@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>270</ID>
+  <Description>"GaItemHandle"</Description>
+  <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+0</Address>
+  <x-ce2fs-child-order>
+    <id id="271"/>
+    <id id="272"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

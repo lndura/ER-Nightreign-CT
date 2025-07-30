@@ -1,0 +1,109 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+SortieStartingPoint = {}
+function SortieStartingPoint:new(id_or_all, patchName)
+    return paramPatcher(self, "SortieStartingPoint", 0x24, id_or_all, patchName)
+end
+
+
+
+function SortieStartingPoint:setUnknown_0(value)
+    return self:setU32(0x00, value)
+end
+function SortieStartingPoint:getUnknown_0(value)
+    return self:getU32(0x00, value)
+end
+
+function SortieStartingPoint:setAreaId(value)
+    return self:setU8(0x04, value)
+end
+function SortieStartingPoint:getAreaId(value)
+    return self:getU8(0x04, value)
+end
+
+function SortieStartingPoint:setGridXNo(value)
+    return self:setU8(0x05, value)
+end
+function SortieStartingPoint:getGridXNo(value)
+    return self:getU8(0x05, value)
+end
+
+function SortieStartingPoint:setGridZNo(value)
+    return self:setU8(0x06, value)
+end
+function SortieStartingPoint:getGridZNo(value)
+    return self:getU8(0x06, value)
+end
+
+function SortieStartingPoint:setUnknown_1d(value)
+    return self:setU8(0x07, value)
+end
+function SortieStartingPoint:getUnknown_1d(value)
+    return self:getU8(0x07, value)
+end
+
+function SortieStartingPoint:setBirdRouteEntityId(value)
+    return self:setU32(0x08, value)
+end
+function SortieStartingPoint:getBirdRouteEntityId(value)
+    return self:getU32(0x08, value)
+end
+
+function SortieStartingPoint:setRequireModifier(value)
+    return self:setU32(0x0C, value)
+end
+function SortieStartingPoint:getRequireModifier(value)
+    return self:getU32(0x0C, value)
+end
+
+function SortieStartingPoint:setExcludeModifier1(value)
+    return self:setU32(0x10, value)
+end
+function SortieStartingPoint:getExcludeModifier1(value)
+    return self:getU32(0x10, value)
+end
+
+function SortieStartingPoint:setExcludeModifier2(value)
+    return self:setU32(0x14, value)
+end
+function SortieStartingPoint:getExcludeModifier2(value)
+    return self:getU32(0x14, value)
+end
+
+function SortieStartingPoint:setUnknown_6a(value)
+    return self:setU8(0x18, value)
+end
+function SortieStartingPoint:getUnknown_6a(value)
+    return self:getU8(0x18, value)
+end
+
+function SortieStartingPoint:setSpawnGridXNo(value)
+    return self:setU8(0x19, value)
+end
+function SortieStartingPoint:getSpawnGridXNo(value)
+    return self:getU8(0x19, value)
+end
+
+function SortieStartingPoint:setSpawnGridZNo(value)
+    return self:setU8(0x1A, value)
+end
+function SortieStartingPoint:getSpawnGridZNo(value)
+    return self:getU8(0x1A, value)
+end
+
+function SortieStartingPoint:setUnknown_6d(value)
+    return self:setU8(0x1B, value)
+end
+function SortieStartingPoint:getUnknown_6d(value)
+    return self:getU8(0x1B, value)
+end
+
+function SortieStartingPoint:setSpawnPointEntityId(value)
+    return self:setU32(0x1C, value)
+end
+function SortieStartingPoint:getSpawnPointEntityId(value)
+    return self:getU32(0x1C, value)
+end
+[disable]
+SortieStartingPoint = nil

@@ -1,0 +1,53 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+paramToggle = {}
+
+local function paramToggleFinder()
+    local SoloParamRepositoryImp = readPointer("SoloParamRepository")
+    if SoloParamRepositoryImp then
+        local paramCount = paramUtils:getCount()
+
+        local paramResCap_Size = (paramCount - 1) * 0x48
+        local paramResCap_List = SoloParamRepositoryImp + 0x88
+        local paramResCap_Stop = paramResCap_List + paramResCap_Size
+
+        for resCapHolder = paramResCap_List, paramResCap_Stop, 0x48 do
+            local paramResCap = readPointer(resCapHolder)
+            local paramName = readDLString(paramResCap + 0x18, 128, true)
+            if paramName then
+                local isParamEnabled = resCapHolder - 0x8
+                paramToggle[paramName] = isParamEnabled
+            end
+        end
+    else
+
+    end
+end
+
+paramToggleFinder()
+
+function paramUtils:getParamToggle(paramName)
+    return paramToggle[paramName]
+end
+
+function paramUtils:isParamEnabled(paramName)
+    local isParamEnabled = paramToggle[paramName]
+    if isParamEnabled then
+        return readByte(isParamEnabled)
+    else
+        pfError("paramUtils: param '%s' not found in param toggles.", paramName or 'nil')
+    end
+end
+
+function paramUtils:toggleParam(paramName, state)
+    local isParamEnabled = paramToggle[paramName]
+    if isParamEnabled then
+        state = state and 1 or 0
+        writeByte(isParamEnabled, state)
+    else
+        pfError("paramUtils: param '%s' not found in param toggles.", paramName or 'nil')
+    end
+end
+[disable]
+paramToggle = nil

@@ -1,0 +1,1516 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+AtkParam_Pc = {}
+function AtkParam_Pc:new(id_or_all, patchName)
+    return paramPatcher(self, "AtkParam_Pc", 0x1D1, id_or_all, patchName)
+end
+
+function AtkParam_Pc:setHit0_Radius(value)
+    return self:setF32(0x00, value)
+end
+function AtkParam_Pc:getHit0_Radius(value)
+    return self:getF32(0x00, value)
+end
+
+function AtkParam_Pc:setHit1_Radius(value)
+    return self:setF32(0x04, value)
+end
+function AtkParam_Pc:getHit1_Radius(value)
+    return self:getF32(0x04, value)
+end
+
+function AtkParam_Pc:setHit2_Radius(value)
+    return self:setF32(0x08, value)
+end
+function AtkParam_Pc:getHit2_Radius(value)
+    return self:getF32(0x08, value)
+end
+
+function AtkParam_Pc:setHit3_Radius(value)
+    return self:setF32(0x0C, value)
+end
+function AtkParam_Pc:getHit3_Radius(value)
+    return self:getF32(0x0C, value)
+end
+
+function AtkParam_Pc:setKnockbackDist(value)
+    return self:setF32(0x10, value)
+end
+function AtkParam_Pc:getKnockbackDist(value)
+    return self:getF32(0x10, value)
+end
+
+function AtkParam_Pc:setHitStopTime(value)
+    return self:setF32(0x14, value)
+end
+function AtkParam_Pc:getHitStopTime(value)
+    return self:getF32(0x14, value)
+end
+
+function AtkParam_Pc:setSpEffectId0(value)
+    return self:setU32(0x18, value)
+end
+function AtkParam_Pc:getSpEffectId0(value)
+    return self:getU32(0x18, value)
+end
+
+function AtkParam_Pc:setSpEffectId1(value)
+    return self:setU32(0x1C, value)
+end
+function AtkParam_Pc:getSpEffectId1(value)
+    return self:getU32(0x1C, value)
+end
+
+function AtkParam_Pc:setSpEffectId2(value)
+    return self:setU32(0x20, value)
+end
+function AtkParam_Pc:getSpEffectId2(value)
+    return self:getU32(0x20, value)
+end
+
+function AtkParam_Pc:setSpEffectId3(value)
+    return self:setU32(0x24, value)
+end
+function AtkParam_Pc:getSpEffectId3(value)
+    return self:getU32(0x24, value)
+end
+
+function AtkParam_Pc:setSpEffectId4(value)
+    return self:setU32(0x28, value)
+end
+function AtkParam_Pc:getSpEffectId4(value)
+    return self:getU32(0x28, value)
+end
+
+function AtkParam_Pc:setHit0_DmyPoly1(value)
+    return self:setU16(0x2C, value)
+end
+function AtkParam_Pc:getHit0_DmyPoly1(value)
+    return self:getU16(0x2C, value)
+end
+
+function AtkParam_Pc:setHit1_DmyPoly1(value)
+    return self:setU16(0x2E, value)
+end
+function AtkParam_Pc:getHit1_DmyPoly1(value)
+    return self:getU16(0x2E, value)
+end
+
+function AtkParam_Pc:setHit2_DmyPoly1(value)
+    return self:setU16(0x30, value)
+end
+function AtkParam_Pc:getHit2_DmyPoly1(value)
+    return self:getU16(0x30, value)
+end
+
+function AtkParam_Pc:setHit3_DmyPoly1(value)
+    return self:setU16(0x32, value)
+end
+function AtkParam_Pc:getHit3_DmyPoly1(value)
+    return self:getU16(0x32, value)
+end
+
+function AtkParam_Pc:setHit0_DmyPoly2(value)
+    return self:setU16(0x34, value)
+end
+function AtkParam_Pc:getHit0_DmyPoly2(value)
+    return self:getU16(0x34, value)
+end
+
+function AtkParam_Pc:setHit1_DmyPoly2(value)
+    return self:setU16(0x36, value)
+end
+function AtkParam_Pc:getHit1_DmyPoly2(value)
+    return self:getU16(0x36, value)
+end
+
+function AtkParam_Pc:setHit2_DmyPoly2(value)
+    return self:setU16(0x38, value)
+end
+function AtkParam_Pc:getHit2_DmyPoly2(value)
+    return self:getU16(0x38, value)
+end
+
+function AtkParam_Pc:setHit3_DmyPoly2(value)
+    return self:setU16(0x3A, value)
+end
+function AtkParam_Pc:getHit3_DmyPoly2(value)
+    return self:getU16(0x3A, value)
+end
+
+function AtkParam_Pc:setBlowingCorrection(value)
+    return self:setU16(0x3C, value)
+end
+function AtkParam_Pc:getBlowingCorrection(value)
+    return self:getU16(0x3C, value)
+end
+
+function AtkParam_Pc:setAtkPhysCorrection(value)
+    return self:setU16(0x3E, value)
+end
+function AtkParam_Pc:getAtkPhysCorrection(value)
+    return self:getU16(0x3E, value)
+end
+
+function AtkParam_Pc:setAtkMagCorrection(value)
+    return self:setU16(0x40, value)
+end
+function AtkParam_Pc:getAtkMagCorrection(value)
+    return self:getU16(0x40, value)
+end
+
+function AtkParam_Pc:setAtkFireCorrection(value)
+    return self:setU16(0x42, value)
+end
+function AtkParam_Pc:getAtkFireCorrection(value)
+    return self:getU16(0x42, value)
+end
+
+function AtkParam_Pc:setAtkThunCorrection(value)
+    return self:setU16(0x44, value)
+end
+function AtkParam_Pc:getAtkThunCorrection(value)
+    return self:getU16(0x44, value)
+end
+
+function AtkParam_Pc:setAtkStamCorrection(value)
+    return self:setU16(0x46, value)
+end
+function AtkParam_Pc:getAtkStamCorrection(value)
+    return self:getU16(0x46, value)
+end
+
+function AtkParam_Pc:setGuardAtkRateCorrection(value)
+    return self:setU16(0x48, value)
+end
+function AtkParam_Pc:getGuardAtkRateCorrection(value)
+    return self:getU16(0x48, value)
+end
+
+function AtkParam_Pc:setGuardBreakCorrection(value)
+    return self:setU16(0x4A, value)
+end
+function AtkParam_Pc:getGuardBreakCorrection(value)
+    return self:getU16(0x4A, value)
+end
+
+function AtkParam_Pc:setAtkThrowEscapeCorrection(value)
+    return self:setU16(0x4C, value)
+end
+function AtkParam_Pc:getAtkThrowEscapeCorrection(value)
+    return self:getU16(0x4C, value)
+end
+
+function AtkParam_Pc:setSubCategory1(value)
+    return self:setU8(0x4E, value)
+end
+function AtkParam_Pc:getSubCategory1(value)
+    return self:getU8(0x4E, value)
+end
+
+function AtkParam_Pc:setSubCategory2(value)
+    return self:setU8(0x4F, value)
+end
+function AtkParam_Pc:getSubCategory2(value)
+    return self:getU8(0x4F, value)
+end
+
+function AtkParam_Pc:setAtkPhys(value)
+    return self:setU16(0x50, value)
+end
+function AtkParam_Pc:getAtkPhys(value)
+    return self:getU16(0x50, value)
+end
+
+function AtkParam_Pc:setAtkMag(value)
+    return self:setU16(0x52, value)
+end
+function AtkParam_Pc:getAtkMag(value)
+    return self:getU16(0x52, value)
+end
+
+function AtkParam_Pc:setAtkFire(value)
+    return self:setU16(0x54, value)
+end
+function AtkParam_Pc:getAtkFire(value)
+    return self:getU16(0x54, value)
+end
+
+function AtkParam_Pc:setAtkThun(value)
+    return self:setU16(0x56, value)
+end
+function AtkParam_Pc:getAtkThun(value)
+    return self:getU16(0x56, value)
+end
+
+function AtkParam_Pc:setAtkStam(value)
+    return self:setU16(0x58, value)
+end
+function AtkParam_Pc:getAtkStam(value)
+    return self:getU16(0x58, value)
+end
+
+function AtkParam_Pc:setGuardAtkRate(value)
+    return self:setU16(0x5A, value)
+end
+function AtkParam_Pc:getGuardAtkRate(value)
+    return self:getU16(0x5A, value)
+end
+
+function AtkParam_Pc:setGuardBreakRate(value)
+    return self:setU16(0x5C, value)
+end
+function AtkParam_Pc:getGuardBreakRate(value)
+    return self:getU16(0x5C, value)
+end
+
+--dummy8 pad6[1]
+
+function AtkParam_Pc:setIsEnableCalcDamageForBushesObj(value)
+    return self:setU8(0x5F, value)
+end
+function AtkParam_Pc:getIsEnableCalcDamageForBushesObj(value)
+    return self:getU8(0x5F, value)
+end
+
+function AtkParam_Pc:setAtkThrowEscape(value)
+    return self:setU16(0x60, value)
+end
+function AtkParam_Pc:getAtkThrowEscape(value)
+    return self:getU16(0x60, value)
+end
+
+function AtkParam_Pc:setAtkObj(value)
+    return self:setU16(0x62, value)
+end
+function AtkParam_Pc:getAtkObj(value)
+    return self:getU16(0x62, value)
+end
+
+function AtkParam_Pc:setGuardStaminaCutRate(value)
+    return self:setU16(0x64, value)
+end
+function AtkParam_Pc:getGuardStaminaCutRate(value)
+    return self:getU16(0x64, value)
+end
+
+function AtkParam_Pc:setGuardRate(value)
+    return self:setU16(0x66, value)
+end
+function AtkParam_Pc:getGuardRate(value)
+    return self:getU16(0x66, value)
+end
+
+function AtkParam_Pc:setThrowTypeId(value)
+    return self:setU16(0x68, value)
+end
+function AtkParam_Pc:getThrowTypeId(value)
+    return self:getU16(0x68, value)
+end
+
+function AtkParam_Pc:setHit0_hitType(value)
+    return self:setU8(0x6A, value)
+end
+function AtkParam_Pc:getHit0_hitType(value)
+    return self:getU8(0x6A, value)
+end
+
+function AtkParam_Pc:setHit1_hitType(value)
+    return self:setU8(0x6B, value)
+end
+function AtkParam_Pc:getHit1_hitType(value)
+    return self:getU8(0x6B, value)
+end
+
+function AtkParam_Pc:setHit2_hitType(value)
+    return self:setU8(0x6C, value)
+end
+function AtkParam_Pc:getHit2_hitType(value)
+    return self:getU8(0x6C, value)
+end
+
+function AtkParam_Pc:setHit3_hitType(value)
+    return self:setU8(0x6D, value)
+end
+function AtkParam_Pc:getHit3_hitType(value)
+    return self:getU8(0x6D, value)
+end
+
+function AtkParam_Pc:setHti0_Priority(value)
+    return self:setU8(0x6E, value)
+end
+function AtkParam_Pc:getHti0_Priority(value)
+    return self:getU8(0x6E, value)
+end
+
+function AtkParam_Pc:setHti1_Priority(value)
+    return self:setU8(0x6F, value)
+end
+function AtkParam_Pc:getHti1_Priority(value)
+    return self:getU8(0x6F, value)
+end
+
+function AtkParam_Pc:setHti2_Priority(value)
+    return self:setU8(0x70, value)
+end
+function AtkParam_Pc:getHti2_Priority(value)
+    return self:getU8(0x70, value)
+end
+
+function AtkParam_Pc:setHti3_Priority(value)
+    return self:setU8(0x71, value)
+end
+function AtkParam_Pc:getHti3_Priority(value)
+    return self:getU8(0x71, value)
+end
+
+function AtkParam_Pc:setDmgLevel(value)
+    return self:setU8(0x72, value)
+end
+function AtkParam_Pc:getDmgLevel(value)
+    return self:getU8(0x72, value)
+end
+
+function AtkParam_Pc:setMapHitType(value)
+    return self:setU8(0x73, value)
+end
+function AtkParam_Pc:getMapHitType(value)
+    return self:getU8(0x73, value)
+end
+
+function AtkParam_Pc:setGuardCutCancelRate(value)
+    return self:setU8(0x74, value)
+end
+function AtkParam_Pc:getGuardCutCancelRate(value)
+    return self:getU8(0x74, value)
+end
+
+function AtkParam_Pc:setAtkAttribute(value)
+    return self:setU8(0x75, value)
+end
+function AtkParam_Pc:getAtkAttribute(value)
+    return self:getU8(0x75, value)
+end
+
+function AtkParam_Pc:setSpAttribute(value)
+    return self:setU8(0x76, value)
+end
+function AtkParam_Pc:getSpAttribute(value)
+    return self:getU8(0x76, value)
+end
+
+function AtkParam_Pc:setAtkType(value)
+    return self:setU8(0x77, value)
+end
+function AtkParam_Pc:getAtkType(value)
+    return self:getU8(0x77, value)
+end
+
+function AtkParam_Pc:setAtkMaterial(value)
+    return self:setU8(0x78, value)
+end
+function AtkParam_Pc:getAtkMaterial(value)
+    return self:getU8(0x78, value)
+end
+
+function AtkParam_Pc:setGuardRangeType(value)
+    return self:setU8(0x79, value)
+end
+function AtkParam_Pc:getGuardRangeType(value)
+    return self:getU8(0x79, value)
+end
+
+function AtkParam_Pc:setDefSeMaterial1(value)
+    return self:setU16(0x7A, value)
+end
+function AtkParam_Pc:getDefSeMaterial1(value)
+    return self:getU16(0x7A, value)
+end
+
+function AtkParam_Pc:setHitSourceType(value)
+    return self:setU8(0x7C, value)
+end
+function AtkParam_Pc:getHitSourceType(value)
+    return self:getU8(0x7C, value)
+end
+
+function AtkParam_Pc:setThrowFlag(value)
+    return self:setU8(0x7D, value)
+end
+function AtkParam_Pc:getThrowFlag(value)
+    return self:getU8(0x7D, value)
+end
+
+function AtkParam_Pc:setDisableGuard(value)
+    return self:setBinary(0x7E, 0, value, 1)
+end
+
+function AtkParam_Pc:getDisableGuard()
+    return self:getBinary(0x7E, 0, value, 1)
+end
+
+function AtkParam_Pc:setDisableStaminaAttack(value)
+    return self:setBinary(0x7E, 1, value, 1)
+end
+
+function AtkParam_Pc:getDisableStaminaAttack()
+    return self:getBinary(0x7E, 1, value, 1)
+end
+
+function AtkParam_Pc:setDisableHitSpEffect(value)
+    return self:setBinary(0x7E, 2, value, 1)
+end
+
+function AtkParam_Pc:getDisableHitSpEffect()
+    return self:getBinary(0x7E, 2, value, 1)
+end
+
+function AtkParam_Pc:setIgnoreNotifyMissSwingForAI(value)
+    return self:setBinary(0x7E, 3, value, 1)
+end
+
+function AtkParam_Pc:getIgnoreNotifyMissSwingForAI()
+    return self:getBinary(0x7E, 3, value, 1)
+end
+
+function AtkParam_Pc:setRepeatHitSfx(value)
+    return self:setBinary(0x7E, 4, value, 1)
+end
+
+function AtkParam_Pc:getRepeatHitSfx()
+    return self:getBinary(0x7E, 4, value, 1)
+end
+
+function AtkParam_Pc:setIsArrowAtk(value)
+    return self:setBinary(0x7E, 5, value, 1)
+end
+
+function AtkParam_Pc:getIsArrowAtk()
+    return self:getBinary(0x7E, 5, value, 1)
+end
+
+function AtkParam_Pc:setIsGhostAtk(value)
+    return self:setBinary(0x7E, 6, value, 1)
+end
+
+function AtkParam_Pc:getIsGhostAtk()
+    return self:getBinary(0x7E, 6, value, 1)
+end
+
+function AtkParam_Pc:setIsDisableNoDamage(value)
+    return self:setBinary(0x7E, 7, value, 1)
+end
+
+function AtkParam_Pc:getIsDisableNoDamage()
+    return self:getBinary(0x7E, 7, value, 1)
+end
+
+function AtkParam_Pc:setAtkPow_forSfx(value)
+    return self:setU8(0x7F, value)
+end
+function AtkParam_Pc:getAtkPow_forSfx(value)
+    return self:getU8(0x7F, value)
+end
+
+function AtkParam_Pc:setAtkDir_forSfx(value)
+    return self:setU8(0x80, value)
+end
+function AtkParam_Pc:getAtkDir_forSfx(value)
+    return self:getU8(0x80, value)
+end
+
+function AtkParam_Pc:setOpposeTarget(value)
+    return self:setBinary(0x81, 0, value, 1)
+end
+
+function AtkParam_Pc:getOpposeTarget()
+    return self:getBinary(0x81, 0, value, 1)
+end
+
+function AtkParam_Pc:setFriendlyTarget(value)
+    return self:setBinary(0x81, 1, value, 1)
+end
+
+function AtkParam_Pc:getFriendlyTarget()
+    return self:getBinary(0x81, 1, value, 1)
+end
+
+function AtkParam_Pc:setSelfTarget(value)
+    return self:setBinary(0x81, 2, value, 1)
+end
+
+function AtkParam_Pc:getSelfTarget()
+    return self:getBinary(0x81, 2, value, 1)
+end
+
+function AtkParam_Pc:setIsCheckDoorPenetration(value)
+    return self:setBinary(0x81, 3, value, 1)
+end
+
+function AtkParam_Pc:getIsCheckDoorPenetration()
+    return self:getBinary(0x81, 3, value, 1)
+end
+
+function AtkParam_Pc:setIsVsRideAtk(value)
+    return self:setBinary(0x81, 4, value, 1)
+end
+
+function AtkParam_Pc:getIsVsRideAtk()
+    return self:getBinary(0x81, 4, value, 1)
+end
+
+function AtkParam_Pc:setIsAddBaseAtk(value)
+    return self:setBinary(0x81, 5, value, 1)
+end
+
+function AtkParam_Pc:getIsAddBaseAtk()
+    return self:getBinary(0x81, 5, value, 1)
+end
+
+function AtkParam_Pc:setExcludeThreatLvNotify(value)
+    return self:setBinary(0x81, 6, value, 1)
+end
+
+function AtkParam_Pc:getExcludeThreatLvNotify()
+    return self:getBinary(0x81, 6, value, 1)
+end
+
+--dummy8 pad1:1
+
+function AtkParam_Pc:setAtkBehaviorId(value)
+    return self:setU8(0x82, value)
+end
+function AtkParam_Pc:getAtkBehaviorId(value)
+    return self:getU8(0x82, value)
+end
+
+function AtkParam_Pc:setAtkPow_forSe(value)
+    return self:setU8(0x83, value)
+end
+function AtkParam_Pc:getAtkPow_forSe(value)
+    return self:getU8(0x83, value)
+end
+
+function AtkParam_Pc:setAtkSuperArmor(value)
+    return self:setF32(0x84, value)
+end
+function AtkParam_Pc:getAtkSuperArmor(value)
+    return self:getF32(0x84, value)
+end
+
+function AtkParam_Pc:setDecalId1(value)
+    return self:setU32(0x88, value)
+end
+function AtkParam_Pc:getDecalId1(value)
+    return self:getU32(0x88, value)
+end
+
+function AtkParam_Pc:setDecalId2(value)
+    return self:setU32(0x8C, value)
+end
+function AtkParam_Pc:getDecalId2(value)
+    return self:getU32(0x8C, value)
+end
+
+function AtkParam_Pc:setAppearAiSoundId(value)
+    return self:setU32(0x90, value)
+end
+function AtkParam_Pc:getAppearAiSoundId(value)
+    return self:getU32(0x90, value)
+end
+
+function AtkParam_Pc:setHitAiSoundId(value)
+    return self:setU32(0x94, value)
+end
+function AtkParam_Pc:getHitAiSoundId(value)
+    return self:getU32(0x94, value)
+end
+
+function AtkParam_Pc:setHitRumbleId(value)
+    return self:setU32(0x98, value)
+end
+function AtkParam_Pc:getHitRumbleId(value)
+    return self:getU32(0x98, value)
+end
+
+function AtkParam_Pc:setHitRumbleIdByNormal(value)
+    return self:setU32(0x9C, value)
+end
+function AtkParam_Pc:getHitRumbleIdByNormal(value)
+    return self:getU32(0x9C, value)
+end
+
+function AtkParam_Pc:setHitRumbleIdByMiddle(value)
+    return self:setU32(0xA0, value)
+end
+function AtkParam_Pc:getHitRumbleIdByMiddle(value)
+    return self:getU32(0xA0, value)
+end
+
+function AtkParam_Pc:setHitRumbleIdByRoot(value)
+    return self:setU32(0xA4, value)
+end
+function AtkParam_Pc:getHitRumbleIdByRoot(value)
+    return self:getU32(0xA4, value)
+end
+
+function AtkParam_Pc:setTraceSfxId0(value)
+    return self:setU32(0xA8, value)
+end
+function AtkParam_Pc:getTraceSfxId0(value)
+    return self:getU32(0xA8, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdHead0(value)
+    return self:setU32(0xAC, value)
+end
+function AtkParam_Pc:getTraceDmyIdHead0(value)
+    return self:getU32(0xAC, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdTail0(value)
+    return self:setU32(0xB0, value)
+end
+function AtkParam_Pc:getTraceDmyIdTail0(value)
+    return self:getU32(0xB0, value)
+end
+
+function AtkParam_Pc:setTraceSfxId1(value)
+    return self:setU32(0xB4, value)
+end
+function AtkParam_Pc:getTraceSfxId1(value)
+    return self:getU32(0xB4, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdHead1(value)
+    return self:setU32(0xB8, value)
+end
+function AtkParam_Pc:getTraceDmyIdHead1(value)
+    return self:getU32(0xB8, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdTail1(value)
+    return self:setU32(0xBC, value)
+end
+function AtkParam_Pc:getTraceDmyIdTail1(value)
+    return self:getU32(0xBC, value)
+end
+
+function AtkParam_Pc:setTraceSfxId2(value)
+    return self:setU32(0xC0, value)
+end
+function AtkParam_Pc:getTraceSfxId2(value)
+    return self:getU32(0xC0, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdHead2(value)
+    return self:setU32(0xC4, value)
+end
+function AtkParam_Pc:getTraceDmyIdHead2(value)
+    return self:getU32(0xC4, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdTail2(value)
+    return self:setU32(0xC8, value)
+end
+function AtkParam_Pc:getTraceDmyIdTail2(value)
+    return self:getU32(0xC8, value)
+end
+
+function AtkParam_Pc:setTraceSfxId3(value)
+    return self:setU32(0xCC, value)
+end
+function AtkParam_Pc:getTraceSfxId3(value)
+    return self:getU32(0xCC, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdHead3(value)
+    return self:setU32(0xD0, value)
+end
+function AtkParam_Pc:getTraceDmyIdHead3(value)
+    return self:getU32(0xD0, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdTail3(value)
+    return self:setU32(0xD4, value)
+end
+function AtkParam_Pc:getTraceDmyIdTail3(value)
+    return self:getU32(0xD4, value)
+end
+
+function AtkParam_Pc:setTraceSfxId4(value)
+    return self:setU32(0xD8, value)
+end
+function AtkParam_Pc:getTraceSfxId4(value)
+    return self:getU32(0xD8, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdHead4(value)
+    return self:setU32(0xDC, value)
+end
+function AtkParam_Pc:getTraceDmyIdHead4(value)
+    return self:getU32(0xDC, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdTail4(value)
+    return self:setU32(0xE0, value)
+end
+function AtkParam_Pc:getTraceDmyIdTail4(value)
+    return self:getU32(0xE0, value)
+end
+
+function AtkParam_Pc:setTraceSfxId5(value)
+    return self:setU32(0xE4, value)
+end
+function AtkParam_Pc:getTraceSfxId5(value)
+    return self:getU32(0xE4, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdHead5(value)
+    return self:setU32(0xE8, value)
+end
+function AtkParam_Pc:getTraceDmyIdHead5(value)
+    return self:getU32(0xE8, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdTail5(value)
+    return self:setU32(0xEC, value)
+end
+function AtkParam_Pc:getTraceDmyIdTail5(value)
+    return self:getU32(0xEC, value)
+end
+
+function AtkParam_Pc:setTraceSfxId6(value)
+    return self:setU32(0xF0, value)
+end
+function AtkParam_Pc:getTraceSfxId6(value)
+    return self:getU32(0xF0, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdHead6(value)
+    return self:setU32(0xF4, value)
+end
+function AtkParam_Pc:getTraceDmyIdHead6(value)
+    return self:getU32(0xF4, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdTail6(value)
+    return self:setU32(0xF8, value)
+end
+function AtkParam_Pc:getTraceDmyIdTail6(value)
+    return self:getU32(0xF8, value)
+end
+
+function AtkParam_Pc:setTraceSfxId7(value)
+    return self:setU32(0xFC, value)
+end
+function AtkParam_Pc:getTraceSfxId7(value)
+    return self:getU32(0xFC, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdHead7(value)
+    return self:setU32(0x100, value)
+end
+function AtkParam_Pc:getTraceDmyIdHead7(value)
+    return self:getU32(0x100, value)
+end
+
+function AtkParam_Pc:setTraceDmyIdTail7(value)
+    return self:setU32(0x104, value)
+end
+function AtkParam_Pc:getTraceDmyIdTail7(value)
+    return self:getU32(0x104, value)
+end
+
+function AtkParam_Pc:setHit4_Radius(value)
+    return self:setF32(0x108, value)
+end
+function AtkParam_Pc:getHit4_Radius(value)
+    return self:getF32(0x108, value)
+end
+
+function AtkParam_Pc:setHit5_Radius(value)
+    return self:setF32(0x10C, value)
+end
+function AtkParam_Pc:getHit5_Radius(value)
+    return self:getF32(0x10C, value)
+end
+
+function AtkParam_Pc:setHit6_Radius(value)
+    return self:setF32(0x110, value)
+end
+function AtkParam_Pc:getHit6_Radius(value)
+    return self:getF32(0x110, value)
+end
+
+function AtkParam_Pc:setHit7_Radius(value)
+    return self:setF32(0x114, value)
+end
+function AtkParam_Pc:getHit7_Radius(value)
+    return self:getF32(0x114, value)
+end
+
+function AtkParam_Pc:setHit8_Radius(value)
+    return self:setF32(0x118, value)
+end
+function AtkParam_Pc:getHit8_Radius(value)
+    return self:getF32(0x118, value)
+end
+
+function AtkParam_Pc:setHit9_Radius(value)
+    return self:setF32(0x11C, value)
+end
+function AtkParam_Pc:getHit9_Radius(value)
+    return self:getF32(0x11C, value)
+end
+
+function AtkParam_Pc:setHit10_Radius(value)
+    return self:setF32(0x120, value)
+end
+function AtkParam_Pc:getHit10_Radius(value)
+    return self:getF32(0x120, value)
+end
+
+function AtkParam_Pc:setHit11_Radius(value)
+    return self:setF32(0x124, value)
+end
+function AtkParam_Pc:getHit11_Radius(value)
+    return self:getF32(0x124, value)
+end
+
+function AtkParam_Pc:setHit12_Radius(value)
+    return self:setF32(0x128, value)
+end
+function AtkParam_Pc:getHit12_Radius(value)
+    return self:getF32(0x128, value)
+end
+
+function AtkParam_Pc:setHit13_Radius(value)
+    return self:setF32(0x12C, value)
+end
+function AtkParam_Pc:getHit13_Radius(value)
+    return self:getF32(0x12C, value)
+end
+
+function AtkParam_Pc:setHit14_Radius(value)
+    return self:setF32(0x130, value)
+end
+function AtkParam_Pc:getHit14_Radius(value)
+    return self:getF32(0x130, value)
+end
+
+function AtkParam_Pc:setHit15_Radius(value)
+    return self:setF32(0x134, value)
+end
+function AtkParam_Pc:getHit15_Radius(value)
+    return self:getF32(0x134, value)
+end
+
+function AtkParam_Pc:setHit4_DmyPoly1(value)
+    return self:setU16(0x138, value)
+end
+function AtkParam_Pc:getHit4_DmyPoly1(value)
+    return self:getU16(0x138, value)
+end
+
+function AtkParam_Pc:setHit5_DmyPoly1(value)
+    return self:setU16(0x13A, value)
+end
+function AtkParam_Pc:getHit5_DmyPoly1(value)
+    return self:getU16(0x13A, value)
+end
+
+function AtkParam_Pc:setHit6_DmyPoly1(value)
+    return self:setU16(0x13C, value)
+end
+function AtkParam_Pc:getHit6_DmyPoly1(value)
+    return self:getU16(0x13C, value)
+end
+
+function AtkParam_Pc:setHit7_DmyPoly1(value)
+    return self:setU16(0x13E, value)
+end
+function AtkParam_Pc:getHit7_DmyPoly1(value)
+    return self:getU16(0x13E, value)
+end
+
+function AtkParam_Pc:setHit8_DmyPoly1(value)
+    return self:setU16(0x140, value)
+end
+function AtkParam_Pc:getHit8_DmyPoly1(value)
+    return self:getU16(0x140, value)
+end
+
+function AtkParam_Pc:setHit9_DmyPoly1(value)
+    return self:setU16(0x142, value)
+end
+function AtkParam_Pc:getHit9_DmyPoly1(value)
+    return self:getU16(0x142, value)
+end
+
+function AtkParam_Pc:setHit10_DmyPoly1(value)
+    return self:setU16(0x144, value)
+end
+function AtkParam_Pc:getHit10_DmyPoly1(value)
+    return self:getU16(0x144, value)
+end
+
+function AtkParam_Pc:setHit11_DmyPoly1(value)
+    return self:setU16(0x146, value)
+end
+function AtkParam_Pc:getHit11_DmyPoly1(value)
+    return self:getU16(0x146, value)
+end
+
+function AtkParam_Pc:setHit12_DmyPoly1(value)
+    return self:setU16(0x148, value)
+end
+function AtkParam_Pc:getHit12_DmyPoly1(value)
+    return self:getU16(0x148, value)
+end
+
+function AtkParam_Pc:setHit13_DmyPoly1(value)
+    return self:setU16(0x14A, value)
+end
+function AtkParam_Pc:getHit13_DmyPoly1(value)
+    return self:getU16(0x14A, value)
+end
+
+function AtkParam_Pc:setHit14_DmyPoly1(value)
+    return self:setU16(0x14C, value)
+end
+function AtkParam_Pc:getHit14_DmyPoly1(value)
+    return self:getU16(0x14C, value)
+end
+
+function AtkParam_Pc:setHit15_DmyPoly1(value)
+    return self:setU16(0x14E, value)
+end
+function AtkParam_Pc:getHit15_DmyPoly1(value)
+    return self:getU16(0x14E, value)
+end
+
+function AtkParam_Pc:setHit4_DmyPoly2(value)
+    return self:setU16(0x150, value)
+end
+function AtkParam_Pc:getHit4_DmyPoly2(value)
+    return self:getU16(0x150, value)
+end
+
+function AtkParam_Pc:setHit5_DmyPoly2(value)
+    return self:setU16(0x152, value)
+end
+function AtkParam_Pc:getHit5_DmyPoly2(value)
+    return self:getU16(0x152, value)
+end
+
+function AtkParam_Pc:setHit6_DmyPoly2(value)
+    return self:setU16(0x154, value)
+end
+function AtkParam_Pc:getHit6_DmyPoly2(value)
+    return self:getU16(0x154, value)
+end
+
+function AtkParam_Pc:setHit7_DmyPoly2(value)
+    return self:setU16(0x156, value)
+end
+function AtkParam_Pc:getHit7_DmyPoly2(value)
+    return self:getU16(0x156, value)
+end
+
+function AtkParam_Pc:setHit8_DmyPoly2(value)
+    return self:setU16(0x158, value)
+end
+function AtkParam_Pc:getHit8_DmyPoly2(value)
+    return self:getU16(0x158, value)
+end
+
+function AtkParam_Pc:setHit9_DmyPoly2(value)
+    return self:setU16(0x15A, value)
+end
+function AtkParam_Pc:getHit9_DmyPoly2(value)
+    return self:getU16(0x15A, value)
+end
+
+function AtkParam_Pc:setHit10_DmyPoly2(value)
+    return self:setU16(0x15C, value)
+end
+function AtkParam_Pc:getHit10_DmyPoly2(value)
+    return self:getU16(0x15C, value)
+end
+
+function AtkParam_Pc:setHit11_DmyPoly2(value)
+    return self:setU16(0x15E, value)
+end
+function AtkParam_Pc:getHit11_DmyPoly2(value)
+    return self:getU16(0x15E, value)
+end
+
+function AtkParam_Pc:setHit12_DmyPoly2(value)
+    return self:setU16(0x160, value)
+end
+function AtkParam_Pc:getHit12_DmyPoly2(value)
+    return self:getU16(0x160, value)
+end
+
+function AtkParam_Pc:setHit13_DmyPoly2(value)
+    return self:setU16(0x162, value)
+end
+function AtkParam_Pc:getHit13_DmyPoly2(value)
+    return self:getU16(0x162, value)
+end
+
+function AtkParam_Pc:setHit14_DmyPoly2(value)
+    return self:setU16(0x164, value)
+end
+function AtkParam_Pc:getHit14_DmyPoly2(value)
+    return self:getU16(0x164, value)
+end
+
+function AtkParam_Pc:setHit15_DmyPoly2(value)
+    return self:setU16(0x166, value)
+end
+function AtkParam_Pc:getHit15_DmyPoly2(value)
+    return self:getU16(0x166, value)
+end
+
+function AtkParam_Pc:setHit4_hitType(value)
+    return self:setU8(0x168, value)
+end
+function AtkParam_Pc:getHit4_hitType(value)
+    return self:getU8(0x168, value)
+end
+
+function AtkParam_Pc:setHit5_hitType(value)
+    return self:setU8(0x169, value)
+end
+function AtkParam_Pc:getHit5_hitType(value)
+    return self:getU8(0x169, value)
+end
+
+function AtkParam_Pc:setHit6_hitType(value)
+    return self:setU8(0x16A, value)
+end
+function AtkParam_Pc:getHit6_hitType(value)
+    return self:getU8(0x16A, value)
+end
+
+function AtkParam_Pc:setHit7_hitType(value)
+    return self:setU8(0x16B, value)
+end
+function AtkParam_Pc:getHit7_hitType(value)
+    return self:getU8(0x16B, value)
+end
+
+function AtkParam_Pc:setHit8_hitType(value)
+    return self:setU8(0x16C, value)
+end
+function AtkParam_Pc:getHit8_hitType(value)
+    return self:getU8(0x16C, value)
+end
+
+function AtkParam_Pc:setHit9_hitType(value)
+    return self:setU8(0x16D, value)
+end
+function AtkParam_Pc:getHit9_hitType(value)
+    return self:getU8(0x16D, value)
+end
+
+function AtkParam_Pc:setHit10_hitType(value)
+    return self:setU8(0x16E, value)
+end
+function AtkParam_Pc:getHit10_hitType(value)
+    return self:getU8(0x16E, value)
+end
+
+function AtkParam_Pc:setHit11_hitType(value)
+    return self:setU8(0x16F, value)
+end
+function AtkParam_Pc:getHit11_hitType(value)
+    return self:getU8(0x16F, value)
+end
+
+function AtkParam_Pc:setHit12_hitType(value)
+    return self:setU8(0x170, value)
+end
+function AtkParam_Pc:getHit12_hitType(value)
+    return self:getU8(0x170, value)
+end
+
+function AtkParam_Pc:setHit13_hitType(value)
+    return self:setU8(0x171, value)
+end
+function AtkParam_Pc:getHit13_hitType(value)
+    return self:getU8(0x171, value)
+end
+
+function AtkParam_Pc:setHit14_hitType(value)
+    return self:setU8(0x172, value)
+end
+function AtkParam_Pc:getHit14_hitType(value)
+    return self:getU8(0x172, value)
+end
+
+function AtkParam_Pc:setHit15_hitType(value)
+    return self:setU8(0x173, value)
+end
+function AtkParam_Pc:getHit15_hitType(value)
+    return self:getU8(0x173, value)
+end
+
+function AtkParam_Pc:setHti4_Priority(value)
+    return self:setU8(0x174, value)
+end
+function AtkParam_Pc:getHti4_Priority(value)
+    return self:getU8(0x174, value)
+end
+
+function AtkParam_Pc:setHti5_Priority(value)
+    return self:setU8(0x175, value)
+end
+function AtkParam_Pc:getHti5_Priority(value)
+    return self:getU8(0x175, value)
+end
+
+function AtkParam_Pc:setHti6_Priority(value)
+    return self:setU8(0x176, value)
+end
+function AtkParam_Pc:getHti6_Priority(value)
+    return self:getU8(0x176, value)
+end
+
+function AtkParam_Pc:setHti7_Priority(value)
+    return self:setU8(0x177, value)
+end
+function AtkParam_Pc:getHti7_Priority(value)
+    return self:getU8(0x177, value)
+end
+
+function AtkParam_Pc:setHti8_Priority(value)
+    return self:setU8(0x178, value)
+end
+function AtkParam_Pc:getHti8_Priority(value)
+    return self:getU8(0x178, value)
+end
+
+function AtkParam_Pc:setHti9_Priority(value)
+    return self:setU8(0x179, value)
+end
+function AtkParam_Pc:getHti9_Priority(value)
+    return self:getU8(0x179, value)
+end
+
+function AtkParam_Pc:setHti10_Priority(value)
+    return self:setU8(0x17A, value)
+end
+function AtkParam_Pc:getHti10_Priority(value)
+    return self:getU8(0x17A, value)
+end
+
+function AtkParam_Pc:setHti11_Priority(value)
+    return self:setU8(0x17B, value)
+end
+function AtkParam_Pc:getHti11_Priority(value)
+    return self:getU8(0x17B, value)
+end
+
+function AtkParam_Pc:setHti12_Priority(value)
+    return self:setU8(0x17C, value)
+end
+function AtkParam_Pc:getHti12_Priority(value)
+    return self:getU8(0x17C, value)
+end
+
+function AtkParam_Pc:setHti13_Priority(value)
+    return self:setU8(0x17D, value)
+end
+function AtkParam_Pc:getHti13_Priority(value)
+    return self:getU8(0x17D, value)
+end
+
+function AtkParam_Pc:setHti14_Priority(value)
+    return self:setU8(0x17E, value)
+end
+function AtkParam_Pc:getHti14_Priority(value)
+    return self:getU8(0x17E, value)
+end
+
+function AtkParam_Pc:setHti15_Priority(value)
+    return self:setU8(0x17F, value)
+end
+function AtkParam_Pc:getHti15_Priority(value)
+    return self:getU8(0x17F, value)
+end
+
+function AtkParam_Pc:setDefSfxMaterial1(value)
+    return self:setU16(0x180, value)
+end
+function AtkParam_Pc:getDefSfxMaterial1(value)
+    return self:getU16(0x180, value)
+end
+
+function AtkParam_Pc:setDefSeMaterial2(value)
+    return self:setU16(0x182, value)
+end
+function AtkParam_Pc:getDefSeMaterial2(value)
+    return self:getU16(0x182, value)
+end
+
+function AtkParam_Pc:setDefSfxMaterial2(value)
+    return self:setU16(0x184, value)
+end
+function AtkParam_Pc:getDefSfxMaterial2(value)
+    return self:getU16(0x184, value)
+end
+
+function AtkParam_Pc:setAtkDarkCorrection(value)
+    return self:setU16(0x186, value)
+end
+function AtkParam_Pc:getAtkDarkCorrection(value)
+    return self:getU16(0x186, value)
+end
+
+function AtkParam_Pc:setAtkDark(value)
+    return self:setU16(0x188, value)
+end
+function AtkParam_Pc:getAtkDark(value)
+    return self:getU16(0x188, value)
+end
+
+--dummy8 pad5:1
+
+function AtkParam_Pc:setIsDisableParry(value)
+    return self:setBinary(0x18A, 1, value, 1)
+end
+
+function AtkParam_Pc:getIsDisableParry()
+    return self:getBinary(0x18A, 1, value, 1)
+end
+
+function AtkParam_Pc:setIsDisableBothHandsAtkBonus(value)
+    return self:setBinary(0x18A, 2, value, 1)
+end
+
+function AtkParam_Pc:getIsDisableBothHandsAtkBonus()
+    return self:getBinary(0x18A, 2, value, 1)
+end
+
+function AtkParam_Pc:setIsInvalidatedByNoDamageInAir(value)
+    return self:setBinary(0x18A, 3, value, 1)
+end
+
+function AtkParam_Pc:getIsInvalidatedByNoDamageInAir()
+    return self:getBinary(0x18A, 3, value, 1)
+end
+
+--dummy8 pad2:4
+
+function AtkParam_Pc:setDmgLevel_vsPlayer(value)
+    return self:setU8(0x18B, value)
+end
+function AtkParam_Pc:getDmgLevel_vsPlayer(value)
+    return self:getU8(0x18B, value)
+end
+
+function AtkParam_Pc:setStatusAilmentAtkPowerCorrectRate(value)
+    return self:setU16(0x18C, value)
+end
+function AtkParam_Pc:getStatusAilmentAtkPowerCorrectRate(value)
+    return self:getU16(0x18C, value)
+end
+
+function AtkParam_Pc:setSpEffectAtkPowerCorrectRate_byPoint(value)
+    return self:setU16(0x18E, value)
+end
+function AtkParam_Pc:getSpEffectAtkPowerCorrectRate_byPoint(value)
+    return self:getU16(0x18E, value)
+end
+
+function AtkParam_Pc:setSpEffectAtkPowerCorrectRate_byRate(value)
+    return self:setU16(0x190, value)
+end
+function AtkParam_Pc:getSpEffectAtkPowerCorrectRate_byRate(value)
+    return self:getU16(0x190, value)
+end
+
+function AtkParam_Pc:setSpEffectAtkPowerCorrectRate_byDmg(value)
+    return self:setU16(0x192, value)
+end
+function AtkParam_Pc:getSpEffectAtkPowerCorrectRate_byDmg(value)
+    return self:getU16(0x192, value)
+end
+
+function AtkParam_Pc:setAtkBehaviorId_2(value)
+    return self:setU8(0x194, value)
+end
+function AtkParam_Pc:getAtkBehaviorId_2(value)
+    return self:getU8(0x194, value)
+end
+
+function AtkParam_Pc:setThrowDamageAttribute(value)
+    return self:setU8(0x195, value)
+end
+function AtkParam_Pc:getThrowDamageAttribute(value)
+    return self:getU8(0x195, value)
+end
+
+function AtkParam_Pc:setStatusAilmentAtkPowerCorrectRate_byPoint(value)
+    return self:setU16(0x196, value)
+end
+function AtkParam_Pc:getStatusAilmentAtkPowerCorrectRate_byPoint(value)
+    return self:getU16(0x196, value)
+end
+
+function AtkParam_Pc:setOverwriteAttackElementCorrectId(value)
+    return self:setU32(0x198, value)
+end
+function AtkParam_Pc:getOverwriteAttackElementCorrectId(value)
+    return self:getU32(0x198, value)
+end
+
+function AtkParam_Pc:setDecalBaseId1(value)
+    return self:setU16(0x19C, value)
+end
+function AtkParam_Pc:getDecalBaseId1(value)
+    return self:getU16(0x19C, value)
+end
+
+function AtkParam_Pc:setDecalBaseId2(value)
+    return self:setU16(0x19E, value)
+end
+function AtkParam_Pc:getDecalBaseId2(value)
+    return self:getU16(0x19E, value)
+end
+
+function AtkParam_Pc:setWepRegainHpScale(value)
+    return self:setU16(0x1A0, value)
+end
+function AtkParam_Pc:getWepRegainHpScale(value)
+    return self:getU16(0x1A0, value)
+end
+
+function AtkParam_Pc:setAtkRegainHp(value)
+    return self:setU16(0x1A2, value)
+end
+function AtkParam_Pc:getAtkRegainHp(value)
+    return self:getU16(0x1A2, value)
+end
+
+function AtkParam_Pc:setRegainableTimeScale(value)
+    return self:setF32(0x1A4, value)
+end
+function AtkParam_Pc:getRegainableTimeScale(value)
+    return self:getF32(0x1A4, value)
+end
+
+function AtkParam_Pc:setRegainableHpRateScale(value)
+    return self:setF32(0x1A8, value)
+end
+function AtkParam_Pc:getRegainableHpRateScale(value)
+    return self:getF32(0x1A8, value)
+end
+
+function AtkParam_Pc:setRegainableSlotId(value)
+    return self:setU8(0x1AC, value)
+end
+function AtkParam_Pc:getRegainableSlotId(value)
+    return self:getU8(0x1AC, value)
+end
+
+function AtkParam_Pc:setSpAttributeVariationValue(value)
+    return self:setU8(0x1AD, value)
+end
+function AtkParam_Pc:getSpAttributeVariationValue(value)
+    return self:getU8(0x1AD, value)
+end
+
+function AtkParam_Pc:setParryForwardOffset(value)
+    return self:setU16(0x1AE, value)
+end
+function AtkParam_Pc:getParryForwardOffset(value)
+    return self:getU16(0x1AE, value)
+end
+
+function AtkParam_Pc:setAtkSuperArmorCorrection(value)
+    return self:setF32(0x1B0, value)
+end
+function AtkParam_Pc:getAtkSuperArmorCorrection(value)
+    return self:getF32(0x1B0, value)
+end
+
+function AtkParam_Pc:setDefSfxMaterialVariationValue(value)
+    return self:setU8(0x1B4, value)
+end
+function AtkParam_Pc:getDefSfxMaterialVariationValue(value)
+    return self:getU8(0x1B4, value)
+end
+
+function AtkParam_Pc:setUnknown_1(value)
+    return self:setU16(0x1B5, value)
+end
+function AtkParam_Pc:getUnknown_1(value)
+    return self:getU16(0x1B5, value)
+end
+
+--dummy8 pad4[1]
+
+function AtkParam_Pc:setUltimateArtGainCorrection(value)
+    return self:setU32(0x1B8, value)
+end
+function AtkParam_Pc:getUltimateArtGainCorrection(value)
+    return self:getU32(0x1B8, value)
+end
+
+function AtkParam_Pc:setReviveDamageCorrection(value)
+    return self:setU32(0x1BC, value)
+end
+function AtkParam_Pc:getReviveDamageCorrection(value)
+    return self:getU32(0x1BC, value)
+end
+
+function AtkParam_Pc:setUnknown_3(value)
+    return self:setF32(0x1C0, value)
+end
+function AtkParam_Pc:getUnknown_3(value)
+    return self:getF32(0x1C0, value)
+end
+
+function AtkParam_Pc:setUnknown_4(value)
+    return self:setF32(0x1C4, value)
+end
+function AtkParam_Pc:getUnknown_4(value)
+    return self:getF32(0x1C4, value)
+end
+
+function AtkParam_Pc:setUnknown_5a(value)
+    return self:setU8(0x1C8, value)
+end
+function AtkParam_Pc:getUnknown_5a(value)
+    return self:getU8(0x1C8, value)
+end
+
+function AtkParam_Pc:setUnknown_5b(value)
+    return self:setU8(0x1C9, value)
+end
+function AtkParam_Pc:getUnknown_5b(value)
+    return self:getU8(0x1C9, value)
+end
+
+function AtkParam_Pc:setUnknown_5c(value)
+    return self:setU8(0x1CA, value)
+end
+function AtkParam_Pc:getUnknown_5c(value)
+    return self:getU8(0x1CA, value)
+end
+
+function AtkParam_Pc:setUnknown_5d(value)
+    return self:setU8(0x1CB, value)
+end
+function AtkParam_Pc:getUnknown_5d(value)
+    return self:getU8(0x1CB, value)
+end
+
+--dummy8 pad7_old[4]
+[disable]
+AtkParam_Pc = nil

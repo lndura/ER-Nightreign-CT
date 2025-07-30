@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337272933</ID>
+  <Description>"InventorySize"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameDataMan</Address>
+  <Offsets>
+    <Offset>(readInteger(inventory.data.Type) - 1) * 0x10 + 0x0C</Offset>
+    <Offset>498</Offset>
+    <Offset>8</Offset>
+  </Offsets>
+</CheatEntry>

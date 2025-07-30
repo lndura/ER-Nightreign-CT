@@ -1,0 +1,18 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+SfxBlockResShareParam = {}
+function SfxBlockResShareParam:new(id_or_all, patchName)
+    return paramPatcher(self, "SfxBlockResShareParam", 0x8, id_or_all, patchName)
+end
+
+
+
+function SfxBlockResShareParam:setUnknown_0(value)
+    return self:setU32(0x00, value)
+end
+function SfxBlockResShareParam:getUnknown_0(value)
+    return self:getU32(0x00, value)
+end
+[disable]
+SfxBlockResShareParam = nil

@@ -1,0 +1,34 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+CharMakeMenuListItemParam = {}
+function CharMakeMenuListItemParam:new(id_or_all, patchName)
+    return paramPatcher(self, "CharMakeMenuListItemParam", 0x11, id_or_all, patchName)
+end
+
+
+
+function CharMakeMenuListItemParam:setValue(value)
+    return self:setU32(0x00, value)
+end
+function CharMakeMenuListItemParam:getValue(value)
+    return self:getU32(0x00, value)
+end
+
+function CharMakeMenuListItemParam:setCaptionId(value)
+    return self:setU32(0x04, value)
+end
+function CharMakeMenuListItemParam:getCaptionId(value)
+    return self:getU32(0x04, value)
+end
+
+function CharMakeMenuListItemParam:setIconId(value)
+    return self:setU8(0x08, value)
+end
+function CharMakeMenuListItemParam:getIconId(value)
+    return self:getU8(0x08, value)
+end
+
+--dummy8 reserved[7]
+[disable]
+CharMakeMenuListItemParam = nil

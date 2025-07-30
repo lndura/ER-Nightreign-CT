@@ -1,0 +1,77 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+WetAspectParam = {}
+function WetAspectParam:new(id_or_all, patchName)
+    return paramPatcher(self, "WetAspectParam", 0x21, id_or_all, patchName)
+end
+
+
+
+function WetAspectParam:setBaseColorR(value)
+    return self:setU8(0x00, value)
+end
+function WetAspectParam:getBaseColorR(value)
+    return self:getU8(0x00, value)
+end
+
+function WetAspectParam:setBaseColorG(value)
+    return self:setU8(0x01, value)
+end
+function WetAspectParam:getBaseColorG(value)
+    return self:getU8(0x01, value)
+end
+
+function WetAspectParam:setBaseColorB(value)
+    return self:setU8(0x02, value)
+end
+function WetAspectParam:getBaseColorB(value)
+    return self:getU8(0x02, value)
+end
+
+--dummy8 reserve_0[1]
+
+function WetAspectParam:setBaseColorA(value)
+    return self:setF32(0x04, value)
+end
+function WetAspectParam:getBaseColorA(value)
+    return self:getF32(0x04, value)
+end
+
+function WetAspectParam:setMetallic(value)
+    return self:setU8(0x08, value)
+end
+function WetAspectParam:getMetallic(value)
+    return self:getU8(0x08, value)
+end
+
+--dummy8 reserve_1[1]
+
+--dummy8 reserve_2[1]
+
+--dummy8 reserve_3[1]
+
+function WetAspectParam:setMetallicRate(value)
+    return self:setF32(0x0C, value)
+end
+function WetAspectParam:getMetallicRate(value)
+    return self:getF32(0x0C, value)
+end
+
+function WetAspectParam:setShininessRate(value)
+    return self:setF32(0x10, value)
+end
+function WetAspectParam:getShininessRate(value)
+    return self:getF32(0x10, value)
+end
+
+function WetAspectParam:setShininess(value)
+    return self:setU8(0x14, value)
+end
+function WetAspectParam:getShininess(value)
+    return self:getU8(0x14, value)
+end
+
+--dummy8 reserve_4[11]
+[disable]
+WetAspectParam = nil

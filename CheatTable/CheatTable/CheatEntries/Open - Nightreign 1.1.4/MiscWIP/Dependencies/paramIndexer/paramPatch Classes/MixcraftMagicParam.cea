@@ -1,0 +1,48 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MixcraftMagicParam = {}
+function MixcraftMagicParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MixcraftMagicParam", 0x11, id_or_all, patchName)
+end
+
+
+
+function MixcraftMagicParam:setElement1(value)
+    return self:setU8(0x00, value)
+end
+function MixcraftMagicParam:getElement1(value)
+    return self:getU8(0x00, value)
+end
+
+function MixcraftMagicParam:setElement2(value)
+    return self:setU8(0x01, value)
+end
+function MixcraftMagicParam:getElement2(value)
+    return self:getU8(0x01, value)
+end
+
+function MixcraftMagicParam:setElement3(value)
+    return self:setU8(0x02, value)
+end
+function MixcraftMagicParam:getElement3(value)
+    return self:getU8(0x02, value)
+end
+
+function MixcraftMagicParam:setUnknown_3(value)
+    return self:setU8(0x03, value)
+end
+function MixcraftMagicParam:getUnknown_3(value)
+    return self:getU8(0x03, value)
+end
+
+function MixcraftMagicParam:setMagicId(value)
+    return self:setU32(0x04, value)
+end
+function MixcraftMagicParam:getMagicId(value)
+    return self:getU32(0x04, value)
+end
+
+--dummy8 endPadding[8]
+[disable]
+MixcraftMagicParam = nil

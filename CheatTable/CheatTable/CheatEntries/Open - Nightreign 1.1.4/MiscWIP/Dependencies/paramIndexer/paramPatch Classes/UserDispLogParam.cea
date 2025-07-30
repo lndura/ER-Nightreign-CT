@@ -1,0 +1,74 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+UserDispLogParam = {}
+function UserDispLogParam:new(id_or_all, patchName)
+    return paramPatcher(self, "UserDispLogParam", 0x24, id_or_all, patchName)
+end
+
+
+
+function UserDispLogParam:setTextId_1(value)
+    return self:setU32(0x00, value)
+end
+function UserDispLogParam:getTextId_1(value)
+    return self:getU32(0x00, value)
+end
+
+function UserDispLogParam:setUnknown_1(value)
+    return self:setU32(0x04, value)
+end
+function UserDispLogParam:getUnknown_1(value)
+    return self:getU32(0x04, value)
+end
+
+function UserDispLogParam:setTextId_2(value)
+    return self:setU32(0x08, value)
+end
+function UserDispLogParam:getTextId_2(value)
+    return self:getU32(0x08, value)
+end
+
+function UserDispLogParam:setUnknown_3(value)
+    return self:setU32(0x0C, value)
+end
+function UserDispLogParam:getUnknown_3(value)
+    return self:getU32(0x0C, value)
+end
+
+function UserDispLogParam:setUnknown_4a(value)
+    return self:setU16(0x10, value)
+end
+function UserDispLogParam:getUnknown_4a(value)
+    return self:getU16(0x10, value)
+end
+
+function UserDispLogParam:setUnknown_4b(value)
+    return self:setU16(0x12, value)
+end
+function UserDispLogParam:getUnknown_4b(value)
+    return self:getU16(0x12, value)
+end
+
+function UserDispLogParam:setUnknown_5(value)
+    return self:setU32(0x14, value)
+end
+function UserDispLogParam:getUnknown_5(value)
+    return self:getU32(0x14, value)
+end
+
+function UserDispLogParam:setUnknown_6(value)
+    return self:setU32(0x18, value)
+end
+function UserDispLogParam:getUnknown_6(value)
+    return self:getU32(0x18, value)
+end
+
+function UserDispLogParam:setUnknown_7(value)
+    return self:setU32(0x1C, value)
+end
+function UserDispLogParam:getUnknown_7(value)
+    return self:getU32(0x1C, value)
+end
+[disable]
+UserDispLogParam = nil

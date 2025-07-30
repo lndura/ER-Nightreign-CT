@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337274986</ID>
+  <Description>"Currency"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337273227"/>
+    <id id="1337273229"/>
+    <id id="1337273230"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,76 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+SessionRandomAssetTexReplaceParam = {}
+function SessionRandomAssetTexReplaceParam:new(id_or_all, patchName)
+    return paramPatcher(self, "SessionRandomAssetTexReplaceParam", 0xC9, id_or_all, patchName)
+end
+
+
+
+function SessionRandomAssetTexReplaceParam:setUnknown_0(value)
+    return self:setU32(0x00, value)
+end
+function SessionRandomAssetTexReplaceParam:getUnknown_0(value)
+    return self:getU32(0x00, value)
+end
+
+function SessionRandomAssetTexReplaceParam:setUnknown_1(value)
+    return self:setU32(0x04, value)
+end
+function SessionRandomAssetTexReplaceParam:getUnknown_1(value)
+    return self:getU32(0x04, value)
+end
+
+function SessionRandomAssetTexReplaceParam:setUnknown_2(value)
+    return self:setU32(0x08, value)
+end
+function SessionRandomAssetTexReplaceParam:getUnknown_2(value)
+    return self:getU32(0x08, value)
+end
+
+function SessionRandomAssetTexReplaceParam:setUnknown_3(value)
+    return self:setU32(0x0C, value)
+end
+function SessionRandomAssetTexReplaceParam:getUnknown_3(value)
+    return self:getU32(0x0C, value)
+end
+
+function SessionRandomAssetTexReplaceParam:setUnknown_4(value)
+    return self:setU32(0x10, value)
+end
+function SessionRandomAssetTexReplaceParam:getUnknown_4(value)
+    return self:getU32(0x10, value)
+end
+
+function SessionRandomAssetTexReplaceParam:setUnknown_5(value)
+    return self:setU32(0x14, value)
+end
+function SessionRandomAssetTexReplaceParam:getUnknown_5(value)
+    return self:getU32(0x14, value)
+end
+
+function SessionRandomAssetTexReplaceParam:setUnknown_6(value)
+    return self:setU32(0x18, value)
+end
+function SessionRandomAssetTexReplaceParam:getUnknown_6(value)
+    return self:getU32(0x18, value)
+end
+
+function SessionRandomAssetTexReplaceParam:setUnknown_7(value)
+    return self:setU32(0x1C, value)
+end
+function SessionRandomAssetTexReplaceParam:getUnknown_7(value)
+    return self:getU32(0x1C, value)
+end
+
+function SessionRandomAssetTexReplaceParam:setUnknown_8(value)
+    return self:setU32(0x20, value)
+end
+function SessionRandomAssetTexReplaceParam:getUnknown_8(value)
+    return self:getU32(0x20, value)
+end
+
+--dummy8 padding[164]
+[disable]
+SessionRandomAssetTexReplaceParam = nil

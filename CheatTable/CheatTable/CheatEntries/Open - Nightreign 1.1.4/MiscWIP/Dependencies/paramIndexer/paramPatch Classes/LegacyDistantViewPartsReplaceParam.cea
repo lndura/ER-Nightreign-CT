@@ -1,0 +1,139 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+LegacyDistantViewPartsReplaceParam = {}
+function LegacyDistantViewPartsReplaceParam:new(id_or_all, patchName)
+    return paramPatcher(self, "LegacyDistantViewPartsReplaceParam", 0x44, id_or_all, patchName)
+end
+
+
+
+function LegacyDistantViewPartsReplaceParam:setTargetMapId(value)
+    return self:setU32(0x00, value)
+end
+function LegacyDistantViewPartsReplaceParam:getTargetMapId(value)
+    return self:getU32(0x00, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setTargetEventId(value)
+    return self:setU32(0x04, value)
+end
+function LegacyDistantViewPartsReplaceParam:getTargetEventId(value)
+    return self:getU32(0x04, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setSrcAssetId(value)
+    return self:setU32(0x08, value)
+end
+function LegacyDistantViewPartsReplaceParam:getSrcAssetId(value)
+    return self:getU32(0x08, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setSrcAssetPartsNo(value)
+    return self:setU32(0x0C, value)
+end
+function LegacyDistantViewPartsReplaceParam:getSrcAssetPartsNo(value)
+    return self:getU32(0x0C, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setDstAssetId(value)
+    return self:setU32(0x10, value)
+end
+function LegacyDistantViewPartsReplaceParam:getDstAssetId(value)
+    return self:getU32(0x10, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setDstAssetPartsNo(value)
+    return self:setU32(0x14, value)
+end
+function LegacyDistantViewPartsReplaceParam:getDstAssetPartsNo(value)
+    return self:getU32(0x14, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setSrcAssetIdRangeMin(value)
+    return self:setU32(0x18, value)
+end
+function LegacyDistantViewPartsReplaceParam:getSrcAssetIdRangeMin(value)
+    return self:getU32(0x18, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setSrcAssetIdRangeMax(value)
+    return self:setU32(0x1C, value)
+end
+function LegacyDistantViewPartsReplaceParam:getSrcAssetIdRangeMax(value)
+    return self:getU32(0x1C, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setDstAssetIdRangeMin(value)
+    return self:setU32(0x20, value)
+end
+function LegacyDistantViewPartsReplaceParam:getDstAssetIdRangeMin(value)
+    return self:getU32(0x20, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setDstAssetIdRangeMax(value)
+    return self:setU32(0x24, value)
+end
+function LegacyDistantViewPartsReplaceParam:getDstAssetIdRangeMax(value)
+    return self:getU32(0x24, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setLimitedMapRegionId0(value)
+    return self:setU8(0x28, value)
+end
+function LegacyDistantViewPartsReplaceParam:getLimitedMapRegionId0(value)
+    return self:getU8(0x28, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setLimitedMapRegionId1(value)
+    return self:setU8(0x29, value)
+end
+function LegacyDistantViewPartsReplaceParam:getLimitedMapRegionId1(value)
+    return self:getU8(0x29, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setLimitedMapRegionId2(value)
+    return self:setU8(0x2A, value)
+end
+function LegacyDistantViewPartsReplaceParam:getLimitedMapRegionId2(value)
+    return self:getU8(0x2A, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setLimitedMapRegionId3(value)
+    return self:setU8(0x2B, value)
+end
+function LegacyDistantViewPartsReplaceParam:getLimitedMapRegionId3(value)
+    return self:getU8(0x2B, value)
+end
+
+--dummy8 reserve[4]
+
+function LegacyDistantViewPartsReplaceParam:setLimitedMapRegionAssetId(value)
+    return self:setU32(0x30, value)
+end
+function LegacyDistantViewPartsReplaceParam:getLimitedMapRegionAssetId(value)
+    return self:getU32(0x30, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setLimitedMapRegioAssetPartsNo(value)
+    return self:setU32(0x34, value)
+end
+function LegacyDistantViewPartsReplaceParam:getLimitedMapRegioAssetPartsNo(value)
+    return self:getU32(0x34, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setLimitedMapRegioAssetIdRangeMin(value)
+    return self:setU32(0x38, value)
+end
+function LegacyDistantViewPartsReplaceParam:getLimitedMapRegioAssetIdRangeMin(value)
+    return self:getU32(0x38, value)
+end
+
+function LegacyDistantViewPartsReplaceParam:setLimitedMapRegioAssetIdRangeMax(value)
+    return self:setU32(0x3C, value)
+end
+function LegacyDistantViewPartsReplaceParam:getLimitedMapRegioAssetIdRangeMax(value)
+    return self:getU32(0x3C, value)
+end
+[disable]
+LegacyDistantViewPartsReplaceParam = nil

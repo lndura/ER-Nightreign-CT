@@ -1,0 +1,27 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MapGridCreateHeightLimitInfoParam = {}
+function MapGridCreateHeightLimitInfoParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MapGridCreateHeightLimitInfoParam", 0x21, id_or_all, patchName)
+end
+
+
+
+function MapGridCreateHeightLimitInfoParam:setGridEnableCreateHeightMin(value)
+    return self:setF32(0x00, value)
+end
+function MapGridCreateHeightLimitInfoParam:getGridEnableCreateHeightMin(value)
+    return self:getF32(0x00, value)
+end
+
+function MapGridCreateHeightLimitInfoParam:setGridEnableCreateHeightMax(value)
+    return self:setF32(0x04, value)
+end
+function MapGridCreateHeightLimitInfoParam:getGridEnableCreateHeightMax(value)
+    return self:getF32(0x04, value)
+end
+
+--dummy8 Reserve[24]
+[disable]
+MapGridCreateHeightLimitInfoParam = nil

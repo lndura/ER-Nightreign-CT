@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337274908</ID>
+  <Description>"EventFlag ID"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>ef.flag</Address>
+  <x-ce2fs-child-order>
+    <id id="1337274909"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

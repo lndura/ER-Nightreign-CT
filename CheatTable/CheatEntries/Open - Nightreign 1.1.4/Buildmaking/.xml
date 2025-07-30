@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337273225</ID>
+  <Description>"Buildmaking"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337274986"/>
+    <id id="1337274906"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

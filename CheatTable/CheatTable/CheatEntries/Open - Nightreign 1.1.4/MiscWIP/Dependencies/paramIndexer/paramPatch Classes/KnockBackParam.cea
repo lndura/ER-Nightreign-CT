@@ -1,0 +1,223 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+KnockBackParam = {}
+function KnockBackParam:new(id_or_all, patchName)
+    return paramPatcher(self, "KnockBackParam", 0x81, id_or_all, patchName)
+end
+
+
+
+function KnockBackParam:setDamage_Min_ContTime(value)
+    return self:setF32(0x00, value)
+end
+function KnockBackParam:getDamage_Min_ContTime(value)
+    return self:getF32(0x00, value)
+end
+
+function KnockBackParam:setDamage_S_ContTime(value)
+    return self:setF32(0x04, value)
+end
+function KnockBackParam:getDamage_S_ContTime(value)
+    return self:getF32(0x04, value)
+end
+
+function KnockBackParam:setDamage_M_ContTime(value)
+    return self:setF32(0x08, value)
+end
+function KnockBackParam:getDamage_M_ContTime(value)
+    return self:getF32(0x08, value)
+end
+
+function KnockBackParam:setDamage_L_ContTime(value)
+    return self:setF32(0x0C, value)
+end
+function KnockBackParam:getDamage_L_ContTime(value)
+    return self:getF32(0x0C, value)
+end
+
+function KnockBackParam:setDamage_BlowS_ContTime(value)
+    return self:setF32(0x10, value)
+end
+function KnockBackParam:getDamage_BlowS_ContTime(value)
+    return self:getF32(0x10, value)
+end
+
+function KnockBackParam:setDamage_BlowM_ContTime(value)
+    return self:setF32(0x14, value)
+end
+function KnockBackParam:getDamage_BlowM_ContTime(value)
+    return self:getF32(0x14, value)
+end
+
+function KnockBackParam:setDamage_Strike_ContTime(value)
+    return self:setF32(0x18, value)
+end
+function KnockBackParam:getDamage_Strike_ContTime(value)
+    return self:getF32(0x18, value)
+end
+
+function KnockBackParam:setDamage_Uppercut_ContTime(value)
+    return self:setF32(0x1C, value)
+end
+function KnockBackParam:getDamage_Uppercut_ContTime(value)
+    return self:getF32(0x1C, value)
+end
+
+function KnockBackParam:setDamage_Push_ContTime(value)
+    return self:setF32(0x20, value)
+end
+function KnockBackParam:getDamage_Push_ContTime(value)
+    return self:getF32(0x20, value)
+end
+
+function KnockBackParam:setDamage_Breath_ContTime(value)
+    return self:setF32(0x24, value)
+end
+function KnockBackParam:getDamage_Breath_ContTime(value)
+    return self:getF32(0x24, value)
+end
+
+function KnockBackParam:setDamage_HeadShot_ContTime(value)
+    return self:setF32(0x28, value)
+end
+function KnockBackParam:getDamage_HeadShot_ContTime(value)
+    return self:getF32(0x28, value)
+end
+
+function KnockBackParam:setGuard_S_ContTime(value)
+    return self:setF32(0x2C, value)
+end
+function KnockBackParam:getGuard_S_ContTime(value)
+    return self:getF32(0x2C, value)
+end
+
+function KnockBackParam:setGuard_L_ContTime(value)
+    return self:setF32(0x30, value)
+end
+function KnockBackParam:getGuard_L_ContTime(value)
+    return self:getF32(0x30, value)
+end
+
+function KnockBackParam:setGuard_LL_ContTime(value)
+    return self:setF32(0x34, value)
+end
+function KnockBackParam:getGuard_LL_ContTime(value)
+    return self:getF32(0x34, value)
+end
+
+function KnockBackParam:setGuardBrake_ContTime(value)
+    return self:setF32(0x38, value)
+end
+function KnockBackParam:getGuardBrake_ContTime(value)
+    return self:getF32(0x38, value)
+end
+
+function KnockBackParam:setDamage_Min_DecTime(value)
+    return self:setF32(0x3C, value)
+end
+function KnockBackParam:getDamage_Min_DecTime(value)
+    return self:getF32(0x3C, value)
+end
+
+function KnockBackParam:setDamage_S_DecTime(value)
+    return self:setF32(0x40, value)
+end
+function KnockBackParam:getDamage_S_DecTime(value)
+    return self:getF32(0x40, value)
+end
+
+function KnockBackParam:setDamage_M_DecTime(value)
+    return self:setF32(0x44, value)
+end
+function KnockBackParam:getDamage_M_DecTime(value)
+    return self:getF32(0x44, value)
+end
+
+function KnockBackParam:setDamage_L_DecTime(value)
+    return self:setF32(0x48, value)
+end
+function KnockBackParam:getDamage_L_DecTime(value)
+    return self:getF32(0x48, value)
+end
+
+function KnockBackParam:setDamage_BlowS_DecTime(value)
+    return self:setF32(0x4C, value)
+end
+function KnockBackParam:getDamage_BlowS_DecTime(value)
+    return self:getF32(0x4C, value)
+end
+
+function KnockBackParam:setDamage_BlowM_DecTime(value)
+    return self:setF32(0x50, value)
+end
+function KnockBackParam:getDamage_BlowM_DecTime(value)
+    return self:getF32(0x50, value)
+end
+
+function KnockBackParam:setDamage_Strike_DecTime(value)
+    return self:setF32(0x54, value)
+end
+function KnockBackParam:getDamage_Strike_DecTime(value)
+    return self:getF32(0x54, value)
+end
+
+function KnockBackParam:setDamage_Uppercut_DecTime(value)
+    return self:setF32(0x58, value)
+end
+function KnockBackParam:getDamage_Uppercut_DecTime(value)
+    return self:getF32(0x58, value)
+end
+
+function KnockBackParam:setDamage_Push_DecTime(value)
+    return self:setF32(0x5C, value)
+end
+function KnockBackParam:getDamage_Push_DecTime(value)
+    return self:getF32(0x5C, value)
+end
+
+function KnockBackParam:setDamage_Breath_DecTime(value)
+    return self:setF32(0x60, value)
+end
+function KnockBackParam:getDamage_Breath_DecTime(value)
+    return self:getF32(0x60, value)
+end
+
+function KnockBackParam:setDamage_HeadShot_DecTime(value)
+    return self:setF32(0x64, value)
+end
+function KnockBackParam:getDamage_HeadShot_DecTime(value)
+    return self:getF32(0x64, value)
+end
+
+function KnockBackParam:setGuard_S_DecTime(value)
+    return self:setF32(0x68, value)
+end
+function KnockBackParam:getGuard_S_DecTime(value)
+    return self:getF32(0x68, value)
+end
+
+function KnockBackParam:setGuard_L_DecTime(value)
+    return self:setF32(0x6C, value)
+end
+function KnockBackParam:getGuard_L_DecTime(value)
+    return self:getF32(0x6C, value)
+end
+
+function KnockBackParam:setGuard_LL_DecTime(value)
+    return self:setF32(0x70, value)
+end
+function KnockBackParam:getGuard_LL_DecTime(value)
+    return self:getF32(0x70, value)
+end
+
+function KnockBackParam:setGuardBrake_DecTime(value)
+    return self:setF32(0x74, value)
+end
+function KnockBackParam:getGuardBrake_DecTime(value)
+    return self:getF32(0x74, value)
+end
+
+--dummy8 pad[8]
+[disable]
+KnockBackParam = nil

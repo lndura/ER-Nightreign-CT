@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337273318</ID>
+  <Description>"Equipped Relics"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337273321"/>
+    <id id="1337273337"/>
+    <id id="1337273352"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

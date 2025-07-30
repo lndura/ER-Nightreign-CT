@@ -1,0 +1,18 @@
+<CheatEntry>
+  <ID>1337273321</ID>
+  <Description>"Slot 1"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>inventory.relics[1]</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337273322"/>
+    <id id="1337273323"/>
+    <id id="1337273327"/>
+    <id id="1337273330"/>
+    <id id="1337273333"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,44 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+KnowledgeLoadScreenItemParam = {}
+function KnowledgeLoadScreenItemParam:new(id_or_all, patchName)
+    return paramPatcher(self, "KnowledgeLoadScreenItemParam", 0x14, id_or_all, patchName)
+end
+
+
+
+function KnowledgeLoadScreenItemParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function KnowledgeLoadScreenItemParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function KnowledgeLoadScreenItemParam:setUnlockFlagId(value)
+    return self:setU32(0x04, value)
+end
+function KnowledgeLoadScreenItemParam:getUnlockFlagId(value)
+    return self:getU32(0x04, value)
+end
+
+function KnowledgeLoadScreenItemParam:setInvalidFlagId(value)
+    return self:setU32(0x08, value)
+end
+function KnowledgeLoadScreenItemParam:getInvalidFlagId(value)
+    return self:getU32(0x08, value)
+end
+
+function KnowledgeLoadScreenItemParam:setMsgId(value)
+    return self:setU32(0x0C, value)
+end
+function KnowledgeLoadScreenItemParam:getMsgId(value)
+    return self:getU32(0x0C, value)
+end
+[disable]
+KnowledgeLoadScreenItemParam = nil

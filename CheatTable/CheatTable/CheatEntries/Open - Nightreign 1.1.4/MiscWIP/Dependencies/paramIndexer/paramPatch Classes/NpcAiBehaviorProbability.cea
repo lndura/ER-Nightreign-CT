@@ -1,0 +1,1411 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+NpcAiBehaviorProbability = {}
+function NpcAiBehaviorProbability:new(id_or_all, patchName)
+    return paramPatcher(self, "NpcAiBehaviorProbability", 0x192, id_or_all, patchName)
+end
+
+
+
+function NpcAiBehaviorProbability:setParam000(value)
+    return self:setU16(0x00, value)
+end
+function NpcAiBehaviorProbability:getParam000(value)
+    return self:getU16(0x00, value)
+end
+
+function NpcAiBehaviorProbability:setParam001(value)
+    return self:setU16(0x02, value)
+end
+function NpcAiBehaviorProbability:getParam001(value)
+    return self:getU16(0x02, value)
+end
+
+function NpcAiBehaviorProbability:setParam002(value)
+    return self:setU16(0x04, value)
+end
+function NpcAiBehaviorProbability:getParam002(value)
+    return self:getU16(0x04, value)
+end
+
+function NpcAiBehaviorProbability:setParam003(value)
+    return self:setU16(0x06, value)
+end
+function NpcAiBehaviorProbability:getParam003(value)
+    return self:getU16(0x06, value)
+end
+
+function NpcAiBehaviorProbability:setParam004(value)
+    return self:setU16(0x08, value)
+end
+function NpcAiBehaviorProbability:getParam004(value)
+    return self:getU16(0x08, value)
+end
+
+function NpcAiBehaviorProbability:setParam005(value)
+    return self:setU16(0x0A, value)
+end
+function NpcAiBehaviorProbability:getParam005(value)
+    return self:getU16(0x0A, value)
+end
+
+function NpcAiBehaviorProbability:setParam006(value)
+    return self:setU16(0x0C, value)
+end
+function NpcAiBehaviorProbability:getParam006(value)
+    return self:getU16(0x0C, value)
+end
+
+function NpcAiBehaviorProbability:setParam007(value)
+    return self:setU16(0x0E, value)
+end
+function NpcAiBehaviorProbability:getParam007(value)
+    return self:getU16(0x0E, value)
+end
+
+function NpcAiBehaviorProbability:setParam008(value)
+    return self:setU16(0x10, value)
+end
+function NpcAiBehaviorProbability:getParam008(value)
+    return self:getU16(0x10, value)
+end
+
+function NpcAiBehaviorProbability:setParam009(value)
+    return self:setU16(0x12, value)
+end
+function NpcAiBehaviorProbability:getParam009(value)
+    return self:getU16(0x12, value)
+end
+
+function NpcAiBehaviorProbability:setParam010(value)
+    return self:setU16(0x14, value)
+end
+function NpcAiBehaviorProbability:getParam010(value)
+    return self:getU16(0x14, value)
+end
+
+function NpcAiBehaviorProbability:setParam011(value)
+    return self:setU16(0x16, value)
+end
+function NpcAiBehaviorProbability:getParam011(value)
+    return self:getU16(0x16, value)
+end
+
+function NpcAiBehaviorProbability:setParam012(value)
+    return self:setU16(0x18, value)
+end
+function NpcAiBehaviorProbability:getParam012(value)
+    return self:getU16(0x18, value)
+end
+
+function NpcAiBehaviorProbability:setParam013(value)
+    return self:setU16(0x1A, value)
+end
+function NpcAiBehaviorProbability:getParam013(value)
+    return self:getU16(0x1A, value)
+end
+
+function NpcAiBehaviorProbability:setParam014(value)
+    return self:setU16(0x1C, value)
+end
+function NpcAiBehaviorProbability:getParam014(value)
+    return self:getU16(0x1C, value)
+end
+
+function NpcAiBehaviorProbability:setParam015(value)
+    return self:setU16(0x1E, value)
+end
+function NpcAiBehaviorProbability:getParam015(value)
+    return self:getU16(0x1E, value)
+end
+
+function NpcAiBehaviorProbability:setParam016(value)
+    return self:setU16(0x20, value)
+end
+function NpcAiBehaviorProbability:getParam016(value)
+    return self:getU16(0x20, value)
+end
+
+function NpcAiBehaviorProbability:setParam017(value)
+    return self:setU16(0x22, value)
+end
+function NpcAiBehaviorProbability:getParam017(value)
+    return self:getU16(0x22, value)
+end
+
+function NpcAiBehaviorProbability:setParam018(value)
+    return self:setU16(0x24, value)
+end
+function NpcAiBehaviorProbability:getParam018(value)
+    return self:getU16(0x24, value)
+end
+
+function NpcAiBehaviorProbability:setParam019(value)
+    return self:setU16(0x26, value)
+end
+function NpcAiBehaviorProbability:getParam019(value)
+    return self:getU16(0x26, value)
+end
+
+function NpcAiBehaviorProbability:setParam020(value)
+    return self:setU16(0x28, value)
+end
+function NpcAiBehaviorProbability:getParam020(value)
+    return self:getU16(0x28, value)
+end
+
+function NpcAiBehaviorProbability:setParam021(value)
+    return self:setU16(0x2A, value)
+end
+function NpcAiBehaviorProbability:getParam021(value)
+    return self:getU16(0x2A, value)
+end
+
+function NpcAiBehaviorProbability:setParam022(value)
+    return self:setU16(0x2C, value)
+end
+function NpcAiBehaviorProbability:getParam022(value)
+    return self:getU16(0x2C, value)
+end
+
+function NpcAiBehaviorProbability:setParam023(value)
+    return self:setU16(0x2E, value)
+end
+function NpcAiBehaviorProbability:getParam023(value)
+    return self:getU16(0x2E, value)
+end
+
+function NpcAiBehaviorProbability:setParam024(value)
+    return self:setU16(0x30, value)
+end
+function NpcAiBehaviorProbability:getParam024(value)
+    return self:getU16(0x30, value)
+end
+
+function NpcAiBehaviorProbability:setParam025(value)
+    return self:setU16(0x32, value)
+end
+function NpcAiBehaviorProbability:getParam025(value)
+    return self:getU16(0x32, value)
+end
+
+function NpcAiBehaviorProbability:setParam026(value)
+    return self:setU16(0x34, value)
+end
+function NpcAiBehaviorProbability:getParam026(value)
+    return self:getU16(0x34, value)
+end
+
+function NpcAiBehaviorProbability:setParam027(value)
+    return self:setU16(0x36, value)
+end
+function NpcAiBehaviorProbability:getParam027(value)
+    return self:getU16(0x36, value)
+end
+
+function NpcAiBehaviorProbability:setParam028(value)
+    return self:setU16(0x38, value)
+end
+function NpcAiBehaviorProbability:getParam028(value)
+    return self:getU16(0x38, value)
+end
+
+function NpcAiBehaviorProbability:setParam029(value)
+    return self:setU16(0x3A, value)
+end
+function NpcAiBehaviorProbability:getParam029(value)
+    return self:getU16(0x3A, value)
+end
+
+function NpcAiBehaviorProbability:setParam030(value)
+    return self:setU16(0x3C, value)
+end
+function NpcAiBehaviorProbability:getParam030(value)
+    return self:getU16(0x3C, value)
+end
+
+function NpcAiBehaviorProbability:setParam031(value)
+    return self:setU16(0x3E, value)
+end
+function NpcAiBehaviorProbability:getParam031(value)
+    return self:getU16(0x3E, value)
+end
+
+function NpcAiBehaviorProbability:setParam032(value)
+    return self:setU16(0x40, value)
+end
+function NpcAiBehaviorProbability:getParam032(value)
+    return self:getU16(0x40, value)
+end
+
+function NpcAiBehaviorProbability:setParam033(value)
+    return self:setU16(0x42, value)
+end
+function NpcAiBehaviorProbability:getParam033(value)
+    return self:getU16(0x42, value)
+end
+
+function NpcAiBehaviorProbability:setParam034(value)
+    return self:setU16(0x44, value)
+end
+function NpcAiBehaviorProbability:getParam034(value)
+    return self:getU16(0x44, value)
+end
+
+function NpcAiBehaviorProbability:setParam035(value)
+    return self:setU16(0x46, value)
+end
+function NpcAiBehaviorProbability:getParam035(value)
+    return self:getU16(0x46, value)
+end
+
+function NpcAiBehaviorProbability:setParam036(value)
+    return self:setU16(0x48, value)
+end
+function NpcAiBehaviorProbability:getParam036(value)
+    return self:getU16(0x48, value)
+end
+
+function NpcAiBehaviorProbability:setParam037(value)
+    return self:setU16(0x4A, value)
+end
+function NpcAiBehaviorProbability:getParam037(value)
+    return self:getU16(0x4A, value)
+end
+
+function NpcAiBehaviorProbability:setParam038(value)
+    return self:setU16(0x4C, value)
+end
+function NpcAiBehaviorProbability:getParam038(value)
+    return self:getU16(0x4C, value)
+end
+
+function NpcAiBehaviorProbability:setParam039(value)
+    return self:setU16(0x4E, value)
+end
+function NpcAiBehaviorProbability:getParam039(value)
+    return self:getU16(0x4E, value)
+end
+
+function NpcAiBehaviorProbability:setParam040(value)
+    return self:setU16(0x50, value)
+end
+function NpcAiBehaviorProbability:getParam040(value)
+    return self:getU16(0x50, value)
+end
+
+function NpcAiBehaviorProbability:setParam041(value)
+    return self:setU16(0x52, value)
+end
+function NpcAiBehaviorProbability:getParam041(value)
+    return self:getU16(0x52, value)
+end
+
+function NpcAiBehaviorProbability:setParam042(value)
+    return self:setU16(0x54, value)
+end
+function NpcAiBehaviorProbability:getParam042(value)
+    return self:getU16(0x54, value)
+end
+
+function NpcAiBehaviorProbability:setParam043(value)
+    return self:setU16(0x56, value)
+end
+function NpcAiBehaviorProbability:getParam043(value)
+    return self:getU16(0x56, value)
+end
+
+function NpcAiBehaviorProbability:setParam044(value)
+    return self:setU16(0x58, value)
+end
+function NpcAiBehaviorProbability:getParam044(value)
+    return self:getU16(0x58, value)
+end
+
+function NpcAiBehaviorProbability:setParam045(value)
+    return self:setU16(0x5A, value)
+end
+function NpcAiBehaviorProbability:getParam045(value)
+    return self:getU16(0x5A, value)
+end
+
+function NpcAiBehaviorProbability:setParam046(value)
+    return self:setU16(0x5C, value)
+end
+function NpcAiBehaviorProbability:getParam046(value)
+    return self:getU16(0x5C, value)
+end
+
+function NpcAiBehaviorProbability:setParam047(value)
+    return self:setU16(0x5E, value)
+end
+function NpcAiBehaviorProbability:getParam047(value)
+    return self:getU16(0x5E, value)
+end
+
+function NpcAiBehaviorProbability:setParam048(value)
+    return self:setU16(0x60, value)
+end
+function NpcAiBehaviorProbability:getParam048(value)
+    return self:getU16(0x60, value)
+end
+
+function NpcAiBehaviorProbability:setParam049(value)
+    return self:setU16(0x62, value)
+end
+function NpcAiBehaviorProbability:getParam049(value)
+    return self:getU16(0x62, value)
+end
+
+function NpcAiBehaviorProbability:setParam050(value)
+    return self:setU16(0x64, value)
+end
+function NpcAiBehaviorProbability:getParam050(value)
+    return self:getU16(0x64, value)
+end
+
+function NpcAiBehaviorProbability:setParam051(value)
+    return self:setU16(0x66, value)
+end
+function NpcAiBehaviorProbability:getParam051(value)
+    return self:getU16(0x66, value)
+end
+
+function NpcAiBehaviorProbability:setParam052(value)
+    return self:setU16(0x68, value)
+end
+function NpcAiBehaviorProbability:getParam052(value)
+    return self:getU16(0x68, value)
+end
+
+function NpcAiBehaviorProbability:setParam053(value)
+    return self:setU16(0x6A, value)
+end
+function NpcAiBehaviorProbability:getParam053(value)
+    return self:getU16(0x6A, value)
+end
+
+function NpcAiBehaviorProbability:setParam054(value)
+    return self:setU16(0x6C, value)
+end
+function NpcAiBehaviorProbability:getParam054(value)
+    return self:getU16(0x6C, value)
+end
+
+function NpcAiBehaviorProbability:setParam055(value)
+    return self:setU16(0x6E, value)
+end
+function NpcAiBehaviorProbability:getParam055(value)
+    return self:getU16(0x6E, value)
+end
+
+function NpcAiBehaviorProbability:setParam056(value)
+    return self:setU16(0x70, value)
+end
+function NpcAiBehaviorProbability:getParam056(value)
+    return self:getU16(0x70, value)
+end
+
+function NpcAiBehaviorProbability:setParam057(value)
+    return self:setU16(0x72, value)
+end
+function NpcAiBehaviorProbability:getParam057(value)
+    return self:getU16(0x72, value)
+end
+
+function NpcAiBehaviorProbability:setParam058(value)
+    return self:setU16(0x74, value)
+end
+function NpcAiBehaviorProbability:getParam058(value)
+    return self:getU16(0x74, value)
+end
+
+function NpcAiBehaviorProbability:setParam059(value)
+    return self:setU16(0x76, value)
+end
+function NpcAiBehaviorProbability:getParam059(value)
+    return self:getU16(0x76, value)
+end
+
+function NpcAiBehaviorProbability:setParam060(value)
+    return self:setU16(0x78, value)
+end
+function NpcAiBehaviorProbability:getParam060(value)
+    return self:getU16(0x78, value)
+end
+
+function NpcAiBehaviorProbability:setParam061(value)
+    return self:setU16(0x7A, value)
+end
+function NpcAiBehaviorProbability:getParam061(value)
+    return self:getU16(0x7A, value)
+end
+
+function NpcAiBehaviorProbability:setParam062(value)
+    return self:setU16(0x7C, value)
+end
+function NpcAiBehaviorProbability:getParam062(value)
+    return self:getU16(0x7C, value)
+end
+
+function NpcAiBehaviorProbability:setParam063(value)
+    return self:setU16(0x7E, value)
+end
+function NpcAiBehaviorProbability:getParam063(value)
+    return self:getU16(0x7E, value)
+end
+
+function NpcAiBehaviorProbability:setParam064(value)
+    return self:setU16(0x80, value)
+end
+function NpcAiBehaviorProbability:getParam064(value)
+    return self:getU16(0x80, value)
+end
+
+function NpcAiBehaviorProbability:setParam065(value)
+    return self:setU16(0x82, value)
+end
+function NpcAiBehaviorProbability:getParam065(value)
+    return self:getU16(0x82, value)
+end
+
+function NpcAiBehaviorProbability:setParam066(value)
+    return self:setU16(0x84, value)
+end
+function NpcAiBehaviorProbability:getParam066(value)
+    return self:getU16(0x84, value)
+end
+
+function NpcAiBehaviorProbability:setParam067(value)
+    return self:setU16(0x86, value)
+end
+function NpcAiBehaviorProbability:getParam067(value)
+    return self:getU16(0x86, value)
+end
+
+function NpcAiBehaviorProbability:setParam068(value)
+    return self:setU16(0x88, value)
+end
+function NpcAiBehaviorProbability:getParam068(value)
+    return self:getU16(0x88, value)
+end
+
+function NpcAiBehaviorProbability:setParam069(value)
+    return self:setU16(0x8A, value)
+end
+function NpcAiBehaviorProbability:getParam069(value)
+    return self:getU16(0x8A, value)
+end
+
+function NpcAiBehaviorProbability:setParam070(value)
+    return self:setU16(0x8C, value)
+end
+function NpcAiBehaviorProbability:getParam070(value)
+    return self:getU16(0x8C, value)
+end
+
+function NpcAiBehaviorProbability:setParam071(value)
+    return self:setU16(0x8E, value)
+end
+function NpcAiBehaviorProbability:getParam071(value)
+    return self:getU16(0x8E, value)
+end
+
+function NpcAiBehaviorProbability:setParam072(value)
+    return self:setU16(0x90, value)
+end
+function NpcAiBehaviorProbability:getParam072(value)
+    return self:getU16(0x90, value)
+end
+
+function NpcAiBehaviorProbability:setParam073(value)
+    return self:setU16(0x92, value)
+end
+function NpcAiBehaviorProbability:getParam073(value)
+    return self:getU16(0x92, value)
+end
+
+function NpcAiBehaviorProbability:setParam074(value)
+    return self:setU16(0x94, value)
+end
+function NpcAiBehaviorProbability:getParam074(value)
+    return self:getU16(0x94, value)
+end
+
+function NpcAiBehaviorProbability:setParam075(value)
+    return self:setU16(0x96, value)
+end
+function NpcAiBehaviorProbability:getParam075(value)
+    return self:getU16(0x96, value)
+end
+
+function NpcAiBehaviorProbability:setParam076(value)
+    return self:setU16(0x98, value)
+end
+function NpcAiBehaviorProbability:getParam076(value)
+    return self:getU16(0x98, value)
+end
+
+function NpcAiBehaviorProbability:setParam077(value)
+    return self:setU16(0x9A, value)
+end
+function NpcAiBehaviorProbability:getParam077(value)
+    return self:getU16(0x9A, value)
+end
+
+function NpcAiBehaviorProbability:setParam078(value)
+    return self:setU16(0x9C, value)
+end
+function NpcAiBehaviorProbability:getParam078(value)
+    return self:getU16(0x9C, value)
+end
+
+function NpcAiBehaviorProbability:setParam079(value)
+    return self:setU16(0x9E, value)
+end
+function NpcAiBehaviorProbability:getParam079(value)
+    return self:getU16(0x9E, value)
+end
+
+function NpcAiBehaviorProbability:setParam080(value)
+    return self:setU16(0xA0, value)
+end
+function NpcAiBehaviorProbability:getParam080(value)
+    return self:getU16(0xA0, value)
+end
+
+function NpcAiBehaviorProbability:setParam081(value)
+    return self:setU16(0xA2, value)
+end
+function NpcAiBehaviorProbability:getParam081(value)
+    return self:getU16(0xA2, value)
+end
+
+function NpcAiBehaviorProbability:setParam082(value)
+    return self:setU16(0xA4, value)
+end
+function NpcAiBehaviorProbability:getParam082(value)
+    return self:getU16(0xA4, value)
+end
+
+function NpcAiBehaviorProbability:setParam083(value)
+    return self:setU16(0xA6, value)
+end
+function NpcAiBehaviorProbability:getParam083(value)
+    return self:getU16(0xA6, value)
+end
+
+function NpcAiBehaviorProbability:setParam084(value)
+    return self:setU16(0xA8, value)
+end
+function NpcAiBehaviorProbability:getParam084(value)
+    return self:getU16(0xA8, value)
+end
+
+function NpcAiBehaviorProbability:setParam085(value)
+    return self:setU16(0xAA, value)
+end
+function NpcAiBehaviorProbability:getParam085(value)
+    return self:getU16(0xAA, value)
+end
+
+function NpcAiBehaviorProbability:setParam086(value)
+    return self:setU16(0xAC, value)
+end
+function NpcAiBehaviorProbability:getParam086(value)
+    return self:getU16(0xAC, value)
+end
+
+function NpcAiBehaviorProbability:setParam087(value)
+    return self:setU16(0xAE, value)
+end
+function NpcAiBehaviorProbability:getParam087(value)
+    return self:getU16(0xAE, value)
+end
+
+function NpcAiBehaviorProbability:setParam088(value)
+    return self:setU16(0xB0, value)
+end
+function NpcAiBehaviorProbability:getParam088(value)
+    return self:getU16(0xB0, value)
+end
+
+function NpcAiBehaviorProbability:setParam089(value)
+    return self:setU16(0xB2, value)
+end
+function NpcAiBehaviorProbability:getParam089(value)
+    return self:getU16(0xB2, value)
+end
+
+function NpcAiBehaviorProbability:setParam090(value)
+    return self:setU16(0xB4, value)
+end
+function NpcAiBehaviorProbability:getParam090(value)
+    return self:getU16(0xB4, value)
+end
+
+function NpcAiBehaviorProbability:setParam091(value)
+    return self:setU16(0xB6, value)
+end
+function NpcAiBehaviorProbability:getParam091(value)
+    return self:getU16(0xB6, value)
+end
+
+function NpcAiBehaviorProbability:setParam092(value)
+    return self:setU16(0xB8, value)
+end
+function NpcAiBehaviorProbability:getParam092(value)
+    return self:getU16(0xB8, value)
+end
+
+function NpcAiBehaviorProbability:setParam093(value)
+    return self:setU16(0xBA, value)
+end
+function NpcAiBehaviorProbability:getParam093(value)
+    return self:getU16(0xBA, value)
+end
+
+function NpcAiBehaviorProbability:setParam094(value)
+    return self:setU16(0xBC, value)
+end
+function NpcAiBehaviorProbability:getParam094(value)
+    return self:getU16(0xBC, value)
+end
+
+function NpcAiBehaviorProbability:setParam095(value)
+    return self:setU16(0xBE, value)
+end
+function NpcAiBehaviorProbability:getParam095(value)
+    return self:getU16(0xBE, value)
+end
+
+function NpcAiBehaviorProbability:setParam096(value)
+    return self:setU16(0xC0, value)
+end
+function NpcAiBehaviorProbability:getParam096(value)
+    return self:getU16(0xC0, value)
+end
+
+function NpcAiBehaviorProbability:setParam097(value)
+    return self:setU16(0xC2, value)
+end
+function NpcAiBehaviorProbability:getParam097(value)
+    return self:getU16(0xC2, value)
+end
+
+function NpcAiBehaviorProbability:setParam098(value)
+    return self:setU16(0xC4, value)
+end
+function NpcAiBehaviorProbability:getParam098(value)
+    return self:getU16(0xC4, value)
+end
+
+function NpcAiBehaviorProbability:setParam099(value)
+    return self:setU16(0xC6, value)
+end
+function NpcAiBehaviorProbability:getParam099(value)
+    return self:getU16(0xC6, value)
+end
+
+function NpcAiBehaviorProbability:setParam100(value)
+    return self:setU16(0xC8, value)
+end
+function NpcAiBehaviorProbability:getParam100(value)
+    return self:getU16(0xC8, value)
+end
+
+function NpcAiBehaviorProbability:setParam101(value)
+    return self:setU16(0xCA, value)
+end
+function NpcAiBehaviorProbability:getParam101(value)
+    return self:getU16(0xCA, value)
+end
+
+function NpcAiBehaviorProbability:setParam102(value)
+    return self:setU16(0xCC, value)
+end
+function NpcAiBehaviorProbability:getParam102(value)
+    return self:getU16(0xCC, value)
+end
+
+function NpcAiBehaviorProbability:setParam103(value)
+    return self:setU16(0xCE, value)
+end
+function NpcAiBehaviorProbability:getParam103(value)
+    return self:getU16(0xCE, value)
+end
+
+function NpcAiBehaviorProbability:setParam104(value)
+    return self:setU16(0xD0, value)
+end
+function NpcAiBehaviorProbability:getParam104(value)
+    return self:getU16(0xD0, value)
+end
+
+function NpcAiBehaviorProbability:setParam105(value)
+    return self:setU16(0xD2, value)
+end
+function NpcAiBehaviorProbability:getParam105(value)
+    return self:getU16(0xD2, value)
+end
+
+function NpcAiBehaviorProbability:setParam106(value)
+    return self:setU16(0xD4, value)
+end
+function NpcAiBehaviorProbability:getParam106(value)
+    return self:getU16(0xD4, value)
+end
+
+function NpcAiBehaviorProbability:setParam107(value)
+    return self:setU16(0xD6, value)
+end
+function NpcAiBehaviorProbability:getParam107(value)
+    return self:getU16(0xD6, value)
+end
+
+function NpcAiBehaviorProbability:setParam108(value)
+    return self:setU16(0xD8, value)
+end
+function NpcAiBehaviorProbability:getParam108(value)
+    return self:getU16(0xD8, value)
+end
+
+function NpcAiBehaviorProbability:setParam109(value)
+    return self:setU16(0xDA, value)
+end
+function NpcAiBehaviorProbability:getParam109(value)
+    return self:getU16(0xDA, value)
+end
+
+function NpcAiBehaviorProbability:setParam110(value)
+    return self:setU16(0xDC, value)
+end
+function NpcAiBehaviorProbability:getParam110(value)
+    return self:getU16(0xDC, value)
+end
+
+function NpcAiBehaviorProbability:setParam111(value)
+    return self:setU16(0xDE, value)
+end
+function NpcAiBehaviorProbability:getParam111(value)
+    return self:getU16(0xDE, value)
+end
+
+function NpcAiBehaviorProbability:setParam112(value)
+    return self:setU16(0xE0, value)
+end
+function NpcAiBehaviorProbability:getParam112(value)
+    return self:getU16(0xE0, value)
+end
+
+function NpcAiBehaviorProbability:setParam113(value)
+    return self:setU16(0xE2, value)
+end
+function NpcAiBehaviorProbability:getParam113(value)
+    return self:getU16(0xE2, value)
+end
+
+function NpcAiBehaviorProbability:setParam114(value)
+    return self:setU16(0xE4, value)
+end
+function NpcAiBehaviorProbability:getParam114(value)
+    return self:getU16(0xE4, value)
+end
+
+function NpcAiBehaviorProbability:setParam115(value)
+    return self:setU16(0xE6, value)
+end
+function NpcAiBehaviorProbability:getParam115(value)
+    return self:getU16(0xE6, value)
+end
+
+function NpcAiBehaviorProbability:setParam116(value)
+    return self:setU16(0xE8, value)
+end
+function NpcAiBehaviorProbability:getParam116(value)
+    return self:getU16(0xE8, value)
+end
+
+function NpcAiBehaviorProbability:setParam117(value)
+    return self:setU16(0xEA, value)
+end
+function NpcAiBehaviorProbability:getParam117(value)
+    return self:getU16(0xEA, value)
+end
+
+function NpcAiBehaviorProbability:setParam118(value)
+    return self:setU16(0xEC, value)
+end
+function NpcAiBehaviorProbability:getParam118(value)
+    return self:getU16(0xEC, value)
+end
+
+function NpcAiBehaviorProbability:setParam119(value)
+    return self:setU16(0xEE, value)
+end
+function NpcAiBehaviorProbability:getParam119(value)
+    return self:getU16(0xEE, value)
+end
+
+function NpcAiBehaviorProbability:setParam120(value)
+    return self:setU16(0xF0, value)
+end
+function NpcAiBehaviorProbability:getParam120(value)
+    return self:getU16(0xF0, value)
+end
+
+function NpcAiBehaviorProbability:setParam121(value)
+    return self:setU16(0xF2, value)
+end
+function NpcAiBehaviorProbability:getParam121(value)
+    return self:getU16(0xF2, value)
+end
+
+function NpcAiBehaviorProbability:setParam122(value)
+    return self:setU16(0xF4, value)
+end
+function NpcAiBehaviorProbability:getParam122(value)
+    return self:getU16(0xF4, value)
+end
+
+function NpcAiBehaviorProbability:setParam123(value)
+    return self:setU16(0xF6, value)
+end
+function NpcAiBehaviorProbability:getParam123(value)
+    return self:getU16(0xF6, value)
+end
+
+function NpcAiBehaviorProbability:setParam124(value)
+    return self:setU16(0xF8, value)
+end
+function NpcAiBehaviorProbability:getParam124(value)
+    return self:getU16(0xF8, value)
+end
+
+function NpcAiBehaviorProbability:setParam125(value)
+    return self:setU16(0xFA, value)
+end
+function NpcAiBehaviorProbability:getParam125(value)
+    return self:getU16(0xFA, value)
+end
+
+function NpcAiBehaviorProbability:setParam126(value)
+    return self:setU16(0xFC, value)
+end
+function NpcAiBehaviorProbability:getParam126(value)
+    return self:getU16(0xFC, value)
+end
+
+function NpcAiBehaviorProbability:setParam127(value)
+    return self:setU16(0xFE, value)
+end
+function NpcAiBehaviorProbability:getParam127(value)
+    return self:getU16(0xFE, value)
+end
+
+function NpcAiBehaviorProbability:setParam128(value)
+    return self:setU16(0x100, value)
+end
+function NpcAiBehaviorProbability:getParam128(value)
+    return self:getU16(0x100, value)
+end
+
+function NpcAiBehaviorProbability:setParam129(value)
+    return self:setU16(0x102, value)
+end
+function NpcAiBehaviorProbability:getParam129(value)
+    return self:getU16(0x102, value)
+end
+
+function NpcAiBehaviorProbability:setParam130(value)
+    return self:setU16(0x104, value)
+end
+function NpcAiBehaviorProbability:getParam130(value)
+    return self:getU16(0x104, value)
+end
+
+function NpcAiBehaviorProbability:setParam131(value)
+    return self:setU16(0x106, value)
+end
+function NpcAiBehaviorProbability:getParam131(value)
+    return self:getU16(0x106, value)
+end
+
+function NpcAiBehaviorProbability:setParam132(value)
+    return self:setU16(0x108, value)
+end
+function NpcAiBehaviorProbability:getParam132(value)
+    return self:getU16(0x108, value)
+end
+
+function NpcAiBehaviorProbability:setParam133(value)
+    return self:setU16(0x10A, value)
+end
+function NpcAiBehaviorProbability:getParam133(value)
+    return self:getU16(0x10A, value)
+end
+
+function NpcAiBehaviorProbability:setParam134(value)
+    return self:setU16(0x10C, value)
+end
+function NpcAiBehaviorProbability:getParam134(value)
+    return self:getU16(0x10C, value)
+end
+
+function NpcAiBehaviorProbability:setParam135(value)
+    return self:setU16(0x10E, value)
+end
+function NpcAiBehaviorProbability:getParam135(value)
+    return self:getU16(0x10E, value)
+end
+
+function NpcAiBehaviorProbability:setParam136(value)
+    return self:setU16(0x110, value)
+end
+function NpcAiBehaviorProbability:getParam136(value)
+    return self:getU16(0x110, value)
+end
+
+function NpcAiBehaviorProbability:setParam137(value)
+    return self:setU16(0x112, value)
+end
+function NpcAiBehaviorProbability:getParam137(value)
+    return self:getU16(0x112, value)
+end
+
+function NpcAiBehaviorProbability:setParam138(value)
+    return self:setU16(0x114, value)
+end
+function NpcAiBehaviorProbability:getParam138(value)
+    return self:getU16(0x114, value)
+end
+
+function NpcAiBehaviorProbability:setParam139(value)
+    return self:setU16(0x116, value)
+end
+function NpcAiBehaviorProbability:getParam139(value)
+    return self:getU16(0x116, value)
+end
+
+function NpcAiBehaviorProbability:setParam140(value)
+    return self:setU16(0x118, value)
+end
+function NpcAiBehaviorProbability:getParam140(value)
+    return self:getU16(0x118, value)
+end
+
+function NpcAiBehaviorProbability:setParam141(value)
+    return self:setU16(0x11A, value)
+end
+function NpcAiBehaviorProbability:getParam141(value)
+    return self:getU16(0x11A, value)
+end
+
+function NpcAiBehaviorProbability:setParam142(value)
+    return self:setU16(0x11C, value)
+end
+function NpcAiBehaviorProbability:getParam142(value)
+    return self:getU16(0x11C, value)
+end
+
+function NpcAiBehaviorProbability:setParam143(value)
+    return self:setU16(0x11E, value)
+end
+function NpcAiBehaviorProbability:getParam143(value)
+    return self:getU16(0x11E, value)
+end
+
+function NpcAiBehaviorProbability:setParam144(value)
+    return self:setU16(0x120, value)
+end
+function NpcAiBehaviorProbability:getParam144(value)
+    return self:getU16(0x120, value)
+end
+
+function NpcAiBehaviorProbability:setParam145(value)
+    return self:setU16(0x122, value)
+end
+function NpcAiBehaviorProbability:getParam145(value)
+    return self:getU16(0x122, value)
+end
+
+function NpcAiBehaviorProbability:setParam146(value)
+    return self:setU16(0x124, value)
+end
+function NpcAiBehaviorProbability:getParam146(value)
+    return self:getU16(0x124, value)
+end
+
+function NpcAiBehaviorProbability:setParam147(value)
+    return self:setU16(0x126, value)
+end
+function NpcAiBehaviorProbability:getParam147(value)
+    return self:getU16(0x126, value)
+end
+
+function NpcAiBehaviorProbability:setParam148(value)
+    return self:setU16(0x128, value)
+end
+function NpcAiBehaviorProbability:getParam148(value)
+    return self:getU16(0x128, value)
+end
+
+function NpcAiBehaviorProbability:setParam149(value)
+    return self:setU16(0x12A, value)
+end
+function NpcAiBehaviorProbability:getParam149(value)
+    return self:getU16(0x12A, value)
+end
+
+function NpcAiBehaviorProbability:setParam150(value)
+    return self:setU16(0x12C, value)
+end
+function NpcAiBehaviorProbability:getParam150(value)
+    return self:getU16(0x12C, value)
+end
+
+function NpcAiBehaviorProbability:setParam151(value)
+    return self:setU16(0x12E, value)
+end
+function NpcAiBehaviorProbability:getParam151(value)
+    return self:getU16(0x12E, value)
+end
+
+function NpcAiBehaviorProbability:setParam152(value)
+    return self:setU16(0x130, value)
+end
+function NpcAiBehaviorProbability:getParam152(value)
+    return self:getU16(0x130, value)
+end
+
+function NpcAiBehaviorProbability:setParam153(value)
+    return self:setU16(0x132, value)
+end
+function NpcAiBehaviorProbability:getParam153(value)
+    return self:getU16(0x132, value)
+end
+
+function NpcAiBehaviorProbability:setParam154(value)
+    return self:setU16(0x134, value)
+end
+function NpcAiBehaviorProbability:getParam154(value)
+    return self:getU16(0x134, value)
+end
+
+function NpcAiBehaviorProbability:setParam155(value)
+    return self:setU16(0x136, value)
+end
+function NpcAiBehaviorProbability:getParam155(value)
+    return self:getU16(0x136, value)
+end
+
+function NpcAiBehaviorProbability:setParam156(value)
+    return self:setU16(0x138, value)
+end
+function NpcAiBehaviorProbability:getParam156(value)
+    return self:getU16(0x138, value)
+end
+
+function NpcAiBehaviorProbability:setParam157(value)
+    return self:setU16(0x13A, value)
+end
+function NpcAiBehaviorProbability:getParam157(value)
+    return self:getU16(0x13A, value)
+end
+
+function NpcAiBehaviorProbability:setParam158(value)
+    return self:setU16(0x13C, value)
+end
+function NpcAiBehaviorProbability:getParam158(value)
+    return self:getU16(0x13C, value)
+end
+
+function NpcAiBehaviorProbability:setParam159(value)
+    return self:setU16(0x13E, value)
+end
+function NpcAiBehaviorProbability:getParam159(value)
+    return self:getU16(0x13E, value)
+end
+
+function NpcAiBehaviorProbability:setParam160(value)
+    return self:setU16(0x140, value)
+end
+function NpcAiBehaviorProbability:getParam160(value)
+    return self:getU16(0x140, value)
+end
+
+function NpcAiBehaviorProbability:setParam161(value)
+    return self:setU16(0x142, value)
+end
+function NpcAiBehaviorProbability:getParam161(value)
+    return self:getU16(0x142, value)
+end
+
+function NpcAiBehaviorProbability:setParam162(value)
+    return self:setU16(0x144, value)
+end
+function NpcAiBehaviorProbability:getParam162(value)
+    return self:getU16(0x144, value)
+end
+
+function NpcAiBehaviorProbability:setParam163(value)
+    return self:setU16(0x146, value)
+end
+function NpcAiBehaviorProbability:getParam163(value)
+    return self:getU16(0x146, value)
+end
+
+function NpcAiBehaviorProbability:setParam164(value)
+    return self:setU16(0x148, value)
+end
+function NpcAiBehaviorProbability:getParam164(value)
+    return self:getU16(0x148, value)
+end
+
+function NpcAiBehaviorProbability:setParam165(value)
+    return self:setU16(0x14A, value)
+end
+function NpcAiBehaviorProbability:getParam165(value)
+    return self:getU16(0x14A, value)
+end
+
+function NpcAiBehaviorProbability:setParam166(value)
+    return self:setU16(0x14C, value)
+end
+function NpcAiBehaviorProbability:getParam166(value)
+    return self:getU16(0x14C, value)
+end
+
+function NpcAiBehaviorProbability:setParam167(value)
+    return self:setU16(0x14E, value)
+end
+function NpcAiBehaviorProbability:getParam167(value)
+    return self:getU16(0x14E, value)
+end
+
+function NpcAiBehaviorProbability:setParam168(value)
+    return self:setU16(0x150, value)
+end
+function NpcAiBehaviorProbability:getParam168(value)
+    return self:getU16(0x150, value)
+end
+
+function NpcAiBehaviorProbability:setParam169(value)
+    return self:setU16(0x152, value)
+end
+function NpcAiBehaviorProbability:getParam169(value)
+    return self:getU16(0x152, value)
+end
+
+function NpcAiBehaviorProbability:setParam170(value)
+    return self:setU16(0x154, value)
+end
+function NpcAiBehaviorProbability:getParam170(value)
+    return self:getU16(0x154, value)
+end
+
+function NpcAiBehaviorProbability:setParam171(value)
+    return self:setU16(0x156, value)
+end
+function NpcAiBehaviorProbability:getParam171(value)
+    return self:getU16(0x156, value)
+end
+
+function NpcAiBehaviorProbability:setParam172(value)
+    return self:setU16(0x158, value)
+end
+function NpcAiBehaviorProbability:getParam172(value)
+    return self:getU16(0x158, value)
+end
+
+function NpcAiBehaviorProbability:setParam173(value)
+    return self:setU16(0x15A, value)
+end
+function NpcAiBehaviorProbability:getParam173(value)
+    return self:getU16(0x15A, value)
+end
+
+function NpcAiBehaviorProbability:setParam174(value)
+    return self:setU16(0x15C, value)
+end
+function NpcAiBehaviorProbability:getParam174(value)
+    return self:getU16(0x15C, value)
+end
+
+function NpcAiBehaviorProbability:setParam175(value)
+    return self:setU16(0x15E, value)
+end
+function NpcAiBehaviorProbability:getParam175(value)
+    return self:getU16(0x15E, value)
+end
+
+function NpcAiBehaviorProbability:setParam176(value)
+    return self:setU16(0x160, value)
+end
+function NpcAiBehaviorProbability:getParam176(value)
+    return self:getU16(0x160, value)
+end
+
+function NpcAiBehaviorProbability:setParam177(value)
+    return self:setU16(0x162, value)
+end
+function NpcAiBehaviorProbability:getParam177(value)
+    return self:getU16(0x162, value)
+end
+
+function NpcAiBehaviorProbability:setParam178(value)
+    return self:setU16(0x164, value)
+end
+function NpcAiBehaviorProbability:getParam178(value)
+    return self:getU16(0x164, value)
+end
+
+function NpcAiBehaviorProbability:setParam179(value)
+    return self:setU16(0x166, value)
+end
+function NpcAiBehaviorProbability:getParam179(value)
+    return self:getU16(0x166, value)
+end
+
+function NpcAiBehaviorProbability:setParam180(value)
+    return self:setU16(0x168, value)
+end
+function NpcAiBehaviorProbability:getParam180(value)
+    return self:getU16(0x168, value)
+end
+
+function NpcAiBehaviorProbability:setParam181(value)
+    return self:setU16(0x16A, value)
+end
+function NpcAiBehaviorProbability:getParam181(value)
+    return self:getU16(0x16A, value)
+end
+
+function NpcAiBehaviorProbability:setParam182(value)
+    return self:setU16(0x16C, value)
+end
+function NpcAiBehaviorProbability:getParam182(value)
+    return self:getU16(0x16C, value)
+end
+
+function NpcAiBehaviorProbability:setParam183(value)
+    return self:setU16(0x16E, value)
+end
+function NpcAiBehaviorProbability:getParam183(value)
+    return self:getU16(0x16E, value)
+end
+
+function NpcAiBehaviorProbability:setParam184(value)
+    return self:setU16(0x170, value)
+end
+function NpcAiBehaviorProbability:getParam184(value)
+    return self:getU16(0x170, value)
+end
+
+function NpcAiBehaviorProbability:setParam185(value)
+    return self:setU16(0x172, value)
+end
+function NpcAiBehaviorProbability:getParam185(value)
+    return self:getU16(0x172, value)
+end
+
+function NpcAiBehaviorProbability:setParam186(value)
+    return self:setU16(0x174, value)
+end
+function NpcAiBehaviorProbability:getParam186(value)
+    return self:getU16(0x174, value)
+end
+
+function NpcAiBehaviorProbability:setParam187(value)
+    return self:setU16(0x176, value)
+end
+function NpcAiBehaviorProbability:getParam187(value)
+    return self:getU16(0x176, value)
+end
+
+function NpcAiBehaviorProbability:setParam188(value)
+    return self:setU16(0x178, value)
+end
+function NpcAiBehaviorProbability:getParam188(value)
+    return self:getU16(0x178, value)
+end
+
+function NpcAiBehaviorProbability:setParam189(value)
+    return self:setU16(0x17A, value)
+end
+function NpcAiBehaviorProbability:getParam189(value)
+    return self:getU16(0x17A, value)
+end
+
+function NpcAiBehaviorProbability:setParam190(value)
+    return self:setU16(0x17C, value)
+end
+function NpcAiBehaviorProbability:getParam190(value)
+    return self:getU16(0x17C, value)
+end
+
+function NpcAiBehaviorProbability:setParam191(value)
+    return self:setU16(0x17E, value)
+end
+function NpcAiBehaviorProbability:getParam191(value)
+    return self:getU16(0x17E, value)
+end
+
+function NpcAiBehaviorProbability:setParam192(value)
+    return self:setU16(0x180, value)
+end
+function NpcAiBehaviorProbability:getParam192(value)
+    return self:getU16(0x180, value)
+end
+
+function NpcAiBehaviorProbability:setParam193(value)
+    return self:setU16(0x182, value)
+end
+function NpcAiBehaviorProbability:getParam193(value)
+    return self:getU16(0x182, value)
+end
+
+function NpcAiBehaviorProbability:setParam194(value)
+    return self:setU16(0x184, value)
+end
+function NpcAiBehaviorProbability:getParam194(value)
+    return self:getU16(0x184, value)
+end
+
+function NpcAiBehaviorProbability:setParam195(value)
+    return self:setU16(0x186, value)
+end
+function NpcAiBehaviorProbability:getParam195(value)
+    return self:getU16(0x186, value)
+end
+
+function NpcAiBehaviorProbability:setParam196(value)
+    return self:setU16(0x188, value)
+end
+function NpcAiBehaviorProbability:getParam196(value)
+    return self:getU16(0x188, value)
+end
+
+function NpcAiBehaviorProbability:setParam197(value)
+    return self:setU16(0x18A, value)
+end
+function NpcAiBehaviorProbability:getParam197(value)
+    return self:getU16(0x18A, value)
+end
+
+function NpcAiBehaviorProbability:setParam198(value)
+    return self:setU16(0x18C, value)
+end
+function NpcAiBehaviorProbability:getParam198(value)
+    return self:getU16(0x18C, value)
+end
+
+function NpcAiBehaviorProbability:setParam199(value)
+    return self:setU16(0x18E, value)
+end
+function NpcAiBehaviorProbability:getParam199(value)
+    return self:getU16(0x18E, value)
+end
+[disable]
+NpcAiBehaviorProbability = nil

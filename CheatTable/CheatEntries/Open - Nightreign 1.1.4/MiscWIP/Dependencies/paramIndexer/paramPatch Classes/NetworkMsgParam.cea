@@ -1,0 +1,346 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+NetworkMsgParam = {}
+function NetworkMsgParam:new(id_or_all, patchName)
+    return paramPatcher(self, "NetworkMsgParam", 0xDD, id_or_all, patchName)
+end
+
+
+
+function NetworkMsgParam:setPriority(value)
+    return self:setU16(0x00, value)
+end
+function NetworkMsgParam:getPriority(value)
+    return self:getU16(0x00, value)
+end
+
+function NetworkMsgParam:setForcePlay(value)
+    return self:setU8(0x02, value)
+end
+function NetworkMsgParam:getForcePlay(value)
+    return self:getU8(0x02, value)
+end
+
+--dummy8 pad1[1]
+
+function NetworkMsgParam:setNormalWhite(value)
+    return self:setU32(0x04, value)
+end
+function NetworkMsgParam:getNormalWhite(value)
+    return self:getU32(0x04, value)
+end
+
+function NetworkMsgParam:setUmbasaWhite(value)
+    return self:setU32(0x08, value)
+end
+function NetworkMsgParam:getUmbasaWhite(value)
+    return self:getU32(0x08, value)
+end
+
+function NetworkMsgParam:setBerserkerWhite(value)
+    return self:setU32(0x0C, value)
+end
+function NetworkMsgParam:getBerserkerWhite(value)
+    return self:getU32(0x0C, value)
+end
+
+function NetworkMsgParam:setSinnerHeroWhite(value)
+    return self:setU32(0x10, value)
+end
+function NetworkMsgParam:getSinnerHeroWhite(value)
+    return self:getU32(0x10, value)
+end
+
+function NetworkMsgParam:setNormalBlack(value)
+    return self:setU32(0x14, value)
+end
+function NetworkMsgParam:getNormalBlack(value)
+    return self:getU32(0x14, value)
+end
+
+function NetworkMsgParam:setUmbasaBlack(value)
+    return self:setU32(0x18, value)
+end
+function NetworkMsgParam:getUmbasaBlack(value)
+    return self:getU32(0x18, value)
+end
+
+function NetworkMsgParam:setBerserkerBlack(value)
+    return self:setU32(0x1C, value)
+end
+function NetworkMsgParam:getBerserkerBlack(value)
+    return self:getU32(0x1C, value)
+end
+
+function NetworkMsgParam:setForceJoinBlack(value)
+    return self:setU32(0x20, value)
+end
+function NetworkMsgParam:getForceJoinBlack(value)
+    return self:getU32(0x20, value)
+end
+
+function NetworkMsgParam:setForceJoinUmbasaBlack(value)
+    return self:setU32(0x24, value)
+end
+function NetworkMsgParam:getForceJoinUmbasaBlack(value)
+    return self:getU32(0x24, value)
+end
+
+function NetworkMsgParam:setForceJoinBerserkerBlack(value)
+    return self:setU32(0x28, value)
+end
+function NetworkMsgParam:getForceJoinBerserkerBlack(value)
+    return self:getU32(0x28, value)
+end
+
+function NetworkMsgParam:setSinnerHunterVisitor(value)
+    return self:setU32(0x2C, value)
+end
+function NetworkMsgParam:getSinnerHunterVisitor(value)
+    return self:getU32(0x2C, value)
+end
+
+function NetworkMsgParam:setRedHunterVisitor(value)
+    return self:setU32(0x30, value)
+end
+function NetworkMsgParam:getRedHunterVisitor(value)
+    return self:getU32(0x30, value)
+end
+
+function NetworkMsgParam:setGuardianOfBossVisitor(value)
+    return self:setU32(0x34, value)
+end
+function NetworkMsgParam:getGuardianOfBossVisitor(value)
+    return self:getU32(0x34, value)
+end
+
+function NetworkMsgParam:setGuardianOfForestMapVisitor(value)
+    return self:setU32(0x38, value)
+end
+function NetworkMsgParam:getGuardianOfForestMapVisitor(value)
+    return self:getU32(0x38, value)
+end
+
+function NetworkMsgParam:setGuardianOfAnolisVisitor(value)
+    return self:setU32(0x3C, value)
+end
+function NetworkMsgParam:getGuardianOfAnolisVisitor(value)
+    return self:getU32(0x3C, value)
+end
+
+function NetworkMsgParam:setRosaliaBlack(value)
+    return self:setU32(0x40, value)
+end
+function NetworkMsgParam:getRosaliaBlack(value)
+    return self:getU32(0x40, value)
+end
+
+function NetworkMsgParam:setForceJoinRosaliaBlack(value)
+    return self:setU32(0x44, value)
+end
+function NetworkMsgParam:getForceJoinRosaliaBlack(value)
+    return self:getU32(0x44, value)
+end
+
+function NetworkMsgParam:setRedHunterVisitor2(value)
+    return self:setU32(0x48, value)
+end
+function NetworkMsgParam:getRedHunterVisitor2(value)
+    return self:getU32(0x48, value)
+end
+
+function NetworkMsgParam:setNpc1(value)
+    return self:setU32(0x4C, value)
+end
+function NetworkMsgParam:getNpc1(value)
+    return self:getU32(0x4C, value)
+end
+
+function NetworkMsgParam:setNpc2(value)
+    return self:setU32(0x50, value)
+end
+function NetworkMsgParam:getNpc2(value)
+    return self:getU32(0x50, value)
+end
+
+function NetworkMsgParam:setNpc3(value)
+    return self:setU32(0x54, value)
+end
+function NetworkMsgParam:getNpc3(value)
+    return self:getU32(0x54, value)
+end
+
+function NetworkMsgParam:setNpc4(value)
+    return self:setU32(0x58, value)
+end
+function NetworkMsgParam:getNpc4(value)
+    return self:getU32(0x58, value)
+end
+
+function NetworkMsgParam:setBattleRoyal(value)
+    return self:setU32(0x5C, value)
+end
+function NetworkMsgParam:getBattleRoyal(value)
+    return self:getU32(0x5C, value)
+end
+
+function NetworkMsgParam:setNpc5(value)
+    return self:setU32(0x60, value)
+end
+function NetworkMsgParam:getNpc5(value)
+    return self:getU32(0x60, value)
+end
+
+function NetworkMsgParam:setNpc6(value)
+    return self:setU32(0x64, value)
+end
+function NetworkMsgParam:getNpc6(value)
+    return self:getU32(0x64, value)
+end
+
+function NetworkMsgParam:setNpc7(value)
+    return self:setU32(0x68, value)
+end
+function NetworkMsgParam:getNpc7(value)
+    return self:getU32(0x68, value)
+end
+
+function NetworkMsgParam:setNpc8(value)
+    return self:setU32(0x6C, value)
+end
+function NetworkMsgParam:getNpc8(value)
+    return self:getU32(0x6C, value)
+end
+
+function NetworkMsgParam:setNpc9(value)
+    return self:setU32(0x70, value)
+end
+function NetworkMsgParam:getNpc9(value)
+    return self:getU32(0x70, value)
+end
+
+function NetworkMsgParam:setNpc10(value)
+    return self:setU32(0x74, value)
+end
+function NetworkMsgParam:getNpc10(value)
+    return self:getU32(0x74, value)
+end
+
+function NetworkMsgParam:setNpc11(value)
+    return self:setU32(0x78, value)
+end
+function NetworkMsgParam:getNpc11(value)
+    return self:getU32(0x78, value)
+end
+
+function NetworkMsgParam:setNpc12(value)
+    return self:setU32(0x7C, value)
+end
+function NetworkMsgParam:getNpc12(value)
+    return self:getU32(0x7C, value)
+end
+
+function NetworkMsgParam:setNpc13(value)
+    return self:setU32(0x80, value)
+end
+function NetworkMsgParam:getNpc13(value)
+    return self:getU32(0x80, value)
+end
+
+function NetworkMsgParam:setNpc14(value)
+    return self:setU32(0x84, value)
+end
+function NetworkMsgParam:getNpc14(value)
+    return self:getU32(0x84, value)
+end
+
+function NetworkMsgParam:setNpc15(value)
+    return self:setU32(0x88, value)
+end
+function NetworkMsgParam:getNpc15(value)
+    return self:getU32(0x88, value)
+end
+
+function NetworkMsgParam:setNpc16(value)
+    return self:setU32(0x8C, value)
+end
+function NetworkMsgParam:getNpc16(value)
+    return self:getU32(0x8C, value)
+end
+
+function NetworkMsgParam:setForceJoinBlack_B(value)
+    return self:setU32(0x90, value)
+end
+function NetworkMsgParam:getForceJoinBlack_B(value)
+    return self:getU32(0x90, value)
+end
+
+function NetworkMsgParam:setNormalWhite_Npc(value)
+    return self:setU32(0x94, value)
+end
+function NetworkMsgParam:getNormalWhite_Npc(value)
+    return self:getU32(0x94, value)
+end
+
+function NetworkMsgParam:setForceJoinBlack_Npc(value)
+    return self:setU32(0x98, value)
+end
+function NetworkMsgParam:getForceJoinBlack_Npc(value)
+    return self:getU32(0x98, value)
+end
+
+function NetworkMsgParam:setForceJoinBlack_B_Npc(value)
+    return self:setU32(0x9C, value)
+end
+function NetworkMsgParam:getForceJoinBlack_B_Npc(value)
+    return self:getU32(0x9C, value)
+end
+
+function NetworkMsgParam:setForceJoinBlack_C_Npc(value)
+    return self:setU32(0xA0, value)
+end
+function NetworkMsgParam:getForceJoinBlack_C_Npc(value)
+    return self:getU32(0xA0, value)
+end
+
+--dummy8 pad2[28]
+
+function NetworkMsgParam:setUnknown_0xa4(value)
+    return self:setU32(0xC0, value)
+end
+function NetworkMsgParam:getUnknown_0xa4(value)
+    return self:getU32(0xC0, value)
+end
+
+function NetworkMsgParam:setUnknown_0xa8(value)
+    return self:setU32(0xC4, value)
+end
+function NetworkMsgParam:getUnknown_0xa8(value)
+    return self:getU32(0xC4, value)
+end
+
+function NetworkMsgParam:setUnknown_0xac(value)
+    return self:setU32(0xC8, value)
+end
+function NetworkMsgParam:getUnknown_0xac(value)
+    return self:getU32(0xC8, value)
+end
+
+function NetworkMsgParam:setUnknown_0xb0(value)
+    return self:setU32(0xCC, value)
+end
+function NetworkMsgParam:getUnknown_0xb0(value)
+    return self:getU32(0xCC, value)
+end
+
+function NetworkMsgParam:setUnknown_0xb4(value)
+    return self:setU32(0xD0, value)
+end
+function NetworkMsgParam:getUnknown_0xb4(value)
+    return self:getU32(0xD0, value)
+end
+
+--dummy8 pad2_new[8]
+[disable]
+NetworkMsgParam = nil

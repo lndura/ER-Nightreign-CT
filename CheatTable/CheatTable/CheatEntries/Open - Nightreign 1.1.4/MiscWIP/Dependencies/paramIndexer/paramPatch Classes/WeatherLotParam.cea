@@ -1,0 +1,284 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+WeatherLotParam = {}
+function WeatherLotParam:new(id_or_all, patchName)
+    return paramPatcher(self, "WeatherLotParam", 0x53, id_or_all, patchName)
+end
+
+
+
+function WeatherLotParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function WeatherLotParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function WeatherLotParam:setWeatherType0(value)
+    return self:setU16(0x04, value)
+end
+function WeatherLotParam:getWeatherType0(value)
+    return self:getU16(0x04, value)
+end
+
+function WeatherLotParam:setWeatherType1(value)
+    return self:setU16(0x06, value)
+end
+function WeatherLotParam:getWeatherType1(value)
+    return self:getU16(0x06, value)
+end
+
+function WeatherLotParam:setWeatherType2(value)
+    return self:setU16(0x08, value)
+end
+function WeatherLotParam:getWeatherType2(value)
+    return self:getU16(0x08, value)
+end
+
+function WeatherLotParam:setWeatherType3(value)
+    return self:setU16(0x0A, value)
+end
+function WeatherLotParam:getWeatherType3(value)
+    return self:getU16(0x0A, value)
+end
+
+function WeatherLotParam:setWeatherType4(value)
+    return self:setU16(0x0C, value)
+end
+function WeatherLotParam:getWeatherType4(value)
+    return self:getU16(0x0C, value)
+end
+
+function WeatherLotParam:setWeatherType5(value)
+    return self:setU16(0x0E, value)
+end
+function WeatherLotParam:getWeatherType5(value)
+    return self:getU16(0x0E, value)
+end
+
+function WeatherLotParam:setWeatherType6(value)
+    return self:setU16(0x10, value)
+end
+function WeatherLotParam:getWeatherType6(value)
+    return self:getU16(0x10, value)
+end
+
+function WeatherLotParam:setWeatherType7(value)
+    return self:setU16(0x12, value)
+end
+function WeatherLotParam:getWeatherType7(value)
+    return self:getU16(0x12, value)
+end
+
+function WeatherLotParam:setWeatherType8(value)
+    return self:setU16(0x14, value)
+end
+function WeatherLotParam:getWeatherType8(value)
+    return self:getU16(0x14, value)
+end
+
+function WeatherLotParam:setWeatherType9(value)
+    return self:setU16(0x16, value)
+end
+function WeatherLotParam:getWeatherType9(value)
+    return self:getU16(0x16, value)
+end
+
+function WeatherLotParam:setWeatherType10(value)
+    return self:setU16(0x18, value)
+end
+function WeatherLotParam:getWeatherType10(value)
+    return self:getU16(0x18, value)
+end
+
+function WeatherLotParam:setWeatherType11(value)
+    return self:setU16(0x1A, value)
+end
+function WeatherLotParam:getWeatherType11(value)
+    return self:getU16(0x1A, value)
+end
+
+function WeatherLotParam:setWeatherType12(value)
+    return self:setU16(0x1C, value)
+end
+function WeatherLotParam:getWeatherType12(value)
+    return self:getU16(0x1C, value)
+end
+
+function WeatherLotParam:setWeatherType13(value)
+    return self:setU16(0x1E, value)
+end
+function WeatherLotParam:getWeatherType13(value)
+    return self:getU16(0x1E, value)
+end
+
+function WeatherLotParam:setWeatherType14(value)
+    return self:setU16(0x20, value)
+end
+function WeatherLotParam:getWeatherType14(value)
+    return self:getU16(0x20, value)
+end
+
+function WeatherLotParam:setWeatherType15(value)
+    return self:setU16(0x22, value)
+end
+function WeatherLotParam:getWeatherType15(value)
+    return self:getU16(0x22, value)
+end
+
+function WeatherLotParam:setLotteryWeight0(value)
+    return self:setU16(0x24, value)
+end
+function WeatherLotParam:getLotteryWeight0(value)
+    return self:getU16(0x24, value)
+end
+
+function WeatherLotParam:setLotteryWeight1(value)
+    return self:setU16(0x26, value)
+end
+function WeatherLotParam:getLotteryWeight1(value)
+    return self:getU16(0x26, value)
+end
+
+function WeatherLotParam:setLotteryWeight2(value)
+    return self:setU16(0x28, value)
+end
+function WeatherLotParam:getLotteryWeight2(value)
+    return self:getU16(0x28, value)
+end
+
+function WeatherLotParam:setLotteryWeight3(value)
+    return self:setU16(0x2A, value)
+end
+function WeatherLotParam:getLotteryWeight3(value)
+    return self:getU16(0x2A, value)
+end
+
+function WeatherLotParam:setLotteryWeight4(value)
+    return self:setU16(0x2C, value)
+end
+function WeatherLotParam:getLotteryWeight4(value)
+    return self:getU16(0x2C, value)
+end
+
+function WeatherLotParam:setLotteryWeight5(value)
+    return self:setU16(0x2E, value)
+end
+function WeatherLotParam:getLotteryWeight5(value)
+    return self:getU16(0x2E, value)
+end
+
+function WeatherLotParam:setLotteryWeight6(value)
+    return self:setU16(0x30, value)
+end
+function WeatherLotParam:getLotteryWeight6(value)
+    return self:getU16(0x30, value)
+end
+
+function WeatherLotParam:setLotteryWeight7(value)
+    return self:setU16(0x32, value)
+end
+function WeatherLotParam:getLotteryWeight7(value)
+    return self:getU16(0x32, value)
+end
+
+function WeatherLotParam:setLotteryWeight8(value)
+    return self:setU16(0x34, value)
+end
+function WeatherLotParam:getLotteryWeight8(value)
+    return self:getU16(0x34, value)
+end
+
+function WeatherLotParam:setLotteryWeight9(value)
+    return self:setU16(0x36, value)
+end
+function WeatherLotParam:getLotteryWeight9(value)
+    return self:getU16(0x36, value)
+end
+
+function WeatherLotParam:setLotteryWeight10(value)
+    return self:setU16(0x38, value)
+end
+function WeatherLotParam:getLotteryWeight10(value)
+    return self:getU16(0x38, value)
+end
+
+function WeatherLotParam:setLotteryWeight11(value)
+    return self:setU16(0x3A, value)
+end
+function WeatherLotParam:getLotteryWeight11(value)
+    return self:getU16(0x3A, value)
+end
+
+function WeatherLotParam:setLotteryWeight12(value)
+    return self:setU16(0x3C, value)
+end
+function WeatherLotParam:getLotteryWeight12(value)
+    return self:getU16(0x3C, value)
+end
+
+function WeatherLotParam:setLotteryWeight13(value)
+    return self:setU16(0x3E, value)
+end
+function WeatherLotParam:getLotteryWeight13(value)
+    return self:getU16(0x3E, value)
+end
+
+function WeatherLotParam:setLotteryWeight14(value)
+    return self:setU16(0x40, value)
+end
+function WeatherLotParam:getLotteryWeight14(value)
+    return self:getU16(0x40, value)
+end
+
+function WeatherLotParam:setLotteryWeight15(value)
+    return self:setU16(0x42, value)
+end
+function WeatherLotParam:getLotteryWeight15(value)
+    return self:getU16(0x42, value)
+end
+
+function WeatherLotParam:setTimezoneLimit(value)
+    return self:setU8(0x44, value)
+end
+function WeatherLotParam:getTimezoneLimit(value)
+    return self:getU8(0x44, value)
+end
+
+function WeatherLotParam:setTimezoneStartHour(value)
+    return self:setU8(0x45, value)
+end
+function WeatherLotParam:getTimezoneStartHour(value)
+    return self:getU8(0x45, value)
+end
+
+function WeatherLotParam:setTimezoneStartMinute(value)
+    return self:setU8(0x46, value)
+end
+function WeatherLotParam:getTimezoneStartMinute(value)
+    return self:getU8(0x46, value)
+end
+
+function WeatherLotParam:setTimezoneEndHour(value)
+    return self:setU8(0x47, value)
+end
+function WeatherLotParam:getTimezoneEndHour(value)
+    return self:getU8(0x47, value)
+end
+
+function WeatherLotParam:setTimezoneEndMinute(value)
+    return self:setU8(0x48, value)
+end
+function WeatherLotParam:getTimezoneEndMinute(value)
+    return self:getU8(0x48, value)
+end
+
+--dummy8 reserve[9]
+[disable]
+WeatherLotParam = nil

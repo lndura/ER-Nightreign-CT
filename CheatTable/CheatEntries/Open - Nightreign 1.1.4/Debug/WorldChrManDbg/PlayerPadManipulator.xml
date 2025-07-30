@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337273222</ID>
+  <Description>"PlayerPadManipulator"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>8 Bytes</VariableType>
+  <Address>+A8</Address>
+</CheatEntry>

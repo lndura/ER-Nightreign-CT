@@ -1,0 +1,151 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+HitEffectSfxParam = {}
+function HitEffectSfxParam:new(id_or_all, patchName)
+    return paramPatcher(self, "HitEffectSfxParam", 0x54, id_or_all, patchName)
+end
+
+
+
+function HitEffectSfxParam:setSlash_Normal(value)
+    return self:setU32(0x00, value)
+end
+function HitEffectSfxParam:getSlash_Normal(value)
+    return self:getU32(0x00, value)
+end
+
+function HitEffectSfxParam:setSlash_S(value)
+    return self:setU32(0x04, value)
+end
+function HitEffectSfxParam:getSlash_S(value)
+    return self:getU32(0x04, value)
+end
+
+function HitEffectSfxParam:setSlash_L(value)
+    return self:setU32(0x08, value)
+end
+function HitEffectSfxParam:getSlash_L(value)
+    return self:getU32(0x08, value)
+end
+
+function HitEffectSfxParam:setSlash_Specific1(value)
+    return self:setU32(0x0C, value)
+end
+function HitEffectSfxParam:getSlash_Specific1(value)
+    return self:getU32(0x0C, value)
+end
+
+function HitEffectSfxParam:setSlash_Specific2(value)
+    return self:setU32(0x10, value)
+end
+function HitEffectSfxParam:getSlash_Specific2(value)
+    return self:getU32(0x10, value)
+end
+
+function HitEffectSfxParam:setBlow_Normal(value)
+    return self:setU32(0x14, value)
+end
+function HitEffectSfxParam:getBlow_Normal(value)
+    return self:getU32(0x14, value)
+end
+
+function HitEffectSfxParam:setBlow_S(value)
+    return self:setU32(0x18, value)
+end
+function HitEffectSfxParam:getBlow_S(value)
+    return self:getU32(0x18, value)
+end
+
+function HitEffectSfxParam:setBlow_L(value)
+    return self:setU32(0x1C, value)
+end
+function HitEffectSfxParam:getBlow_L(value)
+    return self:getU32(0x1C, value)
+end
+
+function HitEffectSfxParam:setBlow_Specific1(value)
+    return self:setU32(0x20, value)
+end
+function HitEffectSfxParam:getBlow_Specific1(value)
+    return self:getU32(0x20, value)
+end
+
+function HitEffectSfxParam:setBlow_Specific2(value)
+    return self:setU32(0x24, value)
+end
+function HitEffectSfxParam:getBlow_Specific2(value)
+    return self:getU32(0x24, value)
+end
+
+function HitEffectSfxParam:setThrust_Normal(value)
+    return self:setU32(0x28, value)
+end
+function HitEffectSfxParam:getThrust_Normal(value)
+    return self:getU32(0x28, value)
+end
+
+function HitEffectSfxParam:setThrust_S(value)
+    return self:setU32(0x2C, value)
+end
+function HitEffectSfxParam:getThrust_S(value)
+    return self:getU32(0x2C, value)
+end
+
+function HitEffectSfxParam:setThrust_L(value)
+    return self:setU32(0x30, value)
+end
+function HitEffectSfxParam:getThrust_L(value)
+    return self:getU32(0x30, value)
+end
+
+function HitEffectSfxParam:setThrust_Specific1(value)
+    return self:setU32(0x34, value)
+end
+function HitEffectSfxParam:getThrust_Specific1(value)
+    return self:getU32(0x34, value)
+end
+
+function HitEffectSfxParam:setThrust_Specific2(value)
+    return self:setU32(0x38, value)
+end
+function HitEffectSfxParam:getThrust_Specific2(value)
+    return self:getU32(0x38, value)
+end
+
+function HitEffectSfxParam:setNeutral_Normal(value)
+    return self:setU32(0x3C, value)
+end
+function HitEffectSfxParam:getNeutral_Normal(value)
+    return self:getU32(0x3C, value)
+end
+
+function HitEffectSfxParam:setNeutral_S(value)
+    return self:setU32(0x40, value)
+end
+function HitEffectSfxParam:getNeutral_S(value)
+    return self:getU32(0x40, value)
+end
+
+function HitEffectSfxParam:setNeutral_L(value)
+    return self:setU32(0x44, value)
+end
+function HitEffectSfxParam:getNeutral_L(value)
+    return self:getU32(0x44, value)
+end
+
+function HitEffectSfxParam:setNeutral_Specific1(value)
+    return self:setU32(0x48, value)
+end
+function HitEffectSfxParam:getNeutral_Specific1(value)
+    return self:getU32(0x48, value)
+end
+
+function HitEffectSfxParam:setNeutral_Specific2(value)
+    return self:setU32(0x4C, value)
+end
+function HitEffectSfxParam:getNeutral_Specific2(value)
+    return self:getU32(0x4C, value)
+end
+[disable]
+HitEffectSfxParam = nil

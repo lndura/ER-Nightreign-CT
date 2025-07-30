@@ -1,0 +1,58 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+ChrModelParam = {}
+function ChrModelParam:new(id_or_all, patchName)
+    return paramPatcher(self, "ChrModelParam", 0x14, id_or_all, patchName)
+end
+
+
+
+function ChrModelParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function ChrModelParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function ChrModelParam:setModelMemoryType(value)
+    return self:setU8(0x04, value)
+end
+function ChrModelParam:getModelMemoryType(value)
+    return self:getU8(0x04, value)
+end
+
+function ChrModelParam:setTexMemoryType(value)
+    return self:setU8(0x05, value)
+end
+function ChrModelParam:getTexMemoryType(value)
+    return self:getU8(0x05, value)
+end
+
+function ChrModelParam:setCameraDitherFadeId(value)
+    return self:setU16(0x06, value)
+end
+function ChrModelParam:getCameraDitherFadeId(value)
+    return self:getU16(0x06, value)
+end
+
+function ChrModelParam:setReportAnimMemSizeMb(value)
+    return self:setF32(0x08, value)
+end
+function ChrModelParam:getReportAnimMemSizeMb(value)
+    return self:getF32(0x08, value)
+end
+
+function ChrModelParam:setUnk(value)
+    return self:setU32(0x0C, value)
+end
+function ChrModelParam:getUnk(value)
+    return self:getU32(0x0C, value)
+end
+[disable]
+ChrModelParam = nil

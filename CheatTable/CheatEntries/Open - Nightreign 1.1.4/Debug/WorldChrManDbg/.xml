@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>1337273221</ID>
+  <Description>"WorldChrManDbg"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>WorldChrManDbg</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337273222"/>
+    <id id="1337273223"/>
+    <id id="1337273224"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

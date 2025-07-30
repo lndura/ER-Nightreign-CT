@@ -1,0 +1,228 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+HeroParam = {}
+function HeroParam:new(id_or_all, patchName)
+    return paramPatcher(self, "HeroParam", 0xA4, id_or_all, patchName)
+end
+
+
+
+function HeroParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function HeroParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function HeroParam:setUnknown_1(value)
+    return self:setU32(0x04, value)
+end
+function HeroParam:getUnknown_1(value)
+    return self:getU32(0x04, value)
+end
+
+function HeroParam:setUnknown_2(value)
+    return self:setU32(0x08, value)
+end
+function HeroParam:getUnknown_2(value)
+    return self:getU32(0x08, value)
+end
+
+function HeroParam:setProperPortraitId(value)
+    return self:setU32(0x0C, value)
+end
+function HeroParam:getProperPortraitId(value)
+    return self:getU32(0x0C, value)
+end
+
+function HeroParam:setSimplePortraitId(value)
+    return self:setU32(0x10, value)
+end
+function HeroParam:getSimplePortraitId(value)
+    return self:getU32(0x10, value)
+end
+
+function HeroParam:setCharacterUnlockFlag(value)
+    return self:setU32(0x14, value)
+end
+function HeroParam:getCharacterUnlockFlag(value)
+    return self:getU32(0x14, value)
+end
+
+function HeroParam:setCharacterNameId(value)
+    return self:setU32(0x18, value)
+end
+function HeroParam:getCharacterNameId(value)
+    return self:getU32(0x18, value)
+end
+
+function HeroParam:setCharacterSkillTitleId(value)
+    return self:setU32(0x1C, value)
+end
+function HeroParam:getCharacterSkillTitleId(value)
+    return self:getU32(0x1C, value)
+end
+
+function HeroParam:setCharacterSkillSummaryId(value)
+    return self:setU32(0x20, value)
+end
+function HeroParam:getCharacterSkillSummaryId(value)
+    return self:getU32(0x20, value)
+end
+
+function HeroParam:setCharacterSkillIconId(value)
+    return self:setU32(0x24, value)
+end
+function HeroParam:getCharacterSkillIconId(value)
+    return self:getU32(0x24, value)
+end
+
+function HeroParam:setUltimateArtTitleId(value)
+    return self:setU32(0x28, value)
+end
+function HeroParam:getUltimateArtTitleId(value)
+    return self:getU32(0x28, value)
+end
+
+function HeroParam:setUltimateArtSummaryId(value)
+    return self:setU32(0x2C, value)
+end
+function HeroParam:getUltimateArtSummaryId(value)
+    return self:getU32(0x2C, value)
+end
+
+function HeroParam:setUltimateArtIconId(value)
+    return self:setU32(0x30, value)
+end
+function HeroParam:getUltimateArtIconId(value)
+    return self:getU32(0x30, value)
+end
+
+function HeroParam:setBackgroundDescriptionId(value)
+    return self:setU32(0x34, value)
+end
+function HeroParam:getBackgroundDescriptionId(value)
+    return self:getU32(0x34, value)
+end
+
+--dummy8 midPadding[40]
+
+function HeroParam:setUnknown_24(value)
+    return self:setU32(0x60, value)
+end
+function HeroParam:getUnknown_24(value)
+    return self:getU32(0x60, value)
+end
+
+function HeroParam:setUnknown_25(value)
+    return self:setU32(0x64, value)
+end
+function HeroParam:getUnknown_25(value)
+    return self:getU32(0x64, value)
+end
+
+function HeroParam:setUnknown_26(value)
+    return self:setU32(0x68, value)
+end
+function HeroParam:getUnknown_26(value)
+    return self:getU32(0x68, value)
+end
+
+function HeroParam:setHeroStatusParamId(value)
+    return self:setU32(0x6C, value)
+end
+function HeroParam:getHeroStatusParamId(value)
+    return self:getU32(0x6C, value)
+end
+
+function HeroParam:setUnknown_27(value)
+    return self:setU32(0x70, value)
+end
+function HeroParam:getUnknown_27(value)
+    return self:getU32(0x70, value)
+end
+
+function HeroParam:setCharacterAbilityCooldown(value)
+    return self:setF32(0x74, value)
+end
+function HeroParam:getCharacterAbilityCooldown(value)
+    return self:getF32(0x74, value)
+end
+
+function HeroParam:setCharacterAbilityUsageCount(value)
+    return self:setU32(0x78, value)
+end
+function HeroParam:getCharacterAbilityUsageCount(value)
+    return self:getU32(0x78, value)
+end
+
+function HeroParam:setPassiveAbilityTitleId(value)
+    return self:setU32(0x7C, value)
+end
+function HeroParam:getPassiveAbilityTitleId(value)
+    return self:getU32(0x7C, value)
+end
+
+function HeroParam:setPassiveAbilitySummaryId(value)
+    return self:setU32(0x80, value)
+end
+function HeroParam:getPassiveAbilitySummaryId(value)
+    return self:getU32(0x80, value)
+end
+
+function HeroParam:setPassiveAbilityIconId(value)
+    return self:setU32(0x84, value)
+end
+function HeroParam:getPassiveAbilityIconId(value)
+    return self:getU32(0x84, value)
+end
+
+function HeroParam:setSmallHudIconId(value)
+    return self:setU32(0x88, value)
+end
+function HeroParam:getSmallHudIconId(value)
+    return self:getU32(0x88, value)
+end
+
+function HeroParam:setCharacterSkillDescriptionId(value)
+    return self:setU32(0x8C, value)
+end
+function HeroParam:getCharacterSkillDescriptionId(value)
+    return self:getU32(0x8C, value)
+end
+
+function HeroParam:setUltimateArtDescriptionId(value)
+    return self:setU32(0x90, value)
+end
+function HeroParam:getUltimateArtDescriptionId(value)
+    return self:getU32(0x90, value)
+end
+
+function HeroParam:setPassiveAbilityDescriptionId(value)
+    return self:setU32(0x94, value)
+end
+function HeroParam:getPassiveAbilityDescriptionId(value)
+    return self:getU32(0x94, value)
+end
+
+function HeroParam:setUnknown_38(value)
+    return self:setU32(0x98, value)
+end
+function HeroParam:getUnknown_38(value)
+    return self:getU32(0x98, value)
+end
+
+function HeroParam:setUnknown_39(value)
+    return self:setU32(0x9C, value)
+end
+function HeroParam:getUnknown_39(value)
+    return self:getU32(0x9C, value)
+end
+[disable]
+HeroParam = nil

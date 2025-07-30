@@ -1,0 +1,60 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MapPieceTexParam = {}
+function MapPieceTexParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MapPieceTexParam", 0x14, id_or_all, patchName)
+end
+
+
+
+function MapPieceTexParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function MapPieceTexParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function MapPieceTexParam:setSrcR(value)
+    return self:setU8(0x04, value)
+end
+function MapPieceTexParam:getSrcR(value)
+    return self:getU8(0x04, value)
+end
+
+function MapPieceTexParam:setSrcG(value)
+    return self:setU8(0x05, value)
+end
+function MapPieceTexParam:getSrcG(value)
+    return self:getU8(0x05, value)
+end
+
+function MapPieceTexParam:setSrcB(value)
+    return self:setU8(0x06, value)
+end
+function MapPieceTexParam:getSrcB(value)
+    return self:getU8(0x06, value)
+end
+
+--dummy8 pad1[1]
+
+function MapPieceTexParam:setSaveMapNameId(value)
+    return self:setU32(0x08, value)
+end
+function MapPieceTexParam:getSaveMapNameId(value)
+    return self:getU32(0x08, value)
+end
+
+function MapPieceTexParam:setMultiPlayAreaId(value)
+    return self:setU32(0x0C, value)
+end
+function MapPieceTexParam:getMultiPlayAreaId(value)
+    return self:getU32(0x0C, value)
+end
+[disable]
+MapPieceTexParam = nil

@@ -1,0 +1,83 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+ChrPhysicsVelocityChangeParam = {}
+function ChrPhysicsVelocityChangeParam:new(id_or_all, patchName)
+    return paramPatcher(self, "ChrPhysicsVelocityChangeParam", 0x21, id_or_all, patchName)
+end
+
+
+
+function ChrPhysicsVelocityChangeParam:setHorizontalVelocityScale(value)
+    return self:setF32(0x00, value)
+end
+function ChrPhysicsVelocityChangeParam:getHorizontalVelocityScale(value)
+    return self:getF32(0x00, value)
+end
+
+function ChrPhysicsVelocityChangeParam:setVerticalVelocityScale(value)
+    return self:setF32(0x04, value)
+end
+function ChrPhysicsVelocityChangeParam:getVerticalVelocityScale(value)
+    return self:getF32(0x04, value)
+end
+
+function ChrPhysicsVelocityChangeParam:setHorizontalVelocityChange(value)
+    return self:setF32(0x08, value)
+end
+function ChrPhysicsVelocityChangeParam:getHorizontalVelocityChange(value)
+    return self:getF32(0x08, value)
+end
+
+function ChrPhysicsVelocityChangeParam:setVerticalVelocityChange(value)
+    return self:setF32(0x0C, value)
+end
+function ChrPhysicsVelocityChangeParam:getVerticalVelocityChange(value)
+    return self:getF32(0x0C, value)
+end
+
+function ChrPhysicsVelocityChangeParam:setHorizontalVelocityAngle(value)
+    return self:setF32(0x10, value)
+end
+function ChrPhysicsVelocityChangeParam:getHorizontalVelocityAngle(value)
+    return self:getF32(0x10, value)
+end
+
+function ChrPhysicsVelocityChangeParam:setUnknown_1(value)
+    return self:setU8(0x14, value)
+end
+function ChrPhysicsVelocityChangeParam:getUnknown_1(value)
+    return self:getU8(0x14, value)
+end
+
+function ChrPhysicsVelocityChangeParam:setUnknown_2(value)
+    return self:setU8(0x15, value)
+end
+function ChrPhysicsVelocityChangeParam:getUnknown_2(value)
+    return self:getU8(0x15, value)
+end
+
+function ChrPhysicsVelocityChangeParam:setUnknown_3(value)
+    return self:setU8(0x16, value)
+end
+function ChrPhysicsVelocityChangeParam:getUnknown_3(value)
+    return self:getU8(0x16, value)
+end
+
+function ChrPhysicsVelocityChangeParam:setUnknown_4(value)
+    return self:setU8(0x17, value)
+end
+function ChrPhysicsVelocityChangeParam:getUnknown_4(value)
+    return self:getU8(0x17, value)
+end
+
+function ChrPhysicsVelocityChangeParam:setUnknown_5(value)
+    return self:setU32(0x18, value)
+end
+function ChrPhysicsVelocityChangeParam:getUnknown_5(value)
+    return self:getU32(0x18, value)
+end
+
+--dummy8 pad1[4]
+[disable]
+ChrPhysicsVelocityChangeParam = nil

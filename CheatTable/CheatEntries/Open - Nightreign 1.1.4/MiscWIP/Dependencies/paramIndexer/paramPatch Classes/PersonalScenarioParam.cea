@@ -1,0 +1,116 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+PersonalScenarioParam = {}
+function PersonalScenarioParam:new(id_or_all, patchName)
+    return paramPatcher(self, "PersonalScenarioParam", 0x34, id_or_all, patchName)
+end
+
+
+
+function PersonalScenarioParam:setUnknown_0(value)
+    return self:setU32(0x00, value)
+end
+function PersonalScenarioParam:getUnknown_0(value)
+    return self:getU32(0x00, value)
+end
+
+function PersonalScenarioParam:setPersonalScenarioObjectiveId(value)
+    return self:setU32(0x04, value)
+end
+function PersonalScenarioParam:getPersonalScenarioObjectiveId(value)
+    return self:getU32(0x04, value)
+end
+
+function PersonalScenarioParam:setObjectiveFlagId(value)
+    return self:setU32(0x08, value)
+end
+function PersonalScenarioParam:getObjectiveFlagId(value)
+    return self:getU32(0x08, value)
+end
+
+function PersonalScenarioParam:setPersonalScenarioTitleId(value)
+    return self:setU32(0x0C, value)
+end
+function PersonalScenarioParam:getPersonalScenarioTitleId(value)
+    return self:getU32(0x0C, value)
+end
+
+function PersonalScenarioParam:setPersonalScenarioBodyId(value)
+    return self:setU32(0x10, value)
+end
+function PersonalScenarioParam:getPersonalScenarioBodyId(value)
+    return self:getU32(0x10, value)
+end
+
+function PersonalScenarioParam:setPersonalScenarioImageId(value)
+    return self:setU32(0x14, value)
+end
+function PersonalScenarioParam:getPersonalScenarioImageId(value)
+    return self:getU32(0x14, value)
+end
+
+function PersonalScenarioParam:setHeroId(value)
+    return self:setU8(0x18, value)
+end
+function PersonalScenarioParam:getHeroId(value)
+    return self:getU8(0x18, value)
+end
+
+function PersonalScenarioParam:setUnknown_6b(value)
+    return self:setU8(0x19, value)
+end
+function PersonalScenarioParam:getUnknown_6b(value)
+    return self:getU8(0x19, value)
+end
+
+function PersonalScenarioParam:setUnknown_6c(value)
+    return self:setU8(0x1A, value)
+end
+function PersonalScenarioParam:getUnknown_6c(value)
+    return self:getU8(0x1A, value)
+end
+
+function PersonalScenarioParam:setUnknown_6d(value)
+    return self:setU8(0x1B, value)
+end
+function PersonalScenarioParam:getUnknown_6d(value)
+    return self:getU8(0x1B, value)
+end
+
+function PersonalScenarioParam:setFlashbackFlagId(value)
+    return self:setU32(0x1C, value)
+end
+function PersonalScenarioParam:getFlashbackFlagId(value)
+    return self:getU32(0x1C, value)
+end
+
+function PersonalScenarioParam:setUnknown_8(value)
+    return self:setU32(0x20, value)
+end
+function PersonalScenarioParam:getUnknown_8(value)
+    return self:getU32(0x20, value)
+end
+
+function PersonalScenarioParam:setSpawnpointEntityId(value)
+    return self:setU32(0x24, value)
+end
+function PersonalScenarioParam:getSpawnpointEntityId(value)
+    return self:getU32(0x24, value)
+end
+
+function PersonalScenarioParam:setUnknown_10(value)
+    return self:setU32(0x28, value)
+end
+function PersonalScenarioParam:getUnknown_10(value)
+    return self:getU32(0x28, value)
+end
+
+function PersonalScenarioParam:setUnknown_11(value)
+    return self:setU32(0x2C, value)
+end
+function PersonalScenarioParam:getUnknown_11(value)
+    return self:getU32(0x2C, value)
+end
+[disable]
+PersonalScenarioParam = nil

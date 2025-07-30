@@ -1,0 +1,83 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+NpcAiActionParam = {}
+function NpcAiActionParam:new(id_or_all, patchName)
+    return paramPatcher(self, "NpcAiActionParam", 0x11, id_or_all, patchName)
+end
+
+
+
+function NpcAiActionParam:setMoveDir(value)
+    return self:setU8(0x00, value)
+end
+function NpcAiActionParam:getMoveDir(value)
+    return self:getU8(0x00, value)
+end
+
+function NpcAiActionParam:setKey1(value)
+    return self:setU8(0x01, value)
+end
+function NpcAiActionParam:getKey1(value)
+    return self:getU8(0x01, value)
+end
+
+function NpcAiActionParam:setKey2(value)
+    return self:setU8(0x02, value)
+end
+function NpcAiActionParam:getKey2(value)
+    return self:getU8(0x02, value)
+end
+
+function NpcAiActionParam:setKey3(value)
+    return self:setU8(0x03, value)
+end
+function NpcAiActionParam:getKey3(value)
+    return self:getU8(0x03, value)
+end
+
+function NpcAiActionParam:setBMoveDirHold(value)
+    return self:setU8(0x04, value)
+end
+function NpcAiActionParam:getBMoveDirHold(value)
+    return self:getU8(0x04, value)
+end
+
+function NpcAiActionParam:setBKeyHold1(value)
+    return self:setU8(0x05, value)
+end
+function NpcAiActionParam:getBKeyHold1(value)
+    return self:getU8(0x05, value)
+end
+
+function NpcAiActionParam:setBKeyHold2(value)
+    return self:setU8(0x06, value)
+end
+function NpcAiActionParam:getBKeyHold2(value)
+    return self:getU8(0x06, value)
+end
+
+function NpcAiActionParam:setBKeyHold3(value)
+    return self:setU8(0x07, value)
+end
+function NpcAiActionParam:getBKeyHold3(value)
+    return self:getU8(0x07, value)
+end
+
+function NpcAiActionParam:setGestureId(value)
+    return self:setU32(0x08, value)
+end
+function NpcAiActionParam:getGestureId(value)
+    return self:getU32(0x08, value)
+end
+
+function NpcAiActionParam:setBLifeEndSuccess(value)
+    return self:setU8(0x0C, value)
+end
+function NpcAiActionParam:getBLifeEndSuccess(value)
+    return self:getU8(0x0C, value)
+end
+
+--dummy8 pad1[3]
+[disable]
+NpcAiActionParam = nil

@@ -1,0 +1,30 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MapGdRegionDrawParam = {}
+function MapGdRegionDrawParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MapGdRegionDrawParam", 0xC, id_or_all, patchName)
+end
+
+
+
+function MapGdRegionDrawParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function MapGdRegionDrawParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function MapGdRegionDrawParam:setOverrideIVLocalLightScale(value)
+    return self:setF32(0x04, value)
+end
+function MapGdRegionDrawParam:getOverrideIVLocalLightScale(value)
+    return self:getF32(0x04, value)
+end
+[disable]
+MapGdRegionDrawParam = nil

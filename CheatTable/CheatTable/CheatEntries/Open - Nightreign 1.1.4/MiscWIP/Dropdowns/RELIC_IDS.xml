@@ -1,0 +1,684 @@
+<CheatEntry>
+  <ID>722</ID>
+  <Description>"RELIC_IDS"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">4294967295:Empty
+8882200:Acid Mist upon Charged Thrust
+8110700:Add Fire to Weapon
+8111000:Add Holy to Weapon
+8110900:Add Lightning to Weapon
+8110800:Add Magic to Weapon
+7000700:Arcane +1
+7000701:Arcane +2
+7000702:Arcane +3
+7070001:Treasure marked upon map
+7120101:Armament deals fire damage +1 at start of expedition
+7030600:Art gauge charged from successful guarding
+7030800:Art gauge fills moderately upon critical hit
+8150300:Attack Boost Dragons:
+7012600:Attack Boost from Nearby Allies
+8150000:Attack Boost Lifeforms Born of Falling Stars:
+8150100:Attack Boost Those Who Live in Death:
+7030900:Attack power increases after using grease items
+7060000:Attack power permanently increased for each evergaol prisoner defeated
+7060200:Attack power up after defeating a Night Invader
+7260400:Attack power up when facing frostbite-afflicted enemy
+7260000:Attack power up when facing poison-afflicted enemy
+7260300:Attack power up when facing scarlet rot-afflicted enemy
+7260200:Attack power up when facing sleep-afflicted enemy
+8310000:Attack Up when Wielding Two Armaments
+7260600:Attacks Create Magic Bursts Versus Sleeping Enemies
+7002000:Attacks Inflict Blood Loss
+8110100:Attacks Inflict Blood Loss
+7002001:Attacks Inflict Blood Loss +1
+7002002:Attacks Inflict Blood Loss +2
+7002200:Attacks Inflict Death Blight
+8110300:Attacks Inflict Death Blight
+7002400:Attacks Inflict Frost
+8110500:Attacks Inflict Frost
+7002401:Attacks Inflict Frost +1
+7002402:Attacks Inflict Frost +2
+7002403:Attacks Inflict Frost +3
+7002500:Attacks Inflict Madness
+8110600:Attacks Inflict Madness
+7001900:Attacks Inflict Poison
+8110000:Attacks Inflict Poison
+7001901:Attacks Inflict Poison +1
+7001902:Attacks Inflict Poison +2
+8110400:Attacks Inflict Rot
+7002300:Attacks Inflict Scarlet Rot
+7002301:Attacks Inflict Scarlet Rot +1
+7002302:Attacks Inflict Scarlet Rot +2
+7002100:Attacks Inflict Sleep
+8110200:Attacks Inflict Sleep
+7002101:Attacks Inflict Sleep +1
+7002102:Attacks Inflict Sleep +2
+7002103:Attacks Inflict Sleep +3
+7122000:Bewitching Branches in possession at start of expedition
+8880200:Black Flames upon Charged Slash
+8640800:Blood Loss Crit: Thorns of Punishment
+321600:Blood Loss in Vicinity Increases Attack Power
+8710000:Blood Loss Increases Attack Power
+8883400:Bloodflies upon Precision Aiming
+7035800:Boosts Attack Power of Added Affinity Attacks
+8884300:Broken Stance Activates Endure
+8960100:Changed Strong Attacks
+7123700:Changes compatible armament's skill to Blood Blade at start of expedition
+7123900:Changes compatible armament's skill to Chilling Mist at start of expedition
+7124600:Changes compatible armament's skill to Determination at start of expedition
+7124300:Changes compatible armament's skill to Endure at start of expedition
+7123000:Changes compatible armament's skill to Eruption at start of expedition
+7122900:Changes compatible armament's skill to Flaming Strike at start of expedition
+7122700:Changes compatible armament's skill to Glintblade Phalanx at start of expedition
+7122800:Changes compatible armament's skill to Gravitas at start of expedition
+7124000:Changes compatible armament's skill to Hoarfrost Stomp at start of expedition
+7123200:Changes compatible armament's skill to Lightning Slash at start of expedition
+7123600:Changes compatible armament's skill to Poison Moth Flight at start of expedition
+7123500:Changes compatible armament's skill to Poisonous Mist at start of expedition
+7123400:Changes compatible armament's skill to Prayerful Strike at start of expedition
+7124400:Changes compatible armament's skill to Quickstep at start of expedition
+7124700:Changes compatible armament's skill to Rain of Arrows at start of expedition
+7123300:Changes compatible armament's skill to Sacred Blade at start of expedition
+7123800:Changes compatible armament's skill to Seppuku at start of expedition
+7124500:Changes compatible armament's skill to Storm Stomp at start of expedition
+7123100:Changes compatible armament's skill to Thunderbolt at start of expedition
+7124100:Changes compatible armament's skill to White Shadow's Lure at start of expedition
+8370000:Character Skill Cooldown Reduction
+7000800:Character Skill Cooldown Reduction +1
+7000801:Character Skill Cooldown Reduction +2
+7000802:Character Skill Cooldown Reduction +3
+8882500:Charged Thrust Invokes Sleep Mist
+7033700:Colossal armaments are coated in rock when performing charged attacks
+8330700:Communion Grants Anti-Dragon Effect
+7035200:Consecutive Guards Harden Skin
+370002:Continuous HP Loss
+350200:Continuous HP Recovery
+8540000:Continuous HP Recovery
+8660300:Creates Holy Ground at Low HP
+7035000:Critical Hit Adds Lightning Effect
+7035100:Critical Hit Boosts Stamina Recovery Speed
+7035300:Critical Hit Creates Sleep Mist
+350600:Critical Hit FP Restoration
+8640100:Critical Hit FP Restoration
+350500:Critical Hit HP Restoration
+7034900:Critical Hit HP Restoration
+8640000:Critical Hit HP Restoration
+8921400:Critical Hits Boost Attack Power
+7100000:Critical hits deal huge damage on poisoned enemies
+7031900:Critical Hits Earn Runes
+8660200:Critical Hits Inflict Blood Loss
+7121600:Crystal Darts in possession at start of expedition
+8640600:Crystal Shards upon Magic Critical Hit
+8640200:Damage Boosted after Critical Hit
+8460000:Darkness Conceals Caster While Walking
+8641200:Death Crit. Hit Calls Death Lightning
+7090000:Defeating enemies fills more of the Art gauge
+7090300:Defeating enemies near Totem Stela restores HP
+361100:Defeating Enemies Restores FP
+8630100:Defeating Enemies Restores FP
+350300:Defeating Enemies Restores HP
+8630000:Defeating Enemies Restores HP
+7090100:Defeating enemies restores HP for allies but not for self
+8630400:Defeating Group Calls Vengeful Spirits
+8630800:Defeating Group Fires Golden Shockwave
+8630300:Defeating Group Releases Mist of Charm
+8630600:Defeating Group Releases Mist of Frost
+8630200:Defeating Group Summons Wraiths
+8630700:Defeating Group Unleashes Lightning
+7000400:Dexterity +1
+7000401:Dexterity +2
+7000402:Dexterity +3
+8330900:Dmg Negation Up While Casting Spells
+8320400:Dmg Negation Up while Charging Attacks
+7030700:Draw enemy attention while guarding
+7031800:Duchess: Become difficult to spot and silence footsteps after landing critical from behind
+7300000:Duchess: Character Skill inflicts sleep upon enemies
+7010700:Duchess: Dagger chain attack reprises event upon nearby enemies
+7032700:Duchess: Defeating enemies while Art is active ups attack power
+7033600:Duchess: Duration of Ultimate Art extended
+7290000:Duchess: Improved Character Skill Attack Power
+7000200:Endurance +1
+7000201:Endurance +2
+7000202:Endurance +3
+7034200:Executor: Attack power up while Ultimate Art is active
+7034400:Executor: Character Skill Boosts Attack but Attacking Drains HP
+7034300:Executor: Improves effect of ability but lowers resistance to status ailments
+7011700:Executor: Roaring restores HP while Art is active
+7034500:Executor: While Character Skill is active, unlocking use of cursed sword restores HP
+330600:Extended Spell Duration
+8330500:Extended Spell Duration
+8885100:Failing to Cast Sorcery Restores FP
+7000600:Faith +1
+7000601:Faith +2
+7000602:Faith +3
+8610400:Fire Attack Follows Charge Attacks
+7001600:Fire Attack Power Up
+7001601:Fire Attack Power Up +1
+7001602:Fire Attack Power Up +2
+7034800:Fire Critical Hit Grants Max Stamina Boost
+7002700:Fire Damage Negation Up
+7122200:Fire Grease in possession at start of expedition
+7121100:Fire Pots in possession at start of expedition
+8460200:Flame of Frenzy While Walking
+7010200:Flask Also Heals Allies
+8440100:Flask Also Heals Allies
+8885000:Flask Healing Also Restores FP
+8650100:FP Recovery From Successful Guarding
+8600200:FP Restoration upon Attacks
+7351000:FP Restoration upon Axe Attacks
+7352400:FP Restoration upon Bow Attacks
+7352100:FP Restoration upon Claw Attacks
+7350300:FP Restoration upon Colossal Sword Attacks
+7352300:FP Restoration upon Colossal Weapon Attacks
+7350500:FP Restoration upon Curved Greatsword Attacks
+7350400:FP Restoration upon Curved Sword Attacks
+7350000:FP Restoration upon Dagger Attacks
+7352000:FP Restoration upon Fist Attacks
+7351400:FP Restoration upon Flail Attacks
+7351300:FP Restoration upon Great Hammer Attacks
+7351700:FP Restoration upon Great Spear Attacks
+7351100:FP Restoration upon Greataxe Attacks
+7350200:FP Restoration upon Greatsword Attacks
+7351800:FP Restoration upon Halberd Attacks
+7351200:FP Restoration upon Hammer Attacks
+7350900:FP Restoration upon Heavy Thrusting Sword Attacks
+7350600:FP Restoration upon Katana Attacks
+7351600:FP Restoration upon Pike Attacks
+7351900:FP Restoration upon Reaper Attacks
+7351500:FP Restoration upon Spear Attacks
+7350100:FP Restoration upon Straight Sword Attacks
+7036000:FP Restoration upon Successive Attacks
+8610100:FP Restoration upon Successive Attacks
+10000:FP Restoration upon Successive Attacks(Old Pocket Watch)
+7350800:FP Restoration upon Thrusting Sword Attacks
+7350700:FP Restoration upon Twinblade Attacks
+7352200:FP Restoration upon Whip Attacks
+8740000:Frostbite Increases Attack Power
+8690300:Frostbite Produces a Mist of Frost
+7035400:Gesture "Crossed Legs" Builds Up Madness
+7121800:Glintstone Scraps in possession at start of expedition
+8440200:Gradual Restoration by Flask
+7121900:Gravity Stone Chunks in possession at start of expedition
+7150000:Guard counter is given a boost based on current HP
+8420100:Guard Counters Activate Holy Attacks
+7012700:Guard Counters Cast Light Pillar
+8420200:Guard Counters Launch Summoning Attack
+7033300:Guardian: Become the target of enemy aggression when ability is activated
+7011900:Guardian: Character Skill inflicts Holy damage
+7011600:Guardian: Creates whirlwind when charging halberd attacks
+7011100:Guardian: Damage negation for allies improved when using Ultimate Art
+7010000:Guardian: Improved Character Skill range
+7011000:Guardian: Increased duration for Character Skill
+7033400:Guardian: Reflect a portion of damage received when ability is activated
+7011400:Guardian: Restores allies' HP when Character Skill is used
+7012000:Guardian: Slowly restores nearby allies' HP while Art is active
+12002:Guardian: Slowly restores nearby allies' HP while Art is active (Witch's Brooch)
+8885200:Guarding Ups Attack &amp; Casting Speeds
+8610600:Holy Attack Follows Charge Attacks
+7001800:Holy Attack Power Up
+7001801:Holy Attack Power Up +1
+7001802:Holy Attack Power Up +2
+7002900:Holy Damage Negation Up
+7122500:Holy Grease in possession at start of expedition
+8881000:Holy Shockwave upon Charged Strike
+7121400:Holy Water Pots in possession at start of expedition
+7036100:HP Recovery From Successful Guarding
+8650000:HP Recovery From Successful Guarding
+8600100:HP Restoration upon Attacks
+7341000:HP Restoration upon Axe Attacks
+7342400:HP Restoration upon Bow Attacks
+7342100:HP Restoration upon Claw Attacks
+7340300:HP Restoration upon Colossal Sword Attacks
+7342300:HP Restoration upon Colossal Weapon Attacks
+7340500:HP Restoration upon Curved Greatsword Attacks
+7340400:HP Restoration upon Curved Sword Attacks
+7340000:HP Restoration upon Dagger Attacks
+7342000:HP Restoration upon Fist Attacks
+7341400:HP Restoration upon Flail Attacks
+7341300:HP Restoration upon Great Hammer Attacks
+7341700:HP Restoration upon Great Spear Attacks
+7341100:HP Restoration upon Greataxe Attacks
+7340200:HP Restoration upon Greatsword Attacks
+7341800:HP Restoration upon Halberd Attacks
+8600146:HP Restoration upon Halberd Attacks
+7341200:HP Restoration upon Hammer Attacks
+7340900:HP Restoration upon Heavy Thrusting Sword Attacks
+7340600:HP Restoration upon Katana Attacks
+7341600:HP Restoration upon Pike Attacks
+7341900:HP Restoration upon Reaper Attacks
+7341500:HP Restoration upon Spear Attacks
+7340100:HP Restoration upon Straight Sword Attacks
+8610000:HP Restoration upon Successive Attacks
+7160000:HP Restoration upon Thrusting Counterattack
+7340800:HP Restoration upon Thrusting Sword Attacks
+7340700:HP Restoration upon Twinblade Attacks
+7342200:HP Restoration upon Whip Attacks
+7200000:HP Restoration with Head Shots
+7030200:HP restored when using cured meats, medicinal boluses, etc.
+7230001:Huge rune discount for shop purchases while on expedition
+8450100:Ice Storm Surge Sprint
+8880000:Ice Storm upon Charged Slash
+8641000:Ice Storm upon Critical Hit with Frost
+340701:Impaired Damage Negation
+320001:Impaired Physical Damage Negation
+320101:Impaired Physical Damage Negation
+320201:Impaired Physical Damage Negation
+320301:Impaired Physical Damage Negation
+320500:Improved Attack Power at Full HP
+8670000:Improved Attack Power at Full HP
+320400:Improved Attack Power at Low HP
+8660000:Improved Attack Power at Low HP
+8300000:Improved Attack Power when Two-Handing
+7081000:Improved Attack Power with 3+ Axes Equipped
+7082400:Improved Attack Power with 3+ Bows Equipped
+7082100:Improved Attack Power with 3+ Claws Equipped
+7080300:Improved Attack Power with 3+ Colossal Swords Equipped
+7082300:Improved Attack Power with 3+ Colossal Weapons Equipped
+7080500:Improved Attack Power with 3+ Curved Greatswords Equipped
+7080400:Improved Attack Power with 3+ Curved Swords Equipped
+7080000:Improved Attack Power with 3+ Daggers Equipped
+7082000:Improved Attack Power with 3+ Fists Equipped
+7081400:Improved Attack Power with 3+ Flails Equipped
+7081300:Improved Attack Power with 3+ Great Hammers Equipped
+7081700:Improved Attack Power with 3+ Great Spears Equipped
+7081100:Improved Attack Power with 3+ Greataxes Equipped
+7080200:Improved Attack Power with 3+ Greatswords Equipped
+7081800:Improved Attack Power with 3+ Halberds Equipped
+7081200:Improved Attack Power with 3+ Hammers Equipped
+7080900:Improved Attack Power with 3+ Heavy Thrusting Swords Equipped
+7080600:Improved Attack Power with 3+ Katana Equipped
+7081900:Improved Attack Power with 3+ Reapers Equipped
+7081500:Improved Attack Power with 3+ Spears Equipped
+7080100:Improved Attack Power with 3+ Straight Swords Equipped
+7080800:Improved Attack Power with 3+ Thrusting Swords Equipped
+7080700:Improved Attack Power with 3+ Twinblades Equipped
+7082200:Improved Attack Power with 3+ Whips Equipped
+7331000:Improved Axe Attack Power
+7044400:Improved Bestial Incantations
+312001:Improved Blood Loss &amp; Frost Resistance
+311600:Improved Blood Loss Resistance
+7003100:Improved Blood Loss Resistance
+8210100:Improved Blood Loss Resistance
+7332400:Improved Bow Attack Power
+7043300:Improved Carian Sword Sorcery
+321200:Improved Chain Attack Finishers
+8320000:Improved Chain Attack Finishers
+321300:Improved Charge Attacks
+8320100:Improved Charge Attacks
+8330300:Improved Charged Incantation
+8350100:Improved Charged Skill Attack Power
+8330200:Improved Charged Sorceries
+330900:Improved Charged Spells &amp; Skills
+7332100:Improved Claw Attack Power
+7330300:Improved Colossal Sword Attack Power
+7332300:Improved Colossal Weapon Attack Power
+320900:Improved Critical Hits
+7040200:Improved Critical Hits
+8130000:Improved Critical Hits
+7040290:Improved Critical Hits +1
+7040201:Improved Critical Hits +1 (Night of the Baron)
+7043600:Improved Crystalian sorcery
+7330500:Improved Curved Greatsword Attack Power
+7330400:Improved Curved Sword Attack Power
+7330000:Improved Dagger Attack Power
+340900:Improved Damage Negation at Full HP
+8670101:Improved Damage Negation at Full HP
+340800:Improved Damage Negation at Low HP
+7012300:Improved Damage Negation at Low HP
+8660101:Improved Damage Negation at Low HP
+311900:Improved Death Blight Resistance
+7003300:Improved Death Blight Resistance
+8210300:Improved Death Blight Resistance
+312500:Improved Dexterity
+340700:Improved Dodging
+8410000:Improved Dodging
+7044600:Improved Dragon Communion Incantations
+7044100:Improved Dragon Cult Incantations
+320200:Improved Fire Attack Power
+8100200:Improved Fire Attack Power
+340200:Improved Fire Damage Negation
+8200200:Improved Fire Damage Negation
+7332000:Improved Fist Attack Power
+7331400:Improved Flail Attack Power
+350000:Improved Flask HP Restoration
+8440000:Improved Flask HP Restoration
+7044500:Improved Frenzied Flame Incantations
+311601:Improved Frost Resistance
+7003500:Improved Frost Resistance
+8210500:Improved Frost Resistance
+7044000:Improved Fundamentalist Incantations
+7044200:Improved Giants' Flame Incantations
+7043400:Improved Glintblade Sorcery
+7044300:Improved Godslayer Incantations
+7043700:Improved Gravity Sorcery
+7331300:Improved Great Hammer Attack Power
+7331700:Improved Great Spear Attack Power
+7331100:Improved Greataxe Attack Power
+7330200:Improved Greatsword Attack Power
+320700:Improved Guard Breaking
+8140000:Improved Guard Breaking
+322000:Improved Guard Counters
+7040100:Improved Guard Counters
+8420000:Improved Guard Counters
+341000:Improved Guarding Ability
+8220000:Improved Guarding Ability
+8220001:Improved Guarding Ability +1
+8220002:Improved Guarding Ability +2
+7331800:Improved Halberd Attack Power
+7331200:Improved Hammer Attack Power
+7330900:Improved Heavy Thrusting Sword Attack Power
+320300:Improved Holy Attack Power
+8100400:Improved Holy Attack Power
+340400:Improved Holy Damage Negation
+8200400:Improved Holy Damage Negation
+330400:Improved Incantations
+8330100:Improved Incantations
+7040000:Improved Initial Standard Attack
+7043500:Improved Invisibility Sorcery
+311000:Improved Item Discovery
+370000:Improved Item Discovery
+8510000:Improved Item Discovery
+321800:Improved Jump Attacks
+8320300:Improved Jump Attacks
+7330600:Improved Katana Attack Power
+320100:Improved Lightning Attack Power
+8100300:Improved Lightning Attack Power
+340300:Improved Lightning Damage Negation
+8200300:Improved Lightning Damage Negation
+311801:Improved Madness Resistance
+7003600:Improved Madness Resistance
+8210600:Improved Madness Resistance
+320000:Improved Magic Attack Power
+8100100:Improved Magic Attack Power
+340100:Improved Magic Damage Negation
+8200100:Improved Magic Damage Negation
+7043900:Improved Night Sorcery
+8920100:Improved Non-Physical Attack Power
+340500:Improved Non-Physical Damage Negation
+8200500:Improved Non-Physical Damage Negation
+322200:Improved Perfuming Arts
+8400000:Improved Perfuming Arts
+7043100:Improved Perfuming Attacks
+8100000:Improved Physical Attack Power
+340000:Improved Physical Damage Negation
+8200000:Improved Physical Damage Negation
+7331600:Improved Pike Attack Power
+312100:Improved Poise
+8230000:Improved Poise
+7240000:Improved Poise &amp; Damage Negation When Knocked Back by Damage
+7030000:Improved Poise Near Totem Stela
+312000:Improved Poison &amp; Rot Resistance
+311700:Improved Poison Resistance
+7003000:Improved Poison Resistance
+8210000:Improved Poison Resistance
+321500:Improved Ranged Weapon Attacks
+8340000:Improved Ranged Weapon Attacks
+7331900:Improved Reaper Attack Power
+321900:Improved Roar &amp; Breath Attacks
+7043000:Improved Roar &amp; Breath Attacks
+8380000:Improved Roar &amp; Breath Attacks
+311701:Improved Rot Resistance
+7003400:Improved Rot Resistance
+8210400:Improved Rot Resistance
+312300:Improved Skill Attack Power
+8350000:Improved Skill Attack Power
+312002:Improved Sleep &amp; Madness Resistance
+311800:Improved Sleep Resistance
+7003200:Improved Sleep Resistance
+8210200:Improved Sleep Resistance
+330000:Improved Sorceries
+8330000:Improved Sorceries
+7331500:Improved Spear Attack Power
+330700:Improved Spell Casting Speed
+8330400:Improved Spell Casting Speed
+311500:Improved Stamina Recovery
+8020200:Improved Stamina Recovery
+8120000:Improved Stance-Breaking
+7006000:Improved Stance-Breaking when Two-Handing
+8300100:Improved Stance-Breaking when Two-Handing
+7006100:Improved Stance-Breaking when Wielding Two Armaments
+8310100:Improved Stance-Breaking when Wielding Two Armaments
+7200100:Improved Stance-Breaking with Head Shots
+7043200:Improved Stonedigger Sorcery
+7330100:Improved Straight Sword Attack Power
+7043800:Improved Thorn Sorcery
+7040400:Improved Throwing Knife Damage
+7040300:Improved Throwing Pot Damage
+322100:Improved Throwing Pots
+8390000:Improved Throwing Pots
+7040500:Improved Throwing Stone Damage
+320600:Improved Thrusting Counterattack
+8430000:Improved Thrusting Counterattack
+7330800:Improved Thrusting Sword Attack Power
+7330700:Improved Twinblade Attack Power
+7332200:Improved Whip Attack Power
+310100:Increased Maximum FP
+7000190:Increased Maximum FP
+8010000:Increased Maximum FP
+310000:Increased Maximum HP
+310400:Increased Maximum HP
+7000090:Increased Maximum HP
+8000000:Increased Maximum HP
+310200:Increased Maximum Stamina
+310401:Increased Maximum Stamina
+7000290:Increased Maximum Stamina
+8020000:Increased Maximum Stamina
+7110000:Increased rune acquisition for self and allies
+7000500:Intelligence +1
+7000501:Intelligence +2
+7000502:Intelligence +3
+7270100:Ironeye: +1 additional Character Skill use
+7034600:Ironeye: Art Charge Activation Adds Poison Effect
+7034700:Ironeye: Boosts thrusting counterattacks after executing Art
+7280000:Ironeye: Extends duration of weak point
+7050100:Items confer effect to all nearby allies
+7012500:Jumping Conjures Magic Projectiles
+8520000:Less Likely to Be Targeted
+7001700:Lightning Attack Power Up
+7001701:Lightning Attack Power Up +1
+7001702:Lightning Attack Power Up +2
+8640500:Lightning Critical Hit Imbues Armament
+7002800:Lightning Damage Negation Up
+8610500:Lightning Follows Charge Attacks
+7122400:Lightning Grease in possession at start of expedition
+7121300:Lightning Pots in possession at start of expedition
+8882100:Lightning upon Charged Thrust
+8410100:Lightning upon Dodging
+8883100:Lightning upon Precision Aiming
+8660400:Low HP Crit. Hit Fully Restores HP
+8881200:Luring Enemies upon Charged Strike
+7035500:Madness Continually Recovers FP
+8641100:Madness Crit. Hit Fires Frenzied Flame
+8750000:Madness Increases Attack Power
+8690100:Madness Produces a Flame of Frenzy
+8610300:Magic Attack Follows Charge Attacks
+7001500:Magic Attack Power Up
+7001501:Magic Attack Power Up +1
+7001502:Magic Attack Power Up +2
+8881600:Magic Bubbles upon Charged Strike
+7002600:Magic Damage Negation Up
+7122300:Magic Grease in possession at start of expedition
+7121200:Magic Pots in possession at start of expedition
+8450000:Magma Surge Sprint
+8881500:Magma upon Charged Strike
+8630500:Magma upon Defeating Multiple Enemies
+8640400:Magma upon Fire Critical Hit
+8530100:Many Periodical Glintblades
+7060100:Max FP permanently increased after releasing Sorcerer's Rise mechanism
+7082600:Max FP Up with 3+ Sacred Seals Equipped
+7082500:Max FP Up with 3+ Staves Equipped
+7082900:Max HP Up with 3+ Greatshields Equipped
+7082800:Max HP Up with 3+ Medium Shields Equipped
+7082700:Max HP Up with 3+ Small Shields Equipped
+330801:Maximum HP Down
+7000100:Mind +1
+7000101:Mind +2
+7000102:Mind +3
+311100:More Runes From Defeated Enemies
+370001:More Runes From Defeated Enemies
+8500000:More Runes From Defeated Enemies
+8530000:Multiple Periodical Glintblades
+7260700:Nearby Frostbite Conceals Self
+360700:No Rune Loss or Level Down Upon Death
+8350400:Parries Activate Golden Retaliation
+7005600:Partial HP Restoration upon Post-Damage Attacks
+7031600:Performing consecutive successful guards improves guard ability and deflects big attacks
+8530200:Periodical Giant Glintblades
+8882300:Pest Threads upon Charged Thrust
+8880300:Phantom Attack upon Charged Slash
+8881400:Phantom Attack upon Charged Strike
+8882000:Phantom Attack upon Charged Thrust
+7001400:Physical Attack Up
+7001401:Physical Attack Up +1
+7001402:Physical Attack Up +2
+7001403:Physical Attack Up +3
+7001000:Poise +1
+7001001:Poise +2
+7001002:Poise +3
+321700:Poison &amp; Rot Improves Attack Power
+7260710:Poison &amp; Rot in Vicinity Increases Attack Power
+7260800:Poison &amp; Rot in Vicinity Increases Attack Power (Night of the Wise)
+8700000:Poison Increases Attack Power
+8882400:Poison Mist upon Charged Thrust
+8640700:Poison Mist upon Poison Critical Hit
+8883200:Poison Mist upon Precision Aiming
+8690000:Poison Produces a Mist of Poison
+7121500:Poisonbone Darts in possession at start of expedition
+9030900:Power of Dark Moon
+9071000:Power of Despair
+9040200:Power of Destined Death
+9040800:Power of Destruction
+9330900:Power of Full Moon
+9031500:Power of House Marais
+9021400:Power of Night and Flame
+9151100:Power of the Ancestral Spirit
+9031400:Power of the Blasphemous
+9122000:Power of the Blasphemous
+9170100:Power of the Blood Lord
+9060400:Power of the Dragonlord
+9230500:Power of the First Lord
+9210600:Power of the Flying Dragon
+9420000:Power of the General
+9200600:Power of the Giant
+9150400:Power of the Golden Lineage
+9031700:Power of the Golden Order
+9160900:Power of the Great Ancient Dragon
+9031000:Power of the Greater Will
+9130300:Power of the Lightless Void
+9081000:Power of the Omen King
+9111500:Power of the Queen
+9040500:Power of the Starscourge
+9090200:Power of the Undefeated
+9041000:Power of Vengeance
+321000:Projectile Damage Drop-Off Reduced
+8340100:Projectile Damage Drop-Off Reduced
+8883000:Projectiles Launched upon Attacks
+8881100:Projectiles upon Charged Strike
+7010800:Raider: Character Skill damage up, damage negation impaired during use
+7031300:Raider: Damage taken while using Character Skill improves attack power and stamina
+7310000:Raider: Duration of Ultimate Art extended
+7033800:Raider: Permanently increase attack power when performing Character Skill's final attack
+7050000:Raised stamina recovery for nearby allies, but not for self
+7034100:Recluse: Activating Ultimate Art raises Max HP
+7034000:Recluse: Collecting 4 Affinity Residues Improves Affinity Attack Power
+7032800:Recluse: Collecting affinity residue activates Terra Magica
+7033900:Recluse: Extends duration of blood sigils
+7032900:Recluse: Suffer blood loss and increase attack power upon Art activation
+8010100:Reduced FP Consumption
+360200:Reduced Skill FP Cost
+8350200:Reduced Skill FP Cost
+330800:Reduced Spell FP Cost
+8330600:Reduced Spell FP Cost
+8020100:Reduced Stamina Consumption
+7320000:Revenant: Ability activation chance increased
+7010900:Revenant: Expend own HP to fully heal nearby allies when activating Art
+7220000:Revenant: Power up while fighting alongside family
+7031200:Revenant: Strengthens family and allies when Ultimate Art is activated
+7011200:Revenant: Trigger ghostflame explosion during Ultimate Art activation
+8880100:Ring of Light upon Charged Slash
+8880400:Roaring Flames upon Charged Slash
+8640900:Rot Critical Hit Fires Pest Threads
+8883300:Rot Mist upon Precision Aiming
+8690200:Rot Produces a Mist of Scarlet Rot
+7230000:Rune discount for shop purchases while on expedition
+8640300:Sacred Order upon Holy Critical Hit
+8460100:Savage Flames Roar While Walking
+7122600:Shield Grease in possession at start of expedition
+8884200:Shielding Creates Holy Ground
+8884000:Shielding Improves Damage Negation
+8884100:Shielding Invokes Indomitable Vow
+7031700:Shockwave Produced From Successful Guarding
+8881300:Shockwave upon Charged Strike
+8350300:Skill Activation Improves Poise
+8720000:Sleep Increases Attack Power
+8690400:Sleep Produces a Mist of Sleep
+7012200:Slowly restore HP for self and nearby allies when HP is low
+7121000:Small Pouch in possession at start of expedition
+7100100:Stamina recovers with each successful attack
+7100190:Stamina recovers with each successful attack +1
+7100110:Stamina recovers with each successful attack +1 (Night of the Beast)
+7126000:Starlight Shards in possession at start of expedition
+7120100:Starting armament deals fire damage
+7120300:Starting armament deals holy damage
+7120200:Starting armament deals lightning damage
+7120000:Starting armament deals magic damage
+7120600:Starting armament inflicts blood loss
+7120400:Starting armament inflicts frost
+7120500:Starting armament inflicts poison
+7120700:Starting armament inflicts scarlet rot
+7120900:Stonesword Key in possession at start of expedition
+8460500:Storm of Red Lightning While Walking
+7000300:Strength +1
+7000301:Strength +2
+7000302:Strength +3
+7012400:Strong Attack Creates Wide Wave of Heat
+8320200:Strong Attacks Improve Poise
+8960200:Strong Jump Attacks Create Shockwave
+8652100:Successful Guarding Ups Dmg Negation
+8652000:Successful Guarding Ups Poise
+350400:Successive Attack HP Restoration
+312501:Successive Attacks Boost Attack Power
+320800:Successive Attacks Boost Attack Power
+8610200:Successive Attacks Boost Attack Power
+8610700:Successive Attacks Negate Damage
+8600300:Sudden Enemy Death upon Attacks
+7035600:Surge Sprint Landings Split Earth
+7035700:Switching Weapons Adds an Affinity Attack
+7035900:Switching Weapons Boosts Attack Power
+10002:Switching Weapons Boosts Attack Power (Fell Omen Fetish)
+7032200:Taking attacks improves attack power
+10001:Taking attacks improves attack power (Besmirched Frame)
+8620100:Taking Damage Boosts Damage Negation
+8620000:Taking Damage Restores FP
+9990400:The Duchess' Grief
+9990800:The Executor's Grief
+9990200:The Guardian's Grief
+9990300:The Ironeye's Grief
+9990500:The Raider's Grief
+9990700:The Recluse's Grief
+9990600:The Revenant's Grief
+9990100:The Wylder's Grief
+7121700:Throwing Daggers in possession at start of expedition
+7070000:Treasure marked upon map
+7000900:Ultimate Art Gauge +1
+7000901:Ultimate Art Gauge +2
+7000902:Ultimate Art Gauge +3
+8360000:Ultimate Art Gauge Charge Speed Up
+8460400:Vicious Star Rain Pours While Walking
+7000000:Vigor +1
+7000001:Vigor +2
+7000002:Vigor +3
+7122100:Wraith Calling Bell in possession at start of expedition
+8460300:Wraiths While Walking
+7033200:Wylder: +1 additional Character Skill use
+7010500:Wylder: Art activation spreads fire in area
+7032400:Wylder: Art gauge greatly filled when ability is activated
+11002:Wylder: Art gauge greatly filled when ability is activated (Silver Tear)
+7011500:Wylder: Character Skill inflicts Blood Loss
+7020000:Wylder: Follow-up attacks possible when using Character Skill (greatsword only)
+7030500:Wylder: Impaired damage negation, improved attack power &amp; stamina after Art activation
+7033000:Wylder: Improved attack power when ability is activated
+7032300:Wylder: Improved attack power when Character Skill is activated
+7031400:Wylder: Reduced cooldown time for Character Skill
+</DropDownList>
+  <GroupHeader>1</GroupHeader>
+</CheatEntry>

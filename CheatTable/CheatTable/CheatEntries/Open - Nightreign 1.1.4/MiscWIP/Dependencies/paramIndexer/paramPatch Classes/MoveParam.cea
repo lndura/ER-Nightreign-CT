@@ -1,0 +1,284 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MoveParam = {}
+function MoveParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MoveParam", 0x91, id_or_all, patchName)
+end
+
+
+
+function MoveParam:setStayId(value)
+    return self:setU32(0x00, value)
+end
+function MoveParam:getStayId(value)
+    return self:getU32(0x00, value)
+end
+
+function MoveParam:setWalkF(value)
+    return self:setU32(0x04, value)
+end
+function MoveParam:getWalkF(value)
+    return self:getU32(0x04, value)
+end
+
+function MoveParam:setWalkB(value)
+    return self:setU32(0x08, value)
+end
+function MoveParam:getWalkB(value)
+    return self:getU32(0x08, value)
+end
+
+function MoveParam:setWalkL(value)
+    return self:setU32(0x0C, value)
+end
+function MoveParam:getWalkL(value)
+    return self:getU32(0x0C, value)
+end
+
+function MoveParam:setWalkR(value)
+    return self:setU32(0x10, value)
+end
+function MoveParam:getWalkR(value)
+    return self:getU32(0x10, value)
+end
+
+function MoveParam:setDashF(value)
+    return self:setU32(0x14, value)
+end
+function MoveParam:getDashF(value)
+    return self:getU32(0x14, value)
+end
+
+function MoveParam:setDashB(value)
+    return self:setU32(0x18, value)
+end
+function MoveParam:getDashB(value)
+    return self:getU32(0x18, value)
+end
+
+function MoveParam:setDashL(value)
+    return self:setU32(0x1C, value)
+end
+function MoveParam:getDashL(value)
+    return self:getU32(0x1C, value)
+end
+
+function MoveParam:setDashR(value)
+    return self:setU32(0x20, value)
+end
+function MoveParam:getDashR(value)
+    return self:getU32(0x20, value)
+end
+
+function MoveParam:setSuperDash(value)
+    return self:setU32(0x24, value)
+end
+function MoveParam:getSuperDash(value)
+    return self:getU32(0x24, value)
+end
+
+function MoveParam:setEscapeF(value)
+    return self:setU32(0x28, value)
+end
+function MoveParam:getEscapeF(value)
+    return self:getU32(0x28, value)
+end
+
+function MoveParam:setEscapeB(value)
+    return self:setU32(0x2C, value)
+end
+function MoveParam:getEscapeB(value)
+    return self:getU32(0x2C, value)
+end
+
+function MoveParam:setEscapeL(value)
+    return self:setU32(0x30, value)
+end
+function MoveParam:getEscapeL(value)
+    return self:getU32(0x30, value)
+end
+
+function MoveParam:setEscapeR(value)
+    return self:setU32(0x34, value)
+end
+function MoveParam:getEscapeR(value)
+    return self:getU32(0x34, value)
+end
+
+function MoveParam:setTurnL(value)
+    return self:setU32(0x38, value)
+end
+function MoveParam:getTurnL(value)
+    return self:getU32(0x38, value)
+end
+
+function MoveParam:setTrunR(value)
+    return self:setU32(0x3C, value)
+end
+function MoveParam:getTrunR(value)
+    return self:getU32(0x3C, value)
+end
+
+function MoveParam:setLargeTurnL(value)
+    return self:setU32(0x40, value)
+end
+function MoveParam:getLargeTurnL(value)
+    return self:getU32(0x40, value)
+end
+
+function MoveParam:setLargeTurnR(value)
+    return self:setU32(0x44, value)
+end
+function MoveParam:getLargeTurnR(value)
+    return self:getU32(0x44, value)
+end
+
+function MoveParam:setStepMove(value)
+    return self:setU32(0x48, value)
+end
+function MoveParam:getStepMove(value)
+    return self:getU32(0x48, value)
+end
+
+function MoveParam:setFlyStay(value)
+    return self:setU32(0x4C, value)
+end
+function MoveParam:getFlyStay(value)
+    return self:getU32(0x4C, value)
+end
+
+function MoveParam:setFlyWalkF(value)
+    return self:setU32(0x50, value)
+end
+function MoveParam:getFlyWalkF(value)
+    return self:getU32(0x50, value)
+end
+
+function MoveParam:setFlyWalkFL(value)
+    return self:setU32(0x54, value)
+end
+function MoveParam:getFlyWalkFL(value)
+    return self:getU32(0x54, value)
+end
+
+function MoveParam:setFlyWalkFR(value)
+    return self:setU32(0x58, value)
+end
+function MoveParam:getFlyWalkFR(value)
+    return self:getU32(0x58, value)
+end
+
+function MoveParam:setFlyWalkFL2(value)
+    return self:setU32(0x5C, value)
+end
+function MoveParam:getFlyWalkFL2(value)
+    return self:getU32(0x5C, value)
+end
+
+function MoveParam:setFlyWalkFR2(value)
+    return self:setU32(0x60, value)
+end
+function MoveParam:getFlyWalkFR2(value)
+    return self:getU32(0x60, value)
+end
+
+function MoveParam:setFlyDashF(value)
+    return self:setU32(0x64, value)
+end
+function MoveParam:getFlyDashF(value)
+    return self:getU32(0x64, value)
+end
+
+function MoveParam:setFlyDashFL(value)
+    return self:setU32(0x68, value)
+end
+function MoveParam:getFlyDashFL(value)
+    return self:getU32(0x68, value)
+end
+
+function MoveParam:setFlyDashFR(value)
+    return self:setU32(0x6C, value)
+end
+function MoveParam:getFlyDashFR(value)
+    return self:getU32(0x6C, value)
+end
+
+function MoveParam:setFlyDashFL2(value)
+    return self:setU32(0x70, value)
+end
+function MoveParam:getFlyDashFL2(value)
+    return self:getU32(0x70, value)
+end
+
+function MoveParam:setFlyDashFR2(value)
+    return self:setU32(0x74, value)
+end
+function MoveParam:getFlyDashFR2(value)
+    return self:getU32(0x74, value)
+end
+
+function MoveParam:setDashEscapeF(value)
+    return self:setU32(0x78, value)
+end
+function MoveParam:getDashEscapeF(value)
+    return self:getU32(0x78, value)
+end
+
+function MoveParam:setDashEscapeB(value)
+    return self:setU32(0x7C, value)
+end
+function MoveParam:getDashEscapeB(value)
+    return self:getU32(0x7C, value)
+end
+
+function MoveParam:setDashEscapeL(value)
+    return self:setU32(0x80, value)
+end
+function MoveParam:getDashEscapeL(value)
+    return self:getU32(0x80, value)
+end
+
+function MoveParam:setDashEscapeR(value)
+    return self:setU32(0x84, value)
+end
+function MoveParam:getDashEscapeR(value)
+    return self:getU32(0x84, value)
+end
+
+function MoveParam:setAnalogMoveParamId(value)
+    return self:setU32(0x88, value)
+end
+function MoveParam:getAnalogMoveParamId(value)
+    return self:getU32(0x88, value)
+end
+
+function MoveParam:setTurnNoAnimAngle(value)
+    return self:setU8(0x8C, value)
+end
+function MoveParam:getTurnNoAnimAngle(value)
+    return self:getU8(0x8C, value)
+end
+
+function MoveParam:setTurn45Angle(value)
+    return self:setU8(0x8D, value)
+end
+function MoveParam:getTurn45Angle(value)
+    return self:getU8(0x8D, value)
+end
+
+function MoveParam:setTurn90Angle(value)
+    return self:setU8(0x8E, value)
+end
+function MoveParam:getTurn90Angle(value)
+    return self:getU8(0x8E, value)
+end
+
+function MoveParam:setTurnWaitNoAnimAngle(value)
+    return self:setU8(0x8F, value)
+end
+function MoveParam:getTurnWaitNoAnimAngle(value)
+    return self:getU8(0x8F, value)
+end
+[disable]
+MoveParam = nil

@@ -1,0 +1,60 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MapPatternCommon = {}
+function MapPatternCommon:new(id_or_all, patchName)
+    return paramPatcher(self, "MapPatternCommon", 0x20, id_or_all, patchName)
+end
+
+
+
+function MapPatternCommon:setUnknown_0(value)
+    return self:setU32(0x00, value)
+end
+function MapPatternCommon:getUnknown_0(value)
+    return self:getU32(0x00, value)
+end
+
+function MapPatternCommon:setUnknown_1(value)
+    return self:setU32(0x04, value)
+end
+function MapPatternCommon:getUnknown_1(value)
+    return self:getU32(0x04, value)
+end
+
+function MapPatternCommon:setUnknown_2(value)
+    return self:setU32(0x08, value)
+end
+function MapPatternCommon:getUnknown_2(value)
+    return self:getU32(0x08, value)
+end
+
+function MapPatternCommon:setUnknown_3(value)
+    return self:setF32(0x0C, value)
+end
+function MapPatternCommon:getUnknown_3(value)
+    return self:getF32(0x0C, value)
+end
+
+function MapPatternCommon:setUnknown_4(value)
+    return self:setU32(0x10, value)
+end
+function MapPatternCommon:getUnknown_4(value)
+    return self:getU32(0x10, value)
+end
+
+function MapPatternCommon:setUnknown_5(value)
+    return self:setU32(0x14, value)
+end
+function MapPatternCommon:getUnknown_5(value)
+    return self:getU32(0x14, value)
+end
+
+function MapPatternCommon:setUnknown_6(value)
+    return self:setU32(0x18, value)
+end
+function MapPatternCommon:getUnknown_6(value)
+    return self:getU32(0x18, value)
+end
+[disable]
+MapPatternCommon = nil

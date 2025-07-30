@@ -1,0 +1,37 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MagicTableParam = {}
+function MagicTableParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MagicTableParam", 0x10, id_or_all, patchName)
+end
+
+
+
+function MagicTableParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function MagicTableParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function MagicTableParam:setMagicId(value)
+    return self:setU32(0x04, value)
+end
+function MagicTableParam:getMagicId(value)
+    return self:getU32(0x04, value)
+end
+
+function MagicTableParam:setChanceWeight(value)
+    return self:setU32(0x08, value)
+end
+function MagicTableParam:getChanceWeight(value)
+    return self:getU32(0x08, value)
+end
+[disable]
+MagicTableParam = nil

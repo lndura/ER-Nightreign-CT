@@ -1,0 +1,1453 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+FaceRangeParam = {}
+function FaceRangeParam:new(id_or_all, patchName)
+    return paramPatcher(self, "FaceRangeParam", 0x33C, id_or_all, patchName)
+end
+
+
+
+function FaceRangeParam:setFace_partsId(value)
+    return self:setF32(0x00, value)
+end
+function FaceRangeParam:getFace_partsId(value)
+    return self:getF32(0x00, value)
+end
+
+function FaceRangeParam:setSkin_color_R(value)
+    return self:setF32(0x04, value)
+end
+function FaceRangeParam:getSkin_color_R(value)
+    return self:getF32(0x04, value)
+end
+
+function FaceRangeParam:setSkin_color_G(value)
+    return self:setF32(0x08, value)
+end
+function FaceRangeParam:getSkin_color_G(value)
+    return self:getF32(0x08, value)
+end
+
+function FaceRangeParam:setSkin_color_B(value)
+    return self:setF32(0x0C, value)
+end
+function FaceRangeParam:getSkin_color_B(value)
+    return self:getF32(0x0C, value)
+end
+
+function FaceRangeParam:setSkin_gloss(value)
+    return self:setF32(0x10, value)
+end
+function FaceRangeParam:getSkin_gloss(value)
+    return self:getF32(0x10, value)
+end
+
+function FaceRangeParam:setSkin_pores(value)
+    return self:setF32(0x14, value)
+end
+function FaceRangeParam:getSkin_pores(value)
+    return self:getF32(0x14, value)
+end
+
+function FaceRangeParam:setFace_beard(value)
+    return self:setF32(0x18, value)
+end
+function FaceRangeParam:getFace_beard(value)
+    return self:getF32(0x18, value)
+end
+
+function FaceRangeParam:setFace_aroundEye(value)
+    return self:setF32(0x1C, value)
+end
+function FaceRangeParam:getFace_aroundEye(value)
+    return self:getF32(0x1C, value)
+end
+
+function FaceRangeParam:setFace_aroundEyeColor_R(value)
+    return self:setF32(0x20, value)
+end
+function FaceRangeParam:getFace_aroundEyeColor_R(value)
+    return self:getF32(0x20, value)
+end
+
+function FaceRangeParam:setFace_aroundEyeColor_G(value)
+    return self:setF32(0x24, value)
+end
+function FaceRangeParam:getFace_aroundEyeColor_G(value)
+    return self:getF32(0x24, value)
+end
+
+function FaceRangeParam:setFace_aroundEyeColor_B(value)
+    return self:setF32(0x28, value)
+end
+function FaceRangeParam:getFace_aroundEyeColor_B(value)
+    return self:getF32(0x28, value)
+end
+
+function FaceRangeParam:setFace_cheek(value)
+    return self:setF32(0x2C, value)
+end
+function FaceRangeParam:getFace_cheek(value)
+    return self:getF32(0x2C, value)
+end
+
+function FaceRangeParam:setFace_cheekColor_R(value)
+    return self:setF32(0x30, value)
+end
+function FaceRangeParam:getFace_cheekColor_R(value)
+    return self:getF32(0x30, value)
+end
+
+function FaceRangeParam:setFace_cheekColor_G(value)
+    return self:setF32(0x34, value)
+end
+function FaceRangeParam:getFace_cheekColor_G(value)
+    return self:getF32(0x34, value)
+end
+
+function FaceRangeParam:setFace_cheekColor_B(value)
+    return self:setF32(0x38, value)
+end
+function FaceRangeParam:getFace_cheekColor_B(value)
+    return self:getF32(0x38, value)
+end
+
+function FaceRangeParam:setFace_eyeLine(value)
+    return self:setF32(0x3C, value)
+end
+function FaceRangeParam:getFace_eyeLine(value)
+    return self:getF32(0x3C, value)
+end
+
+function FaceRangeParam:setFace_eyeLineColor_R(value)
+    return self:setF32(0x40, value)
+end
+function FaceRangeParam:getFace_eyeLineColor_R(value)
+    return self:getF32(0x40, value)
+end
+
+function FaceRangeParam:setFace_eyeLineColor_G(value)
+    return self:setF32(0x44, value)
+end
+function FaceRangeParam:getFace_eyeLineColor_G(value)
+    return self:getF32(0x44, value)
+end
+
+function FaceRangeParam:setFace_eyeLineColor_B(value)
+    return self:setF32(0x48, value)
+end
+function FaceRangeParam:getFace_eyeLineColor_B(value)
+    return self:getF32(0x48, value)
+end
+
+function FaceRangeParam:setFace_eyeShadowDown(value)
+    return self:setF32(0x4C, value)
+end
+function FaceRangeParam:getFace_eyeShadowDown(value)
+    return self:getF32(0x4C, value)
+end
+
+function FaceRangeParam:setFace_eyeShadowDownColor_R(value)
+    return self:setF32(0x50, value)
+end
+function FaceRangeParam:getFace_eyeShadowDownColor_R(value)
+    return self:getF32(0x50, value)
+end
+
+function FaceRangeParam:setFace_eyeShadowDownColor_G(value)
+    return self:setF32(0x54, value)
+end
+function FaceRangeParam:getFace_eyeShadowDownColor_G(value)
+    return self:getF32(0x54, value)
+end
+
+function FaceRangeParam:setFace_eyeShadowDownColor_B(value)
+    return self:setF32(0x58, value)
+end
+function FaceRangeParam:getFace_eyeShadowDownColor_B(value)
+    return self:getF32(0x58, value)
+end
+
+function FaceRangeParam:setFace_eyeShadowUp(value)
+    return self:setF32(0x5C, value)
+end
+function FaceRangeParam:getFace_eyeShadowUp(value)
+    return self:getF32(0x5C, value)
+end
+
+function FaceRangeParam:setFace_eyeShadowUpColor_R(value)
+    return self:setF32(0x60, value)
+end
+function FaceRangeParam:getFace_eyeShadowUpColor_R(value)
+    return self:getF32(0x60, value)
+end
+
+function FaceRangeParam:setFace_eyeShadowUpColor_G(value)
+    return self:setF32(0x64, value)
+end
+function FaceRangeParam:getFace_eyeShadowUpColor_G(value)
+    return self:getF32(0x64, value)
+end
+
+function FaceRangeParam:setFace_eyeShadowUpColor_B(value)
+    return self:setF32(0x68, value)
+end
+function FaceRangeParam:getFace_eyeShadowUpColor_B(value)
+    return self:getF32(0x68, value)
+end
+
+function FaceRangeParam:setFace_lip(value)
+    return self:setF32(0x6C, value)
+end
+function FaceRangeParam:getFace_lip(value)
+    return self:getF32(0x6C, value)
+end
+
+function FaceRangeParam:setFace_lipColor_R(value)
+    return self:setF32(0x70, value)
+end
+function FaceRangeParam:getFace_lipColor_R(value)
+    return self:getF32(0x70, value)
+end
+
+function FaceRangeParam:setFace_lipColor_G(value)
+    return self:setF32(0x74, value)
+end
+function FaceRangeParam:getFace_lipColor_G(value)
+    return self:getF32(0x74, value)
+end
+
+function FaceRangeParam:setFace_lipColor_B(value)
+    return self:setF32(0x78, value)
+end
+function FaceRangeParam:getFace_lipColor_B(value)
+    return self:getF32(0x78, value)
+end
+
+function FaceRangeParam:setBody_hair(value)
+    return self:setF32(0x7C, value)
+end
+function FaceRangeParam:getBody_hair(value)
+    return self:getF32(0x7C, value)
+end
+
+function FaceRangeParam:setBody_hairColor_R(value)
+    return self:setF32(0x80, value)
+end
+function FaceRangeParam:getBody_hairColor_R(value)
+    return self:getF32(0x80, value)
+end
+
+function FaceRangeParam:setBody_hairColor_G(value)
+    return self:setF32(0x84, value)
+end
+function FaceRangeParam:getBody_hairColor_G(value)
+    return self:getF32(0x84, value)
+end
+
+function FaceRangeParam:setBody_hairColor_B(value)
+    return self:setF32(0x88, value)
+end
+function FaceRangeParam:getBody_hairColor_B(value)
+    return self:getF32(0x88, value)
+end
+
+function FaceRangeParam:setEye_partsId(value)
+    return self:setF32(0x8C, value)
+end
+function FaceRangeParam:getEye_partsId(value)
+    return self:getF32(0x8C, value)
+end
+
+function FaceRangeParam:setEyeR_irisColor_R(value)
+    return self:setF32(0x90, value)
+end
+function FaceRangeParam:getEyeR_irisColor_R(value)
+    return self:getF32(0x90, value)
+end
+
+function FaceRangeParam:setEyeR_irisColor_G(value)
+    return self:setF32(0x94, value)
+end
+function FaceRangeParam:getEyeR_irisColor_G(value)
+    return self:getF32(0x94, value)
+end
+
+function FaceRangeParam:setEyeR_irisColor_B(value)
+    return self:setF32(0x98, value)
+end
+function FaceRangeParam:getEyeR_irisColor_B(value)
+    return self:getF32(0x98, value)
+end
+
+function FaceRangeParam:setEyeR_irisScale(value)
+    return self:setF32(0x9C, value)
+end
+function FaceRangeParam:getEyeR_irisScale(value)
+    return self:getF32(0x9C, value)
+end
+
+function FaceRangeParam:setEyeR_cataract(value)
+    return self:setF32(0xA0, value)
+end
+function FaceRangeParam:getEyeR_cataract(value)
+    return self:getF32(0xA0, value)
+end
+
+function FaceRangeParam:setEyeR_cataractColor_R(value)
+    return self:setF32(0xA4, value)
+end
+function FaceRangeParam:getEyeR_cataractColor_R(value)
+    return self:getF32(0xA4, value)
+end
+
+function FaceRangeParam:setEyeR_cataractColor_G(value)
+    return self:setF32(0xA8, value)
+end
+function FaceRangeParam:getEyeR_cataractColor_G(value)
+    return self:getF32(0xA8, value)
+end
+
+function FaceRangeParam:setEyeR_cataractColor_B(value)
+    return self:setF32(0xAC, value)
+end
+function FaceRangeParam:getEyeR_cataractColor_B(value)
+    return self:getF32(0xAC, value)
+end
+
+function FaceRangeParam:setEyeR_scleraColor_R(value)
+    return self:setF32(0xB0, value)
+end
+function FaceRangeParam:getEyeR_scleraColor_R(value)
+    return self:getF32(0xB0, value)
+end
+
+function FaceRangeParam:setEyeR_scleraColor_G(value)
+    return self:setF32(0xB4, value)
+end
+function FaceRangeParam:getEyeR_scleraColor_G(value)
+    return self:getF32(0xB4, value)
+end
+
+function FaceRangeParam:setEyeR_scleraColor_B(value)
+    return self:setF32(0xB8, value)
+end
+function FaceRangeParam:getEyeR_scleraColor_B(value)
+    return self:getF32(0xB8, value)
+end
+
+function FaceRangeParam:setEyeR_irisDistance(value)
+    return self:setF32(0xBC, value)
+end
+function FaceRangeParam:getEyeR_irisDistance(value)
+    return self:getF32(0xBC, value)
+end
+
+function FaceRangeParam:setEyeL_irisColor_R(value)
+    return self:setF32(0xC0, value)
+end
+function FaceRangeParam:getEyeL_irisColor_R(value)
+    return self:getF32(0xC0, value)
+end
+
+function FaceRangeParam:setEyeL_irisColor_G(value)
+    return self:setF32(0xC4, value)
+end
+function FaceRangeParam:getEyeL_irisColor_G(value)
+    return self:getF32(0xC4, value)
+end
+
+function FaceRangeParam:setEyeL_irisColor_B(value)
+    return self:setF32(0xC8, value)
+end
+function FaceRangeParam:getEyeL_irisColor_B(value)
+    return self:getF32(0xC8, value)
+end
+
+function FaceRangeParam:setEyeL_irisScale(value)
+    return self:setF32(0xCC, value)
+end
+function FaceRangeParam:getEyeL_irisScale(value)
+    return self:getF32(0xCC, value)
+end
+
+function FaceRangeParam:setEyeL_cataract(value)
+    return self:setF32(0xD0, value)
+end
+function FaceRangeParam:getEyeL_cataract(value)
+    return self:getF32(0xD0, value)
+end
+
+function FaceRangeParam:setEyeL_cataractColor_R(value)
+    return self:setF32(0xD4, value)
+end
+function FaceRangeParam:getEyeL_cataractColor_R(value)
+    return self:getF32(0xD4, value)
+end
+
+function FaceRangeParam:setEyeL_cataractColor_G(value)
+    return self:setF32(0xD8, value)
+end
+function FaceRangeParam:getEyeL_cataractColor_G(value)
+    return self:getF32(0xD8, value)
+end
+
+function FaceRangeParam:setEyeL_cataractColor_B(value)
+    return self:setF32(0xDC, value)
+end
+function FaceRangeParam:getEyeL_cataractColor_B(value)
+    return self:getF32(0xDC, value)
+end
+
+function FaceRangeParam:setEyeL_scleraColor_R(value)
+    return self:setF32(0xE0, value)
+end
+function FaceRangeParam:getEyeL_scleraColor_R(value)
+    return self:getF32(0xE0, value)
+end
+
+function FaceRangeParam:setEyeL_scleraColor_G(value)
+    return self:setF32(0xE4, value)
+end
+function FaceRangeParam:getEyeL_scleraColor_G(value)
+    return self:getF32(0xE4, value)
+end
+
+function FaceRangeParam:setEyeL_scleraColor_B(value)
+    return self:setF32(0xE8, value)
+end
+function FaceRangeParam:getEyeL_scleraColor_B(value)
+    return self:getF32(0xE8, value)
+end
+
+function FaceRangeParam:setEyeL_irisDistance(value)
+    return self:setF32(0xEC, value)
+end
+function FaceRangeParam:getEyeL_irisDistance(value)
+    return self:getF32(0xEC, value)
+end
+
+function FaceRangeParam:setHair_partsId(value)
+    return self:setF32(0xF0, value)
+end
+function FaceRangeParam:getHair_partsId(value)
+    return self:getF32(0xF0, value)
+end
+
+function FaceRangeParam:setHair_color_R(value)
+    return self:setF32(0xF4, value)
+end
+function FaceRangeParam:getHair_color_R(value)
+    return self:getF32(0xF4, value)
+end
+
+function FaceRangeParam:setHair_color_G(value)
+    return self:setF32(0xF8, value)
+end
+function FaceRangeParam:getHair_color_G(value)
+    return self:getF32(0xF8, value)
+end
+
+function FaceRangeParam:setHair_color_B(value)
+    return self:setF32(0xFC, value)
+end
+function FaceRangeParam:getHair_color_B(value)
+    return self:getF32(0xFC, value)
+end
+
+function FaceRangeParam:setHair_shininess(value)
+    return self:setF32(0x100, value)
+end
+function FaceRangeParam:getHair_shininess(value)
+    return self:getF32(0x100, value)
+end
+
+function FaceRangeParam:setHair_rootBlack(value)
+    return self:setF32(0x104, value)
+end
+function FaceRangeParam:getHair_rootBlack(value)
+    return self:getF32(0x104, value)
+end
+
+function FaceRangeParam:setHair_whiteDensity(value)
+    return self:setF32(0x108, value)
+end
+function FaceRangeParam:getHair_whiteDensity(value)
+    return self:getF32(0x108, value)
+end
+
+function FaceRangeParam:setBeard_partsId(value)
+    return self:setF32(0x10C, value)
+end
+function FaceRangeParam:getBeard_partsId(value)
+    return self:getF32(0x10C, value)
+end
+
+function FaceRangeParam:setBeard_color_R(value)
+    return self:setF32(0x110, value)
+end
+function FaceRangeParam:getBeard_color_R(value)
+    return self:getF32(0x110, value)
+end
+
+function FaceRangeParam:setBeard_color_G(value)
+    return self:setF32(0x114, value)
+end
+function FaceRangeParam:getBeard_color_G(value)
+    return self:getF32(0x114, value)
+end
+
+function FaceRangeParam:setBeard_color_B(value)
+    return self:setF32(0x118, value)
+end
+function FaceRangeParam:getBeard_color_B(value)
+    return self:getF32(0x118, value)
+end
+
+function FaceRangeParam:setBeard_shininess(value)
+    return self:setF32(0x11C, value)
+end
+function FaceRangeParam:getBeard_shininess(value)
+    return self:getF32(0x11C, value)
+end
+
+function FaceRangeParam:setBeard_rootBlack(value)
+    return self:setF32(0x120, value)
+end
+function FaceRangeParam:getBeard_rootBlack(value)
+    return self:getF32(0x120, value)
+end
+
+function FaceRangeParam:setBeard_whiteDensity(value)
+    return self:setF32(0x124, value)
+end
+function FaceRangeParam:getBeard_whiteDensity(value)
+    return self:getF32(0x124, value)
+end
+
+function FaceRangeParam:setEyebrow_partsId(value)
+    return self:setF32(0x128, value)
+end
+function FaceRangeParam:getEyebrow_partsId(value)
+    return self:getF32(0x128, value)
+end
+
+function FaceRangeParam:setEyebrow_color_R(value)
+    return self:setF32(0x12C, value)
+end
+function FaceRangeParam:getEyebrow_color_R(value)
+    return self:getF32(0x12C, value)
+end
+
+function FaceRangeParam:setEyebrow_color_G(value)
+    return self:setF32(0x130, value)
+end
+function FaceRangeParam:getEyebrow_color_G(value)
+    return self:getF32(0x130, value)
+end
+
+function FaceRangeParam:setEyebrow_color_B(value)
+    return self:setF32(0x134, value)
+end
+function FaceRangeParam:getEyebrow_color_B(value)
+    return self:getF32(0x134, value)
+end
+
+function FaceRangeParam:setEyebrow_shininess(value)
+    return self:setF32(0x138, value)
+end
+function FaceRangeParam:getEyebrow_shininess(value)
+    return self:getF32(0x138, value)
+end
+
+function FaceRangeParam:setEyebrow_rootBlack(value)
+    return self:setF32(0x13C, value)
+end
+function FaceRangeParam:getEyebrow_rootBlack(value)
+    return self:getF32(0x13C, value)
+end
+
+function FaceRangeParam:setEyebrow_whiteDensity(value)
+    return self:setF32(0x140, value)
+end
+function FaceRangeParam:getEyebrow_whiteDensity(value)
+    return self:getF32(0x140, value)
+end
+
+function FaceRangeParam:setEyelash_partsId(value)
+    return self:setF32(0x144, value)
+end
+function FaceRangeParam:getEyelash_partsId(value)
+    return self:getF32(0x144, value)
+end
+
+function FaceRangeParam:setEyelash_color_R(value)
+    return self:setF32(0x148, value)
+end
+function FaceRangeParam:getEyelash_color_R(value)
+    return self:getF32(0x148, value)
+end
+
+function FaceRangeParam:setEyelash_color_G(value)
+    return self:setF32(0x14C, value)
+end
+function FaceRangeParam:getEyelash_color_G(value)
+    return self:getF32(0x14C, value)
+end
+
+function FaceRangeParam:setEyelash_color_B(value)
+    return self:setF32(0x150, value)
+end
+function FaceRangeParam:getEyelash_color_B(value)
+    return self:getF32(0x150, value)
+end
+
+function FaceRangeParam:setAccessories_partsId(value)
+    return self:setF32(0x154, value)
+end
+function FaceRangeParam:getAccessories_partsId(value)
+    return self:getF32(0x154, value)
+end
+
+function FaceRangeParam:setAccessories_color_R(value)
+    return self:setF32(0x158, value)
+end
+function FaceRangeParam:getAccessories_color_R(value)
+    return self:getF32(0x158, value)
+end
+
+function FaceRangeParam:setAccessories_color_G(value)
+    return self:setF32(0x15C, value)
+end
+function FaceRangeParam:getAccessories_color_G(value)
+    return self:getF32(0x15C, value)
+end
+
+function FaceRangeParam:setAccessories_color_B(value)
+    return self:setF32(0x160, value)
+end
+function FaceRangeParam:getAccessories_color_B(value)
+    return self:getF32(0x160, value)
+end
+
+function FaceRangeParam:setDecal_partsId(value)
+    return self:setF32(0x164, value)
+end
+function FaceRangeParam:getDecal_partsId(value)
+    return self:getF32(0x164, value)
+end
+
+function FaceRangeParam:setDecal_posX(value)
+    return self:setF32(0x168, value)
+end
+function FaceRangeParam:getDecal_posX(value)
+    return self:getF32(0x168, value)
+end
+
+function FaceRangeParam:setDecal_posY(value)
+    return self:setF32(0x16C, value)
+end
+function FaceRangeParam:getDecal_posY(value)
+    return self:getF32(0x16C, value)
+end
+
+function FaceRangeParam:setDecal_angle(value)
+    return self:setF32(0x170, value)
+end
+function FaceRangeParam:getDecal_angle(value)
+    return self:getF32(0x170, value)
+end
+
+function FaceRangeParam:setDecal_scale(value)
+    return self:setF32(0x174, value)
+end
+function FaceRangeParam:getDecal_scale(value)
+    return self:getF32(0x174, value)
+end
+
+function FaceRangeParam:setDecal_color_R(value)
+    return self:setF32(0x178, value)
+end
+function FaceRangeParam:getDecal_color_R(value)
+    return self:getF32(0x178, value)
+end
+
+function FaceRangeParam:setDecal_color_G(value)
+    return self:setF32(0x17C, value)
+end
+function FaceRangeParam:getDecal_color_G(value)
+    return self:getF32(0x17C, value)
+end
+
+function FaceRangeParam:setDecal_color_B(value)
+    return self:setF32(0x180, value)
+end
+function FaceRangeParam:getDecal_color_B(value)
+    return self:getF32(0x180, value)
+end
+
+function FaceRangeParam:setDecal_gloss(value)
+    return self:setF32(0x184, value)
+end
+function FaceRangeParam:getDecal_gloss(value)
+    return self:getF32(0x184, value)
+end
+
+function FaceRangeParam:setDecal_mirror(value)
+    return self:setF32(0x188, value)
+end
+function FaceRangeParam:getDecal_mirror(value)
+    return self:getF32(0x188, value)
+end
+
+function FaceRangeParam:setChrBodyScaleHead(value)
+    return self:setF32(0x18C, value)
+end
+function FaceRangeParam:getChrBodyScaleHead(value)
+    return self:getF32(0x18C, value)
+end
+
+function FaceRangeParam:setChrBodyScaleBreast(value)
+    return self:setF32(0x190, value)
+end
+function FaceRangeParam:getChrBodyScaleBreast(value)
+    return self:getF32(0x190, value)
+end
+
+function FaceRangeParam:setChrBodyScaleAbdomen(value)
+    return self:setF32(0x194, value)
+end
+function FaceRangeParam:getChrBodyScaleAbdomen(value)
+    return self:getF32(0x194, value)
+end
+
+function FaceRangeParam:setChrBodyScaleArm(value)
+    return self:setF32(0x198, value)
+end
+function FaceRangeParam:getChrBodyScaleArm(value)
+    return self:getF32(0x198, value)
+end
+
+function FaceRangeParam:setChrBodyScaleLeg(value)
+    return self:setF32(0x19C, value)
+end
+function FaceRangeParam:getChrBodyScaleLeg(value)
+    return self:getF32(0x19C, value)
+end
+
+function FaceRangeParam:setAge(value)
+    return self:setF32(0x1A0, value)
+end
+function FaceRangeParam:getAge(value)
+    return self:getF32(0x1A0, value)
+end
+
+function FaceRangeParam:setGender(value)
+    return self:setF32(0x1A4, value)
+end
+function FaceRangeParam:getGender(value)
+    return self:getF32(0x1A4, value)
+end
+
+function FaceRangeParam:setCaricatureGeometry(value)
+    return self:setF32(0x1A8, value)
+end
+function FaceRangeParam:getCaricatureGeometry(value)
+    return self:getF32(0x1A8, value)
+end
+
+function FaceRangeParam:setCaricatureTexture(value)
+    return self:setF32(0x1AC, value)
+end
+function FaceRangeParam:getCaricatureTexture(value)
+    return self:getF32(0x1AC, value)
+end
+
+function FaceRangeParam:setFaceGeoData00(value)
+    return self:setF32(0x1B0, value)
+end
+function FaceRangeParam:getFaceGeoData00(value)
+    return self:getF32(0x1B0, value)
+end
+
+function FaceRangeParam:setFaceGeoData01(value)
+    return self:setF32(0x1B4, value)
+end
+function FaceRangeParam:getFaceGeoData01(value)
+    return self:getF32(0x1B4, value)
+end
+
+function FaceRangeParam:setFaceGeoData02(value)
+    return self:setF32(0x1B8, value)
+end
+function FaceRangeParam:getFaceGeoData02(value)
+    return self:getF32(0x1B8, value)
+end
+
+function FaceRangeParam:setFaceGeoData03(value)
+    return self:setF32(0x1BC, value)
+end
+function FaceRangeParam:getFaceGeoData03(value)
+    return self:getF32(0x1BC, value)
+end
+
+function FaceRangeParam:setFaceGeoData04(value)
+    return self:setF32(0x1C0, value)
+end
+function FaceRangeParam:getFaceGeoData04(value)
+    return self:getF32(0x1C0, value)
+end
+
+function FaceRangeParam:setFaceGeoData05(value)
+    return self:setF32(0x1C4, value)
+end
+function FaceRangeParam:getFaceGeoData05(value)
+    return self:getF32(0x1C4, value)
+end
+
+function FaceRangeParam:setFaceGeoData06(value)
+    return self:setF32(0x1C8, value)
+end
+function FaceRangeParam:getFaceGeoData06(value)
+    return self:getF32(0x1C8, value)
+end
+
+function FaceRangeParam:setFaceGeoData07(value)
+    return self:setF32(0x1CC, value)
+end
+function FaceRangeParam:getFaceGeoData07(value)
+    return self:getF32(0x1CC, value)
+end
+
+function FaceRangeParam:setFaceGeoData08(value)
+    return self:setF32(0x1D0, value)
+end
+function FaceRangeParam:getFaceGeoData08(value)
+    return self:getF32(0x1D0, value)
+end
+
+function FaceRangeParam:setFaceGeoData09(value)
+    return self:setF32(0x1D4, value)
+end
+function FaceRangeParam:getFaceGeoData09(value)
+    return self:getF32(0x1D4, value)
+end
+
+function FaceRangeParam:setFaceGeoData10(value)
+    return self:setF32(0x1D8, value)
+end
+function FaceRangeParam:getFaceGeoData10(value)
+    return self:getF32(0x1D8, value)
+end
+
+function FaceRangeParam:setFaceGeoData11(value)
+    return self:setF32(0x1DC, value)
+end
+function FaceRangeParam:getFaceGeoData11(value)
+    return self:getF32(0x1DC, value)
+end
+
+function FaceRangeParam:setFaceGeoData12(value)
+    return self:setF32(0x1E0, value)
+end
+function FaceRangeParam:getFaceGeoData12(value)
+    return self:getF32(0x1E0, value)
+end
+
+function FaceRangeParam:setFaceGeoData13(value)
+    return self:setF32(0x1E4, value)
+end
+function FaceRangeParam:getFaceGeoData13(value)
+    return self:getF32(0x1E4, value)
+end
+
+function FaceRangeParam:setFaceGeoData14(value)
+    return self:setF32(0x1E8, value)
+end
+function FaceRangeParam:getFaceGeoData14(value)
+    return self:getF32(0x1E8, value)
+end
+
+function FaceRangeParam:setFaceGeoData15(value)
+    return self:setF32(0x1EC, value)
+end
+function FaceRangeParam:getFaceGeoData15(value)
+    return self:getF32(0x1EC, value)
+end
+
+function FaceRangeParam:setFaceGeoData16(value)
+    return self:setF32(0x1F0, value)
+end
+function FaceRangeParam:getFaceGeoData16(value)
+    return self:getF32(0x1F0, value)
+end
+
+function FaceRangeParam:setFaceGeoData17(value)
+    return self:setF32(0x1F4, value)
+end
+function FaceRangeParam:getFaceGeoData17(value)
+    return self:getF32(0x1F4, value)
+end
+
+function FaceRangeParam:setFaceGeoData18(value)
+    return self:setF32(0x1F8, value)
+end
+function FaceRangeParam:getFaceGeoData18(value)
+    return self:getF32(0x1F8, value)
+end
+
+function FaceRangeParam:setFaceGeoData19(value)
+    return self:setF32(0x1FC, value)
+end
+function FaceRangeParam:getFaceGeoData19(value)
+    return self:getF32(0x1FC, value)
+end
+
+function FaceRangeParam:setFaceGeoData20(value)
+    return self:setF32(0x200, value)
+end
+function FaceRangeParam:getFaceGeoData20(value)
+    return self:getF32(0x200, value)
+end
+
+function FaceRangeParam:setFaceGeoData21(value)
+    return self:setF32(0x204, value)
+end
+function FaceRangeParam:getFaceGeoData21(value)
+    return self:getF32(0x204, value)
+end
+
+function FaceRangeParam:setFaceGeoData22(value)
+    return self:setF32(0x208, value)
+end
+function FaceRangeParam:getFaceGeoData22(value)
+    return self:getF32(0x208, value)
+end
+
+function FaceRangeParam:setFaceGeoData23(value)
+    return self:setF32(0x20C, value)
+end
+function FaceRangeParam:getFaceGeoData23(value)
+    return self:getF32(0x20C, value)
+end
+
+function FaceRangeParam:setFaceGeoData24(value)
+    return self:setF32(0x210, value)
+end
+function FaceRangeParam:getFaceGeoData24(value)
+    return self:getF32(0x210, value)
+end
+
+function FaceRangeParam:setFaceGeoData25(value)
+    return self:setF32(0x214, value)
+end
+function FaceRangeParam:getFaceGeoData25(value)
+    return self:getF32(0x214, value)
+end
+
+function FaceRangeParam:setFaceGeoData26(value)
+    return self:setF32(0x218, value)
+end
+function FaceRangeParam:getFaceGeoData26(value)
+    return self:getF32(0x218, value)
+end
+
+function FaceRangeParam:setFaceGeoData27(value)
+    return self:setF32(0x21C, value)
+end
+function FaceRangeParam:getFaceGeoData27(value)
+    return self:getF32(0x21C, value)
+end
+
+function FaceRangeParam:setFaceGeoData28(value)
+    return self:setF32(0x220, value)
+end
+function FaceRangeParam:getFaceGeoData28(value)
+    return self:getF32(0x220, value)
+end
+
+function FaceRangeParam:setFaceGeoData29(value)
+    return self:setF32(0x224, value)
+end
+function FaceRangeParam:getFaceGeoData29(value)
+    return self:getF32(0x224, value)
+end
+
+function FaceRangeParam:setFaceGeoData30(value)
+    return self:setF32(0x228, value)
+end
+function FaceRangeParam:getFaceGeoData30(value)
+    return self:getF32(0x228, value)
+end
+
+function FaceRangeParam:setFaceGeoData31(value)
+    return self:setF32(0x22C, value)
+end
+function FaceRangeParam:getFaceGeoData31(value)
+    return self:getF32(0x22C, value)
+end
+
+function FaceRangeParam:setFaceGeoData32(value)
+    return self:setF32(0x230, value)
+end
+function FaceRangeParam:getFaceGeoData32(value)
+    return self:getF32(0x230, value)
+end
+
+function FaceRangeParam:setFaceGeoData33(value)
+    return self:setF32(0x234, value)
+end
+function FaceRangeParam:getFaceGeoData33(value)
+    return self:getF32(0x234, value)
+end
+
+function FaceRangeParam:setFaceGeoData34(value)
+    return self:setF32(0x238, value)
+end
+function FaceRangeParam:getFaceGeoData34(value)
+    return self:getF32(0x238, value)
+end
+
+function FaceRangeParam:setFaceGeoData35(value)
+    return self:setF32(0x23C, value)
+end
+function FaceRangeParam:getFaceGeoData35(value)
+    return self:getF32(0x23C, value)
+end
+
+function FaceRangeParam:setFaceGeoData36(value)
+    return self:setF32(0x240, value)
+end
+function FaceRangeParam:getFaceGeoData36(value)
+    return self:getF32(0x240, value)
+end
+
+function FaceRangeParam:setFaceGeoData37(value)
+    return self:setF32(0x244, value)
+end
+function FaceRangeParam:getFaceGeoData37(value)
+    return self:getF32(0x244, value)
+end
+
+function FaceRangeParam:setFaceGeoData38(value)
+    return self:setF32(0x248, value)
+end
+function FaceRangeParam:getFaceGeoData38(value)
+    return self:getF32(0x248, value)
+end
+
+function FaceRangeParam:setFaceGeoData39(value)
+    return self:setF32(0x24C, value)
+end
+function FaceRangeParam:getFaceGeoData39(value)
+    return self:getF32(0x24C, value)
+end
+
+function FaceRangeParam:setFaceGeoData40(value)
+    return self:setF32(0x250, value)
+end
+function FaceRangeParam:getFaceGeoData40(value)
+    return self:getF32(0x250, value)
+end
+
+function FaceRangeParam:setFaceGeoData41(value)
+    return self:setF32(0x254, value)
+end
+function FaceRangeParam:getFaceGeoData41(value)
+    return self:getF32(0x254, value)
+end
+
+function FaceRangeParam:setFaceGeoData42(value)
+    return self:setF32(0x258, value)
+end
+function FaceRangeParam:getFaceGeoData42(value)
+    return self:getF32(0x258, value)
+end
+
+function FaceRangeParam:setFaceGeoData43(value)
+    return self:setF32(0x25C, value)
+end
+function FaceRangeParam:getFaceGeoData43(value)
+    return self:getF32(0x25C, value)
+end
+
+function FaceRangeParam:setFaceGeoData44(value)
+    return self:setF32(0x260, value)
+end
+function FaceRangeParam:getFaceGeoData44(value)
+    return self:getF32(0x260, value)
+end
+
+function FaceRangeParam:setFaceGeoData45(value)
+    return self:setF32(0x264, value)
+end
+function FaceRangeParam:getFaceGeoData45(value)
+    return self:getF32(0x264, value)
+end
+
+function FaceRangeParam:setFaceGeoData46(value)
+    return self:setF32(0x268, value)
+end
+function FaceRangeParam:getFaceGeoData46(value)
+    return self:getF32(0x268, value)
+end
+
+function FaceRangeParam:setFaceGeoData47(value)
+    return self:setF32(0x26C, value)
+end
+function FaceRangeParam:getFaceGeoData47(value)
+    return self:getF32(0x26C, value)
+end
+
+function FaceRangeParam:setFaceGeoData48(value)
+    return self:setF32(0x270, value)
+end
+function FaceRangeParam:getFaceGeoData48(value)
+    return self:getF32(0x270, value)
+end
+
+function FaceRangeParam:setFaceGeoData49(value)
+    return self:setF32(0x274, value)
+end
+function FaceRangeParam:getFaceGeoData49(value)
+    return self:getF32(0x274, value)
+end
+
+function FaceRangeParam:setFaceGeoData50(value)
+    return self:setF32(0x278, value)
+end
+function FaceRangeParam:getFaceGeoData50(value)
+    return self:getF32(0x278, value)
+end
+
+function FaceRangeParam:setFaceGeoData51(value)
+    return self:setF32(0x27C, value)
+end
+function FaceRangeParam:getFaceGeoData51(value)
+    return self:getF32(0x27C, value)
+end
+
+function FaceRangeParam:setFaceGeoData52(value)
+    return self:setF32(0x280, value)
+end
+function FaceRangeParam:getFaceGeoData52(value)
+    return self:getF32(0x280, value)
+end
+
+function FaceRangeParam:setFaceGeoData53(value)
+    return self:setF32(0x284, value)
+end
+function FaceRangeParam:getFaceGeoData53(value)
+    return self:getF32(0x284, value)
+end
+
+function FaceRangeParam:setFaceGeoData54(value)
+    return self:setF32(0x288, value)
+end
+function FaceRangeParam:getFaceGeoData54(value)
+    return self:getF32(0x288, value)
+end
+
+function FaceRangeParam:setFaceGeoData55(value)
+    return self:setF32(0x28C, value)
+end
+function FaceRangeParam:getFaceGeoData55(value)
+    return self:getF32(0x28C, value)
+end
+
+function FaceRangeParam:setFaceGeoData56(value)
+    return self:setF32(0x290, value)
+end
+function FaceRangeParam:getFaceGeoData56(value)
+    return self:getF32(0x290, value)
+end
+
+function FaceRangeParam:setFaceGeoData57(value)
+    return self:setF32(0x294, value)
+end
+function FaceRangeParam:getFaceGeoData57(value)
+    return self:getF32(0x294, value)
+end
+
+function FaceRangeParam:setFaceGeoData58(value)
+    return self:setF32(0x298, value)
+end
+function FaceRangeParam:getFaceGeoData58(value)
+    return self:getF32(0x298, value)
+end
+
+function FaceRangeParam:setFaceGeoData59(value)
+    return self:setF32(0x29C, value)
+end
+function FaceRangeParam:getFaceGeoData59(value)
+    return self:getF32(0x29C, value)
+end
+
+function FaceRangeParam:setFaceGeoData60(value)
+    return self:setF32(0x2A0, value)
+end
+function FaceRangeParam:getFaceGeoData60(value)
+    return self:getF32(0x2A0, value)
+end
+
+function FaceRangeParam:setFaceTexData00(value)
+    return self:setF32(0x2A4, value)
+end
+function FaceRangeParam:getFaceTexData00(value)
+    return self:getF32(0x2A4, value)
+end
+
+function FaceRangeParam:setFaceTexData01(value)
+    return self:setF32(0x2A8, value)
+end
+function FaceRangeParam:getFaceTexData01(value)
+    return self:getF32(0x2A8, value)
+end
+
+function FaceRangeParam:setFaceTexData02(value)
+    return self:setF32(0x2AC, value)
+end
+function FaceRangeParam:getFaceTexData02(value)
+    return self:getF32(0x2AC, value)
+end
+
+function FaceRangeParam:setFaceTexData03(value)
+    return self:setF32(0x2B0, value)
+end
+function FaceRangeParam:getFaceTexData03(value)
+    return self:getF32(0x2B0, value)
+end
+
+function FaceRangeParam:setFaceTexData04(value)
+    return self:setF32(0x2B4, value)
+end
+function FaceRangeParam:getFaceTexData04(value)
+    return self:getF32(0x2B4, value)
+end
+
+function FaceRangeParam:setFaceTexData05(value)
+    return self:setF32(0x2B8, value)
+end
+function FaceRangeParam:getFaceTexData05(value)
+    return self:getF32(0x2B8, value)
+end
+
+function FaceRangeParam:setFaceTexData06(value)
+    return self:setF32(0x2BC, value)
+end
+function FaceRangeParam:getFaceTexData06(value)
+    return self:getF32(0x2BC, value)
+end
+
+function FaceRangeParam:setFaceTexData07(value)
+    return self:setF32(0x2C0, value)
+end
+function FaceRangeParam:getFaceTexData07(value)
+    return self:getF32(0x2C0, value)
+end
+
+function FaceRangeParam:setFaceTexData08(value)
+    return self:setF32(0x2C4, value)
+end
+function FaceRangeParam:getFaceTexData08(value)
+    return self:getF32(0x2C4, value)
+end
+
+function FaceRangeParam:setFaceTexData09(value)
+    return self:setF32(0x2C8, value)
+end
+function FaceRangeParam:getFaceTexData09(value)
+    return self:getF32(0x2C8, value)
+end
+
+function FaceRangeParam:setFaceTexData10(value)
+    return self:setF32(0x2CC, value)
+end
+function FaceRangeParam:getFaceTexData10(value)
+    return self:getF32(0x2CC, value)
+end
+
+function FaceRangeParam:setFaceTexData11(value)
+    return self:setF32(0x2D0, value)
+end
+function FaceRangeParam:getFaceTexData11(value)
+    return self:getF32(0x2D0, value)
+end
+
+function FaceRangeParam:setFaceTexData12(value)
+    return self:setF32(0x2D4, value)
+end
+function FaceRangeParam:getFaceTexData12(value)
+    return self:getF32(0x2D4, value)
+end
+
+function FaceRangeParam:setFaceTexData13(value)
+    return self:setF32(0x2D8, value)
+end
+function FaceRangeParam:getFaceTexData13(value)
+    return self:getF32(0x2D8, value)
+end
+
+function FaceRangeParam:setFaceTexData14(value)
+    return self:setF32(0x2DC, value)
+end
+function FaceRangeParam:getFaceTexData14(value)
+    return self:getF32(0x2DC, value)
+end
+
+function FaceRangeParam:setFaceTexData15(value)
+    return self:setF32(0x2E0, value)
+end
+function FaceRangeParam:getFaceTexData15(value)
+    return self:getF32(0x2E0, value)
+end
+
+function FaceRangeParam:setFaceTexData16(value)
+    return self:setF32(0x2E4, value)
+end
+function FaceRangeParam:getFaceTexData16(value)
+    return self:getF32(0x2E4, value)
+end
+
+function FaceRangeParam:setFaceTexData17(value)
+    return self:setF32(0x2E8, value)
+end
+function FaceRangeParam:getFaceTexData17(value)
+    return self:getF32(0x2E8, value)
+end
+
+function FaceRangeParam:setFaceTexData18(value)
+    return self:setF32(0x2EC, value)
+end
+function FaceRangeParam:getFaceTexData18(value)
+    return self:getF32(0x2EC, value)
+end
+
+function FaceRangeParam:setFaceTexData19(value)
+    return self:setF32(0x2F0, value)
+end
+function FaceRangeParam:getFaceTexData19(value)
+    return self:getF32(0x2F0, value)
+end
+
+function FaceRangeParam:setFaceTexData20(value)
+    return self:setF32(0x2F4, value)
+end
+function FaceRangeParam:getFaceTexData20(value)
+    return self:getF32(0x2F4, value)
+end
+
+function FaceRangeParam:setFaceTexData21(value)
+    return self:setF32(0x2F8, value)
+end
+function FaceRangeParam:getFaceTexData21(value)
+    return self:getF32(0x2F8, value)
+end
+
+function FaceRangeParam:setFaceTexData22(value)
+    return self:setF32(0x2FC, value)
+end
+function FaceRangeParam:getFaceTexData22(value)
+    return self:getF32(0x2FC, value)
+end
+
+function FaceRangeParam:setFaceTexData23(value)
+    return self:setF32(0x300, value)
+end
+function FaceRangeParam:getFaceTexData23(value)
+    return self:getF32(0x300, value)
+end
+
+function FaceRangeParam:setFaceTexData24(value)
+    return self:setF32(0x304, value)
+end
+function FaceRangeParam:getFaceTexData24(value)
+    return self:getF32(0x304, value)
+end
+
+function FaceRangeParam:setFaceTexData25(value)
+    return self:setF32(0x308, value)
+end
+function FaceRangeParam:getFaceTexData25(value)
+    return self:getF32(0x308, value)
+end
+
+function FaceRangeParam:setFaceTexData26(value)
+    return self:setF32(0x30C, value)
+end
+function FaceRangeParam:getFaceTexData26(value)
+    return self:getF32(0x30C, value)
+end
+
+function FaceRangeParam:setFaceTexData27(value)
+    return self:setF32(0x310, value)
+end
+function FaceRangeParam:getFaceTexData27(value)
+    return self:getF32(0x310, value)
+end
+
+function FaceRangeParam:setFaceTexData28(value)
+    return self:setF32(0x314, value)
+end
+function FaceRangeParam:getFaceTexData28(value)
+    return self:getF32(0x314, value)
+end
+
+function FaceRangeParam:setFaceTexData29(value)
+    return self:setF32(0x318, value)
+end
+function FaceRangeParam:getFaceTexData29(value)
+    return self:getF32(0x318, value)
+end
+
+function FaceRangeParam:setFaceTexData30(value)
+    return self:setF32(0x31C, value)
+end
+function FaceRangeParam:getFaceTexData30(value)
+    return self:getF32(0x31C, value)
+end
+
+function FaceRangeParam:setFaceTexData31(value)
+    return self:setF32(0x320, value)
+end
+function FaceRangeParam:getFaceTexData31(value)
+    return self:getF32(0x320, value)
+end
+
+function FaceRangeParam:setFaceTexData32(value)
+    return self:setF32(0x324, value)
+end
+function FaceRangeParam:getFaceTexData32(value)
+    return self:getF32(0x324, value)
+end
+
+function FaceRangeParam:setFaceTexData33(value)
+    return self:setF32(0x328, value)
+end
+function FaceRangeParam:getFaceTexData33(value)
+    return self:getF32(0x328, value)
+end
+
+function FaceRangeParam:setFaceTexData34(value)
+    return self:setF32(0x32C, value)
+end
+function FaceRangeParam:getFaceTexData34(value)
+    return self:getF32(0x32C, value)
+end
+
+function FaceRangeParam:setFaceTexData35(value)
+    return self:setF32(0x330, value)
+end
+function FaceRangeParam:getFaceTexData35(value)
+    return self:getF32(0x330, value)
+end
+
+function FaceRangeParam:setBurn_scar(value)
+    return self:setF32(0x334, value)
+end
+function FaceRangeParam:getBurn_scar(value)
+    return self:getF32(0x334, value)
+end
+[disable]
+FaceRangeParam = nil

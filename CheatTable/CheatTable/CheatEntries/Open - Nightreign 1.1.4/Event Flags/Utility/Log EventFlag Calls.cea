@@ -1,0 +1,12 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+local log_type = 1
+setEventFlagDbg(true, log_type)
+[disable]
+setEventFlagDbg(false)
+if ef.dbg then
+    for flag, data in pairs(ef.dbg) do
+        printf("EventFlag '%d' has been enabled %d times and disabled %d times. Last changed at %s.", flag, data.enabled, data.disabled, data.time)
+    end
+end

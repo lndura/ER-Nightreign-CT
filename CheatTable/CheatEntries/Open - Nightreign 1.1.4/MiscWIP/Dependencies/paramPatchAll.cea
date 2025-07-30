@@ -1,0 +1,50 @@
+[ENABLE]
+alloc(paramPatchAll, 512, $process)
+registersymbol(paramPatchAll)
+label(paramTable)
+registersymbol(paramTable)
+label(paramPatch)
+registersymbol(paramPatch)
+label(patchRowDone)
+registersymbol(patchRowDone)
+label(paramRowIter)
+label(return)
+
+paramPatchAll:
+  xor ecx,ecx
+  mov r15d,40
+  mov rax,[paramTable] // ParamTable
+  test rax,rax
+  jz return
+paramRowIter: // Loop logic
+  movzx ebx,word ptr [rax+0A] // ParamRowCount
+  lea rdx,[rax+r15d]
+  mov r11d,[rdx+08]
+  lea r12,[rax+r11d]
+  test r12,r12
+  jz return
+  jmp paramPatch
+patchRowDone:
+  lea r15d,[r15+18]
+  inc ecx
+  cmp ecx,ebx
+  jl paramRowIter
+return:
+  ret
+paramTable:
+  dq #0
+paramPatch:
+// PatchInfo
+  jmp patchRowDone
+
+{ Example:
+paramPatch:
+  mov [r12+34],#1040 // patches offset 0x34 to 1040 for all rows
+  jmp patchRowDone
+}
+[DISABLE]
+unregistersymbol(patchRowDone)
+unregistersymbol(paramPatch)
+unregistersymbol(paramTable)
+unregistersymbol(paramPatchAll)
+dealloc(paramPatchAll)

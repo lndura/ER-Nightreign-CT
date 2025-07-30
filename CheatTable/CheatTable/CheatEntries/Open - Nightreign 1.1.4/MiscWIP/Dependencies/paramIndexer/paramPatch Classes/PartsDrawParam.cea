@@ -1,0 +1,280 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+PartsDrawParam = {}
+function PartsDrawParam:new(id_or_all, patchName)
+    return paramPatcher(self, "PartsDrawParam", 0x8D, id_or_all, patchName)
+end
+
+
+
+function PartsDrawParam:setLv01_BorderDist(value)
+    return self:setF32(0x00, value)
+end
+function PartsDrawParam:getLv01_BorderDist(value)
+    return self:getF32(0x00, value)
+end
+
+function PartsDrawParam:setLv01_PlayDist(value)
+    return self:setF32(0x04, value)
+end
+function PartsDrawParam:getLv01_PlayDist(value)
+    return self:getF32(0x04, value)
+end
+
+function PartsDrawParam:setLv12_BorderDist(value)
+    return self:setF32(0x08, value)
+end
+function PartsDrawParam:getLv12_BorderDist(value)
+    return self:getF32(0x08, value)
+end
+
+function PartsDrawParam:setLv12_PlayDist(value)
+    return self:setF32(0x0C, value)
+end
+function PartsDrawParam:getLv12_PlayDist(value)
+    return self:getF32(0x0C, value)
+end
+
+function PartsDrawParam:setLv23_BorderDist(value)
+    return self:setF32(0x10, value)
+end
+function PartsDrawParam:getLv23_BorderDist(value)
+    return self:getF32(0x10, value)
+end
+
+function PartsDrawParam:setLv23_PlayDist(value)
+    return self:setF32(0x14, value)
+end
+function PartsDrawParam:getLv23_PlayDist(value)
+    return self:getF32(0x14, value)
+end
+
+function PartsDrawParam:setLv34_BorderDist(value)
+    return self:setF32(0x18, value)
+end
+function PartsDrawParam:getLv34_BorderDist(value)
+    return self:getF32(0x18, value)
+end
+
+function PartsDrawParam:setLv34_PlayDist(value)
+    return self:setF32(0x1C, value)
+end
+function PartsDrawParam:getLv34_PlayDist(value)
+    return self:getF32(0x1C, value)
+end
+
+function PartsDrawParam:setLv45_BorderDist(value)
+    return self:setF32(0x20, value)
+end
+function PartsDrawParam:getLv45_BorderDist(value)
+    return self:getF32(0x20, value)
+end
+
+function PartsDrawParam:setLv45_PlayDist(value)
+    return self:setF32(0x24, value)
+end
+function PartsDrawParam:getLv45_PlayDist(value)
+    return self:getF32(0x24, value)
+end
+
+function PartsDrawParam:setTex_lv01_BorderDist(value)
+    return self:setF32(0x28, value)
+end
+function PartsDrawParam:getTex_lv01_BorderDist(value)
+    return self:getF32(0x28, value)
+end
+
+function PartsDrawParam:setTex_lv01_PlayDist(value)
+    return self:setF32(0x2C, value)
+end
+function PartsDrawParam:getTex_lv01_PlayDist(value)
+    return self:getF32(0x2C, value)
+end
+
+function PartsDrawParam:setEnableCrossFade(value)
+    return self:setBinary(0x30, 0, value, 1)
+end
+
+function PartsDrawParam:getEnableCrossFade()
+    return self:getBinary(0x30, 0, value, 1)
+end
+
+function PartsDrawParam:setDrawDist(value)
+    return self:setF32(0x30, value)
+end
+function PartsDrawParam:getDrawDist(value)
+    return self:getF32(0x30, value)
+end
+
+function PartsDrawParam:setDrawFadeRange(value)
+    return self:setF32(0x34, value)
+end
+function PartsDrawParam:getDrawFadeRange(value)
+    return self:getF32(0x34, value)
+end
+
+function PartsDrawParam:setShadowDrawDist(value)
+    return self:setF32(0x38, value)
+end
+function PartsDrawParam:getShadowDrawDist(value)
+    return self:getF32(0x38, value)
+end
+
+function PartsDrawParam:setShadowFadeRange(value)
+    return self:setF32(0x3C, value)
+end
+function PartsDrawParam:getShadowFadeRange(value)
+    return self:getF32(0x3C, value)
+end
+
+function PartsDrawParam:setMotionBlur_BorderDist(value)
+    return self:setF32(0x40, value)
+end
+function PartsDrawParam:getMotionBlur_BorderDist(value)
+    return self:getF32(0x40, value)
+end
+
+function PartsDrawParam:setIsPointLightShadowSrc(value)
+    return self:setU8(0x44, value)
+end
+function PartsDrawParam:getIsPointLightShadowSrc(value)
+    return self:getU8(0x44, value)
+end
+
+function PartsDrawParam:setIsDirLightShadowSrc(value)
+    return self:setU8(0x45, value)
+end
+function PartsDrawParam:getIsDirLightShadowSrc(value)
+    return self:getU8(0x45, value)
+end
+
+function PartsDrawParam:setIsShadowDst(value)
+    return self:setU8(0x46, value)
+end
+function PartsDrawParam:getIsShadowDst(value)
+    return self:getU8(0x46, value)
+end
+
+function PartsDrawParam:setIsShadowOnly(value)
+    return self:setU8(0x47, value)
+end
+function PartsDrawParam:getIsShadowOnly(value)
+    return self:getU8(0x47, value)
+end
+
+function PartsDrawParam:setDrawByReflectCam(value)
+    return self:setU8(0x48, value)
+end
+function PartsDrawParam:getDrawByReflectCam(value)
+    return self:getU8(0x48, value)
+end
+
+function PartsDrawParam:setDrawOnlyReflectCam(value)
+    return self:setU8(0x49, value)
+end
+function PartsDrawParam:getDrawOnlyReflectCam(value)
+    return self:getU8(0x49, value)
+end
+
+function PartsDrawParam:setIncludeLodMapLv(value)
+    return self:setU8(0x4A, value)
+end
+function PartsDrawParam:getIncludeLodMapLv(value)
+    return self:getU8(0x4A, value)
+end
+
+function PartsDrawParam:setIsNoFarClipDraw(value)
+    return self:setU8(0x4B, value)
+end
+function PartsDrawParam:getIsNoFarClipDraw(value)
+    return self:getU8(0x4B, value)
+end
+
+function PartsDrawParam:setLodType(value)
+    return self:setU8(0x4C, value)
+end
+function PartsDrawParam:getLodType(value)
+    return self:getU8(0x4C, value)
+end
+
+function PartsDrawParam:setShadowDrawLodOffset(value)
+    return self:setU8(0x4D, value)
+end
+function PartsDrawParam:getShadowDrawLodOffset(value)
+    return self:getU8(0x4D, value)
+end
+
+function PartsDrawParam:setIsTraceCameraXZ(value)
+    return self:setU8(0x4E, value)
+end
+function PartsDrawParam:getIsTraceCameraXZ(value)
+    return self:getU8(0x4E, value)
+end
+
+function PartsDrawParam:setIsSkydomeDrawPhase(value)
+    return self:setU8(0x4F, value)
+end
+function PartsDrawParam:getIsSkydomeDrawPhase(value)
+    return self:getU8(0x4F, value)
+end
+
+function PartsDrawParam:setDistantViewModel_BorderDist(value)
+    return self:setF32(0x50, value)
+end
+function PartsDrawParam:getDistantViewModel_BorderDist(value)
+    return self:getF32(0x50, value)
+end
+
+function PartsDrawParam:setDistantViewModel_PlayDist(value)
+    return self:setF32(0x54, value)
+end
+function PartsDrawParam:getDistantViewModel_PlayDist(value)
+    return self:getF32(0x54, value)
+end
+
+function PartsDrawParam:setLimtedActivate_BorderDist_forGrid(value)
+    return self:setF32(0x58, value)
+end
+function PartsDrawParam:getLimtedActivate_BorderDist_forGrid(value)
+    return self:getF32(0x58, value)
+end
+
+function PartsDrawParam:setLimtedActivate_PlayDist_forGrid(value)
+    return self:setF32(0x5C, value)
+end
+function PartsDrawParam:getLimtedActivate_PlayDist_forGrid(value)
+    return self:getF32(0x5C, value)
+end
+
+function PartsDrawParam:setZSortOffsetForNoFarClipDraw(value)
+    return self:setF32(0x60, value)
+end
+function PartsDrawParam:getZSortOffsetForNoFarClipDraw(value)
+    return self:getF32(0x60, value)
+end
+
+function PartsDrawParam:setShadowDrawAlphaTestDist(value)
+    return self:setF32(0x64, value)
+end
+function PartsDrawParam:getShadowDrawAlphaTestDist(value)
+    return self:getF32(0x64, value)
+end
+
+function PartsDrawParam:setFowardDrawEnvmapBlendType(value)
+    return self:setU8(0x68, value)
+end
+function PartsDrawParam:getFowardDrawEnvmapBlendType(value)
+    return self:getU8(0x68, value)
+end
+
+function PartsDrawParam:setLBDrawDistScaleParamID(value)
+    return self:setU8(0x69, value)
+end
+function PartsDrawParam:getLBDrawDistScaleParamID(value)
+    return self:getU8(0x69, value)
+end
+
+--dummy8 resereve[34]
+[disable]
+PartsDrawParam = nil

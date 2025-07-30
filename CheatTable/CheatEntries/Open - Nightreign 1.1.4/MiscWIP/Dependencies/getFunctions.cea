@@ -1,0 +1,93 @@
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+local TOTAL_INVENTORIES = 2
+
+readDLString = function(address, bytes, isWChar)
+    local namePtr = getAddressSafe(address)
+    if namePtr and namePtr > 0 then
+        local strLen = readQword(namePtr + 0x10)
+        if strLen and strLen > 7 then
+            namePtr = readPointer(namePtr)
+        end
+        if namePtr then
+            return readString(namePtr, bytes, isWChar)
+        end
+    end
+    return nil
+end
+
+getInvData = function(inventoryType)
+    if not inventoryType then
+        inventoryType = 1
+    end
+    local invName = {
+        "Player Inventory",
+        "Key Item Inventory",
+    }
+    local name = invName[inventoryType]
+    local GameDataManImp = readU64("GameDataMan")
+    if GameDataManImp and name then
+        local PlayerGameData = readU64(GameDataManImp + 0x8)
+        if PlayerGameData then
+            local EquipInventoryData = readU64(PlayerGameData + 0x498)
+            return {
+                maxSize = readU32(EquipInventoryData + inventoryType * 0x10 - 0x4),
+                list = readU64(EquipInventoryData + inventoryType * 0x10),
+                size = readU32(EquipInventoryData + inventoryType * 0x10 + 0x8),
+                name = name,
+            }
+        end
+    end
+    return nil
+end
+
+getInvSlot = function(item_or_handle)
+    for invType = 1, TOTAL_INVENTORIES, 1 do
+        local invData = getInvData(invType)
+        for invSlot = 0,(invData.size - 1),1 do
+            local invSlotAddr = invData.list + invSlot * 0x14
+            local GaitemHandle = readU32(invSlotAddr)
+            local ItemId = readU32(invSlotAddr + 0x4)
+            if GaitemHandle == item_or_handle or ItemId == ItemId then
+                return invSlot + 1, invSlotAddr
+            end
+        end
+    end
+    return nil
+end
+
+getGaItemIns = function(CSGaItemHandle)
+    local CSGaItemImp = readU64("CSGaItem")
+    if CSGaItemImp then
+        local index = CSGaItemHandle & 0xFFFF
+        if index then
+            local CSGaItemEntry = (CSGaItemImp + 8 + 8 * index)
+            local CSGaItemIns = readU64(CSGaItemEntry)
+            local rtti = getRTTIClassName(CSGaItemIns)
+            return CSGaItemIns, rtti
+        end
+    end
+    return nil
+end
+
+--[[
+getItemData = function(itemId)
+    local itemType = itemId >> 28
+    local paramTable = ...
+    if paramTable then
+        local equipId = itemId - itemType * 0x10000000
+        local paramAddr = paramTable[equipId]
+        if paramAddr then
+            return itemType, equipId, paramAddr
+        end
+    end
+    return nil
+end
+--]]
+
+[DISABLE]
+readDLString = nil
+getGaItemIns = nil
+getInvSlotByHandle = nil
+getInvSlotByItem = nil

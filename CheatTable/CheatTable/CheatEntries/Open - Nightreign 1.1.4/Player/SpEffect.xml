@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>265</ID>
+  <Description>"SpEffect"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>WorldChrMan</Address>
+  <Offsets>
+    <Offset>190</Offset>
+    <Offset>174E8</Offset>
+  </Offsets>
+</CheatEntry>

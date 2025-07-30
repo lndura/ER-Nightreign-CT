@@ -1,0 +1,123 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+LimitedDayAssetParam = {}
+function LimitedDayAssetParam:new(id_or_all, patchName)
+    return paramPatcher(self, "LimitedDayAssetParam", 0x44, id_or_all, patchName)
+end
+
+
+
+function LimitedDayAssetParam:setUnknown_0(value)
+    return self:setU32(0x00, value)
+end
+function LimitedDayAssetParam:getUnknown_0(value)
+    return self:getU32(0x00, value)
+end
+
+function LimitedDayAssetParam:setUnknown_1(value)
+    return self:setU32(0x04, value)
+end
+function LimitedDayAssetParam:getUnknown_1(value)
+    return self:getU32(0x04, value)
+end
+
+function LimitedDayAssetParam:setUnknown_2(value)
+    return self:setU32(0x08, value)
+end
+function LimitedDayAssetParam:getUnknown_2(value)
+    return self:getU32(0x08, value)
+end
+
+function LimitedDayAssetParam:setUnknown_3(value)
+    return self:setU32(0x0C, value)
+end
+function LimitedDayAssetParam:getUnknown_3(value)
+    return self:getU32(0x0C, value)
+end
+
+function LimitedDayAssetParam:setUnknown_4(value)
+    return self:setU32(0x10, value)
+end
+function LimitedDayAssetParam:getUnknown_4(value)
+    return self:getU32(0x10, value)
+end
+
+function LimitedDayAssetParam:setUnknown_5(value)
+    return self:setU32(0x14, value)
+end
+function LimitedDayAssetParam:getUnknown_5(value)
+    return self:getU32(0x14, value)
+end
+
+function LimitedDayAssetParam:setUnknown_6(value)
+    return self:setU32(0x18, value)
+end
+function LimitedDayAssetParam:getUnknown_6(value)
+    return self:getU32(0x18, value)
+end
+
+function LimitedDayAssetParam:setUnknown_7(value)
+    return self:setU32(0x1C, value)
+end
+function LimitedDayAssetParam:getUnknown_7(value)
+    return self:getU32(0x1C, value)
+end
+
+function LimitedDayAssetParam:setUnknown_8(value)
+    return self:setU32(0x20, value)
+end
+function LimitedDayAssetParam:getUnknown_8(value)
+    return self:getU32(0x20, value)
+end
+
+function LimitedDayAssetParam:setUnknown_9(value)
+    return self:setU32(0x24, value)
+end
+function LimitedDayAssetParam:getUnknown_9(value)
+    return self:getU32(0x24, value)
+end
+
+function LimitedDayAssetParam:setUnknown_10(value)
+    return self:setU32(0x28, value)
+end
+function LimitedDayAssetParam:getUnknown_10(value)
+    return self:getU32(0x28, value)
+end
+
+function LimitedDayAssetParam:setUnknown_11(value)
+    return self:setU32(0x2C, value)
+end
+function LimitedDayAssetParam:getUnknown_11(value)
+    return self:getU32(0x2C, value)
+end
+
+function LimitedDayAssetParam:setUnknown_12(value)
+    return self:setU32(0x30, value)
+end
+function LimitedDayAssetParam:getUnknown_12(value)
+    return self:getU32(0x30, value)
+end
+
+function LimitedDayAssetParam:setUnknown_13(value)
+    return self:setU32(0x34, value)
+end
+function LimitedDayAssetParam:getUnknown_13(value)
+    return self:getU32(0x34, value)
+end
+
+function LimitedDayAssetParam:setUnknown_14(value)
+    return self:setU32(0x38, value)
+end
+function LimitedDayAssetParam:getUnknown_14(value)
+    return self:getU32(0x38, value)
+end
+
+function LimitedDayAssetParam:setUnknown_15(value)
+    return self:setU32(0x3C, value)
+end
+function LimitedDayAssetParam:getUnknown_15(value)
+    return self:getU32(0x3C, value)
+end
+[disable]
+LimitedDayAssetParam = nil

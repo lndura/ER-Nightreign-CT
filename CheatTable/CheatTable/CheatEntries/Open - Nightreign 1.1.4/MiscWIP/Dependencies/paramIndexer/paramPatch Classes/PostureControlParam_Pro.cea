@@ -1,0 +1,235 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+PostureControlParam_Pro = {}
+function PostureControlParam_Pro:new(id_or_all, patchName)
+    return paramPatcher(self, "PostureControlParam_Pro", 0x42, id_or_all, patchName)
+end
+
+
+
+function PostureControlParam_Pro:setA000_rightArmIO(value)
+    return self:setU16(0x00, value)
+end
+function PostureControlParam_Pro:getA000_rightArmIO(value)
+    return self:getU16(0x00, value)
+end
+
+function PostureControlParam_Pro:setA000_rightArmFB(value)
+    return self:setU16(0x02, value)
+end
+function PostureControlParam_Pro:getA000_rightArmFB(value)
+    return self:getU16(0x02, value)
+end
+
+function PostureControlParam_Pro:setA000_leftArmIO(value)
+    return self:setU16(0x04, value)
+end
+function PostureControlParam_Pro:getA000_leftArmIO(value)
+    return self:getU16(0x04, value)
+end
+
+function PostureControlParam_Pro:setA000_leftArmFB(value)
+    return self:setU16(0x06, value)
+end
+function PostureControlParam_Pro:getA000_leftArmFB(value)
+    return self:getU16(0x06, value)
+end
+
+function PostureControlParam_Pro:setA002_rightArmIO(value)
+    return self:setU16(0x08, value)
+end
+function PostureControlParam_Pro:getA002_rightArmIO(value)
+    return self:getU16(0x08, value)
+end
+
+function PostureControlParam_Pro:setA002_rightArmFB(value)
+    return self:setU16(0x0A, value)
+end
+function PostureControlParam_Pro:getA002_rightArmFB(value)
+    return self:getU16(0x0A, value)
+end
+
+function PostureControlParam_Pro:setA002_leftArmIO(value)
+    return self:setU16(0x0C, value)
+end
+function PostureControlParam_Pro:getA002_leftArmIO(value)
+    return self:getU16(0x0C, value)
+end
+
+function PostureControlParam_Pro:setA002_leftArmFB(value)
+    return self:setU16(0x0E, value)
+end
+function PostureControlParam_Pro:getA002_leftArmFB(value)
+    return self:getU16(0x0E, value)
+end
+
+function PostureControlParam_Pro:setA003_rightArmIO(value)
+    return self:setU16(0x10, value)
+end
+function PostureControlParam_Pro:getA003_rightArmIO(value)
+    return self:getU16(0x10, value)
+end
+
+function PostureControlParam_Pro:setA003_rightArmFB(value)
+    return self:setU16(0x12, value)
+end
+function PostureControlParam_Pro:getA003_rightArmFB(value)
+    return self:getU16(0x12, value)
+end
+
+function PostureControlParam_Pro:setA003_leftArmIO(value)
+    return self:setU16(0x14, value)
+end
+function PostureControlParam_Pro:getA003_leftArmIO(value)
+    return self:getU16(0x14, value)
+end
+
+function PostureControlParam_Pro:setA003_leftArmFB(value)
+    return self:setU16(0x16, value)
+end
+function PostureControlParam_Pro:getA003_leftArmFB(value)
+    return self:getU16(0x16, value)
+end
+
+function PostureControlParam_Pro:setA010_rightArmIO(value)
+    return self:setU16(0x18, value)
+end
+function PostureControlParam_Pro:getA010_rightArmIO(value)
+    return self:getU16(0x18, value)
+end
+
+function PostureControlParam_Pro:setA010_rightArmFB(value)
+    return self:setU16(0x1A, value)
+end
+function PostureControlParam_Pro:getA010_rightArmFB(value)
+    return self:getU16(0x1A, value)
+end
+
+function PostureControlParam_Pro:setA010_leftArmIO(value)
+    return self:setU16(0x1C, value)
+end
+function PostureControlParam_Pro:getA010_leftArmIO(value)
+    return self:getU16(0x1C, value)
+end
+
+function PostureControlParam_Pro:setA010_leftArmFB(value)
+    return self:setU16(0x1E, value)
+end
+function PostureControlParam_Pro:getA010_leftArmFB(value)
+    return self:getU16(0x1E, value)
+end
+
+function PostureControlParam_Pro:setA012_rightArmIO(value)
+    return self:setU16(0x20, value)
+end
+function PostureControlParam_Pro:getA012_rightArmIO(value)
+    return self:getU16(0x20, value)
+end
+
+function PostureControlParam_Pro:setA012_rightArmFB(value)
+    return self:setU16(0x22, value)
+end
+function PostureControlParam_Pro:getA012_rightArmFB(value)
+    return self:getU16(0x22, value)
+end
+
+function PostureControlParam_Pro:setA012_leftArmIO(value)
+    return self:setU16(0x24, value)
+end
+function PostureControlParam_Pro:getA012_leftArmIO(value)
+    return self:getU16(0x24, value)
+end
+
+function PostureControlParam_Pro:setA012_leftArmFB(value)
+    return self:setU16(0x26, value)
+end
+function PostureControlParam_Pro:getA012_leftArmFB(value)
+    return self:getU16(0x26, value)
+end
+
+function PostureControlParam_Pro:setA013_rightArmIO(value)
+    return self:setU16(0x28, value)
+end
+function PostureControlParam_Pro:getA013_rightArmIO(value)
+    return self:getU16(0x28, value)
+end
+
+function PostureControlParam_Pro:setA013_rightArmFB(value)
+    return self:setU16(0x2A, value)
+end
+function PostureControlParam_Pro:getA013_rightArmFB(value)
+    return self:getU16(0x2A, value)
+end
+
+function PostureControlParam_Pro:setA013_leftArmIO(value)
+    return self:setU16(0x2C, value)
+end
+function PostureControlParam_Pro:getA013_leftArmIO(value)
+    return self:getU16(0x2C, value)
+end
+
+function PostureControlParam_Pro:setA013_leftArmFB(value)
+    return self:setU16(0x2E, value)
+end
+function PostureControlParam_Pro:getA013_leftArmFB(value)
+    return self:getU16(0x2E, value)
+end
+
+function PostureControlParam_Pro:setA014_rightArmIO(value)
+    return self:setU16(0x30, value)
+end
+function PostureControlParam_Pro:getA014_rightArmIO(value)
+    return self:getU16(0x30, value)
+end
+
+function PostureControlParam_Pro:setA014_rightArmFB(value)
+    return self:setU16(0x32, value)
+end
+function PostureControlParam_Pro:getA014_rightArmFB(value)
+    return self:getU16(0x32, value)
+end
+
+function PostureControlParam_Pro:setA014_leftArmIO(value)
+    return self:setU16(0x34, value)
+end
+function PostureControlParam_Pro:getA014_leftArmIO(value)
+    return self:getU16(0x34, value)
+end
+
+function PostureControlParam_Pro:setA014_leftArmFB(value)
+    return self:setU16(0x36, value)
+end
+function PostureControlParam_Pro:getA014_leftArmFB(value)
+    return self:getU16(0x36, value)
+end
+
+function PostureControlParam_Pro:setA015_rightArmIO(value)
+    return self:setU16(0x38, value)
+end
+function PostureControlParam_Pro:getA015_rightArmIO(value)
+    return self:getU16(0x38, value)
+end
+
+function PostureControlParam_Pro:setA015_rightArmFB(value)
+    return self:setU16(0x3A, value)
+end
+function PostureControlParam_Pro:getA015_rightArmFB(value)
+    return self:getU16(0x3A, value)
+end
+
+function PostureControlParam_Pro:setA015_leftArmIO(value)
+    return self:setU16(0x3C, value)
+end
+function PostureControlParam_Pro:getA015_leftArmIO(value)
+    return self:getU16(0x3C, value)
+end
+
+function PostureControlParam_Pro:setA015_leftArmFB(value)
+    return self:setU16(0x3E, value)
+end
+function PostureControlParam_Pro:getA015_leftArmFB(value)
+    return self:getU16(0x3E, value)
+end
+[disable]
+PostureControlParam_Pro = nil

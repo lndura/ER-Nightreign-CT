@@ -1,0 +1,20 @@
+<CheatEntry>
+  <ID>48</ID>
+  <Description>"PersCam1"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+0</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="49"/>
+    <id id="50"/>
+    <id id="71"/>
+    <id id="72"/>
+    <id id="73"/>
+    <id id="74"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

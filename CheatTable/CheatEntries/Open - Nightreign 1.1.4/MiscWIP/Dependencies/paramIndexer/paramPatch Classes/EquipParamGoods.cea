@@ -1,0 +1,877 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+EquipParamGoods = {}
+function EquipParamGoods:new(id_or_all, patchName)
+    return paramPatcher(self, "EquipParamGoods", 0xC2, id_or_all, patchName)
+end
+
+
+
+function EquipParamGoods:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function EquipParamGoods:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function EquipParamGoods:setRefId_default(value)
+    return self:setU32(0x04, value)
+end
+function EquipParamGoods:getRefId_default(value)
+    return self:getU32(0x04, value)
+end
+
+function EquipParamGoods:setSfxVariationId(value)
+    return self:setU32(0x08, value)
+end
+function EquipParamGoods:getSfxVariationId(value)
+    return self:getU32(0x08, value)
+end
+
+function EquipParamGoods:setWeight(value)
+    return self:setF32(0x0C, value)
+end
+function EquipParamGoods:getWeight(value)
+    return self:getF32(0x0C, value)
+end
+
+function EquipParamGoods:setBasicPrice(value)
+    return self:setU32(0x10, value)
+end
+function EquipParamGoods:getBasicPrice(value)
+    return self:getU32(0x10, value)
+end
+
+function EquipParamGoods:setSellValue(value)
+    return self:setU32(0x14, value)
+end
+function EquipParamGoods:getSellValue(value)
+    return self:getU32(0x14, value)
+end
+
+function EquipParamGoods:setBehaviorId(value)
+    return self:setU32(0x18, value)
+end
+function EquipParamGoods:getBehaviorId(value)
+    return self:getU32(0x18, value)
+end
+
+function EquipParamGoods:setReplaceItemId(value)
+    return self:setU32(0x1C, value)
+end
+function EquipParamGoods:getReplaceItemId(value)
+    return self:getU32(0x1C, value)
+end
+
+function EquipParamGoods:setSortId(value)
+    return self:setU32(0x20, value)
+end
+function EquipParamGoods:getSortId(value)
+    return self:getU32(0x20, value)
+end
+
+function EquipParamGoods:setAppearanceReplaceItemId(value)
+    return self:setU32(0x24, value)
+end
+function EquipParamGoods:getAppearanceReplaceItemId(value)
+    return self:getU32(0x24, value)
+end
+
+function EquipParamGoods:setYesNoDialogMessageId(value)
+    return self:setU32(0x28, value)
+end
+function EquipParamGoods:getYesNoDialogMessageId(value)
+    return self:getU32(0x28, value)
+end
+
+function EquipParamGoods:setUseEnableSpEffectType(value)
+    return self:setU16(0x2C, value)
+end
+function EquipParamGoods:getUseEnableSpEffectType(value)
+    return self:getU16(0x2C, value)
+end
+
+function EquipParamGoods:setPotGroupId(value)
+    return self:setU8(0x2E, value)
+end
+function EquipParamGoods:getPotGroupId(value)
+    return self:getU8(0x2E, value)
+end
+
+--dummy8 pad[1]
+
+function EquipParamGoods:setIconId(value)
+    return self:setU16(0x30, value)
+end
+function EquipParamGoods:getIconId(value)
+    return self:getU16(0x30, value)
+end
+
+function EquipParamGoods:setModelId(value)
+    return self:setU16(0x32, value)
+end
+function EquipParamGoods:getModelId(value)
+    return self:getU16(0x32, value)
+end
+
+function EquipParamGoods:setShopLv(value)
+    return self:setU16(0x34, value)
+end
+function EquipParamGoods:getShopLv(value)
+    return self:getU16(0x34, value)
+end
+
+function EquipParamGoods:setCompTrophySedId(value)
+    return self:setU16(0x36, value)
+end
+function EquipParamGoods:getCompTrophySedId(value)
+    return self:getU16(0x36, value)
+end
+
+function EquipParamGoods:setTrophySeqId(value)
+    return self:setU16(0x38, value)
+end
+function EquipParamGoods:getTrophySeqId(value)
+    return self:getU16(0x38, value)
+end
+
+function EquipParamGoods:setMaxNum(value)
+    return self:setU16(0x3A, value)
+end
+function EquipParamGoods:getMaxNum(value)
+    return self:getU16(0x3A, value)
+end
+
+function EquipParamGoods:setConsumeHeroPoint(value)
+    return self:setU8(0x3C, value)
+end
+function EquipParamGoods:getConsumeHeroPoint(value)
+    return self:getU8(0x3C, value)
+end
+
+function EquipParamGoods:setOverDexterity(value)
+    return self:setU8(0x3D, value)
+end
+function EquipParamGoods:getOverDexterity(value)
+    return self:getU8(0x3D, value)
+end
+
+function EquipParamGoods:setGoodsType(value)
+    return self:setU8(0x3E, value)
+end
+function EquipParamGoods:getGoodsType(value)
+    return self:getU8(0x3E, value)
+end
+
+function EquipParamGoods:setRefCategory(value)
+    return self:setU8(0x3F, value)
+end
+function EquipParamGoods:getRefCategory(value)
+    return self:getU8(0x3F, value)
+end
+
+function EquipParamGoods:setSpEffectCategory(value)
+    return self:setU8(0x40, value)
+end
+function EquipParamGoods:getSpEffectCategory(value)
+    return self:getU8(0x40, value)
+end
+
+--dummy8 pad3[1]
+
+function EquipParamGoods:setUnknown_0x40(value)
+    return self:setU8(0x42, value)
+end
+function EquipParamGoods:getUnknown_0x40(value)
+    return self:getU8(0x42, value)
+end
+
+function EquipParamGoods:setGoodsUseAnim(value)
+    return self:setU8(0x43, value)
+end
+function EquipParamGoods:getGoodsUseAnim(value)
+    return self:getU8(0x43, value)
+end
+
+function EquipParamGoods:setOpmeMenuType(value)
+    return self:setU8(0x44, value)
+end
+function EquipParamGoods:getOpmeMenuType(value)
+    return self:getU8(0x44, value)
+end
+
+function EquipParamGoods:setUseLimitCategory(value)
+    return self:setU8(0x45, value)
+end
+function EquipParamGoods:getUseLimitCategory(value)
+    return self:getU8(0x45, value)
+end
+
+function EquipParamGoods:setReplaceCategory(value)
+    return self:setU8(0x46, value)
+end
+function EquipParamGoods:getReplaceCategory(value)
+    return self:getU8(0x46, value)
+end
+
+--dummy8 reserve4[2]
+
+function EquipParamGoods:setEnable_live(value)
+    return self:setBinary(0x49, 0, value, 1)
+end
+
+function EquipParamGoods:getEnable_live()
+    return self:getBinary(0x49, 0, value, 1)
+end
+
+function EquipParamGoods:setEnable_gray(value)
+    return self:setBinary(0x49, 1, value, 1)
+end
+
+function EquipParamGoods:getEnable_gray()
+    return self:getBinary(0x49, 1, value, 1)
+end
+
+function EquipParamGoods:setEnable_white(value)
+    return self:setBinary(0x49, 2, value, 1)
+end
+
+function EquipParamGoods:getEnable_white()
+    return self:getBinary(0x49, 2, value, 1)
+end
+
+function EquipParamGoods:setEnable_black(value)
+    return self:setBinary(0x49, 3, value, 1)
+end
+
+function EquipParamGoods:getEnable_black()
+    return self:getBinary(0x49, 3, value, 1)
+end
+
+function EquipParamGoods:setEnable_multi(value)
+    return self:setBinary(0x49, 4, value, 1)
+end
+
+function EquipParamGoods:getEnable_multi()
+    return self:getBinary(0x49, 4, value, 1)
+end
+
+function EquipParamGoods:setDisable_offline(value)
+    return self:setBinary(0x49, 5, value, 1)
+end
+
+function EquipParamGoods:getDisable_offline()
+    return self:getBinary(0x49, 5, value, 1)
+end
+
+function EquipParamGoods:setIsEquip(value)
+    return self:setBinary(0x49, 6, value, 1)
+end
+
+function EquipParamGoods:getIsEquip()
+    return self:getBinary(0x49, 6, value, 1)
+end
+
+function EquipParamGoods:setIsConsume(value)
+    return self:setBinary(0x49, 7, value, 1)
+end
+
+function EquipParamGoods:getIsConsume()
+    return self:getBinary(0x49, 7, value, 1)
+end
+
+function EquipParamGoods:setIsAutoEquip(value)
+    return self:setBinary(0x4A, 0, value, 1)
+end
+
+function EquipParamGoods:getIsAutoEquip()
+    return self:getBinary(0x4A, 0, value, 1)
+end
+
+function EquipParamGoods:setIsEstablishment(value)
+    return self:setBinary(0x4A, 1, value, 1)
+end
+
+function EquipParamGoods:getIsEstablishment()
+    return self:getBinary(0x4A, 1, value, 1)
+end
+
+function EquipParamGoods:setIsOnlyOne(value)
+    return self:setBinary(0x4A, 2, value, 1)
+end
+
+function EquipParamGoods:getIsOnlyOne()
+    return self:getBinary(0x4A, 2, value, 1)
+end
+
+function EquipParamGoods:setIsDiscard(value)
+    return self:setBinary(0x4A, 3, value, 1)
+end
+
+function EquipParamGoods:getIsDiscard()
+    return self:getBinary(0x4A, 3, value, 1)
+end
+
+function EquipParamGoods:setIsDeposit(value)
+    return self:setBinary(0x4A, 4, value, 1)
+end
+
+function EquipParamGoods:getIsDeposit()
+    return self:getBinary(0x4A, 4, value, 1)
+end
+
+function EquipParamGoods:setIsDisableHand(value)
+    return self:setBinary(0x4A, 5, value, 1)
+end
+
+function EquipParamGoods:getIsDisableHand()
+    return self:getBinary(0x4A, 5, value, 1)
+end
+
+function EquipParamGoods:setIsRemoveItem_forGameClear(value)
+    return self:setBinary(0x4A, 6, value, 1)
+end
+
+function EquipParamGoods:getIsRemoveItem_forGameClear()
+    return self:getBinary(0x4A, 6, value, 1)
+end
+
+function EquipParamGoods:setIsSuppleItem(value)
+    return self:setBinary(0x4A, 7, value, 1)
+end
+
+function EquipParamGoods:getIsSuppleItem()
+    return self:getBinary(0x4A, 7, value, 1)
+end
+
+function EquipParamGoods:setIsFullSuppleItem(value)
+    return self:setBinary(0x4B, 0, value, 1)
+end
+
+function EquipParamGoods:getIsFullSuppleItem()
+    return self:getBinary(0x4B, 0, value, 1)
+end
+
+function EquipParamGoods:setIsEnhance(value)
+    return self:setBinary(0x4B, 1, value, 1)
+end
+
+function EquipParamGoods:getIsEnhance()
+    return self:getBinary(0x4B, 1, value, 1)
+end
+
+function EquipParamGoods:setIsFixItem(value)
+    return self:setBinary(0x4B, 2, value, 1)
+end
+
+function EquipParamGoods:getIsFixItem()
+    return self:getBinary(0x4B, 2, value, 1)
+end
+
+function EquipParamGoods:setDisableMultiDropShare(value)
+    return self:setBinary(0x4B, 3, value, 1)
+end
+
+function EquipParamGoods:getDisableMultiDropShare()
+    return self:getBinary(0x4B, 3, value, 1)
+end
+
+function EquipParamGoods:setDisableUseAtColiseum(value)
+    return self:setBinary(0x4B, 4, value, 1)
+end
+
+function EquipParamGoods:getDisableUseAtColiseum()
+    return self:getBinary(0x4B, 4, value, 1)
+end
+
+function EquipParamGoods:setDisableUseAtOutOfColiseum(value)
+    return self:setBinary(0x4B, 5, value, 1)
+end
+
+function EquipParamGoods:getDisableUseAtOutOfColiseum()
+    return self:getBinary(0x4B, 5, value, 1)
+end
+
+function EquipParamGoods:setIsEnableFastUseItem(value)
+    return self:setBinary(0x4B, 6, value, 1)
+end
+
+function EquipParamGoods:getIsEnableFastUseItem()
+    return self:getBinary(0x4B, 6, value, 1)
+end
+
+function EquipParamGoods:setIsApplySpecialEffect(value)
+    return self:setBinary(0x4B, 7, value, 1)
+end
+
+function EquipParamGoods:getIsApplySpecialEffect()
+    return self:getBinary(0x4B, 7, value, 1)
+end
+
+function EquipParamGoods:setSyncNumVaryId(value)
+    return self:setU8(0x4C, value)
+end
+function EquipParamGoods:getSyncNumVaryId(value)
+    return self:getU8(0x4C, value)
+end
+
+function EquipParamGoods:setRefId_1(value)
+    return self:setU32(0x4D, value)
+end
+function EquipParamGoods:getRefId_1(value)
+    return self:getU32(0x4D, value)
+end
+
+function EquipParamGoods:setRefVirtualWepId(value)
+    return self:setU32(0x51, value)
+end
+function EquipParamGoods:getRefVirtualWepId(value)
+    return self:getU32(0x51, value)
+end
+
+function EquipParamGoods:setVagrantItemLotId(value)
+    return self:setU32(0x55, value)
+end
+function EquipParamGoods:getVagrantItemLotId(value)
+    return self:getU32(0x55, value)
+end
+
+function EquipParamGoods:setVagrantBonusEneDropItemLotId(value)
+    return self:setU32(0x59, value)
+end
+function EquipParamGoods:getVagrantBonusEneDropItemLotId(value)
+    return self:getU32(0x59, value)
+end
+
+function EquipParamGoods:setVagrantItemEneDropItemLotId(value)
+    return self:setU32(0x5D, value)
+end
+function EquipParamGoods:getVagrantItemEneDropItemLotId(value)
+    return self:getU32(0x5D, value)
+end
+
+function EquipParamGoods:setCastSfxId(value)
+    return self:setU32(0x61, value)
+end
+function EquipParamGoods:getCastSfxId(value)
+    return self:getU32(0x61, value)
+end
+
+function EquipParamGoods:setFireSfxId(value)
+    return self:setU32(0x65, value)
+end
+function EquipParamGoods:getFireSfxId(value)
+    return self:getU32(0x65, value)
+end
+
+function EquipParamGoods:setEffectSfxId(value)
+    return self:setU32(0x69, value)
+end
+function EquipParamGoods:getEffectSfxId(value)
+    return self:getU32(0x69, value)
+end
+
+function EquipParamGoods:setEnable_ActiveBigRune(value)
+    return self:setBinary(0x6D, 0, value, 1)
+end
+
+function EquipParamGoods:getEnable_ActiveBigRune()
+    return self:getBinary(0x6D, 0, value, 1)
+end
+
+function EquipParamGoods:setIsBonfireWarpItem(value)
+    return self:setBinary(0x6D, 1, value, 1)
+end
+
+function EquipParamGoods:getIsBonfireWarpItem()
+    return self:getBinary(0x6D, 1, value, 1)
+end
+
+function EquipParamGoods:setEnable_Ladder(value)
+    return self:setBinary(0x6D, 2, value, 1)
+end
+
+function EquipParamGoods:getEnable_Ladder()
+    return self:getBinary(0x6D, 2, value, 1)
+end
+
+function EquipParamGoods:setIsUseMultiPlayPreparation(value)
+    return self:setBinary(0x6D, 3, value, 1)
+end
+
+function EquipParamGoods:getIsUseMultiPlayPreparation()
+    return self:getBinary(0x6D, 3, value, 1)
+end
+
+function EquipParamGoods:setCanMultiUse(value)
+    return self:setBinary(0x6D, 4, value, 1)
+end
+
+function EquipParamGoods:getCanMultiUse()
+    return self:getBinary(0x6D, 4, value, 1)
+end
+
+function EquipParamGoods:setIsShieldEnchant(value)
+    return self:setBinary(0x6D, 5, value, 1)
+end
+
+function EquipParamGoods:getIsShieldEnchant()
+    return self:getBinary(0x6D, 5, value, 1)
+end
+
+function EquipParamGoods:setIsWarpProhibited(value)
+    return self:setBinary(0x6D, 6, value, 1)
+end
+
+function EquipParamGoods:getIsWarpProhibited()
+    return self:getBinary(0x6D, 6, value, 1)
+end
+
+function EquipParamGoods:setIsUseMultiPenaltyOnly(value)
+    return self:setBinary(0x6D, 7, value, 1)
+end
+
+function EquipParamGoods:getIsUseMultiPenaltyOnly()
+    return self:getBinary(0x6D, 7, value, 1)
+end
+
+function EquipParamGoods:setSuppleType(value)
+    return self:setU8(0x6E, value)
+end
+function EquipParamGoods:getSuppleType(value)
+    return self:getU8(0x6E, value)
+end
+
+function EquipParamGoods:setAutoReplenishType(value)
+    return self:setU8(0x6F, value)
+end
+function EquipParamGoods:getAutoReplenishType(value)
+    return self:getU8(0x6F, value)
+end
+
+function EquipParamGoods:setIsDrop(value)
+    return self:setBinary(0x70, 0, value, 1)
+end
+
+function EquipParamGoods:getIsDrop()
+    return self:getBinary(0x70, 0, value, 1)
+end
+
+function EquipParamGoods:setShowLogCondType(value)
+    return self:setBinary(0x70, 1, value, 1)
+end
+
+function EquipParamGoods:getShowLogCondType()
+    return self:getBinary(0x70, 1, value, 1)
+end
+
+function EquipParamGoods:setIsSummonHorse(value)
+    return self:setBinary(0x70, 2, value, 1)
+end
+
+function EquipParamGoods:getIsSummonHorse()
+    return self:getBinary(0x70, 2, value, 1)
+end
+
+function EquipParamGoods:setShowDialogCondType(value)
+    return self:setBinary(0x70, 3, value, 2)
+end
+
+function EquipParamGoods:getShowDialogCondType()
+    return self:getBinary(0x70, 3, value, 2)
+end
+
+function EquipParamGoods:setIsSleepCollectionItem(value)
+    return self:setBinary(0x70, 5, value, 1)
+end
+
+function EquipParamGoods:getIsSleepCollectionItem()
+    return self:getBinary(0x70, 5, value, 1)
+end
+
+function EquipParamGoods:setEnableRiding(value)
+    return self:setBinary(0x70, 6, value, 1)
+end
+
+function EquipParamGoods:getEnableRiding()
+    return self:getBinary(0x70, 6, value, 1)
+end
+
+function EquipParamGoods:setDisableRiding(value)
+    return self:setBinary(0x70, 7, value, 1)
+end
+
+function EquipParamGoods:getDisableRiding()
+    return self:getBinary(0x70, 7, value, 1)
+end
+
+function EquipParamGoods:setMaxRepositoryNum(value)
+    return self:setU16(0x71, value)
+end
+function EquipParamGoods:getMaxRepositoryNum(value)
+    return self:getU16(0x71, value)
+end
+
+function EquipParamGoods:setSortGroupId(value)
+    return self:setU8(0x73, value)
+end
+function EquipParamGoods:getSortGroupId(value)
+    return self:getU8(0x73, value)
+end
+
+function EquipParamGoods:setIsUseNoAttackRegion(value)
+    return self:setBinary(0x74, 0, value, 1)
+end
+
+function EquipParamGoods:getIsUseNoAttackRegion()
+    return self:getBinary(0x74, 0, value, 1)
+end
+
+--dummy8 pad1_old:7
+
+function EquipParamGoods:setUnknown_0x73_1(value)
+    return self:setBinary(0x75, 0, value, 1)
+end
+
+function EquipParamGoods:getUnknown_0x73_1()
+    return self:getBinary(0x75, 0, value, 1)
+end
+
+function EquipParamGoods:setQuickMatchReplenish(value)
+    return self:setBinary(0x75, 1, value, 1)
+end
+
+function EquipParamGoods:getQuickMatchReplenish()
+    return self:getBinary(0x75, 1, value, 1)
+end
+
+--dummy8 pad1:5
+
+function EquipParamGoods:setSaleValue(value)
+    return self:setU32(0x75, value)
+end
+function EquipParamGoods:getSaleValue(value)
+    return self:getU32(0x75, value)
+end
+
+function EquipParamGoods:setRarity(value)
+    return self:setU8(0x79, value)
+end
+function EquipParamGoods:getRarity(value)
+    return self:getU8(0x79, value)
+end
+
+function EquipParamGoods:setUseLimitSummonBuddy(value)
+    return self:setU8(0x7A, value)
+end
+function EquipParamGoods:getUseLimitSummonBuddy(value)
+    return self:getU8(0x7A, value)
+end
+
+function EquipParamGoods:setUseLimitSpEffectType(value)
+    return self:setU16(0x7B, value)
+end
+function EquipParamGoods:getUseLimitSpEffectType(value)
+    return self:getU16(0x7B, value)
+end
+
+function EquipParamGoods:setAiUseJudgeId(value)
+    return self:setU32(0x7D, value)
+end
+function EquipParamGoods:getAiUseJudgeId(value)
+    return self:getU32(0x7D, value)
+end
+
+function EquipParamGoods:setConsumeMP(value)
+    return self:setU16(0x81, value)
+end
+function EquipParamGoods:getConsumeMP(value)
+    return self:getU16(0x81, value)
+end
+
+function EquipParamGoods:setConsumeHP(value)
+    return self:setU16(0x83, value)
+end
+function EquipParamGoods:getConsumeHP(value)
+    return self:getU16(0x83, value)
+end
+
+function EquipParamGoods:setReinforceGoodsId(value)
+    return self:setU32(0x85, value)
+end
+function EquipParamGoods:getReinforceGoodsId(value)
+    return self:getU32(0x85, value)
+end
+
+function EquipParamGoods:setReinforceMaterialId(value)
+    return self:setU32(0x89, value)
+end
+function EquipParamGoods:getReinforceMaterialId(value)
+    return self:getU32(0x89, value)
+end
+
+function EquipParamGoods:setReinforcePrice(value)
+    return self:setU32(0x8D, value)
+end
+function EquipParamGoods:getReinforcePrice(value)
+    return self:getU32(0x8D, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType0(value)
+    return self:setU8(0x91, value)
+end
+function EquipParamGoods:getUseLevel_vowType0(value)
+    return self:getU8(0x91, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType1(value)
+    return self:setU8(0x92, value)
+end
+function EquipParamGoods:getUseLevel_vowType1(value)
+    return self:getU8(0x92, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType2(value)
+    return self:setU8(0x93, value)
+end
+function EquipParamGoods:getUseLevel_vowType2(value)
+    return self:getU8(0x93, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType3(value)
+    return self:setU8(0x94, value)
+end
+function EquipParamGoods:getUseLevel_vowType3(value)
+    return self:getU8(0x94, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType4(value)
+    return self:setU8(0x95, value)
+end
+function EquipParamGoods:getUseLevel_vowType4(value)
+    return self:getU8(0x95, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType5(value)
+    return self:setU8(0x96, value)
+end
+function EquipParamGoods:getUseLevel_vowType5(value)
+    return self:getU8(0x96, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType6(value)
+    return self:setU8(0x97, value)
+end
+function EquipParamGoods:getUseLevel_vowType6(value)
+    return self:getU8(0x97, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType7(value)
+    return self:setU8(0x98, value)
+end
+function EquipParamGoods:getUseLevel_vowType7(value)
+    return self:getU8(0x98, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType8(value)
+    return self:setU8(0x99, value)
+end
+function EquipParamGoods:getUseLevel_vowType8(value)
+    return self:getU8(0x99, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType9(value)
+    return self:setU8(0x9A, value)
+end
+function EquipParamGoods:getUseLevel_vowType9(value)
+    return self:getU8(0x9A, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType10(value)
+    return self:setU8(0x9B, value)
+end
+function EquipParamGoods:getUseLevel_vowType10(value)
+    return self:getU8(0x9B, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType11(value)
+    return self:setU8(0x9C, value)
+end
+function EquipParamGoods:getUseLevel_vowType11(value)
+    return self:getU8(0x9C, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType12(value)
+    return self:setU8(0x9D, value)
+end
+function EquipParamGoods:getUseLevel_vowType12(value)
+    return self:getU8(0x9D, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType13(value)
+    return self:setU8(0x9E, value)
+end
+function EquipParamGoods:getUseLevel_vowType13(value)
+    return self:getU8(0x9E, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType14(value)
+    return self:setU8(0x9F, value)
+end
+function EquipParamGoods:getUseLevel_vowType14(value)
+    return self:getU8(0x9F, value)
+end
+
+function EquipParamGoods:setUseLevel_vowType15(value)
+    return self:setU8(0xA0, value)
+end
+function EquipParamGoods:getUseLevel_vowType15(value)
+    return self:getU8(0xA0, value)
+end
+
+function EquipParamGoods:setUseLevel(value)
+    return self:setU16(0xA1, value)
+end
+function EquipParamGoods:getUseLevel(value)
+    return self:getU16(0xA1, value)
+end
+
+--dummy8 reserve5[2]
+
+function EquipParamGoods:setItemGetTutorialFlagId(value)
+    return self:setU32(0xA5, value)
+end
+function EquipParamGoods:getItemGetTutorialFlagId(value)
+    return self:getU32(0xA5, value)
+end
+
+function EquipParamGoods:setCharacterInitId(value)
+    return self:setU32(0xA9, value)
+end
+function EquipParamGoods:getCharacterInitId(value)
+    return self:getU32(0xA9, value)
+end
+
+function EquipParamGoods:setBulletId(value)
+    return self:setU32(0xAD, value)
+end
+function EquipParamGoods:getBulletId(value)
+    return self:getU32(0xAD, value)
+end
+
+function EquipParamGoods:setUnknown_3(value)
+    return self:setU32(0xB1, value)
+end
+function EquipParamGoods:getUnknown_3(value)
+    return self:getU32(0xB1, value)
+end
+
+--dummy8 reserve3[12]
+[disable]
+EquipParamGoods = nil

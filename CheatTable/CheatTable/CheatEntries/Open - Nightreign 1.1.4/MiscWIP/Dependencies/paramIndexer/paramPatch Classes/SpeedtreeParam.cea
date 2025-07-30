@@ -1,0 +1,81 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+SpeedtreeParam = {}
+function SpeedtreeParam:new(id_or_all, patchName)
+    return paramPatcher(self, "SpeedtreeParam", 0x2C, id_or_all, patchName)
+end
+
+
+
+function SpeedtreeParam:setMinFadeLeaf(value)
+    return self:setF32(0x00, value)
+end
+function SpeedtreeParam:getMinFadeLeaf(value)
+    return self:getF32(0x00, value)
+end
+
+function SpeedtreeParam:setMinFadeFrond(value)
+    return self:setF32(0x04, value)
+end
+function SpeedtreeParam:getMinFadeFrond(value)
+    return self:getF32(0x04, value)
+end
+
+function SpeedtreeParam:setMinFadeBranch(value)
+    return self:setF32(0x08, value)
+end
+function SpeedtreeParam:getMinFadeBranch(value)
+    return self:getF32(0x08, value)
+end
+
+function SpeedtreeParam:setMinTranslucencyLeaf(value)
+    return self:setF32(0x0C, value)
+end
+function SpeedtreeParam:getMinTranslucencyLeaf(value)
+    return self:getF32(0x0C, value)
+end
+
+function SpeedtreeParam:setMaxTranslucencyLeaf(value)
+    return self:setF32(0x10, value)
+end
+function SpeedtreeParam:getMaxTranslucencyLeaf(value)
+    return self:getF32(0x10, value)
+end
+
+function SpeedtreeParam:setMinTranslucencyFrond(value)
+    return self:setF32(0x14, value)
+end
+function SpeedtreeParam:getMinTranslucencyFrond(value)
+    return self:getF32(0x14, value)
+end
+
+function SpeedtreeParam:setMaxTranslucencyFrond(value)
+    return self:setF32(0x18, value)
+end
+function SpeedtreeParam:getMaxTranslucencyFrond(value)
+    return self:getF32(0x18, value)
+end
+
+function SpeedtreeParam:setMinTranslucencyBranch(value)
+    return self:setF32(0x1C, value)
+end
+function SpeedtreeParam:getMinTranslucencyBranch(value)
+    return self:getF32(0x1C, value)
+end
+
+function SpeedtreeParam:setMaxTranslucencyBranch(value)
+    return self:setF32(0x20, value)
+end
+function SpeedtreeParam:getMaxTranslucencyBranch(value)
+    return self:getF32(0x20, value)
+end
+
+function SpeedtreeParam:setBillboardBackSpecularWeakenParam(value)
+    return self:setF32(0x24, value)
+end
+function SpeedtreeParam:getBillboardBackSpecularWeakenParam(value)
+    return self:getF32(0x24, value)
+end
+[disable]
+SpeedtreeParam = nil

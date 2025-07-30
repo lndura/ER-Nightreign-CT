@@ -1,0 +1,60 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+PermanentBuffParam = {}
+function PermanentBuffParam:new(id_or_all, patchName)
+    return paramPatcher(self, "PermanentBuffParam", 0x1C, id_or_all, patchName)
+end
+
+
+
+function PermanentBuffParam:setSpEffectId(value)
+    return self:setU32(0x00, value)
+end
+function PermanentBuffParam:getSpEffectId(value)
+    return self:getU32(0x00, value)
+end
+
+function PermanentBuffParam:setIconId(value)
+    return self:setU32(0x04, value)
+end
+function PermanentBuffParam:getIconId(value)
+    return self:getU32(0x04, value)
+end
+
+function PermanentBuffParam:setSecondaryIconId(value)
+    return self:setU32(0x08, value)
+end
+function PermanentBuffParam:getSecondaryIconId(value)
+    return self:getU32(0x08, value)
+end
+
+function PermanentBuffParam:setDisplayNumericValue(value)
+    return self:setU16(0x0C, value)
+end
+function PermanentBuffParam:getDisplayNumericValue(value)
+    return self:getU16(0x0C, value)
+end
+
+function PermanentBuffParam:setDisplayPercentageSymbol(value)
+    return self:setU16(0x0E, value)
+end
+function PermanentBuffParam:getDisplayPercentageSymbol(value)
+    return self:getU16(0x0E, value)
+end
+
+function PermanentBuffParam:setNumericValue(value)
+    return self:setU32(0x10, value)
+end
+function PermanentBuffParam:getNumericValue(value)
+    return self:getU32(0x10, value)
+end
+
+function PermanentBuffParam:setGraceSpEffectId(value)
+    return self:setU32(0x14, value)
+end
+function PermanentBuffParam:getGraceSpEffectId(value)
+    return self:getU32(0x14, value)
+end
+[disable]
+PermanentBuffParam = nil

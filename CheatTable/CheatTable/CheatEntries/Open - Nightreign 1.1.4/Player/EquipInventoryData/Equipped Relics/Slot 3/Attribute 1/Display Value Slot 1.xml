@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>327</ID>
+  <Description>"Display Value Slot 1"</Description>
+  <DropDownListLink>RELIC_IDS</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+3C</Address>
+</CheatEntry>

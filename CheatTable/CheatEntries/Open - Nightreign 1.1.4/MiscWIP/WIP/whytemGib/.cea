@@ -1,0 +1,319 @@
+{  Major thanks to:
+   - vswarte for itemGive.
+   - ViRazY for itemDrop.
+}
+
+{$lua}
+if syntaxcheck then return end
+[enable]
+local winMain = getAddressSafe(process)
+if not winMain then
+   local err = string.format("Not attached to process: %s", process or 'NULL')
+   print(err)
+   error(err)
+end
+
+-- Fallbacks, patfh 1.1.3
+local MapItemMan = getAddressSafe("MapItemMan") or winMain + 0x3B05DF8
+local CSRegulationManager = getAddressSafe("CSRegulationManager") or winMain + 0x33B22200
+
+local AttachEffectParam = paramUtils:getParamTable("AttachEffectParam")
+local function getAttachEffect(AttachEffect)
+    return AttachEffectParam[AttachEffect]
+end
+
+local SwordArtsParam = paramUtils:getParamTable("SwordArtsParam")
+local function getSwordArts(SwordArt)
+    return SwordArtsParam[SwordArt]
+end
+
+local equipParamByType = {
+    [0] = paramUtils:getParamTable("EquipParamWeapon"),
+    --[1] = paramUtils:getParamTable("EquipParamProtector"),
+    [2] = paramUtils:getParamTable("EquipParamAccessory"),
+    [4] = paramUtils:getParamTable("EquipParamGoods"),
+    [8] = paramUtils:getParamTable("EquipParamAntique"),
+}
+
+local function extractItemData(itemId)
+    local itemType = itemId >> 28
+    local paramTable = equipParamByType[itemType]
+    if paramTable then
+        local equipId = itemId - itemType * 0x10000000
+        local paramAddr = paramTable[equipId]
+        if paramAddr then
+            return  itemType, equipId, paramAddr
+        end
+    end
+    return nil, nil, nil
+end
+
+local function normalizeItemList(itemList_or_id, quantity, attachEffect, weaponInfo)
+    local itemList = itemList_or_id
+    if type(itemList_or_id) == 'table' then
+        if type(itemList_or_id[1]) ~= 'table' then
+            itemList = {itemList_or_id}
+        end
+    else
+        itemList = {
+            {itemList_or_id, quantity, attachEffect, weaponInfo},
+        }
+    end
+    return itemList
+end
+
+local function callFunction(safe, itemList, fn_call, itemData, ...)
+    local mapItemManImp = readPointer(MapItemMan)
+    if mapItemManImp then
+        local itemCount = #itemList
+        for i = 1,itemCount,1 do
+            local itemList_or_id, quantity, attachEffect, weaponData = itemList[i][1], itemList[i][2], itemList[i][3], itemList[i][4]
+            if itemId and quantity then
+                if safe then
+                    -- Validate itemData
+                    local itemType, equipId, paramAddr = extractItemData(itemId)
+
+                    if not itemType then
+                        goto invalid_item
+                    end
+
+                    local amount = 1
+                    local effects = {-1, -1, -1}
+                    local wepData = {-1, -1, -1}
+
+                    local attachEffectType = type(attachEffect)
+                    local weaponDataType = type(weaponData)
+
+                    if itemType == 0 then
+                        for i = 1,3,1 do
+                            local data = weaponData[i]
+                            if data then
+                                wepData[i] = data
+                            end
+                        end
+
+                    --elseif itemType == 1 then
+
+                    elseif itemType == 2 then
+
+                    elseif itemType == 4 then
+                        if quantity then
+                            amount = quantity
+                        end
+                    elseif itemType == 8 then
+                        for i = 1,3,1 do
+                            local effect = attachEffect[i]
+                            if effect then
+                                local address = getAttachEffect(effect)
+                                if not address then
+                                    printf("AttachEffect[%d], invalid address: %d / 0x08%X", i, effect, effect)
+                                    goto invalid_item
+                                end
+                                if readU32(address + 0x28) == -1 then
+                                    printf("AttachEffect[%d], invalid statusIconId: %d / 0x08%X", i, effect, effect)
+                                    goto invalid_item
+                                end
+                                effects[i] = effect
+                            end
+                        end
+                    else
+                        print("invalid itemType ", tostring(itemType))
+                        goto invalid_item
+                    end
+                end
+
+                -- i forgot if this is the right method to check if we require a 2nd itemId
+                local itemId_2 = effects[1] == -1 and -1 or itemId
+
+                writeU32(itemData + 0x08, itemId)
+                writeU32(itemData + 0x0C, wepData[1])
+                writeU32(itemData + 0x10, effects[1])
+                writeU32(itemData + 0x14, effects[2])
+                writeU32(itemData + 0x18, effects[3])
+                writeU32(itemData + 0x1C, wepData[2])
+                writeU32(itemData + 0x20, wepData[3])
+                writeU32(itemData + 0x34, itemId_2)
+                writeU16(itemData + 0x48, amount)
+
+                local ret = executeCodeEx(0, 100, fn_call, mapItemManImp, itemData, ...)
+
+                if not ret then
+                    printf("Failed spawning itemlist entry %d, itemId: %d / %08X", i, itemId, itemId)
+                end
+            end
+            ::invalid_item::
+        end
+    else
+
+        return false
+    end
+end
+
+local give_aob = "40 55 53 56 57 41 54 41 55 41 56 41 57 48 8d 6c 24 f9 48 81 ec d8 00 00 00 48 8b 05 ?? ?? ?? ?? 48 33 c4"
+local fn_itemGive = AOBScanModuleUnique(process, give_aob)
+local drop_aob = "48 8b c4 55 53 56 57 41 54 41 56 41 57 48 8d a8 98 fe ff ff 48 81 ec 30 02 00 00 0f 29 70 b8 0f 29 78 a8 48 8b 05 ?? ?? ?? ?? 48 33 c4"
+local fn_itemDrop = AOBScanModuleUnique(process, drop_aob)
+item = {
+   mem = allocateMemory(256, winMain),
+   fn_itemGive = fn_itemGive,
+   fn_itemDrop = fn_itemDrop,
+}
+
+function item.tracker()
+    local params = {
+        RCX,
+        RDX,
+        R8,
+        R9,
+        readPointer(RSP + 0x28),
+        readPointer(RSP + 0x30),
+        readInteger(RSP + 0x38),
+    }
+    local defs = {
+        "mapItemManImpl",
+        "itemData",
+        false,
+        false,
+        false,
+        false,
+        false,
+    }
+
+    printf("\nbreakpoint debugger:")
+    for index, arg in ipairs(params) do
+        local param = defs[index] or "param_" .. index
+        if index > 4 then
+            local offset = 0x28 + (index - 5) * 8
+            local stack = RSP + offset
+            printf("   stack: %016X", RSP + stack)
+        end
+        printf("   %s: %016X", param, arg)
+        if index == 2 then
+            for i = 0,0x48,4 do
+                local int = readInteger(arg + i)
+                writeInteger(item.data + i, int)
+                printf("      [0x%02X] %08X", i, int)
+            end
+        end
+    end
+    debug_continueFromBreakpoint(co_run)
+end
+
+function item:debugCalls(fn_addr, state)
+    local breakpointActive = false
+    local breakpoints = debug_getBreakpointList()
+    if not breakpoints then
+        pfError("debugger not attached.")
+    end
+    for index, address in ipairs(breakpoints) do
+        if address == fn_addr then
+            breakpointActive = true
+            break
+        end
+    end
+    if state and not breakpointActive then
+        debug_setBreakpoint(fn_addr, self.tracker)
+    elseif breakpointActive then
+        debug_removeBreakpoint(fn_addr)
+    end
+end
+
+function item:debugGiveCalls(state)
+    self:debugCalls(fn_itemGive, state)
+end
+
+local function giveItemSafe(sender, itemList_or_id, quantity, passive, gem, magic_1, magic_2)
+    local itemData, param_3, param_4, param_5, param_7 = itemGive.data, itemGive.param_3, itemGive.param_4, itemGive.param_5, itemGive.param_7
+    local itemList = normalizeItemList(itemList_or_id, quantity, passive, gem, magic_1, magic_2)
+    return callFunction(true, itemList, fn_itemGive, itemData, param_3, param_4, param_5, 1, param_7)
+end
+
+local function giveItemUnsafe()
+    local itemData, param_3, param_4, param_5, param_7 = itemGive.data, itemGive.param_3, itemGive.param_4, itemGive.param_5, itemGive.param_7
+    local itemList = normalizeItemList(itemList_or_id, quantity, passive, gem, magic_1, magic_2)
+    return callFunction(false, itemList, fn_itemGive, itemData, param_3, param_4, param_5, 1, param_7)
+end
+
+local function giveItemBuffer(sender, buffer, showItemPopup)
+    local param_3, param_4, param_5, param_7 = itemGive.param_3, itemGive.param_4, itemGive.param_5, itemGive.param_7
+    local mapItemManImp = readPointer(MapItemMan)
+    if mapItemManImp and getAddressSafe(buffer) then
+        local param_6 = showItemPopup and 1 or 0
+        return executeCodeEx(0, 100, fn_itemGive, mapItemManImp, buffer, param_3, param_4, param_5, param_6, param_7)
+    end
+    return false
+end
+
+itemGive = {
+   safe = giveItemSafe,
+   unsafe = giveItemUnsafe,
+   buffer = giveItemBuffer,
+}
+itemGive.mem = item.mem
+itemGive.param_3 =  itemGive.mem
+itemGive.param_4 =  itemGive.param_3 + 0x12
+itemGive.param_5 =  itemGive.param_4 + 0x08
+itemGive.param_7 =  itemGive.param_5 + 0x18
+itemGive.data =     itemGive.param_7 + 0x08
+
+writeU32(itemData + 0x00, 1)
+writeU32(itemData + 0x04, 0)
+--writeU32(itemData + 0x08, itemId)
+--writeU32(itemData + 0x0C, weaponArt)
+--writeU32(itemData + 0x10, spEffect_1)
+--writeU32(itemData + 0x14, spEffect_2)
+--writeU32(itemData + 0x18, spEffect_3)
+--writeU32(itemData + 0x1C, magic_1)
+--writeU32(itemData + 0x20, magic_2)
+writeU32(itemData + 0x24, 0)
+writeU32(itemData + 0x28, 0)
+writeU32(itemData + 0x2C, 0)
+writeU32(itemData + 0x30, -1)
+--writeU32(itemData + 0x34, itemId_2)
+writeU32(itemData + 0x38, -1)
+writeU32(itemData + 0x3C, -1)
+writeU32(itemData + 0x40, -1)
+writeU32(itemData + 0x44, 0)
+--writeU16(itemData + 0x48, quantity)
+writeU16(itemData + 0x4A, -1)
+
+setmetatable(itemGive, {__call = giveItemSafe})
+
+--[[ DOES NOT WORK YET.
+
+function item:debugDropCalls(state)
+    self:debugCalls(fn_itemDrop, state)
+end
+
+local function dropItemSafe(sender, itemList_or_id, quantity, gem, passive)
+
+end
+
+local function dropItemUnsafe()
+
+end
+
+local function dropItemBuffer(sender, buffer)
+    local param_5 = item.param_5
+    local mapItemManImp = readPointer(MapItemMan)
+    if mapItemManImp and getAddressSafe(buffer) then
+        return executeCodeEx(0, 100, fn_itemDrop, mapItemManImp, buffer, 0, 1)
+    end
+    return false
+end
+
+itemDrop = {
+   safe = dropItemSafe,
+   unsafe = dropItemUnsafe,
+   buffer = dropItemBuffer,
+}
+
+local dropSafe = {__call = dropItem}
+setmetatable(itemDrop, dropSafe)
+--]]
+
+[disable]
+deAlloc(item.mem)
+item = nil
+itemGive = nil
+itemDrop = nil

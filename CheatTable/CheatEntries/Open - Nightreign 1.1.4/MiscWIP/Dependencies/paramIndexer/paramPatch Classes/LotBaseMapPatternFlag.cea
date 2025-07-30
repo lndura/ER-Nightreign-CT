@@ -1,0 +1,74 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+LotBaseMapPatternFlag = {}
+function LotBaseMapPatternFlag:new(id_or_all, patchName)
+    return paramPatcher(self, "LotBaseMapPatternFlag", 0x28, id_or_all, patchName)
+end
+
+
+
+function LotBaseMapPatternFlag:setUnknown_0(value)
+    return self:setU32(0x00, value)
+end
+function LotBaseMapPatternFlag:getUnknown_0(value)
+    return self:getU32(0x00, value)
+end
+
+function LotBaseMapPatternFlag:setModifierSet(value)
+    return self:setU32(0x04, value)
+end
+function LotBaseMapPatternFlag:getModifierSet(value)
+    return self:getU32(0x04, value)
+end
+
+function LotBaseMapPatternFlag:setRequireModifier1(value)
+    return self:setU32(0x08, value)
+end
+function LotBaseMapPatternFlag:getRequireModifier1(value)
+    return self:getU32(0x08, value)
+end
+
+function LotBaseMapPatternFlag:setRequireModifier2(value)
+    return self:setU32(0x0C, value)
+end
+function LotBaseMapPatternFlag:getRequireModifier2(value)
+    return self:getU32(0x0C, value)
+end
+
+function LotBaseMapPatternFlag:setExcludeModifier1(value)
+    return self:setU32(0x10, value)
+end
+function LotBaseMapPatternFlag:getExcludeModifier1(value)
+    return self:getU32(0x10, value)
+end
+
+function LotBaseMapPatternFlag:setExcludeModifier2(value)
+    return self:setU32(0x14, value)
+end
+function LotBaseMapPatternFlag:getExcludeModifier2(value)
+    return self:getU32(0x14, value)
+end
+
+function LotBaseMapPatternFlag:setModifier(value)
+    return self:setU32(0x18, value)
+end
+function LotBaseMapPatternFlag:getModifier(value)
+    return self:getU32(0x18, value)
+end
+
+function LotBaseMapPatternFlag:setEventFlag(value)
+    return self:setU32(0x1C, value)
+end
+function LotBaseMapPatternFlag:getEventFlag(value)
+    return self:getU32(0x1C, value)
+end
+
+function LotBaseMapPatternFlag:setWeight(value)
+    return self:setU32(0x20, value)
+end
+function LotBaseMapPatternFlag:getWeight(value)
+    return self:getU32(0x20, value)
+end
+[disable]
+LotBaseMapPatternFlag = nil

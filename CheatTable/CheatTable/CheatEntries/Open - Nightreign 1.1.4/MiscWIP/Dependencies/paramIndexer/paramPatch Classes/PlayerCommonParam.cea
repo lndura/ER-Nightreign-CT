@@ -1,0 +1,790 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+PlayerCommonParam = {}
+function PlayerCommonParam:new(id_or_all, patchName)
+    return paramPatcher(self, "PlayerCommonParam", 0x18C, id_or_all, patchName)
+end
+
+
+
+function PlayerCommonParam:setPlayerFootEffect_bySFX(value)
+    return self:setU32(0x00, value)
+end
+function PlayerCommonParam:getPlayerFootEffect_bySFX(value)
+    return self:getU32(0x00, value)
+end
+
+function PlayerCommonParam:setSnipeModeDrawAlpha_FadeTime(value)
+    return self:setF32(0x04, value)
+end
+function PlayerCommonParam:getSnipeModeDrawAlpha_FadeTime(value)
+    return self:getF32(0x04, value)
+end
+
+function PlayerCommonParam:setToughnessRecoverCorrection(value)
+    return self:setF32(0x08, value)
+end
+function PlayerCommonParam:getToughnessRecoverCorrection(value)
+    return self:getF32(0x08, value)
+end
+
+function PlayerCommonParam:setBaseMagicSlotSize(value)
+    return self:setU8(0x0C, value)
+end
+function PlayerCommonParam:getBaseMagicSlotSize(value)
+    return self:getU8(0x0C, value)
+end
+
+function PlayerCommonParam:setBaseAccSlotNum(value)
+    return self:setU8(0x0D, value)
+end
+function PlayerCommonParam:getBaseAccSlotNum(value)
+    return self:getU8(0x0D, value)
+end
+
+function PlayerCommonParam:setDefaultNumberOfItemSlots(value)
+    return self:setU8(0x0E, value)
+end
+function PlayerCommonParam:getDefaultNumberOfItemSlots(value)
+    return self:getU8(0x0E, value)
+end
+
+function PlayerCommonParam:setUnknownByte_2(value)
+    return self:setU8(0x0F, value)
+end
+function PlayerCommonParam:getUnknownByte_2(value)
+    return self:getU8(0x0F, value)
+end
+
+function PlayerCommonParam:setAnimeID_DropItemPick(value)
+    return self:setU32(0x10, value)
+end
+function PlayerCommonParam:getAnimeID_DropItemPick(value)
+    return self:getU32(0x10, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Sleep_Player(value)
+    return self:setF32(0x14, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Sleep_Player(value)
+    return self:getF32(0x14, value)
+end
+
+function PlayerCommonParam:setFlareOverrideHomingAngle(value)
+    return self:setU32(0x18, value)
+end
+function PlayerCommonParam:getFlareOverrideHomingAngle(value)
+    return self:getU32(0x18, value)
+end
+
+function PlayerCommonParam:setFlareOverrideHomingStopRange(value)
+    return self:setF32(0x1C, value)
+end
+function PlayerCommonParam:getFlareOverrideHomingStopRange(value)
+    return self:getF32(0x1C, value)
+end
+
+function PlayerCommonParam:setAnimeID_SleepCollectorItemPick(value)
+    return self:setU32(0x20, value)
+end
+function PlayerCommonParam:getAnimeID_SleepCollectorItemPick(value)
+    return self:getU32(0x20, value)
+end
+
+function PlayerCommonParam:setUnlockEventFlagBaseId_forWepAttr(value)
+    return self:setU32(0x24, value)
+end
+function PlayerCommonParam:getUnlockEventFlagBaseId_forWepAttr(value)
+    return self:getU32(0x24, value)
+end
+
+function PlayerCommonParam:setSystemEnchant_BigRune(value)
+    return self:setU32(0x28, value)
+end
+function PlayerCommonParam:getSystemEnchant_BigRune(value)
+    return self:getU32(0x28, value)
+end
+
+function PlayerCommonParam:setLowStatus_AtkPowDown(value)
+    return self:setF32(0x2C, value)
+end
+function PlayerCommonParam:getLowStatus_AtkPowDown(value)
+    return self:getF32(0x2C, value)
+end
+
+function PlayerCommonParam:setLowStatus_ConsumeStaminaRate(value)
+    return self:setF32(0x30, value)
+end
+function PlayerCommonParam:getLowStatus_ConsumeStaminaRate(value)
+    return self:getF32(0x30, value)
+end
+
+function PlayerCommonParam:setLowStatus_AtkGuardBreak(value)
+    return self:setU16(0x34, value)
+end
+function PlayerCommonParam:getLowStatus_AtkGuardBreak(value)
+    return self:getU16(0x34, value)
+end
+
+function PlayerCommonParam:setGuardStatusCorrect_MaxStatusVal(value)
+    return self:setU16(0x36, value)
+end
+function PlayerCommonParam:getGuardStatusCorrect_MaxStatusVal(value)
+    return self:getU16(0x36, value)
+end
+
+function PlayerCommonParam:setUnlockEventFlagStepNum_forWepAttr(value)
+    return self:setU16(0x38, value)
+end
+function PlayerCommonParam:getUnlockEventFlagStepNum_forWepAttr(value)
+    return self:getU16(0x38, value)
+end
+
+function PlayerCommonParam:setRetributionMagic_damageCountNum(value)
+    return self:setU16(0x3A, value)
+end
+function PlayerCommonParam:getRetributionMagic_damageCountNum(value)
+    return self:getU16(0x3A, value)
+end
+
+function PlayerCommonParam:setRetributionMagic_damageCountRemainTime(value)
+    return self:setU16(0x3C, value)
+end
+function PlayerCommonParam:getRetributionMagic_damageCountRemainTime(value)
+    return self:getU16(0x3C, value)
+end
+
+function PlayerCommonParam:setRetributionMagic_burstDmypolyId(value)
+    return self:setU16(0x3E, value)
+end
+function PlayerCommonParam:getRetributionMagic_burstDmypolyId(value)
+    return self:getU16(0x3E, value)
+end
+
+function PlayerCommonParam:setRetributionMagic_burstMagicParamId(value)
+    return self:setU32(0x40, value)
+end
+function PlayerCommonParam:getRetributionMagic_burstMagicParamId(value)
+    return self:getU32(0x40, value)
+end
+
+function PlayerCommonParam:setChrAimCam_rideOffsetHeight(value)
+    return self:setF32(0x44, value)
+end
+function PlayerCommonParam:getChrAimCam_rideOffsetHeight(value)
+    return self:getF32(0x44, value)
+end
+
+function PlayerCommonParam:setUnknownInt_2(value)
+    return self:setU32(0x48, value)
+end
+function PlayerCommonParam:getUnknownInt_2(value)
+    return self:getU32(0x48, value)
+end
+
+function PlayerCommonParam:setArrowCaseWepBindDmypolyId(value)
+    return self:setU32(0x4C, value)
+end
+function PlayerCommonParam:getArrowCaseWepBindDmypolyId(value)
+    return self:getU32(0x4C, value)
+end
+
+function PlayerCommonParam:setBoltPouchWepBindDmypolyId(value)
+    return self:setU32(0x50, value)
+end
+function PlayerCommonParam:getBoltPouchWepBindDmypolyId(value)
+    return self:getU32(0x50, value)
+end
+
+function PlayerCommonParam:setEstusFlaskAllocateRate(value)
+    return self:setF32(0x54, value)
+end
+function PlayerCommonParam:getEstusFlaskAllocateRate(value)
+    return self:getF32(0x54, value)
+end
+
+--dummy8 reserved38[2]
+
+function PlayerCommonParam:setKickAcceptanceDeg(value)
+    return self:setU8(0x5A, value)
+end
+function PlayerCommonParam:getKickAcceptanceDeg(value)
+    return self:getU8(0x5A, value)
+end
+
+function PlayerCommonParam:setNpcPlayerAnalogWeightRate_Light(value)
+    return self:setU8(0x5B, value)
+end
+function PlayerCommonParam:getNpcPlayerAnalogWeightRate_Light(value)
+    return self:getU8(0x5B, value)
+end
+
+function PlayerCommonParam:setNpcPlayerAnalogWeightRate_Normal(value)
+    return self:setU8(0x5C, value)
+end
+function PlayerCommonParam:getNpcPlayerAnalogWeightRate_Normal(value)
+    return self:getU8(0x5C, value)
+end
+
+function PlayerCommonParam:setNpcPlayerAnalogWeightRate_Heavy(value)
+    return self:setU8(0x5D, value)
+end
+function PlayerCommonParam:getNpcPlayerAnalogWeightRate_Heavy(value)
+    return self:getU8(0x5D, value)
+end
+
+function PlayerCommonParam:setNpcPlayerAnalogWeightRate_WeightOver(value)
+    return self:setU8(0x5E, value)
+end
+function PlayerCommonParam:getNpcPlayerAnalogWeightRate_WeightOver(value)
+    return self:getU8(0x5E, value)
+end
+
+function PlayerCommonParam:setNpcPlayerAnalogWeightRate_SuperLight(value)
+    return self:setU8(0x5F, value)
+end
+function PlayerCommonParam:getNpcPlayerAnalogWeightRate_SuperLight(value)
+    return self:getU8(0x5F, value)
+end
+
+function PlayerCommonParam:setUnknownInt_1(value)
+    return self:setU32(0x60, value)
+end
+function PlayerCommonParam:getUnknownInt_1(value)
+    return self:getU32(0x60, value)
+end
+
+function PlayerCommonParam:setClearCountCorrectBaseSpEffectId(value)
+    return self:setU32(0x64, value)
+end
+function PlayerCommonParam:getClearCountCorrectBaseSpEffectId(value)
+    return self:getU32(0x64, value)
+end
+
+function PlayerCommonParam:setArrowBoltModelIdOffset(value)
+    return self:setU32(0x68, value)
+end
+function PlayerCommonParam:getArrowBoltModelIdOffset(value)
+    return self:getU32(0x68, value)
+end
+
+function PlayerCommonParam:setArrowBoltRemainingNumModelMaskThreshold1(value)
+    return self:setU8(0x6C, value)
+end
+function PlayerCommonParam:getArrowBoltRemainingNumModelMaskThreshold1(value)
+    return self:getU8(0x6C, value)
+end
+
+function PlayerCommonParam:setArrowBoltRemainingNumModelMaskThreshold2(value)
+    return self:setU8(0x6D, value)
+end
+function PlayerCommonParam:getArrowBoltRemainingNumModelMaskThreshold2(value)
+    return self:getU8(0x6D, value)
+end
+
+function PlayerCommonParam:setUnknownByte_3(value)
+    return self:setU8(0x6E, value)
+end
+function PlayerCommonParam:getUnknownByte_3(value)
+    return self:getU8(0x6E, value)
+end
+
+function PlayerCommonParam:setUnknownByte_4(value)
+    return self:setU8(0x6F, value)
+end
+function PlayerCommonParam:getUnknownByte_4(value)
+    return self:getU8(0x6F, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Poision_Player(value)
+    return self:setF32(0x70, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Poision_Player(value)
+    return self:getF32(0x70, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Desease_Player(value)
+    return self:setF32(0x74, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Desease_Player(value)
+    return self:getF32(0x74, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Blood_Player(value)
+    return self:setF32(0x78, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Blood_Player(value)
+    return self:getF32(0x78, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Curse_Player(value)
+    return self:setF32(0x7C, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Curse_Player(value)
+    return self:getF32(0x7C, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Freeze_Player(value)
+    return self:setF32(0x80, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Freeze_Player(value)
+    return self:getF32(0x80, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Poision_Enemy(value)
+    return self:setF32(0x84, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Poision_Enemy(value)
+    return self:getF32(0x84, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Desease_Enemy(value)
+    return self:setF32(0x88, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Desease_Enemy(value)
+    return self:getF32(0x88, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Blood_Enemy(value)
+    return self:setF32(0x8C, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Blood_Enemy(value)
+    return self:getF32(0x8C, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Curse_Enemy(value)
+    return self:setF32(0x90, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Curse_Enemy(value)
+    return self:getF32(0x90, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Freeze_Enemy(value)
+    return self:setF32(0x94, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Freeze_Enemy(value)
+    return self:getF32(0x94, value)
+end
+
+function PlayerCommonParam:setRequestTimeLeftBothHand(value)
+    return self:setF32(0x98, value)
+end
+function PlayerCommonParam:getRequestTimeLeftBothHand(value)
+    return self:getF32(0x98, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Madness_Player(value)
+    return self:setF32(0x9C, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Madness_Player(value)
+    return self:getF32(0x9C, value)
+end
+
+function PlayerCommonParam:setAnimeID_MaterialItemPick(value)
+    return self:setU32(0xA0, value)
+end
+function PlayerCommonParam:getAnimeID_MaterialItemPick(value)
+    return self:getU32(0xA0, value)
+end
+
+function PlayerCommonParam:setHpEstusFlaskAllocateRateForYellowMonk(value)
+    return self:setF32(0xA4, value)
+end
+function PlayerCommonParam:getHpEstusFlaskAllocateRateForYellowMonk(value)
+    return self:getF32(0xA4, value)
+end
+
+function PlayerCommonParam:setHpEstusFlaskAllocateOffsetForYellowMonk(value)
+    return self:setU32(0xA8, value)
+end
+function PlayerCommonParam:getHpEstusFlaskAllocateOffsetForYellowMonk(value)
+    return self:getU32(0xA8, value)
+end
+
+function PlayerCommonParam:setMpEstusFlaskAllocateRateForYellowMonk(value)
+    return self:setF32(0xAC, value)
+end
+function PlayerCommonParam:getMpEstusFlaskAllocateRateForYellowMonk(value)
+    return self:getF32(0xAC, value)
+end
+
+function PlayerCommonParam:setMpEstusFlaskAllocateOffsetForYellowMonk(value)
+    return self:setU32(0xB0, value)
+end
+function PlayerCommonParam:getMpEstusFlaskAllocateOffsetForYellowMonk(value)
+    return self:getU32(0xB0, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Sleep_Enemy(value)
+    return self:setF32(0xB4, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Sleep_Enemy(value)
+    return self:getF32(0xB4, value)
+end
+
+function PlayerCommonParam:setResistRecoverPoint_Madness_Enemy(value)
+    return self:setF32(0xB8, value)
+end
+function PlayerCommonParam:getResistRecoverPoint_Madness_Enemy(value)
+    return self:getF32(0xB8, value)
+end
+
+function PlayerCommonParam:setUnknown_1(value)
+    return self:setU32(0xBC, value)
+end
+function PlayerCommonParam:getUnknown_1(value)
+    return self:getU32(0xBC, value)
+end
+
+function PlayerCommonParam:setUnknown_2(value)
+    return self:setU32(0xC0, value)
+end
+function PlayerCommonParam:getUnknown_2(value)
+    return self:getU32(0xC0, value)
+end
+
+function PlayerCommonParam:setUnknown_3(value)
+    return self:setU32(0xC4, value)
+end
+function PlayerCommonParam:getUnknown_3(value)
+    return self:getU32(0xC4, value)
+end
+
+function PlayerCommonParam:setUnknown_4(value)
+    return self:setU32(0xC8, value)
+end
+function PlayerCommonParam:getUnknown_4(value)
+    return self:getU32(0xC8, value)
+end
+
+function PlayerCommonParam:setUnknown_5(value)
+    return self:setF32(0xCC, value)
+end
+function PlayerCommonParam:getUnknown_5(value)
+    return self:getF32(0xCC, value)
+end
+
+function PlayerCommonParam:setUnknown_6(value)
+    return self:setF32(0xD0, value)
+end
+function PlayerCommonParam:getUnknown_6(value)
+    return self:getF32(0xD0, value)
+end
+
+function PlayerCommonParam:setUnknown_7(value)
+    return self:setF32(0xD4, value)
+end
+function PlayerCommonParam:getUnknown_7(value)
+    return self:getF32(0xD4, value)
+end
+
+function PlayerCommonParam:setUnknown_8(value)
+    return self:setF32(0xD8, value)
+end
+function PlayerCommonParam:getUnknown_8(value)
+    return self:getF32(0xD8, value)
+end
+
+function PlayerCommonParam:setUnknown_9(value)
+    return self:setF32(0xDC, value)
+end
+function PlayerCommonParam:getUnknown_9(value)
+    return self:getF32(0xDC, value)
+end
+
+function PlayerCommonParam:setUnknown_10(value)
+    return self:setU32(0xE0, value)
+end
+function PlayerCommonParam:getUnknown_10(value)
+    return self:getU32(0xE0, value)
+end
+
+function PlayerCommonParam:setUnknown_11(value)
+    return self:setF32(0xE4, value)
+end
+function PlayerCommonParam:getUnknown_11(value)
+    return self:getF32(0xE4, value)
+end
+
+function PlayerCommonParam:setUnknown_12(value)
+    return self:setF32(0xE8, value)
+end
+function PlayerCommonParam:getUnknown_12(value)
+    return self:getF32(0xE8, value)
+end
+
+function PlayerCommonParam:setUnknown_13(value)
+    return self:setU32(0xEC, value)
+end
+function PlayerCommonParam:getUnknown_13(value)
+    return self:getU32(0xEC, value)
+end
+
+function PlayerCommonParam:setUnknown_14(value)
+    return self:setU32(0xF0, value)
+end
+function PlayerCommonParam:getUnknown_14(value)
+    return self:getU32(0xF0, value)
+end
+
+function PlayerCommonParam:setRevenantSummon1_BuddyParamId(value)
+    return self:setU32(0xF4, value)
+end
+function PlayerCommonParam:getRevenantSummon1_BuddyParamId(value)
+    return self:getU32(0xF4, value)
+end
+
+function PlayerCommonParam:setRevenantSummon2_BuddyParamId(value)
+    return self:setU32(0xF8, value)
+end
+function PlayerCommonParam:getRevenantSummon2_BuddyParamId(value)
+    return self:getU32(0xF8, value)
+end
+
+function PlayerCommonParam:setRevenantSummon3_BuddyParamId(value)
+    return self:setU32(0xFC, value)
+end
+function PlayerCommonParam:getRevenantSummon3_BuddyParamId(value)
+    return self:getU32(0xFC, value)
+end
+
+function PlayerCommonParam:setUnknown_18(value)
+    return self:setF32(0x100, value)
+end
+function PlayerCommonParam:getUnknown_18(value)
+    return self:getF32(0x100, value)
+end
+
+function PlayerCommonParam:setUnknown_19(value)
+    return self:setU32(0x104, value)
+end
+function PlayerCommonParam:getUnknown_19(value)
+    return self:getU32(0x104, value)
+end
+
+function PlayerCommonParam:setUnknown_20(value)
+    return self:setF32(0x108, value)
+end
+function PlayerCommonParam:getUnknown_20(value)
+    return self:getF32(0x108, value)
+end
+
+function PlayerCommonParam:setUnknown_21(value)
+    return self:setF32(0x10C, value)
+end
+function PlayerCommonParam:getUnknown_21(value)
+    return self:getF32(0x10C, value)
+end
+
+function PlayerCommonParam:setUnknown_22(value)
+    return self:setU32(0x110, value)
+end
+function PlayerCommonParam:getUnknown_22(value)
+    return self:getU32(0x110, value)
+end
+
+function PlayerCommonParam:setUnknown_23(value)
+    return self:setU32(0x114, value)
+end
+function PlayerCommonParam:getUnknown_23(value)
+    return self:getU32(0x114, value)
+end
+
+function PlayerCommonParam:setUnknown_24(value)
+    return self:setF32(0x118, value)
+end
+function PlayerCommonParam:getUnknown_24(value)
+    return self:getF32(0x118, value)
+end
+
+function PlayerCommonParam:setUnknown_25(value)
+    return self:setF32(0x11C, value)
+end
+function PlayerCommonParam:getUnknown_25(value)
+    return self:getF32(0x11C, value)
+end
+
+function PlayerCommonParam:setUnknown_26(value)
+    return self:setU32(0x120, value)
+end
+function PlayerCommonParam:getUnknown_26(value)
+    return self:getU32(0x120, value)
+end
+
+function PlayerCommonParam:setUnknown_27(value)
+    return self:setU32(0x124, value)
+end
+function PlayerCommonParam:getUnknown_27(value)
+    return self:getU32(0x124, value)
+end
+
+function PlayerCommonParam:setUnknown_28(value)
+    return self:setU32(0x128, value)
+end
+function PlayerCommonParam:getUnknown_28(value)
+    return self:getU32(0x128, value)
+end
+
+function PlayerCommonParam:setUnknown_29(value)
+    return self:setF32(0x12C, value)
+end
+function PlayerCommonParam:getUnknown_29(value)
+    return self:getF32(0x12C, value)
+end
+
+function PlayerCommonParam:setUnknown_30(value)
+    return self:setF32(0x130, value)
+end
+function PlayerCommonParam:getUnknown_30(value)
+    return self:getF32(0x130, value)
+end
+
+function PlayerCommonParam:setUnknown_31(value)
+    return self:setU32(0x134, value)
+end
+function PlayerCommonParam:getUnknown_31(value)
+    return self:getU32(0x134, value)
+end
+
+function PlayerCommonParam:setUnknown_32(value)
+    return self:setF32(0x138, value)
+end
+function PlayerCommonParam:getUnknown_32(value)
+    return self:getF32(0x138, value)
+end
+
+function PlayerCommonParam:setUnknown_33(value)
+    return self:setF32(0x13C, value)
+end
+function PlayerCommonParam:getUnknown_33(value)
+    return self:getF32(0x13C, value)
+end
+
+function PlayerCommonParam:setUnknown_34(value)
+    return self:setF32(0x140, value)
+end
+function PlayerCommonParam:getUnknown_34(value)
+    return self:getF32(0x140, value)
+end
+
+function PlayerCommonParam:setUnknown_35(value)
+    return self:setF32(0x144, value)
+end
+function PlayerCommonParam:getUnknown_35(value)
+    return self:getF32(0x144, value)
+end
+
+function PlayerCommonParam:setUnknown_36(value)
+    return self:setF32(0x148, value)
+end
+function PlayerCommonParam:getUnknown_36(value)
+    return self:getF32(0x148, value)
+end
+
+function PlayerCommonParam:setUnknown_37(value)
+    return self:setF32(0x14C, value)
+end
+function PlayerCommonParam:getUnknown_37(value)
+    return self:getF32(0x14C, value)
+end
+
+function PlayerCommonParam:setUnknown_38(value)
+    return self:setF32(0x150, value)
+end
+function PlayerCommonParam:getUnknown_38(value)
+    return self:getF32(0x150, value)
+end
+
+function PlayerCommonParam:setUnknown_39(value)
+    return self:setF32(0x154, value)
+end
+function PlayerCommonParam:getUnknown_39(value)
+    return self:getF32(0x154, value)
+end
+
+function PlayerCommonParam:setUnknown_40(value)
+    return self:setF32(0x158, value)
+end
+function PlayerCommonParam:getUnknown_40(value)
+    return self:getF32(0x158, value)
+end
+
+function PlayerCommonParam:setUnknown_41(value)
+    return self:setF32(0x15C, value)
+end
+function PlayerCommonParam:getUnknown_41(value)
+    return self:getF32(0x15C, value)
+end
+
+function PlayerCommonParam:setUnknown_42(value)
+    return self:setU32(0x160, value)
+end
+function PlayerCommonParam:getUnknown_42(value)
+    return self:getU32(0x160, value)
+end
+
+function PlayerCommonParam:setUnknown_43(value)
+    return self:setU32(0x164, value)
+end
+function PlayerCommonParam:getUnknown_43(value)
+    return self:getU32(0x164, value)
+end
+
+function PlayerCommonParam:setUnknown_44(value)
+    return self:setU32(0x168, value)
+end
+function PlayerCommonParam:getUnknown_44(value)
+    return self:getU32(0x168, value)
+end
+
+function PlayerCommonParam:setUnknown_45(value)
+    return self:setF32(0x16C, value)
+end
+function PlayerCommonParam:getUnknown_45(value)
+    return self:getF32(0x16C, value)
+end
+
+function PlayerCommonParam:setUnknown_46(value)
+    return self:setU32(0x170, value)
+end
+function PlayerCommonParam:getUnknown_46(value)
+    return self:getU32(0x170, value)
+end
+
+function PlayerCommonParam:setUnknown_47(value)
+    return self:setF32(0x174, value)
+end
+function PlayerCommonParam:getUnknown_47(value)
+    return self:getF32(0x174, value)
+end
+
+function PlayerCommonParam:setUnknown_48(value)
+    return self:setU32(0x178, value)
+end
+function PlayerCommonParam:getUnknown_48(value)
+    return self:getU32(0x178, value)
+end
+
+function PlayerCommonParam:setUnknown_49(value)
+    return self:setU32(0x17C, value)
+end
+function PlayerCommonParam:getUnknown_49(value)
+    return self:getU32(0x17C, value)
+end
+
+function PlayerCommonParam:setUnknown_50(value)
+    return self:setU32(0x180, value)
+end
+function PlayerCommonParam:getUnknown_50(value)
+    return self:getU32(0x180, value)
+end
+
+function PlayerCommonParam:setUnknown_51(value)
+    return self:setF32(0x184, value)
+end
+function PlayerCommonParam:getUnknown_51(value)
+    return self:getF32(0x184, value)
+end
+[disable]
+PlayerCommonParam = nil

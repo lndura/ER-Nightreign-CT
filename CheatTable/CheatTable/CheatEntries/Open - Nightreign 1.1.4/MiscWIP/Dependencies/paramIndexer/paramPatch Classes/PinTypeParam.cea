@@ -1,0 +1,95 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+PinTypeParam = {}
+function PinTypeParam:new(id_or_all, patchName)
+    return paramPatcher(self, "PinTypeParam", 0x28, id_or_all, patchName)
+end
+
+
+
+function PinTypeParam:setUnknown_0a(value)
+    return self:setU8(0x00, value)
+end
+function PinTypeParam:getUnknown_0a(value)
+    return self:getU8(0x00, value)
+end
+
+function PinTypeParam:setUnknown_0b(value)
+    return self:setU8(0x01, value)
+end
+function PinTypeParam:getUnknown_0b(value)
+    return self:getU8(0x01, value)
+end
+
+function PinTypeParam:setUnknown_0c(value)
+    return self:setU8(0x02, value)
+end
+function PinTypeParam:getUnknown_0c(value)
+    return self:getU8(0x02, value)
+end
+
+function PinTypeParam:setUnknown_0d(value)
+    return self:setU8(0x03, value)
+end
+function PinTypeParam:getUnknown_0d(value)
+    return self:getU8(0x03, value)
+end
+
+function PinTypeParam:setUnknown_1(value)
+    return self:setF32(0x04, value)
+end
+function PinTypeParam:getUnknown_1(value)
+    return self:getF32(0x04, value)
+end
+
+function PinTypeParam:setUnknown_2(value)
+    return self:setF32(0x08, value)
+end
+function PinTypeParam:getUnknown_2(value)
+    return self:getF32(0x08, value)
+end
+
+function PinTypeParam:setUnknown_3(value)
+    return self:setF32(0x0C, value)
+end
+function PinTypeParam:getUnknown_3(value)
+    return self:getF32(0x0C, value)
+end
+
+function PinTypeParam:setUnknown_4(value)
+    return self:setF32(0x10, value)
+end
+function PinTypeParam:getUnknown_4(value)
+    return self:getF32(0x10, value)
+end
+
+function PinTypeParam:setUnknown_5(value)
+    return self:setF32(0x14, value)
+end
+function PinTypeParam:getUnknown_5(value)
+    return self:getF32(0x14, value)
+end
+
+function PinTypeParam:setUnknown_6(value)
+    return self:setF32(0x18, value)
+end
+function PinTypeParam:getUnknown_6(value)
+    return self:getF32(0x18, value)
+end
+
+function PinTypeParam:setUnknown_7(value)
+    return self:setF32(0x1C, value)
+end
+function PinTypeParam:getUnknown_7(value)
+    return self:getF32(0x1C, value)
+end
+
+function PinTypeParam:setUnknown_8(value)
+    return self:setF32(0x20, value)
+end
+function PinTypeParam:getUnknown_8(value)
+    return self:getF32(0x20, value)
+end
+[disable]
+PinTypeParam = nil

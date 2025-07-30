@@ -1,0 +1,1701 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+FaceParam = {}
+function FaceParam:new(id_or_all, patchName)
+    return paramPatcher(self, "FaceParam", 0xF1, id_or_all, patchName)
+end
+
+
+
+function FaceParam:setFace_partsId(value)
+    return self:setU8(0x00, value)
+end
+function FaceParam:getFace_partsId(value)
+    return self:getU8(0x00, value)
+end
+
+function FaceParam:setSkin_color_R(value)
+    return self:setU8(0x01, value)
+end
+function FaceParam:getSkin_color_R(value)
+    return self:getU8(0x01, value)
+end
+
+function FaceParam:setSkin_color_G(value)
+    return self:setU8(0x02, value)
+end
+function FaceParam:getSkin_color_G(value)
+    return self:getU8(0x02, value)
+end
+
+function FaceParam:setSkin_color_B(value)
+    return self:setU8(0x03, value)
+end
+function FaceParam:getSkin_color_B(value)
+    return self:getU8(0x03, value)
+end
+
+function FaceParam:setSkin_gloss(value)
+    return self:setU8(0x04, value)
+end
+function FaceParam:getSkin_gloss(value)
+    return self:getU8(0x04, value)
+end
+
+function FaceParam:setSkin_pores(value)
+    return self:setU8(0x05, value)
+end
+function FaceParam:getSkin_pores(value)
+    return self:getU8(0x05, value)
+end
+
+function FaceParam:setFace_beard(value)
+    return self:setU8(0x06, value)
+end
+function FaceParam:getFace_beard(value)
+    return self:getU8(0x06, value)
+end
+
+function FaceParam:setFace_aroundEye(value)
+    return self:setU8(0x07, value)
+end
+function FaceParam:getFace_aroundEye(value)
+    return self:getU8(0x07, value)
+end
+
+function FaceParam:setFace_aroundEyeColor_R(value)
+    return self:setU8(0x08, value)
+end
+function FaceParam:getFace_aroundEyeColor_R(value)
+    return self:getU8(0x08, value)
+end
+
+function FaceParam:setFace_aroundEyeColor_G(value)
+    return self:setU8(0x09, value)
+end
+function FaceParam:getFace_aroundEyeColor_G(value)
+    return self:getU8(0x09, value)
+end
+
+function FaceParam:setFace_aroundEyeColor_B(value)
+    return self:setU8(0x0A, value)
+end
+function FaceParam:getFace_aroundEyeColor_B(value)
+    return self:getU8(0x0A, value)
+end
+
+function FaceParam:setFace_cheek(value)
+    return self:setU8(0x0B, value)
+end
+function FaceParam:getFace_cheek(value)
+    return self:getU8(0x0B, value)
+end
+
+function FaceParam:setFace_cheekColor_R(value)
+    return self:setU8(0x0C, value)
+end
+function FaceParam:getFace_cheekColor_R(value)
+    return self:getU8(0x0C, value)
+end
+
+function FaceParam:setFace_cheekColor_G(value)
+    return self:setU8(0x0D, value)
+end
+function FaceParam:getFace_cheekColor_G(value)
+    return self:getU8(0x0D, value)
+end
+
+function FaceParam:setFace_cheekColor_B(value)
+    return self:setU8(0x0E, value)
+end
+function FaceParam:getFace_cheekColor_B(value)
+    return self:getU8(0x0E, value)
+end
+
+function FaceParam:setFace_eyeLine(value)
+    return self:setU8(0x0F, value)
+end
+function FaceParam:getFace_eyeLine(value)
+    return self:getU8(0x0F, value)
+end
+
+function FaceParam:setFace_eyeLineColor_R(value)
+    return self:setU8(0x10, value)
+end
+function FaceParam:getFace_eyeLineColor_R(value)
+    return self:getU8(0x10, value)
+end
+
+function FaceParam:setFace_eyeLineColor_G(value)
+    return self:setU8(0x11, value)
+end
+function FaceParam:getFace_eyeLineColor_G(value)
+    return self:getU8(0x11, value)
+end
+
+function FaceParam:setFace_eyeLineColor_B(value)
+    return self:setU8(0x12, value)
+end
+function FaceParam:getFace_eyeLineColor_B(value)
+    return self:getU8(0x12, value)
+end
+
+function FaceParam:setFace_eyeShadowDown(value)
+    return self:setU8(0x13, value)
+end
+function FaceParam:getFace_eyeShadowDown(value)
+    return self:getU8(0x13, value)
+end
+
+function FaceParam:setFace_eyeShadowDownColor_R(value)
+    return self:setU8(0x14, value)
+end
+function FaceParam:getFace_eyeShadowDownColor_R(value)
+    return self:getU8(0x14, value)
+end
+
+function FaceParam:setFace_eyeShadowDownColor_G(value)
+    return self:setU8(0x15, value)
+end
+function FaceParam:getFace_eyeShadowDownColor_G(value)
+    return self:getU8(0x15, value)
+end
+
+function FaceParam:setFace_eyeShadowDownColor_B(value)
+    return self:setU8(0x16, value)
+end
+function FaceParam:getFace_eyeShadowDownColor_B(value)
+    return self:getU8(0x16, value)
+end
+
+function FaceParam:setFace_eyeShadowUp(value)
+    return self:setU8(0x17, value)
+end
+function FaceParam:getFace_eyeShadowUp(value)
+    return self:getU8(0x17, value)
+end
+
+function FaceParam:setFace_eyeShadowUpColor_R(value)
+    return self:setU8(0x18, value)
+end
+function FaceParam:getFace_eyeShadowUpColor_R(value)
+    return self:getU8(0x18, value)
+end
+
+function FaceParam:setFace_eyeShadowUpColor_G(value)
+    return self:setU8(0x19, value)
+end
+function FaceParam:getFace_eyeShadowUpColor_G(value)
+    return self:getU8(0x19, value)
+end
+
+function FaceParam:setFace_eyeShadowUpColor_B(value)
+    return self:setU8(0x1A, value)
+end
+function FaceParam:getFace_eyeShadowUpColor_B(value)
+    return self:getU8(0x1A, value)
+end
+
+function FaceParam:setFace_lip(value)
+    return self:setU8(0x1B, value)
+end
+function FaceParam:getFace_lip(value)
+    return self:getU8(0x1B, value)
+end
+
+function FaceParam:setFace_lipColor_R(value)
+    return self:setU8(0x1C, value)
+end
+function FaceParam:getFace_lipColor_R(value)
+    return self:getU8(0x1C, value)
+end
+
+function FaceParam:setFace_lipColor_G(value)
+    return self:setU8(0x1D, value)
+end
+function FaceParam:getFace_lipColor_G(value)
+    return self:getU8(0x1D, value)
+end
+
+function FaceParam:setFace_lipColor_B(value)
+    return self:setU8(0x1E, value)
+end
+function FaceParam:getFace_lipColor_B(value)
+    return self:getU8(0x1E, value)
+end
+
+function FaceParam:setBody_hair(value)
+    return self:setU8(0x1F, value)
+end
+function FaceParam:getBody_hair(value)
+    return self:getU8(0x1F, value)
+end
+
+function FaceParam:setBody_hairColor_R(value)
+    return self:setU8(0x20, value)
+end
+function FaceParam:getBody_hairColor_R(value)
+    return self:getU8(0x20, value)
+end
+
+function FaceParam:setBody_hairColor_G(value)
+    return self:setU8(0x21, value)
+end
+function FaceParam:getBody_hairColor_G(value)
+    return self:getU8(0x21, value)
+end
+
+function FaceParam:setBody_hairColor_B(value)
+    return self:setU8(0x22, value)
+end
+function FaceParam:getBody_hairColor_B(value)
+    return self:getU8(0x22, value)
+end
+
+function FaceParam:setEye_partsId(value)
+    return self:setU8(0x23, value)
+end
+function FaceParam:getEye_partsId(value)
+    return self:getU8(0x23, value)
+end
+
+function FaceParam:setEyeR_irisColor_R(value)
+    return self:setU8(0x24, value)
+end
+function FaceParam:getEyeR_irisColor_R(value)
+    return self:getU8(0x24, value)
+end
+
+function FaceParam:setEyeR_irisColor_G(value)
+    return self:setU8(0x25, value)
+end
+function FaceParam:getEyeR_irisColor_G(value)
+    return self:getU8(0x25, value)
+end
+
+function FaceParam:setEyeR_irisColor_B(value)
+    return self:setU8(0x26, value)
+end
+function FaceParam:getEyeR_irisColor_B(value)
+    return self:getU8(0x26, value)
+end
+
+function FaceParam:setEyeR_irisScale(value)
+    return self:setU8(0x27, value)
+end
+function FaceParam:getEyeR_irisScale(value)
+    return self:getU8(0x27, value)
+end
+
+function FaceParam:setEyeR_cataract(value)
+    return self:setU8(0x28, value)
+end
+function FaceParam:getEyeR_cataract(value)
+    return self:getU8(0x28, value)
+end
+
+function FaceParam:setEyeR_cataractColor_R(value)
+    return self:setU8(0x29, value)
+end
+function FaceParam:getEyeR_cataractColor_R(value)
+    return self:getU8(0x29, value)
+end
+
+function FaceParam:setEyeR_cataractColor_G(value)
+    return self:setU8(0x2A, value)
+end
+function FaceParam:getEyeR_cataractColor_G(value)
+    return self:getU8(0x2A, value)
+end
+
+function FaceParam:setEyeR_cataractColor_B(value)
+    return self:setU8(0x2B, value)
+end
+function FaceParam:getEyeR_cataractColor_B(value)
+    return self:getU8(0x2B, value)
+end
+
+function FaceParam:setEyeR_scleraColor_R(value)
+    return self:setU8(0x2C, value)
+end
+function FaceParam:getEyeR_scleraColor_R(value)
+    return self:getU8(0x2C, value)
+end
+
+function FaceParam:setEyeR_scleraColor_G(value)
+    return self:setU8(0x2D, value)
+end
+function FaceParam:getEyeR_scleraColor_G(value)
+    return self:getU8(0x2D, value)
+end
+
+function FaceParam:setEyeR_scleraColor_B(value)
+    return self:setU8(0x2E, value)
+end
+function FaceParam:getEyeR_scleraColor_B(value)
+    return self:getU8(0x2E, value)
+end
+
+function FaceParam:setEyeR_irisDistance(value)
+    return self:setU8(0x2F, value)
+end
+function FaceParam:getEyeR_irisDistance(value)
+    return self:getU8(0x2F, value)
+end
+
+function FaceParam:setEyeL_irisColor_R(value)
+    return self:setU8(0x30, value)
+end
+function FaceParam:getEyeL_irisColor_R(value)
+    return self:getU8(0x30, value)
+end
+
+function FaceParam:setEyeL_irisColor_G(value)
+    return self:setU8(0x31, value)
+end
+function FaceParam:getEyeL_irisColor_G(value)
+    return self:getU8(0x31, value)
+end
+
+function FaceParam:setEyeL_irisColor_B(value)
+    return self:setU8(0x32, value)
+end
+function FaceParam:getEyeL_irisColor_B(value)
+    return self:getU8(0x32, value)
+end
+
+function FaceParam:setEyeL_irisScale(value)
+    return self:setU8(0x33, value)
+end
+function FaceParam:getEyeL_irisScale(value)
+    return self:getU8(0x33, value)
+end
+
+function FaceParam:setEyeL_cataract(value)
+    return self:setU8(0x34, value)
+end
+function FaceParam:getEyeL_cataract(value)
+    return self:getU8(0x34, value)
+end
+
+function FaceParam:setEyeL_cataractColor_R(value)
+    return self:setU8(0x35, value)
+end
+function FaceParam:getEyeL_cataractColor_R(value)
+    return self:getU8(0x35, value)
+end
+
+function FaceParam:setEyeL_cataractColor_G(value)
+    return self:setU8(0x36, value)
+end
+function FaceParam:getEyeL_cataractColor_G(value)
+    return self:getU8(0x36, value)
+end
+
+function FaceParam:setEyeL_cataractColor_B(value)
+    return self:setU8(0x37, value)
+end
+function FaceParam:getEyeL_cataractColor_B(value)
+    return self:getU8(0x37, value)
+end
+
+function FaceParam:setEyeL_scleraColor_R(value)
+    return self:setU8(0x38, value)
+end
+function FaceParam:getEyeL_scleraColor_R(value)
+    return self:getU8(0x38, value)
+end
+
+function FaceParam:setEyeL_scleraColor_G(value)
+    return self:setU8(0x39, value)
+end
+function FaceParam:getEyeL_scleraColor_G(value)
+    return self:getU8(0x39, value)
+end
+
+function FaceParam:setEyeL_scleraColor_B(value)
+    return self:setU8(0x3A, value)
+end
+function FaceParam:getEyeL_scleraColor_B(value)
+    return self:getU8(0x3A, value)
+end
+
+function FaceParam:setEyeL_irisDistance(value)
+    return self:setU8(0x3B, value)
+end
+function FaceParam:getEyeL_irisDistance(value)
+    return self:getU8(0x3B, value)
+end
+
+function FaceParam:setHair_partsId(value)
+    return self:setU8(0x3C, value)
+end
+function FaceParam:getHair_partsId(value)
+    return self:getU8(0x3C, value)
+end
+
+function FaceParam:setHair_color_R(value)
+    return self:setU8(0x3D, value)
+end
+function FaceParam:getHair_color_R(value)
+    return self:getU8(0x3D, value)
+end
+
+function FaceParam:setHair_color_G(value)
+    return self:setU8(0x3E, value)
+end
+function FaceParam:getHair_color_G(value)
+    return self:getU8(0x3E, value)
+end
+
+function FaceParam:setHair_color_B(value)
+    return self:setU8(0x3F, value)
+end
+function FaceParam:getHair_color_B(value)
+    return self:getU8(0x3F, value)
+end
+
+function FaceParam:setHair_shininess(value)
+    return self:setU8(0x40, value)
+end
+function FaceParam:getHair_shininess(value)
+    return self:getU8(0x40, value)
+end
+
+function FaceParam:setHair_rootBlack(value)
+    return self:setU8(0x41, value)
+end
+function FaceParam:getHair_rootBlack(value)
+    return self:getU8(0x41, value)
+end
+
+function FaceParam:setHair_whiteDensity(value)
+    return self:setU8(0x42, value)
+end
+function FaceParam:getHair_whiteDensity(value)
+    return self:getU8(0x42, value)
+end
+
+function FaceParam:setBeard_partsId(value)
+    return self:setU8(0x43, value)
+end
+function FaceParam:getBeard_partsId(value)
+    return self:getU8(0x43, value)
+end
+
+function FaceParam:setBeard_color_R(value)
+    return self:setU8(0x44, value)
+end
+function FaceParam:getBeard_color_R(value)
+    return self:getU8(0x44, value)
+end
+
+function FaceParam:setBeard_color_G(value)
+    return self:setU8(0x45, value)
+end
+function FaceParam:getBeard_color_G(value)
+    return self:getU8(0x45, value)
+end
+
+function FaceParam:setBeard_color_B(value)
+    return self:setU8(0x46, value)
+end
+function FaceParam:getBeard_color_B(value)
+    return self:getU8(0x46, value)
+end
+
+function FaceParam:setBeard_shininess(value)
+    return self:setU8(0x47, value)
+end
+function FaceParam:getBeard_shininess(value)
+    return self:getU8(0x47, value)
+end
+
+function FaceParam:setBeard_rootBlack(value)
+    return self:setU8(0x48, value)
+end
+function FaceParam:getBeard_rootBlack(value)
+    return self:getU8(0x48, value)
+end
+
+function FaceParam:setBeard_whiteDensity(value)
+    return self:setU8(0x49, value)
+end
+function FaceParam:getBeard_whiteDensity(value)
+    return self:getU8(0x49, value)
+end
+
+function FaceParam:setEyebrow_partsId(value)
+    return self:setU8(0x4A, value)
+end
+function FaceParam:getEyebrow_partsId(value)
+    return self:getU8(0x4A, value)
+end
+
+function FaceParam:setEyebrow_color_R(value)
+    return self:setU8(0x4B, value)
+end
+function FaceParam:getEyebrow_color_R(value)
+    return self:getU8(0x4B, value)
+end
+
+function FaceParam:setEyebrow_color_G(value)
+    return self:setU8(0x4C, value)
+end
+function FaceParam:getEyebrow_color_G(value)
+    return self:getU8(0x4C, value)
+end
+
+function FaceParam:setEyebrow_color_B(value)
+    return self:setU8(0x4D, value)
+end
+function FaceParam:getEyebrow_color_B(value)
+    return self:getU8(0x4D, value)
+end
+
+function FaceParam:setEyebrow_shininess(value)
+    return self:setU8(0x4E, value)
+end
+function FaceParam:getEyebrow_shininess(value)
+    return self:getU8(0x4E, value)
+end
+
+function FaceParam:setEyebrow_rootBlack(value)
+    return self:setU8(0x4F, value)
+end
+function FaceParam:getEyebrow_rootBlack(value)
+    return self:getU8(0x4F, value)
+end
+
+function FaceParam:setEyebrow_whiteDensity(value)
+    return self:setU8(0x50, value)
+end
+function FaceParam:getEyebrow_whiteDensity(value)
+    return self:getU8(0x50, value)
+end
+
+function FaceParam:setEyelash_partsId(value)
+    return self:setU8(0x51, value)
+end
+function FaceParam:getEyelash_partsId(value)
+    return self:getU8(0x51, value)
+end
+
+function FaceParam:setEyelash_color_R(value)
+    return self:setU8(0x52, value)
+end
+function FaceParam:getEyelash_color_R(value)
+    return self:getU8(0x52, value)
+end
+
+function FaceParam:setEyelash_color_G(value)
+    return self:setU8(0x53, value)
+end
+function FaceParam:getEyelash_color_G(value)
+    return self:getU8(0x53, value)
+end
+
+function FaceParam:setEyelash_color_B(value)
+    return self:setU8(0x54, value)
+end
+function FaceParam:getEyelash_color_B(value)
+    return self:getU8(0x54, value)
+end
+
+function FaceParam:setAccessories_partsId(value)
+    return self:setU8(0x55, value)
+end
+function FaceParam:getAccessories_partsId(value)
+    return self:getU8(0x55, value)
+end
+
+function FaceParam:setAccessories_color_R(value)
+    return self:setU8(0x56, value)
+end
+function FaceParam:getAccessories_color_R(value)
+    return self:getU8(0x56, value)
+end
+
+function FaceParam:setAccessories_color_G(value)
+    return self:setU8(0x57, value)
+end
+function FaceParam:getAccessories_color_G(value)
+    return self:getU8(0x57, value)
+end
+
+function FaceParam:setAccessories_color_B(value)
+    return self:setU8(0x58, value)
+end
+function FaceParam:getAccessories_color_B(value)
+    return self:getU8(0x58, value)
+end
+
+function FaceParam:setDecal_partsId(value)
+    return self:setU8(0x59, value)
+end
+function FaceParam:getDecal_partsId(value)
+    return self:getU8(0x59, value)
+end
+
+function FaceParam:setDecal_posX(value)
+    return self:setU8(0x5A, value)
+end
+function FaceParam:getDecal_posX(value)
+    return self:getU8(0x5A, value)
+end
+
+function FaceParam:setDecal_posY(value)
+    return self:setU8(0x5B, value)
+end
+function FaceParam:getDecal_posY(value)
+    return self:getU8(0x5B, value)
+end
+
+function FaceParam:setDecal_angle(value)
+    return self:setU8(0x5C, value)
+end
+function FaceParam:getDecal_angle(value)
+    return self:getU8(0x5C, value)
+end
+
+function FaceParam:setDecal_scale(value)
+    return self:setU8(0x5D, value)
+end
+function FaceParam:getDecal_scale(value)
+    return self:getU8(0x5D, value)
+end
+
+function FaceParam:setDecal_color_R(value)
+    return self:setU8(0x5E, value)
+end
+function FaceParam:getDecal_color_R(value)
+    return self:getU8(0x5E, value)
+end
+
+function FaceParam:setDecal_color_G(value)
+    return self:setU8(0x5F, value)
+end
+function FaceParam:getDecal_color_G(value)
+    return self:getU8(0x5F, value)
+end
+
+function FaceParam:setDecal_color_B(value)
+    return self:setU8(0x60, value)
+end
+function FaceParam:getDecal_color_B(value)
+    return self:getU8(0x60, value)
+end
+
+function FaceParam:setDecal_gloss(value)
+    return self:setU8(0x61, value)
+end
+function FaceParam:getDecal_gloss(value)
+    return self:getU8(0x61, value)
+end
+
+function FaceParam:setDecal_mirror(value)
+    return self:setU8(0x62, value)
+end
+function FaceParam:getDecal_mirror(value)
+    return self:getU8(0x62, value)
+end
+
+function FaceParam:setChrBodyScaleHead(value)
+    return self:setU8(0x63, value)
+end
+function FaceParam:getChrBodyScaleHead(value)
+    return self:getU8(0x63, value)
+end
+
+function FaceParam:setChrBodyScaleBreast(value)
+    return self:setU8(0x64, value)
+end
+function FaceParam:getChrBodyScaleBreast(value)
+    return self:getU8(0x64, value)
+end
+
+function FaceParam:setChrBodyScaleAbdomen(value)
+    return self:setU8(0x65, value)
+end
+function FaceParam:getChrBodyScaleAbdomen(value)
+    return self:getU8(0x65, value)
+end
+
+function FaceParam:setChrBodyScaleRArm(value)
+    return self:setU8(0x66, value)
+end
+function FaceParam:getChrBodyScaleRArm(value)
+    return self:getU8(0x66, value)
+end
+
+function FaceParam:setChrBodyScaleRLeg(value)
+    return self:setU8(0x67, value)
+end
+function FaceParam:getChrBodyScaleRLeg(value)
+    return self:getU8(0x67, value)
+end
+
+function FaceParam:setChrBodyScaleLArm(value)
+    return self:setU8(0x68, value)
+end
+function FaceParam:getChrBodyScaleLArm(value)
+    return self:getU8(0x68, value)
+end
+
+function FaceParam:setChrBodyScaleLLeg(value)
+    return self:setU8(0x69, value)
+end
+function FaceParam:getChrBodyScaleLLeg(value)
+    return self:getU8(0x69, value)
+end
+
+function FaceParam:setBurn_scar(value)
+    return self:setU8(0x6A, value)
+end
+function FaceParam:getBurn_scar(value)
+    return self:getU8(0x6A, value)
+end
+
+function FaceParam:setOverride_eye_partsId(value)
+    return self:setBinary(0x6B, 0, value, 1)
+end
+
+function FaceParam:getOverride_eye_partsId()
+    return self:getBinary(0x6B, 0, value, 1)
+end
+
+function FaceParam:setOverride_eye_irisColor(value)
+    return self:setBinary(0x6B, 1, value, 1)
+end
+
+function FaceParam:getOverride_eye_irisColor()
+    return self:getBinary(0x6B, 1, value, 1)
+end
+
+function FaceParam:setOverride_eye_cataract(value)
+    return self:setBinary(0x6B, 2, value, 1)
+end
+
+function FaceParam:getOverride_eye_cataract()
+    return self:getBinary(0x6B, 2, value, 1)
+end
+
+function FaceParam:setOverride_eye_cataractColor(value)
+    return self:setBinary(0x6B, 3, value, 1)
+end
+
+function FaceParam:getOverride_eye_cataractColor()
+    return self:getBinary(0x6B, 3, value, 1)
+end
+
+function FaceParam:setOverride_eye_scleraColor(value)
+    return self:setBinary(0x6B, 4, value, 1)
+end
+
+function FaceParam:getOverride_eye_scleraColor()
+    return self:getBinary(0x6B, 4, value, 1)
+end
+
+function FaceParam:setOverride_burn_scar(value)
+    return self:setBinary(0x6B, 5, value, 1)
+end
+
+function FaceParam:getOverride_burn_scar()
+    return self:getBinary(0x6B, 5, value, 1)
+end
+
+--dummy8 pad2:2
+
+--dummy8 pad[5]
+
+function FaceParam:setAge(value)
+    return self:setU8(0x71, value)
+end
+function FaceParam:getAge(value)
+    return self:getU8(0x71, value)
+end
+
+function FaceParam:setGender(value)
+    return self:setU8(0x72, value)
+end
+function FaceParam:getGender(value)
+    return self:getU8(0x72, value)
+end
+
+function FaceParam:setCaricatureGeometry(value)
+    return self:setU8(0x73, value)
+end
+function FaceParam:getCaricatureGeometry(value)
+    return self:getU8(0x73, value)
+end
+
+function FaceParam:setCaricatureTexture(value)
+    return self:setU8(0x74, value)
+end
+function FaceParam:getCaricatureTexture(value)
+    return self:getU8(0x74, value)
+end
+
+function FaceParam:setFaceGeoData00(value)
+    return self:setU8(0x75, value)
+end
+function FaceParam:getFaceGeoData00(value)
+    return self:getU8(0x75, value)
+end
+
+function FaceParam:setFaceGeoData01(value)
+    return self:setU8(0x76, value)
+end
+function FaceParam:getFaceGeoData01(value)
+    return self:getU8(0x76, value)
+end
+
+function FaceParam:setFaceGeoData02(value)
+    return self:setU8(0x77, value)
+end
+function FaceParam:getFaceGeoData02(value)
+    return self:getU8(0x77, value)
+end
+
+function FaceParam:setFaceGeoData03(value)
+    return self:setU8(0x78, value)
+end
+function FaceParam:getFaceGeoData03(value)
+    return self:getU8(0x78, value)
+end
+
+function FaceParam:setFaceGeoData04(value)
+    return self:setU8(0x79, value)
+end
+function FaceParam:getFaceGeoData04(value)
+    return self:getU8(0x79, value)
+end
+
+function FaceParam:setFaceGeoData05(value)
+    return self:setU8(0x7A, value)
+end
+function FaceParam:getFaceGeoData05(value)
+    return self:getU8(0x7A, value)
+end
+
+function FaceParam:setFaceGeoData06(value)
+    return self:setU8(0x7B, value)
+end
+function FaceParam:getFaceGeoData06(value)
+    return self:getU8(0x7B, value)
+end
+
+function FaceParam:setFaceGeoData07(value)
+    return self:setU8(0x7C, value)
+end
+function FaceParam:getFaceGeoData07(value)
+    return self:getU8(0x7C, value)
+end
+
+function FaceParam:setFaceGeoData08(value)
+    return self:setU8(0x7D, value)
+end
+function FaceParam:getFaceGeoData08(value)
+    return self:getU8(0x7D, value)
+end
+
+function FaceParam:setFaceGeoData09(value)
+    return self:setU8(0x7E, value)
+end
+function FaceParam:getFaceGeoData09(value)
+    return self:getU8(0x7E, value)
+end
+
+function FaceParam:setFaceGeoData10(value)
+    return self:setU8(0x7F, value)
+end
+function FaceParam:getFaceGeoData10(value)
+    return self:getU8(0x7F, value)
+end
+
+function FaceParam:setFaceGeoData11(value)
+    return self:setU8(0x80, value)
+end
+function FaceParam:getFaceGeoData11(value)
+    return self:getU8(0x80, value)
+end
+
+function FaceParam:setFaceGeoData12(value)
+    return self:setU8(0x81, value)
+end
+function FaceParam:getFaceGeoData12(value)
+    return self:getU8(0x81, value)
+end
+
+function FaceParam:setFaceGeoData13(value)
+    return self:setU8(0x82, value)
+end
+function FaceParam:getFaceGeoData13(value)
+    return self:getU8(0x82, value)
+end
+
+function FaceParam:setFaceGeoData14(value)
+    return self:setU8(0x83, value)
+end
+function FaceParam:getFaceGeoData14(value)
+    return self:getU8(0x83, value)
+end
+
+function FaceParam:setFaceGeoData15(value)
+    return self:setU8(0x84, value)
+end
+function FaceParam:getFaceGeoData15(value)
+    return self:getU8(0x84, value)
+end
+
+function FaceParam:setFaceGeoData16(value)
+    return self:setU8(0x85, value)
+end
+function FaceParam:getFaceGeoData16(value)
+    return self:getU8(0x85, value)
+end
+
+function FaceParam:setFaceGeoData17(value)
+    return self:setU8(0x86, value)
+end
+function FaceParam:getFaceGeoData17(value)
+    return self:getU8(0x86, value)
+end
+
+function FaceParam:setFaceGeoData18(value)
+    return self:setU8(0x87, value)
+end
+function FaceParam:getFaceGeoData18(value)
+    return self:getU8(0x87, value)
+end
+
+function FaceParam:setFaceGeoData19(value)
+    return self:setU8(0x88, value)
+end
+function FaceParam:getFaceGeoData19(value)
+    return self:getU8(0x88, value)
+end
+
+function FaceParam:setFaceGeoData20(value)
+    return self:setU8(0x89, value)
+end
+function FaceParam:getFaceGeoData20(value)
+    return self:getU8(0x89, value)
+end
+
+function FaceParam:setFaceGeoData21(value)
+    return self:setU8(0x8A, value)
+end
+function FaceParam:getFaceGeoData21(value)
+    return self:getU8(0x8A, value)
+end
+
+function FaceParam:setFaceGeoData22(value)
+    return self:setU8(0x8B, value)
+end
+function FaceParam:getFaceGeoData22(value)
+    return self:getU8(0x8B, value)
+end
+
+function FaceParam:setFaceGeoData23(value)
+    return self:setU8(0x8C, value)
+end
+function FaceParam:getFaceGeoData23(value)
+    return self:getU8(0x8C, value)
+end
+
+function FaceParam:setFaceGeoData24(value)
+    return self:setU8(0x8D, value)
+end
+function FaceParam:getFaceGeoData24(value)
+    return self:getU8(0x8D, value)
+end
+
+function FaceParam:setFaceGeoData25(value)
+    return self:setU8(0x8E, value)
+end
+function FaceParam:getFaceGeoData25(value)
+    return self:getU8(0x8E, value)
+end
+
+function FaceParam:setFaceGeoData26(value)
+    return self:setU8(0x8F, value)
+end
+function FaceParam:getFaceGeoData26(value)
+    return self:getU8(0x8F, value)
+end
+
+function FaceParam:setFaceGeoData27(value)
+    return self:setU8(0x90, value)
+end
+function FaceParam:getFaceGeoData27(value)
+    return self:getU8(0x90, value)
+end
+
+function FaceParam:setFaceGeoData28(value)
+    return self:setU8(0x91, value)
+end
+function FaceParam:getFaceGeoData28(value)
+    return self:getU8(0x91, value)
+end
+
+function FaceParam:setFaceGeoData29(value)
+    return self:setU8(0x92, value)
+end
+function FaceParam:getFaceGeoData29(value)
+    return self:getU8(0x92, value)
+end
+
+function FaceParam:setFaceGeoData30(value)
+    return self:setU8(0x93, value)
+end
+function FaceParam:getFaceGeoData30(value)
+    return self:getU8(0x93, value)
+end
+
+function FaceParam:setFaceGeoData31(value)
+    return self:setU8(0x94, value)
+end
+function FaceParam:getFaceGeoData31(value)
+    return self:getU8(0x94, value)
+end
+
+function FaceParam:setFaceGeoData32(value)
+    return self:setU8(0x95, value)
+end
+function FaceParam:getFaceGeoData32(value)
+    return self:getU8(0x95, value)
+end
+
+function FaceParam:setFaceGeoData33(value)
+    return self:setU8(0x96, value)
+end
+function FaceParam:getFaceGeoData33(value)
+    return self:getU8(0x96, value)
+end
+
+function FaceParam:setFaceGeoData34(value)
+    return self:setU8(0x97, value)
+end
+function FaceParam:getFaceGeoData34(value)
+    return self:getU8(0x97, value)
+end
+
+function FaceParam:setFaceGeoData35(value)
+    return self:setU8(0x98, value)
+end
+function FaceParam:getFaceGeoData35(value)
+    return self:getU8(0x98, value)
+end
+
+function FaceParam:setFaceGeoData36(value)
+    return self:setU8(0x99, value)
+end
+function FaceParam:getFaceGeoData36(value)
+    return self:getU8(0x99, value)
+end
+
+function FaceParam:setFaceGeoData37(value)
+    return self:setU8(0x9A, value)
+end
+function FaceParam:getFaceGeoData37(value)
+    return self:getU8(0x9A, value)
+end
+
+function FaceParam:setFaceGeoData38(value)
+    return self:setU8(0x9B, value)
+end
+function FaceParam:getFaceGeoData38(value)
+    return self:getU8(0x9B, value)
+end
+
+function FaceParam:setFaceGeoData39(value)
+    return self:setU8(0x9C, value)
+end
+function FaceParam:getFaceGeoData39(value)
+    return self:getU8(0x9C, value)
+end
+
+function FaceParam:setFaceGeoData40(value)
+    return self:setU8(0x9D, value)
+end
+function FaceParam:getFaceGeoData40(value)
+    return self:getU8(0x9D, value)
+end
+
+function FaceParam:setFaceGeoData41(value)
+    return self:setU8(0x9E, value)
+end
+function FaceParam:getFaceGeoData41(value)
+    return self:getU8(0x9E, value)
+end
+
+function FaceParam:setFaceGeoData42(value)
+    return self:setU8(0x9F, value)
+end
+function FaceParam:getFaceGeoData42(value)
+    return self:getU8(0x9F, value)
+end
+
+function FaceParam:setFaceGeoData43(value)
+    return self:setU8(0xA0, value)
+end
+function FaceParam:getFaceGeoData43(value)
+    return self:getU8(0xA0, value)
+end
+
+function FaceParam:setFaceGeoData44(value)
+    return self:setU8(0xA1, value)
+end
+function FaceParam:getFaceGeoData44(value)
+    return self:getU8(0xA1, value)
+end
+
+function FaceParam:setFaceGeoData45(value)
+    return self:setU8(0xA2, value)
+end
+function FaceParam:getFaceGeoData45(value)
+    return self:getU8(0xA2, value)
+end
+
+function FaceParam:setFaceGeoData46(value)
+    return self:setU8(0xA3, value)
+end
+function FaceParam:getFaceGeoData46(value)
+    return self:getU8(0xA3, value)
+end
+
+function FaceParam:setFaceGeoData47(value)
+    return self:setU8(0xA4, value)
+end
+function FaceParam:getFaceGeoData47(value)
+    return self:getU8(0xA4, value)
+end
+
+function FaceParam:setFaceGeoData48(value)
+    return self:setU8(0xA5, value)
+end
+function FaceParam:getFaceGeoData48(value)
+    return self:getU8(0xA5, value)
+end
+
+function FaceParam:setFaceGeoData49(value)
+    return self:setU8(0xA6, value)
+end
+function FaceParam:getFaceGeoData49(value)
+    return self:getU8(0xA6, value)
+end
+
+function FaceParam:setFaceGeoData50(value)
+    return self:setU8(0xA7, value)
+end
+function FaceParam:getFaceGeoData50(value)
+    return self:getU8(0xA7, value)
+end
+
+function FaceParam:setFaceGeoData51(value)
+    return self:setU8(0xA8, value)
+end
+function FaceParam:getFaceGeoData51(value)
+    return self:getU8(0xA8, value)
+end
+
+function FaceParam:setFaceGeoData52(value)
+    return self:setU8(0xA9, value)
+end
+function FaceParam:getFaceGeoData52(value)
+    return self:getU8(0xA9, value)
+end
+
+function FaceParam:setFaceGeoData53(value)
+    return self:setU8(0xAA, value)
+end
+function FaceParam:getFaceGeoData53(value)
+    return self:getU8(0xAA, value)
+end
+
+function FaceParam:setFaceGeoData54(value)
+    return self:setU8(0xAB, value)
+end
+function FaceParam:getFaceGeoData54(value)
+    return self:getU8(0xAB, value)
+end
+
+function FaceParam:setFaceGeoData55(value)
+    return self:setU8(0xAC, value)
+end
+function FaceParam:getFaceGeoData55(value)
+    return self:getU8(0xAC, value)
+end
+
+function FaceParam:setFaceGeoData56(value)
+    return self:setU8(0xAD, value)
+end
+function FaceParam:getFaceGeoData56(value)
+    return self:getU8(0xAD, value)
+end
+
+function FaceParam:setFaceGeoData57(value)
+    return self:setU8(0xAE, value)
+end
+function FaceParam:getFaceGeoData57(value)
+    return self:getU8(0xAE, value)
+end
+
+function FaceParam:setFaceGeoData58(value)
+    return self:setU8(0xAF, value)
+end
+function FaceParam:getFaceGeoData58(value)
+    return self:getU8(0xAF, value)
+end
+
+function FaceParam:setFaceGeoData59(value)
+    return self:setU8(0xB0, value)
+end
+function FaceParam:getFaceGeoData59(value)
+    return self:getU8(0xB0, value)
+end
+
+function FaceParam:setFaceGeoData60(value)
+    return self:setU8(0xB1, value)
+end
+function FaceParam:getFaceGeoData60(value)
+    return self:getU8(0xB1, value)
+end
+
+function FaceParam:setFaceTexData00(value)
+    return self:setU8(0xB2, value)
+end
+function FaceParam:getFaceTexData00(value)
+    return self:getU8(0xB2, value)
+end
+
+function FaceParam:setFaceTexData01(value)
+    return self:setU8(0xB3, value)
+end
+function FaceParam:getFaceTexData01(value)
+    return self:getU8(0xB3, value)
+end
+
+function FaceParam:setFaceTexData02(value)
+    return self:setU8(0xB4, value)
+end
+function FaceParam:getFaceTexData02(value)
+    return self:getU8(0xB4, value)
+end
+
+function FaceParam:setFaceTexData03(value)
+    return self:setU8(0xB5, value)
+end
+function FaceParam:getFaceTexData03(value)
+    return self:getU8(0xB5, value)
+end
+
+function FaceParam:setFaceTexData04(value)
+    return self:setU8(0xB6, value)
+end
+function FaceParam:getFaceTexData04(value)
+    return self:getU8(0xB6, value)
+end
+
+function FaceParam:setFaceTexData05(value)
+    return self:setU8(0xB7, value)
+end
+function FaceParam:getFaceTexData05(value)
+    return self:getU8(0xB7, value)
+end
+
+function FaceParam:setFaceTexData06(value)
+    return self:setU8(0xB8, value)
+end
+function FaceParam:getFaceTexData06(value)
+    return self:getU8(0xB8, value)
+end
+
+function FaceParam:setFaceTexData07(value)
+    return self:setU8(0xB9, value)
+end
+function FaceParam:getFaceTexData07(value)
+    return self:getU8(0xB9, value)
+end
+
+function FaceParam:setFaceTexData08(value)
+    return self:setU8(0xBA, value)
+end
+function FaceParam:getFaceTexData08(value)
+    return self:getU8(0xBA, value)
+end
+
+function FaceParam:setFaceTexData09(value)
+    return self:setU8(0xBB, value)
+end
+function FaceParam:getFaceTexData09(value)
+    return self:getU8(0xBB, value)
+end
+
+function FaceParam:setFaceTexData10(value)
+    return self:setU8(0xBC, value)
+end
+function FaceParam:getFaceTexData10(value)
+    return self:getU8(0xBC, value)
+end
+
+function FaceParam:setFaceTexData11(value)
+    return self:setU8(0xBD, value)
+end
+function FaceParam:getFaceTexData11(value)
+    return self:getU8(0xBD, value)
+end
+
+function FaceParam:setFaceTexData12(value)
+    return self:setU8(0xBE, value)
+end
+function FaceParam:getFaceTexData12(value)
+    return self:getU8(0xBE, value)
+end
+
+function FaceParam:setFaceTexData13(value)
+    return self:setU8(0xBF, value)
+end
+function FaceParam:getFaceTexData13(value)
+    return self:getU8(0xBF, value)
+end
+
+function FaceParam:setFaceTexData14(value)
+    return self:setU8(0xC0, value)
+end
+function FaceParam:getFaceTexData14(value)
+    return self:getU8(0xC0, value)
+end
+
+function FaceParam:setFaceTexData15(value)
+    return self:setU8(0xC1, value)
+end
+function FaceParam:getFaceTexData15(value)
+    return self:getU8(0xC1, value)
+end
+
+function FaceParam:setFaceTexData16(value)
+    return self:setU8(0xC2, value)
+end
+function FaceParam:getFaceTexData16(value)
+    return self:getU8(0xC2, value)
+end
+
+function FaceParam:setFaceTexData17(value)
+    return self:setU8(0xC3, value)
+end
+function FaceParam:getFaceTexData17(value)
+    return self:getU8(0xC3, value)
+end
+
+function FaceParam:setFaceTexData18(value)
+    return self:setU8(0xC4, value)
+end
+function FaceParam:getFaceTexData18(value)
+    return self:getU8(0xC4, value)
+end
+
+function FaceParam:setFaceTexData19(value)
+    return self:setU8(0xC5, value)
+end
+function FaceParam:getFaceTexData19(value)
+    return self:getU8(0xC5, value)
+end
+
+function FaceParam:setFaceTexData20(value)
+    return self:setU8(0xC6, value)
+end
+function FaceParam:getFaceTexData20(value)
+    return self:getU8(0xC6, value)
+end
+
+function FaceParam:setFaceTexData21(value)
+    return self:setU8(0xC7, value)
+end
+function FaceParam:getFaceTexData21(value)
+    return self:getU8(0xC7, value)
+end
+
+function FaceParam:setFaceTexData22(value)
+    return self:setU8(0xC8, value)
+end
+function FaceParam:getFaceTexData22(value)
+    return self:getU8(0xC8, value)
+end
+
+function FaceParam:setFaceTexData23(value)
+    return self:setU8(0xC9, value)
+end
+function FaceParam:getFaceTexData23(value)
+    return self:getU8(0xC9, value)
+end
+
+function FaceParam:setFaceTexData24(value)
+    return self:setU8(0xCA, value)
+end
+function FaceParam:getFaceTexData24(value)
+    return self:getU8(0xCA, value)
+end
+
+function FaceParam:setFaceTexData25(value)
+    return self:setU8(0xCB, value)
+end
+function FaceParam:getFaceTexData25(value)
+    return self:getU8(0xCB, value)
+end
+
+function FaceParam:setFaceTexData26(value)
+    return self:setU8(0xCC, value)
+end
+function FaceParam:getFaceTexData26(value)
+    return self:getU8(0xCC, value)
+end
+
+function FaceParam:setFaceTexData27(value)
+    return self:setU8(0xCD, value)
+end
+function FaceParam:getFaceTexData27(value)
+    return self:getU8(0xCD, value)
+end
+
+function FaceParam:setFaceTexData28(value)
+    return self:setU8(0xCE, value)
+end
+function FaceParam:getFaceTexData28(value)
+    return self:getU8(0xCE, value)
+end
+
+function FaceParam:setFaceTexData29(value)
+    return self:setU8(0xCF, value)
+end
+function FaceParam:getFaceTexData29(value)
+    return self:getU8(0xCF, value)
+end
+
+function FaceParam:setFaceTexData30(value)
+    return self:setU8(0xD0, value)
+end
+function FaceParam:getFaceTexData30(value)
+    return self:getU8(0xD0, value)
+end
+
+function FaceParam:setFaceTexData31(value)
+    return self:setU8(0xD1, value)
+end
+function FaceParam:getFaceTexData31(value)
+    return self:getU8(0xD1, value)
+end
+
+function FaceParam:setFaceTexData32(value)
+    return self:setU8(0xD2, value)
+end
+function FaceParam:getFaceTexData32(value)
+    return self:getU8(0xD2, value)
+end
+
+function FaceParam:setFaceTexData33(value)
+    return self:setU8(0xD3, value)
+end
+function FaceParam:getFaceTexData33(value)
+    return self:getU8(0xD3, value)
+end
+
+function FaceParam:setFaceTexData34(value)
+    return self:setU8(0xD4, value)
+end
+function FaceParam:getFaceTexData34(value)
+    return self:getU8(0xD4, value)
+end
+
+function FaceParam:setFaceTexData35(value)
+    return self:setU8(0xD5, value)
+end
+function FaceParam:getFaceTexData35(value)
+    return self:getU8(0xD5, value)
+end
+
+function FaceParam:setFaceGeoAsymData00(value)
+    return self:setU8(0xD6, value)
+end
+function FaceParam:getFaceGeoAsymData00(value)
+    return self:getU8(0xD6, value)
+end
+
+function FaceParam:setFaceGeoAsymData01(value)
+    return self:setU8(0xD7, value)
+end
+function FaceParam:getFaceGeoAsymData01(value)
+    return self:getU8(0xD7, value)
+end
+
+function FaceParam:setFaceGeoAsymData02(value)
+    return self:setU8(0xD8, value)
+end
+function FaceParam:getFaceGeoAsymData02(value)
+    return self:getU8(0xD8, value)
+end
+
+function FaceParam:setFaceGeoAsymData03(value)
+    return self:setU8(0xD9, value)
+end
+function FaceParam:getFaceGeoAsymData03(value)
+    return self:getU8(0xD9, value)
+end
+
+function FaceParam:setFaceGeoAsymData04(value)
+    return self:setU8(0xDA, value)
+end
+function FaceParam:getFaceGeoAsymData04(value)
+    return self:getU8(0xDA, value)
+end
+
+function FaceParam:setFaceGeoAsymData05(value)
+    return self:setU8(0xDB, value)
+end
+function FaceParam:getFaceGeoAsymData05(value)
+    return self:getU8(0xDB, value)
+end
+
+function FaceParam:setFaceGeoAsymData06(value)
+    return self:setU8(0xDC, value)
+end
+function FaceParam:getFaceGeoAsymData06(value)
+    return self:getU8(0xDC, value)
+end
+
+function FaceParam:setFaceGeoAsymData07(value)
+    return self:setU8(0xDD, value)
+end
+function FaceParam:getFaceGeoAsymData07(value)
+    return self:getU8(0xDD, value)
+end
+
+function FaceParam:setFaceGeoAsymData08(value)
+    return self:setU8(0xDE, value)
+end
+function FaceParam:getFaceGeoAsymData08(value)
+    return self:getU8(0xDE, value)
+end
+
+function FaceParam:setFaceGeoAsymData09(value)
+    return self:setU8(0xDF, value)
+end
+function FaceParam:getFaceGeoAsymData09(value)
+    return self:getU8(0xDF, value)
+end
+
+function FaceParam:setFaceGeoAsymData10(value)
+    return self:setU8(0xE0, value)
+end
+function FaceParam:getFaceGeoAsymData10(value)
+    return self:getU8(0xE0, value)
+end
+
+function FaceParam:setFaceGeoAsymData11(value)
+    return self:setU8(0xE1, value)
+end
+function FaceParam:getFaceGeoAsymData11(value)
+    return self:getU8(0xE1, value)
+end
+
+function FaceParam:setFaceGeoAsymData12(value)
+    return self:setU8(0xE2, value)
+end
+function FaceParam:getFaceGeoAsymData12(value)
+    return self:getU8(0xE2, value)
+end
+
+function FaceParam:setFaceGeoAsymData13(value)
+    return self:setU8(0xE3, value)
+end
+function FaceParam:getFaceGeoAsymData13(value)
+    return self:getU8(0xE3, value)
+end
+
+function FaceParam:setFaceGeoAsymData14(value)
+    return self:setU8(0xE4, value)
+end
+function FaceParam:getFaceGeoAsymData14(value)
+    return self:getU8(0xE4, value)
+end
+
+function FaceParam:setFaceGeoAsymData15(value)
+    return self:setU8(0xE5, value)
+end
+function FaceParam:getFaceGeoAsymData15(value)
+    return self:getU8(0xE5, value)
+end
+
+function FaceParam:setFaceGeoAsymData16(value)
+    return self:setU8(0xE6, value)
+end
+function FaceParam:getFaceGeoAsymData16(value)
+    return self:getU8(0xE6, value)
+end
+
+function FaceParam:setFaceGeoAsymData17(value)
+    return self:setU8(0xE7, value)
+end
+function FaceParam:getFaceGeoAsymData17(value)
+    return self:getU8(0xE7, value)
+end
+
+function FaceParam:setFaceGeoAsymData18(value)
+    return self:setU8(0xE8, value)
+end
+function FaceParam:getFaceGeoAsymData18(value)
+    return self:getU8(0xE8, value)
+end
+
+function FaceParam:setFaceGeoAsymData19(value)
+    return self:setU8(0xE9, value)
+end
+function FaceParam:getFaceGeoAsymData19(value)
+    return self:getU8(0xE9, value)
+end
+
+function FaceParam:setFaceGeoAsymData20(value)
+    return self:setU8(0xEA, value)
+end
+function FaceParam:getFaceGeoAsymData20(value)
+    return self:getU8(0xEA, value)
+end
+
+function FaceParam:setFaceGeoAsymData21(value)
+    return self:setU8(0xEB, value)
+end
+function FaceParam:getFaceGeoAsymData21(value)
+    return self:getU8(0xEB, value)
+end
+
+function FaceParam:setFaceGeoAsymData22(value)
+    return self:setU8(0xEC, value)
+end
+function FaceParam:getFaceGeoAsymData22(value)
+    return self:getU8(0xEC, value)
+end
+
+function FaceParam:setFaceGeoAsymData23(value)
+    return self:setU8(0xED, value)
+end
+function FaceParam:getFaceGeoAsymData23(value)
+    return self:getU8(0xED, value)
+end
+
+function FaceParam:setFaceGeoAsymData24(value)
+    return self:setU8(0xEE, value)
+end
+function FaceParam:getFaceGeoAsymData24(value)
+    return self:getU8(0xEE, value)
+end
+
+function FaceParam:setFaceGeoAsymData25(value)
+    return self:setU8(0xEF, value)
+end
+function FaceParam:getFaceGeoAsymData25(value)
+    return self:getU8(0xEF, value)
+end
+[disable]
+FaceParam = nil

@@ -1,0 +1,209 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+ActionButtonParam = {}
+function ActionButtonParam:new(id_or_all, patchName)
+    return paramPatcher(self, "ActionButtonParam", 0x71, id_or_all, patchName)
+end
+
+
+
+function ActionButtonParam:setRegionType(value)
+    return self:setU8(0x00, value)
+end
+function ActionButtonParam:getRegionType(value)
+    return self:getU8(0x00, value)
+end
+
+function ActionButtonParam:setCategory(value)
+    return self:setU8(0x01, value)
+end
+function ActionButtonParam:getCategory(value)
+    return self:getU8(0x01, value)
+end
+
+--dummy8 padding1[2]
+
+function ActionButtonParam:setDummyPoly1(value)
+    return self:setU32(0x04, value)
+end
+function ActionButtonParam:getDummyPoly1(value)
+    return self:getU32(0x04, value)
+end
+
+function ActionButtonParam:setDummyPoly2(value)
+    return self:setU32(0x08, value)
+end
+function ActionButtonParam:getDummyPoly2(value)
+    return self:getU32(0x08, value)
+end
+
+function ActionButtonParam:setRadius(value)
+    return self:setF32(0x0C, value)
+end
+function ActionButtonParam:getRadius(value)
+    return self:getF32(0x0C, value)
+end
+
+function ActionButtonParam:setAngle(value)
+    return self:setU32(0x10, value)
+end
+function ActionButtonParam:getAngle(value)
+    return self:getU32(0x10, value)
+end
+
+function ActionButtonParam:setDepth(value)
+    return self:setF32(0x14, value)
+end
+function ActionButtonParam:getDepth(value)
+    return self:getF32(0x14, value)
+end
+
+function ActionButtonParam:setWidth(value)
+    return self:setF32(0x18, value)
+end
+function ActionButtonParam:getWidth(value)
+    return self:getF32(0x18, value)
+end
+
+function ActionButtonParam:setHeight(value)
+    return self:setF32(0x1C, value)
+end
+function ActionButtonParam:getHeight(value)
+    return self:getF32(0x1C, value)
+end
+
+function ActionButtonParam:setBaseHeightOffset(value)
+    return self:setF32(0x20, value)
+end
+function ActionButtonParam:getBaseHeightOffset(value)
+    return self:getF32(0x20, value)
+end
+
+function ActionButtonParam:setAngleCheckType(value)
+    return self:setU8(0x24, value)
+end
+function ActionButtonParam:getAngleCheckType(value)
+    return self:getU8(0x24, value)
+end
+
+--dummy8 padding2[3]
+
+function ActionButtonParam:setAllowAngle(value)
+    return self:setU32(0x28, value)
+end
+function ActionButtonParam:getAllowAngle(value)
+    return self:getU32(0x28, value)
+end
+
+function ActionButtonParam:setSpotDummyPoly(value)
+    return self:setU32(0x2C, value)
+end
+function ActionButtonParam:getSpotDummyPoly(value)
+    return self:getU32(0x2C, value)
+end
+
+function ActionButtonParam:setTextBoxType(value)
+    return self:setU8(0x30, value)
+end
+function ActionButtonParam:getTextBoxType(value)
+    return self:getU8(0x30, value)
+end
+
+--dummy8 padding3[2]
+
+--dummy8 padding5:1
+
+function ActionButtonParam:setIsInvalidForRide(value)
+    return self:setBinary(0x33, 1, value, 1)
+end
+
+function ActionButtonParam:getIsInvalidForRide()
+    return self:getBinary(0x33, 1, value, 1)
+end
+
+function ActionButtonParam:setIsGrayoutForRide(value)
+    return self:setBinary(0x33, 2, value, 1)
+end
+
+function ActionButtonParam:getIsGrayoutForRide()
+    return self:getBinary(0x33, 2, value, 1)
+end
+
+function ActionButtonParam:setIsInvalidForCrouching(value)
+    return self:setBinary(0x33, 3, value, 1)
+end
+
+function ActionButtonParam:getIsInvalidForCrouching()
+    return self:getBinary(0x33, 3, value, 1)
+end
+
+function ActionButtonParam:setIsGrayoutForCrouching(value)
+    return self:setBinary(0x33, 4, value, 1)
+end
+
+function ActionButtonParam:getIsGrayoutForCrouching()
+    return self:getBinary(0x33, 4, value, 1)
+end
+
+--dummy8 padding4:3
+
+function ActionButtonParam:setTextId(value)
+    return self:setU32(0x34, value)
+end
+function ActionButtonParam:getTextId(value)
+    return self:getU32(0x34, value)
+end
+
+function ActionButtonParam:setInvalidFlag(value)
+    return self:setU32(0x38, value)
+end
+function ActionButtonParam:getInvalidFlag(value)
+    return self:getU32(0x38, value)
+end
+
+function ActionButtonParam:setGrayoutFlag(value)
+    return self:setU32(0x3C, value)
+end
+function ActionButtonParam:getGrayoutFlag(value)
+    return self:getU32(0x3C, value)
+end
+
+function ActionButtonParam:setOverrideActionButtonIdForRide(value)
+    return self:setU32(0x40, value)
+end
+function ActionButtonParam:getOverrideActionButtonIdForRide(value)
+    return self:getU32(0x40, value)
+end
+
+function ActionButtonParam:setExecInvalidTime(value)
+    return self:setF32(0x44, value)
+end
+function ActionButtonParam:getExecInvalidTime(value)
+    return self:getF32(0x44, value)
+end
+
+function ActionButtonParam:setUnknown_1(value)
+    return self:setF32(0x48, value)
+end
+function ActionButtonParam:getUnknown_1(value)
+    return self:getF32(0x48, value)
+end
+
+function ActionButtonParam:setUnknown_2(value)
+    return self:setF32(0x4C, value)
+end
+function ActionButtonParam:getUnknown_2(value)
+    return self:getF32(0x4C, value)
+end
+
+function ActionButtonParam:setUnknown_3(value)
+    return self:setF32(0x50, value)
+end
+function ActionButtonParam:getUnknown_3(value)
+    return self:getF32(0x50, value)
+end
+
+--dummy8 padding6[28]
+[disable]
+ActionButtonParam = nil

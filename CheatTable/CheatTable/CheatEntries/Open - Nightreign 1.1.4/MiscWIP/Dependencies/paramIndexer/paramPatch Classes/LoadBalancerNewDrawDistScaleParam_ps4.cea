@@ -1,0 +1,73 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+LoadBalancerNewDrawDistScaleParam_ps4 = {}
+function LoadBalancerNewDrawDistScaleParam_ps4:new(id_or_all, patchName)
+    return paramPatcher(self, "LoadBalancerNewDrawDistScaleParam_ps4", 0x31, id_or_all, patchName)
+end
+
+
+
+function LoadBalancerNewDrawDistScaleParam_ps4:setDrawDist_LvBegin(value)
+    return self:setU8(0x00, value)
+end
+function LoadBalancerNewDrawDistScaleParam_ps4:getDrawDist_LvBegin(value)
+    return self:getU8(0x00, value)
+end
+
+function LoadBalancerNewDrawDistScaleParam_ps4:setDrawDist_LvEnd(value)
+    return self:setU8(0x01, value)
+end
+function LoadBalancerNewDrawDistScaleParam_ps4:getDrawDist_LvEnd(value)
+    return self:getU8(0x01, value)
+end
+
+--dummy8 reserve0[2]
+
+function LoadBalancerNewDrawDistScaleParam_ps4:setDrawDist_ScaleBegin(value)
+    return self:setF32(0x04, value)
+end
+function LoadBalancerNewDrawDistScaleParam_ps4:getDrawDist_ScaleBegin(value)
+    return self:getF32(0x04, value)
+end
+
+function LoadBalancerNewDrawDistScaleParam_ps4:setDrawDist_ScaleEnd(value)
+    return self:setF32(0x08, value)
+end
+function LoadBalancerNewDrawDistScaleParam_ps4:getDrawDist_ScaleEnd(value)
+    return self:getF32(0x08, value)
+end
+
+function LoadBalancerNewDrawDistScaleParam_ps4:setShadwDrawDist_LvBegin(value)
+    return self:setU8(0x0C, value)
+end
+function LoadBalancerNewDrawDistScaleParam_ps4:getShadwDrawDist_LvBegin(value)
+    return self:getU8(0x0C, value)
+end
+
+function LoadBalancerNewDrawDistScaleParam_ps4:setShadwDrawDist_LvEnd(value)
+    return self:setU8(0x0D, value)
+end
+function LoadBalancerNewDrawDistScaleParam_ps4:getShadwDrawDist_LvEnd(value)
+    return self:getU8(0x0D, value)
+end
+
+--dummy8 reserve1[2]
+
+function LoadBalancerNewDrawDistScaleParam_ps4:setShadwDrawDist_ScaleBegin(value)
+    return self:setF32(0x10, value)
+end
+function LoadBalancerNewDrawDistScaleParam_ps4:getShadwDrawDist_ScaleBegin(value)
+    return self:getF32(0x10, value)
+end
+
+function LoadBalancerNewDrawDistScaleParam_ps4:setShadwDrawDist_ScaleEnd(value)
+    return self:setF32(0x14, value)
+end
+function LoadBalancerNewDrawDistScaleParam_ps4:getShadwDrawDist_ScaleEnd(value)
+    return self:getF32(0x14, value)
+end
+
+--dummy8 reserve2[24]
+[disable]
+LoadBalancerNewDrawDistScaleParam_ps4 = nil

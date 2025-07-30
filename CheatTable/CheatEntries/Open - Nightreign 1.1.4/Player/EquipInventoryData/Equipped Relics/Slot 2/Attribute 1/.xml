@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337273343</ID>
+  <Description>"Attribute 1"</Description>
+  <Options moRecursiveSetValue="1"/>
+  <DropDownListLink>RELIC_IDS</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+18</Address>
+  <x-ce2fs-child-order>
+    <id id="1337273344"/>
+    <id id="1337273345"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

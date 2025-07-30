@@ -1,0 +1,1411 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+FootSfxParam = {}
+function FootSfxParam:new(id_or_all, patchName)
+    return paramPatcher(self, "FootSfxParam", 0x324, id_or_all, patchName)
+end
+
+
+
+function FootSfxParam:setSfxId_00(value)
+    return self:setU32(0x00, value)
+end
+function FootSfxParam:getSfxId_00(value)
+    return self:getU32(0x00, value)
+end
+
+function FootSfxParam:setSfxId_01(value)
+    return self:setU32(0x04, value)
+end
+function FootSfxParam:getSfxId_01(value)
+    return self:getU32(0x04, value)
+end
+
+function FootSfxParam:setSfxId_02(value)
+    return self:setU32(0x08, value)
+end
+function FootSfxParam:getSfxId_02(value)
+    return self:getU32(0x08, value)
+end
+
+function FootSfxParam:setSfxId_03(value)
+    return self:setU32(0x0C, value)
+end
+function FootSfxParam:getSfxId_03(value)
+    return self:getU32(0x0C, value)
+end
+
+function FootSfxParam:setSfxId_04(value)
+    return self:setU32(0x10, value)
+end
+function FootSfxParam:getSfxId_04(value)
+    return self:getU32(0x10, value)
+end
+
+function FootSfxParam:setSfxId_05(value)
+    return self:setU32(0x14, value)
+end
+function FootSfxParam:getSfxId_05(value)
+    return self:getU32(0x14, value)
+end
+
+function FootSfxParam:setSfxId_06(value)
+    return self:setU32(0x18, value)
+end
+function FootSfxParam:getSfxId_06(value)
+    return self:getU32(0x18, value)
+end
+
+function FootSfxParam:setSfxId_07(value)
+    return self:setU32(0x1C, value)
+end
+function FootSfxParam:getSfxId_07(value)
+    return self:getU32(0x1C, value)
+end
+
+function FootSfxParam:setSfxId_08(value)
+    return self:setU32(0x20, value)
+end
+function FootSfxParam:getSfxId_08(value)
+    return self:getU32(0x20, value)
+end
+
+function FootSfxParam:setSfxId_09(value)
+    return self:setU32(0x24, value)
+end
+function FootSfxParam:getSfxId_09(value)
+    return self:getU32(0x24, value)
+end
+
+function FootSfxParam:setSfxId_10(value)
+    return self:setU32(0x28, value)
+end
+function FootSfxParam:getSfxId_10(value)
+    return self:getU32(0x28, value)
+end
+
+function FootSfxParam:setSfxId_11(value)
+    return self:setU32(0x2C, value)
+end
+function FootSfxParam:getSfxId_11(value)
+    return self:getU32(0x2C, value)
+end
+
+function FootSfxParam:setSfxId_12(value)
+    return self:setU32(0x30, value)
+end
+function FootSfxParam:getSfxId_12(value)
+    return self:getU32(0x30, value)
+end
+
+function FootSfxParam:setSfxId_13(value)
+    return self:setU32(0x34, value)
+end
+function FootSfxParam:getSfxId_13(value)
+    return self:getU32(0x34, value)
+end
+
+function FootSfxParam:setSfxId_14(value)
+    return self:setU32(0x38, value)
+end
+function FootSfxParam:getSfxId_14(value)
+    return self:getU32(0x38, value)
+end
+
+function FootSfxParam:setSfxId_15(value)
+    return self:setU32(0x3C, value)
+end
+function FootSfxParam:getSfxId_15(value)
+    return self:getU32(0x3C, value)
+end
+
+function FootSfxParam:setSfxId_16(value)
+    return self:setU32(0x40, value)
+end
+function FootSfxParam:getSfxId_16(value)
+    return self:getU32(0x40, value)
+end
+
+function FootSfxParam:setSfxId_17(value)
+    return self:setU32(0x44, value)
+end
+function FootSfxParam:getSfxId_17(value)
+    return self:getU32(0x44, value)
+end
+
+function FootSfxParam:setSfxId_18(value)
+    return self:setU32(0x48, value)
+end
+function FootSfxParam:getSfxId_18(value)
+    return self:getU32(0x48, value)
+end
+
+function FootSfxParam:setSfxId_19(value)
+    return self:setU32(0x4C, value)
+end
+function FootSfxParam:getSfxId_19(value)
+    return self:getU32(0x4C, value)
+end
+
+function FootSfxParam:setSfxId_20(value)
+    return self:setU32(0x50, value)
+end
+function FootSfxParam:getSfxId_20(value)
+    return self:getU32(0x50, value)
+end
+
+function FootSfxParam:setSfxId_21(value)
+    return self:setU32(0x54, value)
+end
+function FootSfxParam:getSfxId_21(value)
+    return self:getU32(0x54, value)
+end
+
+function FootSfxParam:setSfxId_22(value)
+    return self:setU32(0x58, value)
+end
+function FootSfxParam:getSfxId_22(value)
+    return self:getU32(0x58, value)
+end
+
+function FootSfxParam:setSfxId_23(value)
+    return self:setU32(0x5C, value)
+end
+function FootSfxParam:getSfxId_23(value)
+    return self:getU32(0x5C, value)
+end
+
+function FootSfxParam:setSfxId_24(value)
+    return self:setU32(0x60, value)
+end
+function FootSfxParam:getSfxId_24(value)
+    return self:getU32(0x60, value)
+end
+
+function FootSfxParam:setSfxId_25(value)
+    return self:setU32(0x64, value)
+end
+function FootSfxParam:getSfxId_25(value)
+    return self:getU32(0x64, value)
+end
+
+function FootSfxParam:setSfxId_26(value)
+    return self:setU32(0x68, value)
+end
+function FootSfxParam:getSfxId_26(value)
+    return self:getU32(0x68, value)
+end
+
+function FootSfxParam:setSfxId_27(value)
+    return self:setU32(0x6C, value)
+end
+function FootSfxParam:getSfxId_27(value)
+    return self:getU32(0x6C, value)
+end
+
+function FootSfxParam:setSfxId_28(value)
+    return self:setU32(0x70, value)
+end
+function FootSfxParam:getSfxId_28(value)
+    return self:getU32(0x70, value)
+end
+
+function FootSfxParam:setSfxId_29(value)
+    return self:setU32(0x74, value)
+end
+function FootSfxParam:getSfxId_29(value)
+    return self:getU32(0x74, value)
+end
+
+function FootSfxParam:setSfxId_30(value)
+    return self:setU32(0x78, value)
+end
+function FootSfxParam:getSfxId_30(value)
+    return self:getU32(0x78, value)
+end
+
+function FootSfxParam:setSfxId_31(value)
+    return self:setU32(0x7C, value)
+end
+function FootSfxParam:getSfxId_31(value)
+    return self:getU32(0x7C, value)
+end
+
+function FootSfxParam:setSfxId_32(value)
+    return self:setU32(0x80, value)
+end
+function FootSfxParam:getSfxId_32(value)
+    return self:getU32(0x80, value)
+end
+
+function FootSfxParam:setSfxId_33(value)
+    return self:setU32(0x84, value)
+end
+function FootSfxParam:getSfxId_33(value)
+    return self:getU32(0x84, value)
+end
+
+function FootSfxParam:setSfxId_34(value)
+    return self:setU32(0x88, value)
+end
+function FootSfxParam:getSfxId_34(value)
+    return self:getU32(0x88, value)
+end
+
+function FootSfxParam:setSfxId_35(value)
+    return self:setU32(0x8C, value)
+end
+function FootSfxParam:getSfxId_35(value)
+    return self:getU32(0x8C, value)
+end
+
+function FootSfxParam:setSfxId_36(value)
+    return self:setU32(0x90, value)
+end
+function FootSfxParam:getSfxId_36(value)
+    return self:getU32(0x90, value)
+end
+
+function FootSfxParam:setSfxId_37(value)
+    return self:setU32(0x94, value)
+end
+function FootSfxParam:getSfxId_37(value)
+    return self:getU32(0x94, value)
+end
+
+function FootSfxParam:setSfxId_38(value)
+    return self:setU32(0x98, value)
+end
+function FootSfxParam:getSfxId_38(value)
+    return self:getU32(0x98, value)
+end
+
+function FootSfxParam:setSfxId_39(value)
+    return self:setU32(0x9C, value)
+end
+function FootSfxParam:getSfxId_39(value)
+    return self:getU32(0x9C, value)
+end
+
+function FootSfxParam:setSfxId_40(value)
+    return self:setU32(0xA0, value)
+end
+function FootSfxParam:getSfxId_40(value)
+    return self:getU32(0xA0, value)
+end
+
+function FootSfxParam:setSfxId_41(value)
+    return self:setU32(0xA4, value)
+end
+function FootSfxParam:getSfxId_41(value)
+    return self:getU32(0xA4, value)
+end
+
+function FootSfxParam:setSfxId_42(value)
+    return self:setU32(0xA8, value)
+end
+function FootSfxParam:getSfxId_42(value)
+    return self:getU32(0xA8, value)
+end
+
+function FootSfxParam:setSfxId_43(value)
+    return self:setU32(0xAC, value)
+end
+function FootSfxParam:getSfxId_43(value)
+    return self:getU32(0xAC, value)
+end
+
+function FootSfxParam:setSfxId_44(value)
+    return self:setU32(0xB0, value)
+end
+function FootSfxParam:getSfxId_44(value)
+    return self:getU32(0xB0, value)
+end
+
+function FootSfxParam:setSfxId_45(value)
+    return self:setU32(0xB4, value)
+end
+function FootSfxParam:getSfxId_45(value)
+    return self:getU32(0xB4, value)
+end
+
+function FootSfxParam:setSfxId_46(value)
+    return self:setU32(0xB8, value)
+end
+function FootSfxParam:getSfxId_46(value)
+    return self:getU32(0xB8, value)
+end
+
+function FootSfxParam:setSfxId_47(value)
+    return self:setU32(0xBC, value)
+end
+function FootSfxParam:getSfxId_47(value)
+    return self:getU32(0xBC, value)
+end
+
+function FootSfxParam:setSfxId_48(value)
+    return self:setU32(0xC0, value)
+end
+function FootSfxParam:getSfxId_48(value)
+    return self:getU32(0xC0, value)
+end
+
+function FootSfxParam:setSfxId_49(value)
+    return self:setU32(0xC4, value)
+end
+function FootSfxParam:getSfxId_49(value)
+    return self:getU32(0xC4, value)
+end
+
+function FootSfxParam:setSfxId_50(value)
+    return self:setU32(0xC8, value)
+end
+function FootSfxParam:getSfxId_50(value)
+    return self:getU32(0xC8, value)
+end
+
+function FootSfxParam:setSfxId_51(value)
+    return self:setU32(0xCC, value)
+end
+function FootSfxParam:getSfxId_51(value)
+    return self:getU32(0xCC, value)
+end
+
+function FootSfxParam:setSfxId_52(value)
+    return self:setU32(0xD0, value)
+end
+function FootSfxParam:getSfxId_52(value)
+    return self:getU32(0xD0, value)
+end
+
+function FootSfxParam:setSfxId_53(value)
+    return self:setU32(0xD4, value)
+end
+function FootSfxParam:getSfxId_53(value)
+    return self:getU32(0xD4, value)
+end
+
+function FootSfxParam:setSfxId_54(value)
+    return self:setU32(0xD8, value)
+end
+function FootSfxParam:getSfxId_54(value)
+    return self:getU32(0xD8, value)
+end
+
+function FootSfxParam:setSfxId_55(value)
+    return self:setU32(0xDC, value)
+end
+function FootSfxParam:getSfxId_55(value)
+    return self:getU32(0xDC, value)
+end
+
+function FootSfxParam:setSfxId_56(value)
+    return self:setU32(0xE0, value)
+end
+function FootSfxParam:getSfxId_56(value)
+    return self:getU32(0xE0, value)
+end
+
+function FootSfxParam:setSfxId_57(value)
+    return self:setU32(0xE4, value)
+end
+function FootSfxParam:getSfxId_57(value)
+    return self:getU32(0xE4, value)
+end
+
+function FootSfxParam:setSfxId_58(value)
+    return self:setU32(0xE8, value)
+end
+function FootSfxParam:getSfxId_58(value)
+    return self:getU32(0xE8, value)
+end
+
+function FootSfxParam:setSfxId_59(value)
+    return self:setU32(0xEC, value)
+end
+function FootSfxParam:getSfxId_59(value)
+    return self:getU32(0xEC, value)
+end
+
+function FootSfxParam:setSfxId_60(value)
+    return self:setU32(0xF0, value)
+end
+function FootSfxParam:getSfxId_60(value)
+    return self:getU32(0xF0, value)
+end
+
+function FootSfxParam:setSfxId_61(value)
+    return self:setU32(0xF4, value)
+end
+function FootSfxParam:getSfxId_61(value)
+    return self:getU32(0xF4, value)
+end
+
+function FootSfxParam:setSfxId_62(value)
+    return self:setU32(0xF8, value)
+end
+function FootSfxParam:getSfxId_62(value)
+    return self:getU32(0xF8, value)
+end
+
+function FootSfxParam:setSfxId_63(value)
+    return self:setU32(0xFC, value)
+end
+function FootSfxParam:getSfxId_63(value)
+    return self:getU32(0xFC, value)
+end
+
+function FootSfxParam:setSfxId_64(value)
+    return self:setU32(0x100, value)
+end
+function FootSfxParam:getSfxId_64(value)
+    return self:getU32(0x100, value)
+end
+
+function FootSfxParam:setSfxId_65(value)
+    return self:setU32(0x104, value)
+end
+function FootSfxParam:getSfxId_65(value)
+    return self:getU32(0x104, value)
+end
+
+function FootSfxParam:setSfxId_66(value)
+    return self:setU32(0x108, value)
+end
+function FootSfxParam:getSfxId_66(value)
+    return self:getU32(0x108, value)
+end
+
+function FootSfxParam:setSfxId_67(value)
+    return self:setU32(0x10C, value)
+end
+function FootSfxParam:getSfxId_67(value)
+    return self:getU32(0x10C, value)
+end
+
+function FootSfxParam:setSfxId_68(value)
+    return self:setU32(0x110, value)
+end
+function FootSfxParam:getSfxId_68(value)
+    return self:getU32(0x110, value)
+end
+
+function FootSfxParam:setSfxId_69(value)
+    return self:setU32(0x114, value)
+end
+function FootSfxParam:getSfxId_69(value)
+    return self:getU32(0x114, value)
+end
+
+function FootSfxParam:setSfxId_70(value)
+    return self:setU32(0x118, value)
+end
+function FootSfxParam:getSfxId_70(value)
+    return self:getU32(0x118, value)
+end
+
+function FootSfxParam:setSfxId_71(value)
+    return self:setU32(0x11C, value)
+end
+function FootSfxParam:getSfxId_71(value)
+    return self:getU32(0x11C, value)
+end
+
+function FootSfxParam:setSfxId_72(value)
+    return self:setU32(0x120, value)
+end
+function FootSfxParam:getSfxId_72(value)
+    return self:getU32(0x120, value)
+end
+
+function FootSfxParam:setSfxId_73(value)
+    return self:setU32(0x124, value)
+end
+function FootSfxParam:getSfxId_73(value)
+    return self:getU32(0x124, value)
+end
+
+function FootSfxParam:setSfxId_74(value)
+    return self:setU32(0x128, value)
+end
+function FootSfxParam:getSfxId_74(value)
+    return self:getU32(0x128, value)
+end
+
+function FootSfxParam:setSfxId_75(value)
+    return self:setU32(0x12C, value)
+end
+function FootSfxParam:getSfxId_75(value)
+    return self:getU32(0x12C, value)
+end
+
+function FootSfxParam:setSfxId_76(value)
+    return self:setU32(0x130, value)
+end
+function FootSfxParam:getSfxId_76(value)
+    return self:getU32(0x130, value)
+end
+
+function FootSfxParam:setSfxId_77(value)
+    return self:setU32(0x134, value)
+end
+function FootSfxParam:getSfxId_77(value)
+    return self:getU32(0x134, value)
+end
+
+function FootSfxParam:setSfxId_78(value)
+    return self:setU32(0x138, value)
+end
+function FootSfxParam:getSfxId_78(value)
+    return self:getU32(0x138, value)
+end
+
+function FootSfxParam:setSfxId_79(value)
+    return self:setU32(0x13C, value)
+end
+function FootSfxParam:getSfxId_79(value)
+    return self:getU32(0x13C, value)
+end
+
+function FootSfxParam:setSfxId_80(value)
+    return self:setU32(0x140, value)
+end
+function FootSfxParam:getSfxId_80(value)
+    return self:getU32(0x140, value)
+end
+
+function FootSfxParam:setSfxId_81(value)
+    return self:setU32(0x144, value)
+end
+function FootSfxParam:getSfxId_81(value)
+    return self:getU32(0x144, value)
+end
+
+function FootSfxParam:setSfxId_82(value)
+    return self:setU32(0x148, value)
+end
+function FootSfxParam:getSfxId_82(value)
+    return self:getU32(0x148, value)
+end
+
+function FootSfxParam:setSfxId_83(value)
+    return self:setU32(0x14C, value)
+end
+function FootSfxParam:getSfxId_83(value)
+    return self:getU32(0x14C, value)
+end
+
+function FootSfxParam:setSfxId_84(value)
+    return self:setU32(0x150, value)
+end
+function FootSfxParam:getSfxId_84(value)
+    return self:getU32(0x150, value)
+end
+
+function FootSfxParam:setSfxId_85(value)
+    return self:setU32(0x154, value)
+end
+function FootSfxParam:getSfxId_85(value)
+    return self:getU32(0x154, value)
+end
+
+function FootSfxParam:setSfxId_86(value)
+    return self:setU32(0x158, value)
+end
+function FootSfxParam:getSfxId_86(value)
+    return self:getU32(0x158, value)
+end
+
+function FootSfxParam:setSfxId_87(value)
+    return self:setU32(0x15C, value)
+end
+function FootSfxParam:getSfxId_87(value)
+    return self:getU32(0x15C, value)
+end
+
+function FootSfxParam:setSfxId_88(value)
+    return self:setU32(0x160, value)
+end
+function FootSfxParam:getSfxId_88(value)
+    return self:getU32(0x160, value)
+end
+
+function FootSfxParam:setSfxId_89(value)
+    return self:setU32(0x164, value)
+end
+function FootSfxParam:getSfxId_89(value)
+    return self:getU32(0x164, value)
+end
+
+function FootSfxParam:setSfxId_90(value)
+    return self:setU32(0x168, value)
+end
+function FootSfxParam:getSfxId_90(value)
+    return self:getU32(0x168, value)
+end
+
+function FootSfxParam:setSfxId_91(value)
+    return self:setU32(0x16C, value)
+end
+function FootSfxParam:getSfxId_91(value)
+    return self:getU32(0x16C, value)
+end
+
+function FootSfxParam:setSfxId_92(value)
+    return self:setU32(0x170, value)
+end
+function FootSfxParam:getSfxId_92(value)
+    return self:getU32(0x170, value)
+end
+
+function FootSfxParam:setSfxId_93(value)
+    return self:setU32(0x174, value)
+end
+function FootSfxParam:getSfxId_93(value)
+    return self:getU32(0x174, value)
+end
+
+function FootSfxParam:setSfxId_94(value)
+    return self:setU32(0x178, value)
+end
+function FootSfxParam:getSfxId_94(value)
+    return self:getU32(0x178, value)
+end
+
+function FootSfxParam:setSfxId_95(value)
+    return self:setU32(0x17C, value)
+end
+function FootSfxParam:getSfxId_95(value)
+    return self:getU32(0x17C, value)
+end
+
+function FootSfxParam:setSfxId_96(value)
+    return self:setU32(0x180, value)
+end
+function FootSfxParam:getSfxId_96(value)
+    return self:getU32(0x180, value)
+end
+
+function FootSfxParam:setSfxId_97(value)
+    return self:setU32(0x184, value)
+end
+function FootSfxParam:getSfxId_97(value)
+    return self:getU32(0x184, value)
+end
+
+function FootSfxParam:setSfxId_98(value)
+    return self:setU32(0x188, value)
+end
+function FootSfxParam:getSfxId_98(value)
+    return self:getU32(0x188, value)
+end
+
+function FootSfxParam:setSfxId_99(value)
+    return self:setU32(0x18C, value)
+end
+function FootSfxParam:getSfxId_99(value)
+    return self:getU32(0x18C, value)
+end
+
+function FootSfxParam:setSfxId_100(value)
+    return self:setU32(0x190, value)
+end
+function FootSfxParam:getSfxId_100(value)
+    return self:getU32(0x190, value)
+end
+
+function FootSfxParam:setSfxId_101(value)
+    return self:setU32(0x194, value)
+end
+function FootSfxParam:getSfxId_101(value)
+    return self:getU32(0x194, value)
+end
+
+function FootSfxParam:setSfxId_102(value)
+    return self:setU32(0x198, value)
+end
+function FootSfxParam:getSfxId_102(value)
+    return self:getU32(0x198, value)
+end
+
+function FootSfxParam:setSfxId_103(value)
+    return self:setU32(0x19C, value)
+end
+function FootSfxParam:getSfxId_103(value)
+    return self:getU32(0x19C, value)
+end
+
+function FootSfxParam:setSfxId_104(value)
+    return self:setU32(0x1A0, value)
+end
+function FootSfxParam:getSfxId_104(value)
+    return self:getU32(0x1A0, value)
+end
+
+function FootSfxParam:setSfxId_105(value)
+    return self:setU32(0x1A4, value)
+end
+function FootSfxParam:getSfxId_105(value)
+    return self:getU32(0x1A4, value)
+end
+
+function FootSfxParam:setSfxId_106(value)
+    return self:setU32(0x1A8, value)
+end
+function FootSfxParam:getSfxId_106(value)
+    return self:getU32(0x1A8, value)
+end
+
+function FootSfxParam:setSfxId_107(value)
+    return self:setU32(0x1AC, value)
+end
+function FootSfxParam:getSfxId_107(value)
+    return self:getU32(0x1AC, value)
+end
+
+function FootSfxParam:setSfxId_108(value)
+    return self:setU32(0x1B0, value)
+end
+function FootSfxParam:getSfxId_108(value)
+    return self:getU32(0x1B0, value)
+end
+
+function FootSfxParam:setSfxId_109(value)
+    return self:setU32(0x1B4, value)
+end
+function FootSfxParam:getSfxId_109(value)
+    return self:getU32(0x1B4, value)
+end
+
+function FootSfxParam:setSfxId_110(value)
+    return self:setU32(0x1B8, value)
+end
+function FootSfxParam:getSfxId_110(value)
+    return self:getU32(0x1B8, value)
+end
+
+function FootSfxParam:setSfxId_111(value)
+    return self:setU32(0x1BC, value)
+end
+function FootSfxParam:getSfxId_111(value)
+    return self:getU32(0x1BC, value)
+end
+
+function FootSfxParam:setSfxId_112(value)
+    return self:setU32(0x1C0, value)
+end
+function FootSfxParam:getSfxId_112(value)
+    return self:getU32(0x1C0, value)
+end
+
+function FootSfxParam:setSfxId_113(value)
+    return self:setU32(0x1C4, value)
+end
+function FootSfxParam:getSfxId_113(value)
+    return self:getU32(0x1C4, value)
+end
+
+function FootSfxParam:setSfxId_114(value)
+    return self:setU32(0x1C8, value)
+end
+function FootSfxParam:getSfxId_114(value)
+    return self:getU32(0x1C8, value)
+end
+
+function FootSfxParam:setSfxId_115(value)
+    return self:setU32(0x1CC, value)
+end
+function FootSfxParam:getSfxId_115(value)
+    return self:getU32(0x1CC, value)
+end
+
+function FootSfxParam:setSfxId_116(value)
+    return self:setU32(0x1D0, value)
+end
+function FootSfxParam:getSfxId_116(value)
+    return self:getU32(0x1D0, value)
+end
+
+function FootSfxParam:setSfxId_117(value)
+    return self:setU32(0x1D4, value)
+end
+function FootSfxParam:getSfxId_117(value)
+    return self:getU32(0x1D4, value)
+end
+
+function FootSfxParam:setSfxId_118(value)
+    return self:setU32(0x1D8, value)
+end
+function FootSfxParam:getSfxId_118(value)
+    return self:getU32(0x1D8, value)
+end
+
+function FootSfxParam:setSfxId_119(value)
+    return self:setU32(0x1DC, value)
+end
+function FootSfxParam:getSfxId_119(value)
+    return self:getU32(0x1DC, value)
+end
+
+function FootSfxParam:setSfxId_120(value)
+    return self:setU32(0x1E0, value)
+end
+function FootSfxParam:getSfxId_120(value)
+    return self:getU32(0x1E0, value)
+end
+
+function FootSfxParam:setSfxId_121(value)
+    return self:setU32(0x1E4, value)
+end
+function FootSfxParam:getSfxId_121(value)
+    return self:getU32(0x1E4, value)
+end
+
+function FootSfxParam:setSfxId_122(value)
+    return self:setU32(0x1E8, value)
+end
+function FootSfxParam:getSfxId_122(value)
+    return self:getU32(0x1E8, value)
+end
+
+function FootSfxParam:setSfxId_123(value)
+    return self:setU32(0x1EC, value)
+end
+function FootSfxParam:getSfxId_123(value)
+    return self:getU32(0x1EC, value)
+end
+
+function FootSfxParam:setSfxId_124(value)
+    return self:setU32(0x1F0, value)
+end
+function FootSfxParam:getSfxId_124(value)
+    return self:getU32(0x1F0, value)
+end
+
+function FootSfxParam:setSfxId_125(value)
+    return self:setU32(0x1F4, value)
+end
+function FootSfxParam:getSfxId_125(value)
+    return self:getU32(0x1F4, value)
+end
+
+function FootSfxParam:setSfxId_126(value)
+    return self:setU32(0x1F8, value)
+end
+function FootSfxParam:getSfxId_126(value)
+    return self:getU32(0x1F8, value)
+end
+
+function FootSfxParam:setSfxId_127(value)
+    return self:setU32(0x1FC, value)
+end
+function FootSfxParam:getSfxId_127(value)
+    return self:getU32(0x1FC, value)
+end
+
+function FootSfxParam:setSfxId_128(value)
+    return self:setU32(0x200, value)
+end
+function FootSfxParam:getSfxId_128(value)
+    return self:getU32(0x200, value)
+end
+
+function FootSfxParam:setSfxId_129(value)
+    return self:setU32(0x204, value)
+end
+function FootSfxParam:getSfxId_129(value)
+    return self:getU32(0x204, value)
+end
+
+function FootSfxParam:setSfxId_130(value)
+    return self:setU32(0x208, value)
+end
+function FootSfxParam:getSfxId_130(value)
+    return self:getU32(0x208, value)
+end
+
+function FootSfxParam:setSfxId_131(value)
+    return self:setU32(0x20C, value)
+end
+function FootSfxParam:getSfxId_131(value)
+    return self:getU32(0x20C, value)
+end
+
+function FootSfxParam:setSfxId_132(value)
+    return self:setU32(0x210, value)
+end
+function FootSfxParam:getSfxId_132(value)
+    return self:getU32(0x210, value)
+end
+
+function FootSfxParam:setSfxId_133(value)
+    return self:setU32(0x214, value)
+end
+function FootSfxParam:getSfxId_133(value)
+    return self:getU32(0x214, value)
+end
+
+function FootSfxParam:setSfxId_134(value)
+    return self:setU32(0x218, value)
+end
+function FootSfxParam:getSfxId_134(value)
+    return self:getU32(0x218, value)
+end
+
+function FootSfxParam:setSfxId_135(value)
+    return self:setU32(0x21C, value)
+end
+function FootSfxParam:getSfxId_135(value)
+    return self:getU32(0x21C, value)
+end
+
+function FootSfxParam:setSfxId_136(value)
+    return self:setU32(0x220, value)
+end
+function FootSfxParam:getSfxId_136(value)
+    return self:getU32(0x220, value)
+end
+
+function FootSfxParam:setSfxId_137(value)
+    return self:setU32(0x224, value)
+end
+function FootSfxParam:getSfxId_137(value)
+    return self:getU32(0x224, value)
+end
+
+function FootSfxParam:setSfxId_138(value)
+    return self:setU32(0x228, value)
+end
+function FootSfxParam:getSfxId_138(value)
+    return self:getU32(0x228, value)
+end
+
+function FootSfxParam:setSfxId_139(value)
+    return self:setU32(0x22C, value)
+end
+function FootSfxParam:getSfxId_139(value)
+    return self:getU32(0x22C, value)
+end
+
+function FootSfxParam:setSfxId_140(value)
+    return self:setU32(0x230, value)
+end
+function FootSfxParam:getSfxId_140(value)
+    return self:getU32(0x230, value)
+end
+
+function FootSfxParam:setSfxId_141(value)
+    return self:setU32(0x234, value)
+end
+function FootSfxParam:getSfxId_141(value)
+    return self:getU32(0x234, value)
+end
+
+function FootSfxParam:setSfxId_142(value)
+    return self:setU32(0x238, value)
+end
+function FootSfxParam:getSfxId_142(value)
+    return self:getU32(0x238, value)
+end
+
+function FootSfxParam:setSfxId_143(value)
+    return self:setU32(0x23C, value)
+end
+function FootSfxParam:getSfxId_143(value)
+    return self:getU32(0x23C, value)
+end
+
+function FootSfxParam:setSfxId_144(value)
+    return self:setU32(0x240, value)
+end
+function FootSfxParam:getSfxId_144(value)
+    return self:getU32(0x240, value)
+end
+
+function FootSfxParam:setSfxId_145(value)
+    return self:setU32(0x244, value)
+end
+function FootSfxParam:getSfxId_145(value)
+    return self:getU32(0x244, value)
+end
+
+function FootSfxParam:setSfxId_146(value)
+    return self:setU32(0x248, value)
+end
+function FootSfxParam:getSfxId_146(value)
+    return self:getU32(0x248, value)
+end
+
+function FootSfxParam:setSfxId_147(value)
+    return self:setU32(0x24C, value)
+end
+function FootSfxParam:getSfxId_147(value)
+    return self:getU32(0x24C, value)
+end
+
+function FootSfxParam:setSfxId_148(value)
+    return self:setU32(0x250, value)
+end
+function FootSfxParam:getSfxId_148(value)
+    return self:getU32(0x250, value)
+end
+
+function FootSfxParam:setSfxId_149(value)
+    return self:setU32(0x254, value)
+end
+function FootSfxParam:getSfxId_149(value)
+    return self:getU32(0x254, value)
+end
+
+function FootSfxParam:setSfxId_150(value)
+    return self:setU32(0x258, value)
+end
+function FootSfxParam:getSfxId_150(value)
+    return self:getU32(0x258, value)
+end
+
+function FootSfxParam:setSfxId_151(value)
+    return self:setU32(0x25C, value)
+end
+function FootSfxParam:getSfxId_151(value)
+    return self:getU32(0x25C, value)
+end
+
+function FootSfxParam:setSfxId_152(value)
+    return self:setU32(0x260, value)
+end
+function FootSfxParam:getSfxId_152(value)
+    return self:getU32(0x260, value)
+end
+
+function FootSfxParam:setSfxId_153(value)
+    return self:setU32(0x264, value)
+end
+function FootSfxParam:getSfxId_153(value)
+    return self:getU32(0x264, value)
+end
+
+function FootSfxParam:setSfxId_154(value)
+    return self:setU32(0x268, value)
+end
+function FootSfxParam:getSfxId_154(value)
+    return self:getU32(0x268, value)
+end
+
+function FootSfxParam:setSfxId_155(value)
+    return self:setU32(0x26C, value)
+end
+function FootSfxParam:getSfxId_155(value)
+    return self:getU32(0x26C, value)
+end
+
+function FootSfxParam:setSfxId_156(value)
+    return self:setU32(0x270, value)
+end
+function FootSfxParam:getSfxId_156(value)
+    return self:getU32(0x270, value)
+end
+
+function FootSfxParam:setSfxId_157(value)
+    return self:setU32(0x274, value)
+end
+function FootSfxParam:getSfxId_157(value)
+    return self:getU32(0x274, value)
+end
+
+function FootSfxParam:setSfxId_158(value)
+    return self:setU32(0x278, value)
+end
+function FootSfxParam:getSfxId_158(value)
+    return self:getU32(0x278, value)
+end
+
+function FootSfxParam:setSfxId_159(value)
+    return self:setU32(0x27C, value)
+end
+function FootSfxParam:getSfxId_159(value)
+    return self:getU32(0x27C, value)
+end
+
+function FootSfxParam:setSfxId_160(value)
+    return self:setU32(0x280, value)
+end
+function FootSfxParam:getSfxId_160(value)
+    return self:getU32(0x280, value)
+end
+
+function FootSfxParam:setSfxId_161(value)
+    return self:setU32(0x284, value)
+end
+function FootSfxParam:getSfxId_161(value)
+    return self:getU32(0x284, value)
+end
+
+function FootSfxParam:setSfxId_162(value)
+    return self:setU32(0x288, value)
+end
+function FootSfxParam:getSfxId_162(value)
+    return self:getU32(0x288, value)
+end
+
+function FootSfxParam:setSfxId_163(value)
+    return self:setU32(0x28C, value)
+end
+function FootSfxParam:getSfxId_163(value)
+    return self:getU32(0x28C, value)
+end
+
+function FootSfxParam:setSfxId_164(value)
+    return self:setU32(0x290, value)
+end
+function FootSfxParam:getSfxId_164(value)
+    return self:getU32(0x290, value)
+end
+
+function FootSfxParam:setSfxId_165(value)
+    return self:setU32(0x294, value)
+end
+function FootSfxParam:getSfxId_165(value)
+    return self:getU32(0x294, value)
+end
+
+function FootSfxParam:setSfxId_166(value)
+    return self:setU32(0x298, value)
+end
+function FootSfxParam:getSfxId_166(value)
+    return self:getU32(0x298, value)
+end
+
+function FootSfxParam:setSfxId_167(value)
+    return self:setU32(0x29C, value)
+end
+function FootSfxParam:getSfxId_167(value)
+    return self:getU32(0x29C, value)
+end
+
+function FootSfxParam:setSfxId_168(value)
+    return self:setU32(0x2A0, value)
+end
+function FootSfxParam:getSfxId_168(value)
+    return self:getU32(0x2A0, value)
+end
+
+function FootSfxParam:setSfxId_169(value)
+    return self:setU32(0x2A4, value)
+end
+function FootSfxParam:getSfxId_169(value)
+    return self:getU32(0x2A4, value)
+end
+
+function FootSfxParam:setSfxId_170(value)
+    return self:setU32(0x2A8, value)
+end
+function FootSfxParam:getSfxId_170(value)
+    return self:getU32(0x2A8, value)
+end
+
+function FootSfxParam:setSfxId_171(value)
+    return self:setU32(0x2AC, value)
+end
+function FootSfxParam:getSfxId_171(value)
+    return self:getU32(0x2AC, value)
+end
+
+function FootSfxParam:setSfxId_172(value)
+    return self:setU32(0x2B0, value)
+end
+function FootSfxParam:getSfxId_172(value)
+    return self:getU32(0x2B0, value)
+end
+
+function FootSfxParam:setSfxId_173(value)
+    return self:setU32(0x2B4, value)
+end
+function FootSfxParam:getSfxId_173(value)
+    return self:getU32(0x2B4, value)
+end
+
+function FootSfxParam:setSfxId_174(value)
+    return self:setU32(0x2B8, value)
+end
+function FootSfxParam:getSfxId_174(value)
+    return self:getU32(0x2B8, value)
+end
+
+function FootSfxParam:setSfxId_175(value)
+    return self:setU32(0x2BC, value)
+end
+function FootSfxParam:getSfxId_175(value)
+    return self:getU32(0x2BC, value)
+end
+
+function FootSfxParam:setSfxId_176(value)
+    return self:setU32(0x2C0, value)
+end
+function FootSfxParam:getSfxId_176(value)
+    return self:getU32(0x2C0, value)
+end
+
+function FootSfxParam:setSfxId_177(value)
+    return self:setU32(0x2C4, value)
+end
+function FootSfxParam:getSfxId_177(value)
+    return self:getU32(0x2C4, value)
+end
+
+function FootSfxParam:setSfxId_178(value)
+    return self:setU32(0x2C8, value)
+end
+function FootSfxParam:getSfxId_178(value)
+    return self:getU32(0x2C8, value)
+end
+
+function FootSfxParam:setSfxId_179(value)
+    return self:setU32(0x2CC, value)
+end
+function FootSfxParam:getSfxId_179(value)
+    return self:getU32(0x2CC, value)
+end
+
+function FootSfxParam:setSfxId_180(value)
+    return self:setU32(0x2D0, value)
+end
+function FootSfxParam:getSfxId_180(value)
+    return self:getU32(0x2D0, value)
+end
+
+function FootSfxParam:setSfxId_181(value)
+    return self:setU32(0x2D4, value)
+end
+function FootSfxParam:getSfxId_181(value)
+    return self:getU32(0x2D4, value)
+end
+
+function FootSfxParam:setSfxId_182(value)
+    return self:setU32(0x2D8, value)
+end
+function FootSfxParam:getSfxId_182(value)
+    return self:getU32(0x2D8, value)
+end
+
+function FootSfxParam:setSfxId_183(value)
+    return self:setU32(0x2DC, value)
+end
+function FootSfxParam:getSfxId_183(value)
+    return self:getU32(0x2DC, value)
+end
+
+function FootSfxParam:setSfxId_184(value)
+    return self:setU32(0x2E0, value)
+end
+function FootSfxParam:getSfxId_184(value)
+    return self:getU32(0x2E0, value)
+end
+
+function FootSfxParam:setSfxId_185(value)
+    return self:setU32(0x2E4, value)
+end
+function FootSfxParam:getSfxId_185(value)
+    return self:getU32(0x2E4, value)
+end
+
+function FootSfxParam:setSfxId_186(value)
+    return self:setU32(0x2E8, value)
+end
+function FootSfxParam:getSfxId_186(value)
+    return self:getU32(0x2E8, value)
+end
+
+function FootSfxParam:setSfxId_187(value)
+    return self:setU32(0x2EC, value)
+end
+function FootSfxParam:getSfxId_187(value)
+    return self:getU32(0x2EC, value)
+end
+
+function FootSfxParam:setSfxId_188(value)
+    return self:setU32(0x2F0, value)
+end
+function FootSfxParam:getSfxId_188(value)
+    return self:getU32(0x2F0, value)
+end
+
+function FootSfxParam:setSfxId_189(value)
+    return self:setU32(0x2F4, value)
+end
+function FootSfxParam:getSfxId_189(value)
+    return self:getU32(0x2F4, value)
+end
+
+function FootSfxParam:setSfxId_190(value)
+    return self:setU32(0x2F8, value)
+end
+function FootSfxParam:getSfxId_190(value)
+    return self:getU32(0x2F8, value)
+end
+
+function FootSfxParam:setSfxId_191(value)
+    return self:setU32(0x2FC, value)
+end
+function FootSfxParam:getSfxId_191(value)
+    return self:getU32(0x2FC, value)
+end
+
+function FootSfxParam:setSfxId_192(value)
+    return self:setU32(0x300, value)
+end
+function FootSfxParam:getSfxId_192(value)
+    return self:getU32(0x300, value)
+end
+
+function FootSfxParam:setSfxId_193(value)
+    return self:setU32(0x304, value)
+end
+function FootSfxParam:getSfxId_193(value)
+    return self:getU32(0x304, value)
+end
+
+function FootSfxParam:setSfxId_194(value)
+    return self:setU32(0x308, value)
+end
+function FootSfxParam:getSfxId_194(value)
+    return self:getU32(0x308, value)
+end
+
+function FootSfxParam:setSfxId_195(value)
+    return self:setU32(0x30C, value)
+end
+function FootSfxParam:getSfxId_195(value)
+    return self:getU32(0x30C, value)
+end
+
+function FootSfxParam:setSfxId_196(value)
+    return self:setU32(0x310, value)
+end
+function FootSfxParam:getSfxId_196(value)
+    return self:getU32(0x310, value)
+end
+
+function FootSfxParam:setSfxId_197(value)
+    return self:setU32(0x314, value)
+end
+function FootSfxParam:getSfxId_197(value)
+    return self:getU32(0x314, value)
+end
+
+function FootSfxParam:setSfxId_198(value)
+    return self:setU32(0x318, value)
+end
+function FootSfxParam:getSfxId_198(value)
+    return self:getU32(0x318, value)
+end
+
+function FootSfxParam:setSfxId_199(value)
+    return self:setU32(0x31C, value)
+end
+function FootSfxParam:getSfxId_199(value)
+    return self:getU32(0x31C, value)
+end
+[disable]
+FootSfxParam = nil

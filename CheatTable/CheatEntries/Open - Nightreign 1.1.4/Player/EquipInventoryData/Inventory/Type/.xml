@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337272899</ID>
+  <Description>"Type"</Description>
+  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1:Regular Items
+2:Key Items
+</DropDownList>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>inventory.data.Type</Address>
+  <x-ce2fs-child-order>
+    <id id="1337272902"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

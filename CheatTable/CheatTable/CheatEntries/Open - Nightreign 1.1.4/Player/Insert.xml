@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>2</ID>
+  <Description>"Insert"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>8 Bytes</VariableType>
+  <Address>WorldChrMan</Address>
+  <Offsets>
+    <Offset>174E8</Offset>
+  </Offsets>
+</CheatEntry>

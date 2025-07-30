@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>274</ID>
+  <Description>"Item"</Description>
+  <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+4</Address>
+  <x-ce2fs-child-order>
+    <id id="275"/>
+    <id id="276"/>
+    <id id="277"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

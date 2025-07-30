@@ -1,0 +1,72 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+AntiqueStandParam = {}
+function AntiqueStandParam:new(id_or_all, patchName)
+    return paramPatcher(self, "AntiqueStandParam", 0x18, id_or_all, patchName)
+end
+
+
+
+function AntiqueStandParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function AntiqueStandParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function AntiqueStandParam:setIconId(value)
+    return self:setU32(0x04, value)
+end
+function AntiqueStandParam:getIconId(value)
+    return self:getU32(0x04, value)
+end
+
+function AntiqueStandParam:setHeroType(value)
+    return self:setU8(0x08, value)
+end
+function AntiqueStandParam:getHeroType(value)
+    return self:getU8(0x08, value)
+end
+
+function AntiqueStandParam:setRelicSlot1(value)
+    return self:setU8(0x09, value)
+end
+function AntiqueStandParam:getRelicSlot1(value)
+    return self:getU8(0x09, value)
+end
+
+function AntiqueStandParam:setRelicSlot2(value)
+    return self:setU8(0x0A, value)
+end
+function AntiqueStandParam:getRelicSlot2(value)
+    return self:getU8(0x0A, value)
+end
+
+function AntiqueStandParam:setRelicSlot3(value)
+    return self:setU8(0x0B, value)
+end
+function AntiqueStandParam:getRelicSlot3(value)
+    return self:getU8(0x0B, value)
+end
+
+function AntiqueStandParam:setUnlockFlag(value)
+    return self:setU32(0x0C, value)
+end
+function AntiqueStandParam:getUnlockFlag(value)
+    return self:getU32(0x0C, value)
+end
+
+function AntiqueStandParam:setGoodsId(value)
+    return self:setU32(0x10, value)
+end
+function AntiqueStandParam:getGoodsId(value)
+    return self:getU32(0x10, value)
+end
+[disable]
+AntiqueStandParam = nil

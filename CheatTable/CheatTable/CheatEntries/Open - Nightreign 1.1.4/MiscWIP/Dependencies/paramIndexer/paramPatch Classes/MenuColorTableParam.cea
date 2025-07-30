@@ -1,0 +1,71 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MenuColorTableParam = {}
+function MenuColorTableParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MenuColorTableParam", 0x24, id_or_all, patchName)
+end
+
+
+
+function MenuColorTableParam:setLerpMode(value)
+    return self:setU8(0x00, value)
+end
+function MenuColorTableParam:getLerpMode(value)
+    return self:getU8(0x00, value)
+end
+
+--dummy8 pad1[3]
+
+function MenuColorTableParam:setH(value)
+    return self:setU16(0x04, value)
+end
+function MenuColorTableParam:getH(value)
+    return self:getU16(0x04, value)
+end
+
+--dummy8 pad2[2]
+
+function MenuColorTableParam:setS1(value)
+    return self:setF32(0x08, value)
+end
+function MenuColorTableParam:getS1(value)
+    return self:getF32(0x08, value)
+end
+
+function MenuColorTableParam:setV1(value)
+    return self:setF32(0x0C, value)
+end
+function MenuColorTableParam:getV1(value)
+    return self:getF32(0x0C, value)
+end
+
+function MenuColorTableParam:setS2(value)
+    return self:setF32(0x10, value)
+end
+function MenuColorTableParam:getS2(value)
+    return self:getF32(0x10, value)
+end
+
+function MenuColorTableParam:setV2(value)
+    return self:setF32(0x14, value)
+end
+function MenuColorTableParam:getV2(value)
+    return self:getF32(0x14, value)
+end
+
+function MenuColorTableParam:setS3(value)
+    return self:setF32(0x18, value)
+end
+function MenuColorTableParam:getS3(value)
+    return self:getF32(0x18, value)
+end
+
+function MenuColorTableParam:setV3(value)
+    return self:setF32(0x1C, value)
+end
+function MenuColorTableParam:getV3(value)
+    return self:getF32(0x1C, value)
+end
+[disable]
+MenuColorTableParam = nil

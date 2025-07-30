@@ -1,0 +1,63 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+CutSceneTextureLoadParam = {}
+function CutSceneTextureLoadParam:new(id_or_all, patchName)
+    return paramPatcher(self, "CutSceneTextureLoadParam", 0x105, id_or_all, patchName)
+end
+
+
+
+function CutSceneTextureLoadParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function CutSceneTextureLoadParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+function CutSceneTextureLoadParam:setDisableParam_Debug(value)
+    return self:setBinary(0x00, 1, value, 1)
+end
+
+function CutSceneTextureLoadParam:getDisableParam_Debug()
+    return self:getBinary(0x00, 1, value, 1)
+end
+
+--dummy8 disableParamReserve1:6
+
+--dummy8 disableParamReserve2[3]
+
+--fixstr texName_00[16]
+
+--fixstr texName_01[16]
+
+--fixstr texName_02[16]
+
+--fixstr texName_03[16]
+
+--fixstr texName_04[16]
+
+--fixstr texName_05[16]
+
+--fixstr texName_06[16]
+
+--fixstr texName_07[16]
+
+--fixstr texName_08[16]
+
+--fixstr texName_09[16]
+
+--fixstr texName_10[16]
+
+--fixstr texName_11[16]
+
+--fixstr texName_12[16]
+
+--fixstr texName_13[16]
+
+--fixstr texName_14[16]
+
+--fixstr texName_15[16]
+[disable]
+CutSceneTextureLoadParam = nil

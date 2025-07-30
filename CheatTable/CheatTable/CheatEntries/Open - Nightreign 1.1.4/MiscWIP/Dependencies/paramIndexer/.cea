@@ -1,0 +1,172 @@
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+local game = "NR"
+local baseUrl, fileFormat = "https://raw.githubusercontent.com/soulsmods/Paramdex/refs/heads/master/" .. game .. "/Defs/", ".xml"
+local typeSizes = {
+    u8 = 8, s8 = 8,
+    u16 = 16, s16 = 16,
+    u32 = 32, s32 = 32,
+    u64 = 64, s64 = 64,
+    f32 = 32, f64 = 64,
+    dummy8 = 8,
+    fixstr = 8,
+    fixstrW = 8,
+}
+
+local function nLine(indent)
+    return "\n" .. string.rep("    ", indent)
+end
+
+local newInstanceStr = [[
+function PARAM:new(id_or_all, patchName)
+    return paramPatcher(self, "PARAM", SIZE, id_or_all, patchName)
+end]]
+
+function getParamDex(paramName, webNames)
+    local webNameType = type(webNames)
+    if webNameType == 'string' then
+        webNames = {webNames}
+    elseif webNameType ~= 'table' then
+        pfError("paramDex: invalid argument type: %s", webNameType)
+    end
+
+    local client = getInternet(paramName .. "_indexer")
+    local linkErr = "404: Not Found"
+    local xmlFile = false
+    local linkCount = #webNames
+    for i = 1,linkCount,1 do
+        local url = string.format("%s%s%s", baseUrl, webNames[i], fileFormat)
+        xmlFile = client.getURL(url)
+        if xmlFile and not xmlFile:find(linkErr) then
+            break
+        end
+    end
+    if not xmlFile or xmlFile:find(linkErr) then
+        printf("%s:\n%s", paramName, table.concat(webNames, ", "))
+        return "",0
+    end
+    client.destroy()
+
+    local result, bitPos = "", 0
+    local xmlField = '<Field%s+Def="(%w+)%s+([^%s:%["]+)([%s:%[]*)"?(%d*)'
+    local lastFieldSize = 0
+    for typeDef, fieldName, bitOrArray, boaSize in xmlFile:gmatch(xmlField) do
+        local fieldSize = typeSizes[typeDef]
+        if not fieldSize then
+            pfError("invalid fieldSize in '%s', typeDef: %s", paramName, typeDef or 'nil')
+        end
+        lastFieldSize = fieldSize
+        local method = fieldName:gsub("^%l", string.upper)
+        local bytePos = (bitPos // 8) -- floors it.
+        local bitOffs = bitPos - bytePos * 8
+        if typeDef ~= "dummy8" then
+            if bitOrArray == ":" then
+                result = string.format(
+                    "%s\n\nfunction %s:set%s(value)\n    return self:setBinary(0x%02X, %d, value, %s)\nend",
+                    result, paramName, method, bytePos, bitOffs, boaSize
+                )
+                result = string.format(
+                    "%s\n\nfunction %s:get%s()\n    return self:getBinary(0x%02X, %d, value, %s)\nend",
+                    result, paramName, method, bytePos, bitOffs, boaSize
+                )
+                bitPos = bitPos + boaSize
+            elseif bitOrArray == "[" then
+                result = string.format(
+                    "%s\n\n--%s %s%s%s%s",
+                    result, typeDef, fieldName, bitOrArray, boaSize, bitOrArray == "[" and "]" or ""
+                )
+                bitPos = bitPos + boaSize * fieldSize
+            else
+                local fixedDef = typeDef:gsub("^%l", string.upper):gsub("S", "U")
+                result = string.format(
+                    "%s\n\nfunction %s:set%s(value)%sreturn self:set%s(0x%02X, value)\nend",
+                    result, paramName, method, nLine(1), fixedDef, bytePos
+                )
+                result = string.format(
+                    "%s\nfunction %s:get%s(value)%sreturn self:get%s(0x%02X, value)\nend",
+                    result, paramName, method, nLine(1), fixedDef, bytePos
+                )
+                bitPos = bitPos + fieldSize
+
+            end
+        else
+            result = string.format(
+                "%s\n\n--%s %s%s%s%s",
+                result, typeDef, fieldName, bitOrArray, boaSize, bitOrArray == "[" and "]" or ""
+            )
+            if bitOrArray == ":" then
+                bitPos = bitPos + boaSize
+            elseif bitOrArray == "[" then
+                bitPos = bitPos + boaSize * fieldSize
+            else
+                bitPos = bitPos + fieldSize
+            end
+        end
+        sleep(1)
+    end
+    return result, (bitPos + lastFieldSize) // 8
+end
+
+function paramIndexer()
+    local addr_list = getAddressList()
+    local paramList = paramUtils:getParamList()
+    local parentRecord = memrec[0]
+    local parentName = "paramPatch Classes"
+    local oldOptions = memrec.Options
+    memrec.Options = "[moAlwaysHideChildren]"
+    if not parentRecord or parentRecord.Description ~= parentName then
+        parentRecord = addr_list.getMemoryRecordByDescription(parentName)
+    end
+
+    if parentRecord then
+        parentRecord.Active = false
+        parentRecord.Options = "[moAlwaysHideChildren]"
+        local index = parentRecord.Index
+        local entry = addr_list[index]
+        if entry then
+            entry.destroy()
+        end
+    end
+
+    local parentRecord = addr_list.createMemoryRecord()
+    parentRecord.Description = parentName
+    parentRecord.IsGroupHeader = true
+    parentRecord.Options = "[moHideChildren]"
+    parentRecord.appendToEntry(memrec)
+
+    local paramsInOrder = {}
+    for paramName, paramResCap in pairs(paramList) do
+        paramsInOrder[#paramsInOrder + 1] = paramName
+    end
+    table.sort(paramsInOrder)
+
+    for _,paramName in ipairs(paramsInOrder) do
+        local webNames = {
+            paramName,
+            paramName:gsub("Param.*", "Param"),
+            paramName:gsub("%w%wEstus", "Estus"),
+        }
+
+        local indexed, size = getParamDex(paramName, webNames)
+        if indexed ~= "" then
+            local baseCode = string.format(
+                "{$lua}\nif syntaxcheck then return end\n[enable]\nPARAM = {}\n%s%s\n[disable]\nPARAM = nil",
+                newInstanceStr, indexed
+            )
+
+            local fullCode = baseCode:gsub("PARAM", paramName):gsub("SIZE", string.format("0x%X", size))
+            local record = addr_list.createMemoryRecord()
+            record.Description = paramName
+            record.Type = 11
+            record.Script = fullCode
+            record.appendToEntry(parentRecord)
+        end
+        sleep(1)
+    end
+    memrec.Options = oldOptions
+end
+
+[DISABLE]
+paramIndexer = nil
+getParamDex = nil

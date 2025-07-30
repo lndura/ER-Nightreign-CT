@@ -1,0 +1,1565 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+EquipParamProtector = {}
+function EquipParamProtector:new(id_or_all, patchName)
+    return paramPatcher(self, "EquipParamProtector", 0x1A1, id_or_all, patchName)
+end
+
+
+
+function EquipParamProtector:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function EquipParamProtector:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function EquipParamProtector:setSortId(value)
+    return self:setU32(0x04, value)
+end
+function EquipParamProtector:getSortId(value)
+    return self:getU32(0x04, value)
+end
+
+function EquipParamProtector:setWanderingEquipId(value)
+    return self:setU32(0x08, value)
+end
+function EquipParamProtector:getWanderingEquipId(value)
+    return self:getU32(0x08, value)
+end
+
+function EquipParamProtector:setResistSleep(value)
+    return self:setU16(0x0C, value)
+end
+function EquipParamProtector:getResistSleep(value)
+    return self:getU16(0x0C, value)
+end
+
+function EquipParamProtector:setResistMadness(value)
+    return self:setU16(0x0E, value)
+end
+function EquipParamProtector:getResistMadness(value)
+    return self:getU16(0x0E, value)
+end
+
+function EquipParamProtector:setSaDurability(value)
+    return self:setF32(0x10, value)
+end
+function EquipParamProtector:getSaDurability(value)
+    return self:getF32(0x10, value)
+end
+
+function EquipParamProtector:setToughnessCorrectRate(value)
+    return self:setF32(0x14, value)
+end
+function EquipParamProtector:getToughnessCorrectRate(value)
+    return self:getF32(0x14, value)
+end
+
+function EquipParamProtector:setFixPrice(value)
+    return self:setU32(0x18, value)
+end
+function EquipParamProtector:getFixPrice(value)
+    return self:getU32(0x18, value)
+end
+
+function EquipParamProtector:setBasicPrice(value)
+    return self:setU32(0x1C, value)
+end
+function EquipParamProtector:getBasicPrice(value)
+    return self:getU32(0x1C, value)
+end
+
+function EquipParamProtector:setSellValue(value)
+    return self:setU32(0x20, value)
+end
+function EquipParamProtector:getSellValue(value)
+    return self:getU32(0x20, value)
+end
+
+function EquipParamProtector:setWeight(value)
+    return self:setF32(0x24, value)
+end
+function EquipParamProtector:getWeight(value)
+    return self:getF32(0x24, value)
+end
+
+function EquipParamProtector:setResidentSpEffectId(value)
+    return self:setU32(0x28, value)
+end
+function EquipParamProtector:getResidentSpEffectId(value)
+    return self:getU32(0x28, value)
+end
+
+function EquipParamProtector:setResidentSpEffectId2(value)
+    return self:setU32(0x2C, value)
+end
+function EquipParamProtector:getResidentSpEffectId2(value)
+    return self:getU32(0x2C, value)
+end
+
+function EquipParamProtector:setResidentSpEffectId3(value)
+    return self:setU32(0x30, value)
+end
+function EquipParamProtector:getResidentSpEffectId3(value)
+    return self:getU32(0x30, value)
+end
+
+function EquipParamProtector:setMaterialSetId(value)
+    return self:setU32(0x34, value)
+end
+function EquipParamProtector:getMaterialSetId(value)
+    return self:getU32(0x34, value)
+end
+
+function EquipParamProtector:setPartsDamageRate(value)
+    return self:setF32(0x38, value)
+end
+function EquipParamProtector:getPartsDamageRate(value)
+    return self:getF32(0x38, value)
+end
+
+function EquipParamProtector:setCorectSARecover(value)
+    return self:setF32(0x3C, value)
+end
+function EquipParamProtector:getCorectSARecover(value)
+    return self:getF32(0x3C, value)
+end
+
+function EquipParamProtector:setOriginEquipPro(value)
+    return self:setU32(0x40, value)
+end
+function EquipParamProtector:getOriginEquipPro(value)
+    return self:getU32(0x40, value)
+end
+
+function EquipParamProtector:setOriginEquipPro1(value)
+    return self:setU32(0x44, value)
+end
+function EquipParamProtector:getOriginEquipPro1(value)
+    return self:getU32(0x44, value)
+end
+
+function EquipParamProtector:setOriginEquipPro2(value)
+    return self:setU32(0x48, value)
+end
+function EquipParamProtector:getOriginEquipPro2(value)
+    return self:getU32(0x48, value)
+end
+
+function EquipParamProtector:setOriginEquipPro3(value)
+    return self:setU32(0x4C, value)
+end
+function EquipParamProtector:getOriginEquipPro3(value)
+    return self:getU32(0x4C, value)
+end
+
+function EquipParamProtector:setOriginEquipPro4(value)
+    return self:setU32(0x50, value)
+end
+function EquipParamProtector:getOriginEquipPro4(value)
+    return self:getU32(0x50, value)
+end
+
+function EquipParamProtector:setOriginEquipPro5(value)
+    return self:setU32(0x54, value)
+end
+function EquipParamProtector:getOriginEquipPro5(value)
+    return self:getU32(0x54, value)
+end
+
+function EquipParamProtector:setOriginEquipPro6(value)
+    return self:setU32(0x58, value)
+end
+function EquipParamProtector:getOriginEquipPro6(value)
+    return self:getU32(0x58, value)
+end
+
+function EquipParamProtector:setOriginEquipPro7(value)
+    return self:setU32(0x5C, value)
+end
+function EquipParamProtector:getOriginEquipPro7(value)
+    return self:getU32(0x5C, value)
+end
+
+function EquipParamProtector:setOriginEquipPro8(value)
+    return self:setU32(0x60, value)
+end
+function EquipParamProtector:getOriginEquipPro8(value)
+    return self:getU32(0x60, value)
+end
+
+function EquipParamProtector:setOriginEquipPro9(value)
+    return self:setU32(0x64, value)
+end
+function EquipParamProtector:getOriginEquipPro9(value)
+    return self:getU32(0x64, value)
+end
+
+function EquipParamProtector:setOriginEquipPro10(value)
+    return self:setU32(0x68, value)
+end
+function EquipParamProtector:getOriginEquipPro10(value)
+    return self:getU32(0x68, value)
+end
+
+function EquipParamProtector:setOriginEquipPro11(value)
+    return self:setU32(0x6C, value)
+end
+function EquipParamProtector:getOriginEquipPro11(value)
+    return self:getU32(0x6C, value)
+end
+
+function EquipParamProtector:setOriginEquipPro12(value)
+    return self:setU32(0x70, value)
+end
+function EquipParamProtector:getOriginEquipPro12(value)
+    return self:getU32(0x70, value)
+end
+
+function EquipParamProtector:setOriginEquipPro13(value)
+    return self:setU32(0x74, value)
+end
+function EquipParamProtector:getOriginEquipPro13(value)
+    return self:getU32(0x74, value)
+end
+
+function EquipParamProtector:setOriginEquipPro14(value)
+    return self:setU32(0x78, value)
+end
+function EquipParamProtector:getOriginEquipPro14(value)
+    return self:getU32(0x78, value)
+end
+
+function EquipParamProtector:setOriginEquipPro15(value)
+    return self:setU32(0x7C, value)
+end
+function EquipParamProtector:getOriginEquipPro15(value)
+    return self:getU32(0x7C, value)
+end
+
+function EquipParamProtector:setFaceScaleM_ScaleX(value)
+    return self:setF32(0x80, value)
+end
+function EquipParamProtector:getFaceScaleM_ScaleX(value)
+    return self:getF32(0x80, value)
+end
+
+function EquipParamProtector:setFaceScaleM_ScaleZ(value)
+    return self:setF32(0x84, value)
+end
+function EquipParamProtector:getFaceScaleM_ScaleZ(value)
+    return self:getF32(0x84, value)
+end
+
+function EquipParamProtector:setFaceScaleM_MaxX(value)
+    return self:setF32(0x88, value)
+end
+function EquipParamProtector:getFaceScaleM_MaxX(value)
+    return self:getF32(0x88, value)
+end
+
+function EquipParamProtector:setFaceScaleM_MaxZ(value)
+    return self:setF32(0x8C, value)
+end
+function EquipParamProtector:getFaceScaleM_MaxZ(value)
+    return self:getF32(0x8C, value)
+end
+
+function EquipParamProtector:setFaceScaleF_ScaleX(value)
+    return self:setF32(0x90, value)
+end
+function EquipParamProtector:getFaceScaleF_ScaleX(value)
+    return self:getF32(0x90, value)
+end
+
+function EquipParamProtector:setFaceScaleF_ScaleZ(value)
+    return self:setF32(0x94, value)
+end
+function EquipParamProtector:getFaceScaleF_ScaleZ(value)
+    return self:getF32(0x94, value)
+end
+
+function EquipParamProtector:setFaceScaleF_MaxX(value)
+    return self:setF32(0x98, value)
+end
+function EquipParamProtector:getFaceScaleF_MaxX(value)
+    return self:getF32(0x98, value)
+end
+
+function EquipParamProtector:setFaceScaleF_MaxZ(value)
+    return self:setF32(0x9C, value)
+end
+function EquipParamProtector:getFaceScaleF_MaxZ(value)
+    return self:getF32(0x9C, value)
+end
+
+function EquipParamProtector:setQwcId(value)
+    return self:setU32(0xA0, value)
+end
+function EquipParamProtector:getQwcId(value)
+    return self:getU32(0xA0, value)
+end
+
+function EquipParamProtector:setEquipModelId(value)
+    return self:setU16(0xA4, value)
+end
+function EquipParamProtector:getEquipModelId(value)
+    return self:getU16(0xA4, value)
+end
+
+function EquipParamProtector:setIconIdM(value)
+    return self:setU16(0xA6, value)
+end
+function EquipParamProtector:getIconIdM(value)
+    return self:getU16(0xA6, value)
+end
+
+function EquipParamProtector:setIconIdF(value)
+    return self:setU16(0xA8, value)
+end
+function EquipParamProtector:getIconIdF(value)
+    return self:getU16(0xA8, value)
+end
+
+function EquipParamProtector:setKnockBack(value)
+    return self:setU16(0xAA, value)
+end
+function EquipParamProtector:getKnockBack(value)
+    return self:getU16(0xAA, value)
+end
+
+function EquipParamProtector:setKnockbackBounceRate(value)
+    return self:setU16(0xAC, value)
+end
+function EquipParamProtector:getKnockbackBounceRate(value)
+    return self:getU16(0xAC, value)
+end
+
+function EquipParamProtector:setDurability(value)
+    return self:setU16(0xAE, value)
+end
+function EquipParamProtector:getDurability(value)
+    return self:getU16(0xAE, value)
+end
+
+function EquipParamProtector:setDurabilityMax(value)
+    return self:setU16(0xB0, value)
+end
+function EquipParamProtector:getDurabilityMax(value)
+    return self:getU16(0xB0, value)
+end
+
+--dummy8 pad03[2]
+
+function EquipParamProtector:setDefFlickPower(value)
+    return self:setU16(0xB4, value)
+end
+function EquipParamProtector:getDefFlickPower(value)
+    return self:getU16(0xB4, value)
+end
+
+function EquipParamProtector:setDefensePhysics(value)
+    return self:setU16(0xB6, value)
+end
+function EquipParamProtector:getDefensePhysics(value)
+    return self:getU16(0xB6, value)
+end
+
+function EquipParamProtector:setDefenseMagic(value)
+    return self:setU16(0xB8, value)
+end
+function EquipParamProtector:getDefenseMagic(value)
+    return self:getU16(0xB8, value)
+end
+
+function EquipParamProtector:setDefenseFire(value)
+    return self:setU16(0xBA, value)
+end
+function EquipParamProtector:getDefenseFire(value)
+    return self:getU16(0xBA, value)
+end
+
+function EquipParamProtector:setDefenseThunder(value)
+    return self:setU16(0xBC, value)
+end
+function EquipParamProtector:getDefenseThunder(value)
+    return self:getU16(0xBC, value)
+end
+
+function EquipParamProtector:setDefenseSlash(value)
+    return self:setU16(0xBE, value)
+end
+function EquipParamProtector:getDefenseSlash(value)
+    return self:getU16(0xBE, value)
+end
+
+function EquipParamProtector:setDefenseBlow(value)
+    return self:setU16(0xC0, value)
+end
+function EquipParamProtector:getDefenseBlow(value)
+    return self:getU16(0xC0, value)
+end
+
+function EquipParamProtector:setDefenseThrust(value)
+    return self:setU16(0xC2, value)
+end
+function EquipParamProtector:getDefenseThrust(value)
+    return self:getU16(0xC2, value)
+end
+
+function EquipParamProtector:setResistPoison(value)
+    return self:setU16(0xC4, value)
+end
+function EquipParamProtector:getResistPoison(value)
+    return self:getU16(0xC4, value)
+end
+
+function EquipParamProtector:setResistDisease(value)
+    return self:setU16(0xC6, value)
+end
+function EquipParamProtector:getResistDisease(value)
+    return self:getU16(0xC6, value)
+end
+
+function EquipParamProtector:setResistBlood(value)
+    return self:setU16(0xC8, value)
+end
+function EquipParamProtector:getResistBlood(value)
+    return self:getU16(0xC8, value)
+end
+
+function EquipParamProtector:setResistCurse(value)
+    return self:setU16(0xCA, value)
+end
+function EquipParamProtector:getResistCurse(value)
+    return self:getU16(0xCA, value)
+end
+
+function EquipParamProtector:setReinforceTypeId(value)
+    return self:setU16(0xCC, value)
+end
+function EquipParamProtector:getReinforceTypeId(value)
+    return self:getU16(0xCC, value)
+end
+
+function EquipParamProtector:setTrophySGradeId(value)
+    return self:setU16(0xCE, value)
+end
+function EquipParamProtector:getTrophySGradeId(value)
+    return self:getU16(0xCE, value)
+end
+
+function EquipParamProtector:setShopLv(value)
+    return self:setU16(0xD0, value)
+end
+function EquipParamProtector:getShopLv(value)
+    return self:getU16(0xD0, value)
+end
+
+function EquipParamProtector:setKnockbackParamId(value)
+    return self:setU8(0xD2, value)
+end
+function EquipParamProtector:getKnockbackParamId(value)
+    return self:getU8(0xD2, value)
+end
+
+function EquipParamProtector:setFlickDamageCutRate(value)
+    return self:setU8(0xD3, value)
+end
+function EquipParamProtector:getFlickDamageCutRate(value)
+    return self:getU8(0xD3, value)
+end
+
+function EquipParamProtector:setEquipModelCategory(value)
+    return self:setU8(0xD4, value)
+end
+function EquipParamProtector:getEquipModelCategory(value)
+    return self:getU8(0xD4, value)
+end
+
+function EquipParamProtector:setEquipModelGender(value)
+    return self:setU8(0xD5, value)
+end
+function EquipParamProtector:getEquipModelGender(value)
+    return self:getU8(0xD5, value)
+end
+
+function EquipParamProtector:setProtectorCategory(value)
+    return self:setU8(0xD6, value)
+end
+function EquipParamProtector:getProtectorCategory(value)
+    return self:getU8(0xD6, value)
+end
+
+function EquipParamProtector:setRarity(value)
+    return self:setU8(0xD7, value)
+end
+function EquipParamProtector:getRarity(value)
+    return self:getU8(0xD7, value)
+end
+
+function EquipParamProtector:setSortGroupId(value)
+    return self:setU8(0xD8, value)
+end
+function EquipParamProtector:getSortGroupId(value)
+    return self:getU8(0xD8, value)
+end
+
+function EquipParamProtector:setPartsDmgType(value)
+    return self:setU8(0xD9, value)
+end
+function EquipParamProtector:getPartsDmgType(value)
+    return self:getU8(0xD9, value)
+end
+
+--dummy8 pad04[2]
+
+function EquipParamProtector:setIsDeposit(value)
+    return self:setBinary(0xDC, 0, value, 1)
+end
+
+function EquipParamProtector:getIsDeposit()
+    return self:getBinary(0xDC, 0, value, 1)
+end
+
+function EquipParamProtector:setHeadEquip(value)
+    return self:setBinary(0xDC, 1, value, 1)
+end
+
+function EquipParamProtector:getHeadEquip()
+    return self:getBinary(0xDC, 1, value, 1)
+end
+
+function EquipParamProtector:setBodyEquip(value)
+    return self:setBinary(0xDC, 2, value, 1)
+end
+
+function EquipParamProtector:getBodyEquip()
+    return self:getBinary(0xDC, 2, value, 1)
+end
+
+function EquipParamProtector:setArmEquip(value)
+    return self:setBinary(0xDC, 3, value, 1)
+end
+
+function EquipParamProtector:getArmEquip()
+    return self:getBinary(0xDC, 3, value, 1)
+end
+
+function EquipParamProtector:setLegEquip(value)
+    return self:setBinary(0xDC, 4, value, 1)
+end
+
+function EquipParamProtector:getLegEquip()
+    return self:getBinary(0xDC, 4, value, 1)
+end
+
+function EquipParamProtector:setUseFaceScale(value)
+    return self:setBinary(0xDC, 5, value, 1)
+end
+
+function EquipParamProtector:getUseFaceScale()
+    return self:getBinary(0xDC, 5, value, 1)
+end
+
+function EquipParamProtector:setIsSkipWeakDamageAnim(value)
+    return self:setBinary(0xDC, 6, value, 1)
+end
+
+function EquipParamProtector:getIsSkipWeakDamageAnim()
+    return self:getBinary(0xDC, 6, value, 1)
+end
+
+--dummy8 pad06:1
+
+function EquipParamProtector:setDefenseMaterialVariationValue_Weak(value)
+    return self:setU8(0xDD, value)
+end
+function EquipParamProtector:getDefenseMaterialVariationValue_Weak(value)
+    return self:getU8(0xDD, value)
+end
+
+function EquipParamProtector:setAutoFootEffectDecalBaseId2(value)
+    return self:setU16(0xDE, value)
+end
+function EquipParamProtector:getAutoFootEffectDecalBaseId2(value)
+    return self:getU16(0xDE, value)
+end
+
+function EquipParamProtector:setAutoFootEffectDecalBaseId3(value)
+    return self:setU16(0xE0, value)
+end
+function EquipParamProtector:getAutoFootEffectDecalBaseId3(value)
+    return self:getU16(0xE0, value)
+end
+
+function EquipParamProtector:setDefenseMaterialVariationValue(value)
+    return self:setU8(0xE2, value)
+end
+function EquipParamProtector:getDefenseMaterialVariationValue(value)
+    return self:getU8(0xE2, value)
+end
+
+function EquipParamProtector:setIsDiscard(value)
+    return self:setBinary(0xE3, 0, value, 1)
+end
+
+function EquipParamProtector:getIsDiscard()
+    return self:getBinary(0xE3, 0, value, 1)
+end
+
+function EquipParamProtector:setIsDrop(value)
+    return self:setBinary(0xE3, 1, value, 1)
+end
+
+function EquipParamProtector:getIsDrop()
+    return self:getBinary(0xE3, 1, value, 1)
+end
+
+function EquipParamProtector:setDisableMultiDropShare(value)
+    return self:setBinary(0xE3, 2, value, 1)
+end
+
+function EquipParamProtector:getDisableMultiDropShare()
+    return self:getBinary(0xE3, 2, value, 1)
+end
+
+function EquipParamProtector:setSimpleModelForDlc(value)
+    return self:setBinary(0xE3, 3, value, 1)
+end
+
+function EquipParamProtector:getSimpleModelForDlc()
+    return self:getBinary(0xE3, 3, value, 1)
+end
+
+function EquipParamProtector:setShowLogCondType(value)
+    return self:setBinary(0xE3, 4, value, 1)
+end
+
+function EquipParamProtector:getShowLogCondType()
+    return self:getBinary(0xE3, 4, value, 1)
+end
+
+function EquipParamProtector:setShowDialogCondType(value)
+    return self:setBinary(0xE3, 5, value, 2)
+end
+
+function EquipParamProtector:getShowDialogCondType()
+    return self:getBinary(0xE3, 5, value, 2)
+end
+
+--dummy8 pad:1
+
+function EquipParamProtector:setNeutralDamageCutRate(value)
+    return self:setF32(0xE4, value)
+end
+function EquipParamProtector:getNeutralDamageCutRate(value)
+    return self:getF32(0xE4, value)
+end
+
+function EquipParamProtector:setSlashDamageCutRate(value)
+    return self:setF32(0xE8, value)
+end
+function EquipParamProtector:getSlashDamageCutRate(value)
+    return self:getF32(0xE8, value)
+end
+
+function EquipParamProtector:setBlowDamageCutRate(value)
+    return self:setF32(0xEC, value)
+end
+function EquipParamProtector:getBlowDamageCutRate(value)
+    return self:getF32(0xEC, value)
+end
+
+function EquipParamProtector:setThrustDamageCutRate(value)
+    return self:setF32(0xF0, value)
+end
+function EquipParamProtector:getThrustDamageCutRate(value)
+    return self:getF32(0xF0, value)
+end
+
+function EquipParamProtector:setMagicDamageCutRate(value)
+    return self:setF32(0xF4, value)
+end
+function EquipParamProtector:getMagicDamageCutRate(value)
+    return self:getF32(0xF4, value)
+end
+
+function EquipParamProtector:setFireDamageCutRate(value)
+    return self:setF32(0xF8, value)
+end
+function EquipParamProtector:getFireDamageCutRate(value)
+    return self:getF32(0xF8, value)
+end
+
+function EquipParamProtector:setThunderDamageCutRate(value)
+    return self:setF32(0xFC, value)
+end
+function EquipParamProtector:getThunderDamageCutRate(value)
+    return self:getF32(0xFC, value)
+end
+
+function EquipParamProtector:setDefenseMaterialSfx1(value)
+    return self:setU16(0x100, value)
+end
+function EquipParamProtector:getDefenseMaterialSfx1(value)
+    return self:getU16(0x100, value)
+end
+
+function EquipParamProtector:setDefenseMaterialSfx_Weak1(value)
+    return self:setU16(0x102, value)
+end
+function EquipParamProtector:getDefenseMaterialSfx_Weak1(value)
+    return self:getU16(0x102, value)
+end
+
+function EquipParamProtector:setDefenseMaterial1(value)
+    return self:setU16(0x104, value)
+end
+function EquipParamProtector:getDefenseMaterial1(value)
+    return self:getU16(0x104, value)
+end
+
+function EquipParamProtector:setDefenseMaterial_Weak1(value)
+    return self:setU16(0x106, value)
+end
+function EquipParamProtector:getDefenseMaterial_Weak1(value)
+    return self:getU16(0x106, value)
+end
+
+function EquipParamProtector:setDefenseMaterialSfx2(value)
+    return self:setU16(0x108, value)
+end
+function EquipParamProtector:getDefenseMaterialSfx2(value)
+    return self:getU16(0x108, value)
+end
+
+function EquipParamProtector:setDefenseMaterialSfx_Weak2(value)
+    return self:setU16(0x10A, value)
+end
+function EquipParamProtector:getDefenseMaterialSfx_Weak2(value)
+    return self:getU16(0x10A, value)
+end
+
+function EquipParamProtector:setFootMaterialSe(value)
+    return self:setU16(0x10C, value)
+end
+function EquipParamProtector:getFootMaterialSe(value)
+    return self:getU16(0x10C, value)
+end
+
+function EquipParamProtector:setDefenseMaterial_Weak2(value)
+    return self:setU16(0x10E, value)
+end
+function EquipParamProtector:getDefenseMaterial_Weak2(value)
+    return self:getU16(0x10E, value)
+end
+
+function EquipParamProtector:setAutoFootEffectDecalBaseId1(value)
+    return self:setU32(0x110, value)
+end
+function EquipParamProtector:getAutoFootEffectDecalBaseId1(value)
+    return self:getU32(0x110, value)
+end
+
+function EquipParamProtector:setToughnessDamageCutRate(value)
+    return self:setF32(0x114, value)
+end
+function EquipParamProtector:getToughnessDamageCutRate(value)
+    return self:getF32(0x114, value)
+end
+
+function EquipParamProtector:setToughnessRecoverCorrection(value)
+    return self:setF32(0x118, value)
+end
+function EquipParamProtector:getToughnessRecoverCorrection(value)
+    return self:getF32(0x118, value)
+end
+
+function EquipParamProtector:setDarkDamageCutRate(value)
+    return self:setF32(0x11C, value)
+end
+function EquipParamProtector:getDarkDamageCutRate(value)
+    return self:getF32(0x11C, value)
+end
+
+function EquipParamProtector:setDefenseDark(value)
+    return self:setU16(0x120, value)
+end
+function EquipParamProtector:getDefenseDark(value)
+    return self:getU16(0x120, value)
+end
+
+--dummy8 invisibleFlag48:1
+
+--dummy8 invisibleFlag49:1
+
+--dummy8 invisibleFlag50:1
+
+--dummy8 invisibleFlag51:1
+
+--dummy8 invisibleFlag52:1
+
+--dummy8 invisibleFlag53:1
+
+--dummy8 invisibleFlag54:1
+
+--dummy8 invisibleFlag55:1
+
+--dummy8 invisibleFlag56:1
+
+--dummy8 invisibleFlag57:1
+
+--dummy8 invisibleFlag58:1
+
+--dummy8 invisibleFlag59:1
+
+--dummy8 invisibleFlag60:1
+
+--dummy8 invisibleFlag61:1
+
+--dummy8 invisibleFlag62:1
+
+--dummy8 invisibleFlag63:1
+
+--dummy8 invisibleFlag64:1
+
+--dummy8 invisibleFlag65:1
+
+--dummy8 invisibleFlag66:1
+
+--dummy8 invisibleFlag67:1
+
+--dummy8 invisibleFlag68:1
+
+--dummy8 invisibleFlag69:1
+
+--dummy8 invisibleFlag70:1
+
+--dummy8 invisibleFlag71:1
+
+--dummy8 invisibleFlag72:1
+
+--dummy8 invisibleFlag73:1
+
+--dummy8 invisibleFlag74:1
+
+--dummy8 invisibleFlag75:1
+
+--dummy8 invisibleFlag76:1
+
+--dummy8 invisibleFlag77:1
+
+--dummy8 invisibleFlag78:1
+
+--dummy8 invisibleFlag79:1
+
+--dummy8 invisibleFlag80:1
+
+--dummy8 padbit:7
+
+function EquipParamProtector:setPostureControlId(value)
+    return self:setU8(0x127, value)
+end
+function EquipParamProtector:getPostureControlId(value)
+    return self:getU8(0x127, value)
+end
+
+--dummy8 pad2[4]
+
+function EquipParamProtector:setSaleValue(value)
+    return self:setU32(0x12C, value)
+end
+function EquipParamProtector:getSaleValue(value)
+    return self:getU32(0x12C, value)
+end
+
+function EquipParamProtector:setResistFreeze(value)
+    return self:setU16(0x130, value)
+end
+function EquipParamProtector:getResistFreeze(value)
+    return self:getU16(0x130, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer00(value)
+    return self:setU8(0x132, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer00(value)
+    return self:getU8(0x132, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer01(value)
+    return self:setU8(0x133, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer01(value)
+    return self:getU8(0x133, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer02(value)
+    return self:setU8(0x134, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer02(value)
+    return self:getU8(0x134, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer03(value)
+    return self:setU8(0x135, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer03(value)
+    return self:getU8(0x135, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer04(value)
+    return self:setU8(0x136, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer04(value)
+    return self:getU8(0x136, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer05(value)
+    return self:setU8(0x137, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer05(value)
+    return self:getU8(0x137, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer06(value)
+    return self:setU8(0x138, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer06(value)
+    return self:getU8(0x138, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer07(value)
+    return self:setU8(0x139, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer07(value)
+    return self:getU8(0x139, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer08(value)
+    return self:setU8(0x13A, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer08(value)
+    return self:getU8(0x13A, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer09(value)
+    return self:setU8(0x13B, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer09(value)
+    return self:getU8(0x13B, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer10(value)
+    return self:setU8(0x13C, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer10(value)
+    return self:getU8(0x13C, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer11(value)
+    return self:setU8(0x13D, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer11(value)
+    return self:getU8(0x13D, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer12(value)
+    return self:setU8(0x13E, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer12(value)
+    return self:getU8(0x13E, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer13(value)
+    return self:setU8(0x13F, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer13(value)
+    return self:getU8(0x13F, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer14(value)
+    return self:setU8(0x140, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer14(value)
+    return self:getU8(0x140, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer15(value)
+    return self:setU8(0x141, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer15(value)
+    return self:getU8(0x141, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer16(value)
+    return self:setU8(0x142, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer16(value)
+    return self:getU8(0x142, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer17(value)
+    return self:setU8(0x143, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer17(value)
+    return self:getU8(0x143, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer18(value)
+    return self:setU8(0x144, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer18(value)
+    return self:getU8(0x144, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer19(value)
+    return self:setU8(0x145, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer19(value)
+    return self:getU8(0x145, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer20(value)
+    return self:setU8(0x146, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer20(value)
+    return self:getU8(0x146, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer21(value)
+    return self:setU8(0x147, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer21(value)
+    return self:getU8(0x147, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer22(value)
+    return self:setU8(0x148, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer22(value)
+    return self:getU8(0x148, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer23(value)
+    return self:setU8(0x149, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer23(value)
+    return self:getU8(0x149, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer24(value)
+    return self:setU8(0x14A, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer24(value)
+    return self:getU8(0x14A, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer25(value)
+    return self:setU8(0x14B, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer25(value)
+    return self:getU8(0x14B, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer26(value)
+    return self:setU8(0x14C, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer26(value)
+    return self:getU8(0x14C, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer27(value)
+    return self:setU8(0x14D, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer27(value)
+    return self:getU8(0x14D, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer28(value)
+    return self:setU8(0x14E, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer28(value)
+    return self:getU8(0x14E, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer29(value)
+    return self:setU8(0x14F, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer29(value)
+    return self:getU8(0x14F, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer30(value)
+    return self:setU8(0x150, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer30(value)
+    return self:getU8(0x150, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer31(value)
+    return self:setU8(0x151, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer31(value)
+    return self:getU8(0x151, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer32(value)
+    return self:setU8(0x152, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer32(value)
+    return self:getU8(0x152, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer33(value)
+    return self:setU8(0x153, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer33(value)
+    return self:getU8(0x153, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer34(value)
+    return self:setU8(0x154, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer34(value)
+    return self:getU8(0x154, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer35(value)
+    return self:setU8(0x155, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer35(value)
+    return self:getU8(0x155, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer36(value)
+    return self:setU8(0x156, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer36(value)
+    return self:getU8(0x156, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer37(value)
+    return self:setU8(0x157, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer37(value)
+    return self:getU8(0x157, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer38(value)
+    return self:setU8(0x158, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer38(value)
+    return self:getU8(0x158, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer39(value)
+    return self:setU8(0x159, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer39(value)
+    return self:getU8(0x159, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer40(value)
+    return self:setU8(0x15A, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer40(value)
+    return self:getU8(0x15A, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer41(value)
+    return self:setU8(0x15B, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer41(value)
+    return self:getU8(0x15B, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer42(value)
+    return self:setU8(0x15C, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer42(value)
+    return self:getU8(0x15C, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer43(value)
+    return self:setU8(0x15D, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer43(value)
+    return self:getU8(0x15D, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer44(value)
+    return self:setU8(0x15E, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer44(value)
+    return self:getU8(0x15E, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer45(value)
+    return self:setU8(0x15F, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer45(value)
+    return self:getU8(0x15F, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer46(value)
+    return self:setU8(0x160, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer46(value)
+    return self:getU8(0x160, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer47(value)
+    return self:setU8(0x161, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer47(value)
+    return self:getU8(0x161, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer48(value)
+    return self:setU8(0x162, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer48(value)
+    return self:getU8(0x162, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer49(value)
+    return self:setU8(0x163, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer49(value)
+    return self:getU8(0x163, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer50(value)
+    return self:setU8(0x164, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer50(value)
+    return self:getU8(0x164, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer51(value)
+    return self:setU8(0x165, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer51(value)
+    return self:getU8(0x165, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer52(value)
+    return self:setU8(0x166, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer52(value)
+    return self:getU8(0x166, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer53(value)
+    return self:setU8(0x167, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer53(value)
+    return self:getU8(0x167, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer54(value)
+    return self:setU8(0x168, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer54(value)
+    return self:getU8(0x168, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer55(value)
+    return self:setU8(0x169, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer55(value)
+    return self:getU8(0x169, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer56(value)
+    return self:setU8(0x16A, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer56(value)
+    return self:getU8(0x16A, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer57(value)
+    return self:setU8(0x16B, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer57(value)
+    return self:getU8(0x16B, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer58(value)
+    return self:setU8(0x16C, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer58(value)
+    return self:getU8(0x16C, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer59(value)
+    return self:setU8(0x16D, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer59(value)
+    return self:getU8(0x16D, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer60(value)
+    return self:setU8(0x16E, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer60(value)
+    return self:getU8(0x16E, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer61(value)
+    return self:setU8(0x16F, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer61(value)
+    return self:getU8(0x16F, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer62(value)
+    return self:setU8(0x170, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer62(value)
+    return self:getU8(0x170, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer63(value)
+    return self:setU8(0x171, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer63(value)
+    return self:getU8(0x171, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer64(value)
+    return self:setU8(0x172, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer64(value)
+    return self:getU8(0x172, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer65(value)
+    return self:setU8(0x173, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer65(value)
+    return self:getU8(0x173, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer66(value)
+    return self:setU8(0x174, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer66(value)
+    return self:getU8(0x174, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer67(value)
+    return self:setU8(0x175, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer67(value)
+    return self:getU8(0x175, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer68(value)
+    return self:setU8(0x176, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer68(value)
+    return self:getU8(0x176, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer69(value)
+    return self:setU8(0x177, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer69(value)
+    return self:getU8(0x177, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer70(value)
+    return self:setU8(0x178, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer70(value)
+    return self:getU8(0x178, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer71(value)
+    return self:setU8(0x179, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer71(value)
+    return self:getU8(0x179, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer72(value)
+    return self:setU8(0x17A, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer72(value)
+    return self:getU8(0x17A, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer73(value)
+    return self:setU8(0x17B, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer73(value)
+    return self:getU8(0x17B, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer74(value)
+    return self:setU8(0x17C, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer74(value)
+    return self:getU8(0x17C, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer75(value)
+    return self:setU8(0x17D, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer75(value)
+    return self:getU8(0x17D, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer76(value)
+    return self:setU8(0x17E, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer76(value)
+    return self:getU8(0x17E, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer77(value)
+    return self:setU8(0x17F, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer77(value)
+    return self:getU8(0x17F, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer78(value)
+    return self:setU8(0x180, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer78(value)
+    return self:getU8(0x180, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer79(value)
+    return self:setU8(0x181, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer79(value)
+    return self:getU8(0x181, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer80(value)
+    return self:setU8(0x182, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer80(value)
+    return self:getU8(0x182, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer81(value)
+    return self:setU8(0x183, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer81(value)
+    return self:getU8(0x183, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer82(value)
+    return self:setU8(0x184, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer82(value)
+    return self:getU8(0x184, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer83(value)
+    return self:setU8(0x185, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer83(value)
+    return self:getU8(0x185, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer84(value)
+    return self:setU8(0x186, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer84(value)
+    return self:getU8(0x186, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer85(value)
+    return self:setU8(0x187, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer85(value)
+    return self:getU8(0x187, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer86(value)
+    return self:setU8(0x188, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer86(value)
+    return self:getU8(0x188, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer87(value)
+    return self:setU8(0x189, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer87(value)
+    return self:getU8(0x189, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer88(value)
+    return self:setU8(0x18A, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer88(value)
+    return self:getU8(0x18A, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer89(value)
+    return self:setU8(0x18B, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer89(value)
+    return self:getU8(0x18B, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer90(value)
+    return self:setU8(0x18C, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer90(value)
+    return self:getU8(0x18C, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer91(value)
+    return self:setU8(0x18D, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer91(value)
+    return self:getU8(0x18D, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer92(value)
+    return self:setU8(0x18E, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer92(value)
+    return self:getU8(0x18E, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer93(value)
+    return self:setU8(0x18F, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer93(value)
+    return self:getU8(0x18F, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer94(value)
+    return self:setU8(0x190, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer94(value)
+    return self:getU8(0x190, value)
+end
+
+function EquipParamProtector:setInvisibleFlag_SexVer95(value)
+    return self:setU8(0x191, value)
+end
+function EquipParamProtector:getInvisibleFlag_SexVer95(value)
+    return self:getU8(0x191, value)
+end
+
+--dummy8 pad404[14]
+[disable]
+EquipParamProtector = nil

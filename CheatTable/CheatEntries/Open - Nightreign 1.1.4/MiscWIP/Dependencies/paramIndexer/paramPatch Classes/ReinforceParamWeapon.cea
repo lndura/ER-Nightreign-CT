@@ -1,0 +1,286 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+ReinforceParamWeapon = {}
+function ReinforceParamWeapon:new(id_or_all, patchName)
+    return paramPatcher(self, "ReinforceParamWeapon", 0x88, id_or_all, patchName)
+end
+
+
+
+function ReinforceParamWeapon:setPhysicsAtkRate(value)
+    return self:setF32(0x00, value)
+end
+function ReinforceParamWeapon:getPhysicsAtkRate(value)
+    return self:getF32(0x00, value)
+end
+
+function ReinforceParamWeapon:setMagicAtkRate(value)
+    return self:setF32(0x04, value)
+end
+function ReinforceParamWeapon:getMagicAtkRate(value)
+    return self:getF32(0x04, value)
+end
+
+function ReinforceParamWeapon:setFireAtkRate(value)
+    return self:setF32(0x08, value)
+end
+function ReinforceParamWeapon:getFireAtkRate(value)
+    return self:getF32(0x08, value)
+end
+
+function ReinforceParamWeapon:setThunderAtkRate(value)
+    return self:setF32(0x0C, value)
+end
+function ReinforceParamWeapon:getThunderAtkRate(value)
+    return self:getF32(0x0C, value)
+end
+
+function ReinforceParamWeapon:setStaminaAtkRate(value)
+    return self:setF32(0x10, value)
+end
+function ReinforceParamWeapon:getStaminaAtkRate(value)
+    return self:getF32(0x10, value)
+end
+
+function ReinforceParamWeapon:setSaWeaponAtkRate(value)
+    return self:setF32(0x14, value)
+end
+function ReinforceParamWeapon:getSaWeaponAtkRate(value)
+    return self:getF32(0x14, value)
+end
+
+function ReinforceParamWeapon:setSaDurabilityRate(value)
+    return self:setF32(0x18, value)
+end
+function ReinforceParamWeapon:getSaDurabilityRate(value)
+    return self:getF32(0x18, value)
+end
+
+function ReinforceParamWeapon:setCorrectStrengthRate(value)
+    return self:setF32(0x1C, value)
+end
+function ReinforceParamWeapon:getCorrectStrengthRate(value)
+    return self:getF32(0x1C, value)
+end
+
+function ReinforceParamWeapon:setCorrectAgilityRate(value)
+    return self:setF32(0x20, value)
+end
+function ReinforceParamWeapon:getCorrectAgilityRate(value)
+    return self:getF32(0x20, value)
+end
+
+function ReinforceParamWeapon:setCorrectMagicRate(value)
+    return self:setF32(0x24, value)
+end
+function ReinforceParamWeapon:getCorrectMagicRate(value)
+    return self:getF32(0x24, value)
+end
+
+function ReinforceParamWeapon:setCorrectFaithRate(value)
+    return self:setF32(0x28, value)
+end
+function ReinforceParamWeapon:getCorrectFaithRate(value)
+    return self:getF32(0x28, value)
+end
+
+function ReinforceParamWeapon:setPhysicsGuardCutRate(value)
+    return self:setF32(0x2C, value)
+end
+function ReinforceParamWeapon:getPhysicsGuardCutRate(value)
+    return self:getF32(0x2C, value)
+end
+
+function ReinforceParamWeapon:setMagicGuardCutRate(value)
+    return self:setF32(0x30, value)
+end
+function ReinforceParamWeapon:getMagicGuardCutRate(value)
+    return self:getF32(0x30, value)
+end
+
+function ReinforceParamWeapon:setFireGuardCutRate(value)
+    return self:setF32(0x34, value)
+end
+function ReinforceParamWeapon:getFireGuardCutRate(value)
+    return self:getF32(0x34, value)
+end
+
+function ReinforceParamWeapon:setThunderGuardCutRate(value)
+    return self:setF32(0x38, value)
+end
+function ReinforceParamWeapon:getThunderGuardCutRate(value)
+    return self:getF32(0x38, value)
+end
+
+function ReinforceParamWeapon:setPoisonGuardResistRate(value)
+    return self:setF32(0x3C, value)
+end
+function ReinforceParamWeapon:getPoisonGuardResistRate(value)
+    return self:getF32(0x3C, value)
+end
+
+function ReinforceParamWeapon:setDiseaseGuardResistRate(value)
+    return self:setF32(0x40, value)
+end
+function ReinforceParamWeapon:getDiseaseGuardResistRate(value)
+    return self:getF32(0x40, value)
+end
+
+function ReinforceParamWeapon:setBloodGuardResistRate(value)
+    return self:setF32(0x44, value)
+end
+function ReinforceParamWeapon:getBloodGuardResistRate(value)
+    return self:getF32(0x44, value)
+end
+
+function ReinforceParamWeapon:setCurseGuardResistRate(value)
+    return self:setF32(0x48, value)
+end
+function ReinforceParamWeapon:getCurseGuardResistRate(value)
+    return self:getF32(0x48, value)
+end
+
+function ReinforceParamWeapon:setStaminaGuardDefRate(value)
+    return self:setF32(0x4C, value)
+end
+function ReinforceParamWeapon:getStaminaGuardDefRate(value)
+    return self:getF32(0x4C, value)
+end
+
+function ReinforceParamWeapon:setSpEffectId1(value)
+    return self:setU8(0x50, value)
+end
+function ReinforceParamWeapon:getSpEffectId1(value)
+    return self:getU8(0x50, value)
+end
+
+function ReinforceParamWeapon:setSpEffectId2(value)
+    return self:setU8(0x51, value)
+end
+function ReinforceParamWeapon:getSpEffectId2(value)
+    return self:getU8(0x51, value)
+end
+
+function ReinforceParamWeapon:setSpEffectId3(value)
+    return self:setU8(0x52, value)
+end
+function ReinforceParamWeapon:getSpEffectId3(value)
+    return self:getU8(0x52, value)
+end
+
+function ReinforceParamWeapon:setResidentSpEffectId1(value)
+    return self:setU8(0x53, value)
+end
+function ReinforceParamWeapon:getResidentSpEffectId1(value)
+    return self:getU8(0x53, value)
+end
+
+function ReinforceParamWeapon:setResidentSpEffectId2(value)
+    return self:setU8(0x54, value)
+end
+function ReinforceParamWeapon:getResidentSpEffectId2(value)
+    return self:getU8(0x54, value)
+end
+
+function ReinforceParamWeapon:setResidentSpEffectId3(value)
+    return self:setU8(0x55, value)
+end
+function ReinforceParamWeapon:getResidentSpEffectId3(value)
+    return self:getU8(0x55, value)
+end
+
+function ReinforceParamWeapon:setMaterialSetId(value)
+    return self:setU8(0x56, value)
+end
+function ReinforceParamWeapon:getMaterialSetId(value)
+    return self:getU8(0x56, value)
+end
+
+function ReinforceParamWeapon:setMaxReinforceLevel(value)
+    return self:setU8(0x57, value)
+end
+function ReinforceParamWeapon:getMaxReinforceLevel(value)
+    return self:getU8(0x57, value)
+end
+
+function ReinforceParamWeapon:setDarkAtkRate(value)
+    return self:setF32(0x58, value)
+end
+function ReinforceParamWeapon:getDarkAtkRate(value)
+    return self:getF32(0x58, value)
+end
+
+function ReinforceParamWeapon:setDarkGuardCutRate(value)
+    return self:setF32(0x5C, value)
+end
+function ReinforceParamWeapon:getDarkGuardCutRate(value)
+    return self:getF32(0x5C, value)
+end
+
+function ReinforceParamWeapon:setCorrectLuckRate(value)
+    return self:setF32(0x60, value)
+end
+function ReinforceParamWeapon:getCorrectLuckRate(value)
+    return self:getF32(0x60, value)
+end
+
+function ReinforceParamWeapon:setFreezeGuardDefRate(value)
+    return self:setF32(0x64, value)
+end
+function ReinforceParamWeapon:getFreezeGuardDefRate(value)
+    return self:getF32(0x64, value)
+end
+
+function ReinforceParamWeapon:setReinforcePriceRate(value)
+    return self:setF32(0x68, value)
+end
+function ReinforceParamWeapon:getReinforcePriceRate(value)
+    return self:getF32(0x68, value)
+end
+
+function ReinforceParamWeapon:setBaseChangePriceRate(value)
+    return self:setF32(0x6C, value)
+end
+function ReinforceParamWeapon:getBaseChangePriceRate(value)
+    return self:getF32(0x6C, value)
+end
+
+function ReinforceParamWeapon:setEnableGemRank(value)
+    return self:setU8(0x70, value)
+end
+function ReinforceParamWeapon:getEnableGemRank(value)
+    return self:getU8(0x70, value)
+end
+
+--dummy8 pad2[3]
+
+function ReinforceParamWeapon:setSleepGuardDefRate(value)
+    return self:setF32(0x74, value)
+end
+function ReinforceParamWeapon:getSleepGuardDefRate(value)
+    return self:getF32(0x74, value)
+end
+
+function ReinforceParamWeapon:setMadnessGuardDefRate(value)
+    return self:setF32(0x78, value)
+end
+function ReinforceParamWeapon:getMadnessGuardDefRate(value)
+    return self:getF32(0x78, value)
+end
+
+function ReinforceParamWeapon:setBaseAtkRate(value)
+    return self:setF32(0x7C, value)
+end
+function ReinforceParamWeapon:getBaseAtkRate(value)
+    return self:getF32(0x7C, value)
+end
+
+function ReinforceParamWeapon:setUnknown_1(value)
+    return self:setF32(0x80, value)
+end
+function ReinforceParamWeapon:getUnknown_1(value)
+    return self:getF32(0x80, value)
+end
+[disable]
+ReinforceParamWeapon = nil

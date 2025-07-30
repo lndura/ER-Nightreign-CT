@@ -1,0 +1,565 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+AttackElementCorrectParam = {}
+function AttackElementCorrectParam:new(id_or_all, patchName)
+    return paramPatcher(self, "AttackElementCorrectParam", 0x81, id_or_all, patchName)
+end
+
+
+
+function AttackElementCorrectParam:setIsStrengthCorrect_byPhysics(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function AttackElementCorrectParam:getIsStrengthCorrect_byPhysics()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+function AttackElementCorrectParam:setIsDexterityCorrect_byPhysics(value)
+    return self:setBinary(0x00, 1, value, 1)
+end
+
+function AttackElementCorrectParam:getIsDexterityCorrect_byPhysics()
+    return self:getBinary(0x00, 1, value, 1)
+end
+
+function AttackElementCorrectParam:setIsMagicCorrect_byPhysics(value)
+    return self:setBinary(0x00, 2, value, 1)
+end
+
+function AttackElementCorrectParam:getIsMagicCorrect_byPhysics()
+    return self:getBinary(0x00, 2, value, 1)
+end
+
+function AttackElementCorrectParam:setIsFaithCorrect_byPhysics(value)
+    return self:setBinary(0x00, 3, value, 1)
+end
+
+function AttackElementCorrectParam:getIsFaithCorrect_byPhysics()
+    return self:getBinary(0x00, 3, value, 1)
+end
+
+function AttackElementCorrectParam:setIsLuckCorrect_byPhysics(value)
+    return self:setBinary(0x00, 4, value, 1)
+end
+
+function AttackElementCorrectParam:getIsLuckCorrect_byPhysics()
+    return self:getBinary(0x00, 4, value, 1)
+end
+
+function AttackElementCorrectParam:setIsStrengthCorrect_byMagic(value)
+    return self:setBinary(0x00, 5, value, 1)
+end
+
+function AttackElementCorrectParam:getIsStrengthCorrect_byMagic()
+    return self:getBinary(0x00, 5, value, 1)
+end
+
+function AttackElementCorrectParam:setIsDexterityCorrect_byMagic(value)
+    return self:setBinary(0x00, 6, value, 1)
+end
+
+function AttackElementCorrectParam:getIsDexterityCorrect_byMagic()
+    return self:getBinary(0x00, 6, value, 1)
+end
+
+function AttackElementCorrectParam:setIsMagicCorrect_byMagic(value)
+    return self:setBinary(0x00, 7, value, 1)
+end
+
+function AttackElementCorrectParam:getIsMagicCorrect_byMagic()
+    return self:getBinary(0x00, 7, value, 1)
+end
+
+function AttackElementCorrectParam:setIsFaithCorrect_byMagic(value)
+    return self:setBinary(0x01, 0, value, 1)
+end
+
+function AttackElementCorrectParam:getIsFaithCorrect_byMagic()
+    return self:getBinary(0x01, 0, value, 1)
+end
+
+function AttackElementCorrectParam:setIsLuckCorrect_byMagic(value)
+    return self:setBinary(0x01, 1, value, 1)
+end
+
+function AttackElementCorrectParam:getIsLuckCorrect_byMagic()
+    return self:getBinary(0x01, 1, value, 1)
+end
+
+function AttackElementCorrectParam:setIsStrengthCorrect_byFire(value)
+    return self:setBinary(0x01, 2, value, 1)
+end
+
+function AttackElementCorrectParam:getIsStrengthCorrect_byFire()
+    return self:getBinary(0x01, 2, value, 1)
+end
+
+function AttackElementCorrectParam:setIsDexterityCorrect_byFire(value)
+    return self:setBinary(0x01, 3, value, 1)
+end
+
+function AttackElementCorrectParam:getIsDexterityCorrect_byFire()
+    return self:getBinary(0x01, 3, value, 1)
+end
+
+function AttackElementCorrectParam:setIsMagicCorrect_byFire(value)
+    return self:setBinary(0x01, 4, value, 1)
+end
+
+function AttackElementCorrectParam:getIsMagicCorrect_byFire()
+    return self:getBinary(0x01, 4, value, 1)
+end
+
+function AttackElementCorrectParam:setIsFaithCorrect_byFire(value)
+    return self:setBinary(0x01, 5, value, 1)
+end
+
+function AttackElementCorrectParam:getIsFaithCorrect_byFire()
+    return self:getBinary(0x01, 5, value, 1)
+end
+
+function AttackElementCorrectParam:setIsLuckCorrect_byFire(value)
+    return self:setBinary(0x01, 6, value, 1)
+end
+
+function AttackElementCorrectParam:getIsLuckCorrect_byFire()
+    return self:getBinary(0x01, 6, value, 1)
+end
+
+function AttackElementCorrectParam:setIsStrengthCorrect_byThunder(value)
+    return self:setBinary(0x01, 7, value, 1)
+end
+
+function AttackElementCorrectParam:getIsStrengthCorrect_byThunder()
+    return self:getBinary(0x01, 7, value, 1)
+end
+
+function AttackElementCorrectParam:setIsDexterityCorrect_byThunder(value)
+    return self:setBinary(0x02, 0, value, 1)
+end
+
+function AttackElementCorrectParam:getIsDexterityCorrect_byThunder()
+    return self:getBinary(0x02, 0, value, 1)
+end
+
+function AttackElementCorrectParam:setIsMagicCorrect_byThunder(value)
+    return self:setBinary(0x02, 1, value, 1)
+end
+
+function AttackElementCorrectParam:getIsMagicCorrect_byThunder()
+    return self:getBinary(0x02, 1, value, 1)
+end
+
+function AttackElementCorrectParam:setIsFaithCorrect_byThunder(value)
+    return self:setBinary(0x02, 2, value, 1)
+end
+
+function AttackElementCorrectParam:getIsFaithCorrect_byThunder()
+    return self:getBinary(0x02, 2, value, 1)
+end
+
+function AttackElementCorrectParam:setIsLuckCorrect_byThunder(value)
+    return self:setBinary(0x02, 3, value, 1)
+end
+
+function AttackElementCorrectParam:getIsLuckCorrect_byThunder()
+    return self:getBinary(0x02, 3, value, 1)
+end
+
+function AttackElementCorrectParam:setIsStrengthCorrect_byDark(value)
+    return self:setBinary(0x02, 4, value, 1)
+end
+
+function AttackElementCorrectParam:getIsStrengthCorrect_byDark()
+    return self:getBinary(0x02, 4, value, 1)
+end
+
+function AttackElementCorrectParam:setIsDexterityCorrect_byDark(value)
+    return self:setBinary(0x02, 5, value, 1)
+end
+
+function AttackElementCorrectParam:getIsDexterityCorrect_byDark()
+    return self:getBinary(0x02, 5, value, 1)
+end
+
+function AttackElementCorrectParam:setIsMagicCorrect_byDark(value)
+    return self:setBinary(0x02, 6, value, 1)
+end
+
+function AttackElementCorrectParam:getIsMagicCorrect_byDark()
+    return self:getBinary(0x02, 6, value, 1)
+end
+
+function AttackElementCorrectParam:setIsFaithCorrect_byDark(value)
+    return self:setBinary(0x02, 7, value, 1)
+end
+
+function AttackElementCorrectParam:getIsFaithCorrect_byDark()
+    return self:getBinary(0x02, 7, value, 1)
+end
+
+function AttackElementCorrectParam:setIsLuckCorrect_byDark(value)
+    return self:setBinary(0x03, 0, value, 1)
+end
+
+function AttackElementCorrectParam:getIsLuckCorrect_byDark()
+    return self:getBinary(0x03, 0, value, 1)
+end
+
+--dummy8 pad1:7
+
+function AttackElementCorrectParam:setOverwriteStrengthCorrectRate_byPhysics(value)
+    return self:setU16(0x04, value)
+end
+function AttackElementCorrectParam:getOverwriteStrengthCorrectRate_byPhysics(value)
+    return self:getU16(0x04, value)
+end
+
+function AttackElementCorrectParam:setOverwriteDexterityCorrectRate_byPhysics(value)
+    return self:setU16(0x06, value)
+end
+function AttackElementCorrectParam:getOverwriteDexterityCorrectRate_byPhysics(value)
+    return self:getU16(0x06, value)
+end
+
+function AttackElementCorrectParam:setOverwriteMagicCorrectRate_byPhysics(value)
+    return self:setU16(0x08, value)
+end
+function AttackElementCorrectParam:getOverwriteMagicCorrectRate_byPhysics(value)
+    return self:getU16(0x08, value)
+end
+
+function AttackElementCorrectParam:setOverwriteFaithCorrectRate_byPhysics(value)
+    return self:setU16(0x0A, value)
+end
+function AttackElementCorrectParam:getOverwriteFaithCorrectRate_byPhysics(value)
+    return self:getU16(0x0A, value)
+end
+
+function AttackElementCorrectParam:setOverwriteLuckCorrectRate_byPhysics(value)
+    return self:setU16(0x0C, value)
+end
+function AttackElementCorrectParam:getOverwriteLuckCorrectRate_byPhysics(value)
+    return self:getU16(0x0C, value)
+end
+
+function AttackElementCorrectParam:setOverwriteStrengthCorrectRate_byMagic(value)
+    return self:setU16(0x0E, value)
+end
+function AttackElementCorrectParam:getOverwriteStrengthCorrectRate_byMagic(value)
+    return self:getU16(0x0E, value)
+end
+
+function AttackElementCorrectParam:setOverwriteDexterityCorrectRate_byMagic(value)
+    return self:setU16(0x10, value)
+end
+function AttackElementCorrectParam:getOverwriteDexterityCorrectRate_byMagic(value)
+    return self:getU16(0x10, value)
+end
+
+function AttackElementCorrectParam:setOverwriteMagicCorrectRate_byMagic(value)
+    return self:setU16(0x12, value)
+end
+function AttackElementCorrectParam:getOverwriteMagicCorrectRate_byMagic(value)
+    return self:getU16(0x12, value)
+end
+
+function AttackElementCorrectParam:setOverwriteFaithCorrectRate_byMagic(value)
+    return self:setU16(0x14, value)
+end
+function AttackElementCorrectParam:getOverwriteFaithCorrectRate_byMagic(value)
+    return self:getU16(0x14, value)
+end
+
+function AttackElementCorrectParam:setOverwriteLuckCorrectRate_byMagic(value)
+    return self:setU16(0x16, value)
+end
+function AttackElementCorrectParam:getOverwriteLuckCorrectRate_byMagic(value)
+    return self:getU16(0x16, value)
+end
+
+function AttackElementCorrectParam:setOverwriteStrengthCorrectRate_byFire(value)
+    return self:setU16(0x18, value)
+end
+function AttackElementCorrectParam:getOverwriteStrengthCorrectRate_byFire(value)
+    return self:getU16(0x18, value)
+end
+
+function AttackElementCorrectParam:setOverwriteDexterityCorrectRate_byFire(value)
+    return self:setU16(0x1A, value)
+end
+function AttackElementCorrectParam:getOverwriteDexterityCorrectRate_byFire(value)
+    return self:getU16(0x1A, value)
+end
+
+function AttackElementCorrectParam:setOverwriteMagicCorrectRate_byFire(value)
+    return self:setU16(0x1C, value)
+end
+function AttackElementCorrectParam:getOverwriteMagicCorrectRate_byFire(value)
+    return self:getU16(0x1C, value)
+end
+
+function AttackElementCorrectParam:setOverwriteFaithCorrectRate_byFire(value)
+    return self:setU16(0x1E, value)
+end
+function AttackElementCorrectParam:getOverwriteFaithCorrectRate_byFire(value)
+    return self:getU16(0x1E, value)
+end
+
+function AttackElementCorrectParam:setOverwriteLuckCorrectRate_byFire(value)
+    return self:setU16(0x20, value)
+end
+function AttackElementCorrectParam:getOverwriteLuckCorrectRate_byFire(value)
+    return self:getU16(0x20, value)
+end
+
+function AttackElementCorrectParam:setOverwriteStrengthCorrectRate_byThunder(value)
+    return self:setU16(0x22, value)
+end
+function AttackElementCorrectParam:getOverwriteStrengthCorrectRate_byThunder(value)
+    return self:getU16(0x22, value)
+end
+
+function AttackElementCorrectParam:setOverwriteDexterityCorrectRate_byThunder(value)
+    return self:setU16(0x24, value)
+end
+function AttackElementCorrectParam:getOverwriteDexterityCorrectRate_byThunder(value)
+    return self:getU16(0x24, value)
+end
+
+function AttackElementCorrectParam:setOverwriteMagicCorrectRate_byThunder(value)
+    return self:setU16(0x26, value)
+end
+function AttackElementCorrectParam:getOverwriteMagicCorrectRate_byThunder(value)
+    return self:getU16(0x26, value)
+end
+
+function AttackElementCorrectParam:setOverwriteFaithCorrectRate_byThunder(value)
+    return self:setU16(0x28, value)
+end
+function AttackElementCorrectParam:getOverwriteFaithCorrectRate_byThunder(value)
+    return self:getU16(0x28, value)
+end
+
+function AttackElementCorrectParam:setOverwriteLuckCorrectRate_byThunder(value)
+    return self:setU16(0x2A, value)
+end
+function AttackElementCorrectParam:getOverwriteLuckCorrectRate_byThunder(value)
+    return self:getU16(0x2A, value)
+end
+
+function AttackElementCorrectParam:setOverwriteStrengthCorrectRate_byDark(value)
+    return self:setU16(0x2C, value)
+end
+function AttackElementCorrectParam:getOverwriteStrengthCorrectRate_byDark(value)
+    return self:getU16(0x2C, value)
+end
+
+function AttackElementCorrectParam:setOverwriteDexterityCorrectRate_byDark(value)
+    return self:setU16(0x2E, value)
+end
+function AttackElementCorrectParam:getOverwriteDexterityCorrectRate_byDark(value)
+    return self:getU16(0x2E, value)
+end
+
+function AttackElementCorrectParam:setOverwriteMagicCorrectRate_byDark(value)
+    return self:setU16(0x30, value)
+end
+function AttackElementCorrectParam:getOverwriteMagicCorrectRate_byDark(value)
+    return self:getU16(0x30, value)
+end
+
+function AttackElementCorrectParam:setOverwriteFaithCorrectRate_byDark(value)
+    return self:setU16(0x32, value)
+end
+function AttackElementCorrectParam:getOverwriteFaithCorrectRate_byDark(value)
+    return self:getU16(0x32, value)
+end
+
+function AttackElementCorrectParam:setOverwriteLuckCorrectRate_byDark(value)
+    return self:setU16(0x34, value)
+end
+function AttackElementCorrectParam:getOverwriteLuckCorrectRate_byDark(value)
+    return self:getU16(0x34, value)
+end
+
+function AttackElementCorrectParam:setInfluenceStrengthCorrectRate_byPhysics(value)
+    return self:setU16(0x36, value)
+end
+function AttackElementCorrectParam:getInfluenceStrengthCorrectRate_byPhysics(value)
+    return self:getU16(0x36, value)
+end
+
+function AttackElementCorrectParam:setInfluenceDexterityCorrectRate_byPhysics(value)
+    return self:setU16(0x38, value)
+end
+function AttackElementCorrectParam:getInfluenceDexterityCorrectRate_byPhysics(value)
+    return self:getU16(0x38, value)
+end
+
+function AttackElementCorrectParam:setInfluenceMagicCorrectRate_byPhysics(value)
+    return self:setU16(0x3A, value)
+end
+function AttackElementCorrectParam:getInfluenceMagicCorrectRate_byPhysics(value)
+    return self:getU16(0x3A, value)
+end
+
+function AttackElementCorrectParam:setInfluenceFaithCorrectRate_byPhysics(value)
+    return self:setU16(0x3C, value)
+end
+function AttackElementCorrectParam:getInfluenceFaithCorrectRate_byPhysics(value)
+    return self:getU16(0x3C, value)
+end
+
+function AttackElementCorrectParam:setInfluenceLuckCorrectRate_byPhysics(value)
+    return self:setU16(0x3E, value)
+end
+function AttackElementCorrectParam:getInfluenceLuckCorrectRate_byPhysics(value)
+    return self:getU16(0x3E, value)
+end
+
+function AttackElementCorrectParam:setInfluenceStrengthCorrectRate_byMagic(value)
+    return self:setU16(0x40, value)
+end
+function AttackElementCorrectParam:getInfluenceStrengthCorrectRate_byMagic(value)
+    return self:getU16(0x40, value)
+end
+
+function AttackElementCorrectParam:setInfluenceDexterityCorrectRate_byMagic(value)
+    return self:setU16(0x42, value)
+end
+function AttackElementCorrectParam:getInfluenceDexterityCorrectRate_byMagic(value)
+    return self:getU16(0x42, value)
+end
+
+function AttackElementCorrectParam:setInfluenceMagicCorrectRate_byMagic(value)
+    return self:setU16(0x44, value)
+end
+function AttackElementCorrectParam:getInfluenceMagicCorrectRate_byMagic(value)
+    return self:getU16(0x44, value)
+end
+
+function AttackElementCorrectParam:setInfluenceFaithCorrectRate_byMagic(value)
+    return self:setU16(0x46, value)
+end
+function AttackElementCorrectParam:getInfluenceFaithCorrectRate_byMagic(value)
+    return self:getU16(0x46, value)
+end
+
+function AttackElementCorrectParam:setInfluenceLuckCorrectRate_byMagic(value)
+    return self:setU16(0x48, value)
+end
+function AttackElementCorrectParam:getInfluenceLuckCorrectRate_byMagic(value)
+    return self:getU16(0x48, value)
+end
+
+function AttackElementCorrectParam:setInfluenceStrengthCorrectRate_byFire(value)
+    return self:setU16(0x4A, value)
+end
+function AttackElementCorrectParam:getInfluenceStrengthCorrectRate_byFire(value)
+    return self:getU16(0x4A, value)
+end
+
+function AttackElementCorrectParam:setInfluenceDexterityCorrectRate_byFire(value)
+    return self:setU16(0x4C, value)
+end
+function AttackElementCorrectParam:getInfluenceDexterityCorrectRate_byFire(value)
+    return self:getU16(0x4C, value)
+end
+
+function AttackElementCorrectParam:setInfluenceMagicCorrectRate_byFire(value)
+    return self:setU16(0x4E, value)
+end
+function AttackElementCorrectParam:getInfluenceMagicCorrectRate_byFire(value)
+    return self:getU16(0x4E, value)
+end
+
+function AttackElementCorrectParam:setInfluenceFaithCorrectRate_byFire(value)
+    return self:setU16(0x50, value)
+end
+function AttackElementCorrectParam:getInfluenceFaithCorrectRate_byFire(value)
+    return self:getU16(0x50, value)
+end
+
+function AttackElementCorrectParam:setInfluenceLuckCorrectRate_byFire(value)
+    return self:setU16(0x52, value)
+end
+function AttackElementCorrectParam:getInfluenceLuckCorrectRate_byFire(value)
+    return self:getU16(0x52, value)
+end
+
+function AttackElementCorrectParam:setInfluenceStrengthCorrectRate_byThunder(value)
+    return self:setU16(0x54, value)
+end
+function AttackElementCorrectParam:getInfluenceStrengthCorrectRate_byThunder(value)
+    return self:getU16(0x54, value)
+end
+
+function AttackElementCorrectParam:setInfluenceDexterityCorrectRate_byThunder(value)
+    return self:setU16(0x56, value)
+end
+function AttackElementCorrectParam:getInfluenceDexterityCorrectRate_byThunder(value)
+    return self:getU16(0x56, value)
+end
+
+function AttackElementCorrectParam:setInfluenceMagicCorrectRate_byThunder(value)
+    return self:setU16(0x58, value)
+end
+function AttackElementCorrectParam:getInfluenceMagicCorrectRate_byThunder(value)
+    return self:getU16(0x58, value)
+end
+
+function AttackElementCorrectParam:setInfluenceFaithCorrectRate_byThunder(value)
+    return self:setU16(0x5A, value)
+end
+function AttackElementCorrectParam:getInfluenceFaithCorrectRate_byThunder(value)
+    return self:getU16(0x5A, value)
+end
+
+function AttackElementCorrectParam:setInfluenceLuckCorrectRate_byThunder(value)
+    return self:setU16(0x5C, value)
+end
+function AttackElementCorrectParam:getInfluenceLuckCorrectRate_byThunder(value)
+    return self:getU16(0x5C, value)
+end
+
+function AttackElementCorrectParam:setInfluenceStrengthCorrectRate_byDark(value)
+    return self:setU16(0x5E, value)
+end
+function AttackElementCorrectParam:getInfluenceStrengthCorrectRate_byDark(value)
+    return self:getU16(0x5E, value)
+end
+
+function AttackElementCorrectParam:setInfluenceDexterityCorrectRate_byDark(value)
+    return self:setU16(0x60, value)
+end
+function AttackElementCorrectParam:getInfluenceDexterityCorrectRate_byDark(value)
+    return self:getU16(0x60, value)
+end
+
+function AttackElementCorrectParam:setInfluenceMagicCorrectRate_byDark(value)
+    return self:setU16(0x62, value)
+end
+function AttackElementCorrectParam:getInfluenceMagicCorrectRate_byDark(value)
+    return self:getU16(0x62, value)
+end
+
+function AttackElementCorrectParam:setInfluenceFaithCorrectRate_byDark(value)
+    return self:setU16(0x64, value)
+end
+function AttackElementCorrectParam:getInfluenceFaithCorrectRate_byDark(value)
+    return self:getU16(0x64, value)
+end
+
+function AttackElementCorrectParam:setInfluenceLuckCorrectRate_byDark(value)
+    return self:setU16(0x66, value)
+end
+function AttackElementCorrectParam:getInfluenceLuckCorrectRate_byDark(value)
+    return self:getU16(0x66, value)
+end
+
+--dummy8 pad2[24]
+[disable]
+AttackElementCorrectParam = nil

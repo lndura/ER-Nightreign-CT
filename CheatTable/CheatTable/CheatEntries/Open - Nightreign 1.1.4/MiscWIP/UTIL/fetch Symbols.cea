@@ -1,0 +1,9 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+for symbol,address in pairs(Symbols) do
+    unregisterSymbol(symbol)
+end
+registerSymbols()
+synchronize(function(rec) return disableMemrec(rec) end, memrec)
+[disable]

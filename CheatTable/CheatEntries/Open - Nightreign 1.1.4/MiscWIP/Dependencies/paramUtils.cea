@@ -1,0 +1,100 @@
+{  Appropriated Igro's param patcher from The Grand Archives.
+}
+
+{$lua}
+if syntaxcheck then return end
+[enable]
+paramUtils = {
+    cache = {},
+    count = 0,
+}
+
+-- maps out the CSRegulationManager paramResCap table.
+-- allows paramResCap lookup by param name.
+local RegulationManager = {}
+function paramUtils:RegulationManagerMapper()
+    local CSRegulationManagerImp = readPointer("CSRegulationManager")
+    if CSRegulationManagerImp then
+        local paramResCap_List = readPointer(CSRegulationManagerImp + 0x18)
+        local paramResCap_End = readPointer(CSRegulationManagerImp + 0x20) - 0x8
+        local paramResCap_List_Size = paramResCap_End - paramResCap_List
+        self.count = (paramResCap_List_Size // 0x8)
+        for resCapHolder = paramResCap_List, paramResCap_End, 0x8 do
+            local paramResCap = readPointer(resCapHolder)
+            local paramName = readDLString(paramResCap + 0x18, 128, true)
+            RegulationManager[paramName] = paramResCap
+        end
+    else
+        pfError("Cannot find CSRegulationManager in symbol list.")
+    end
+end
+
+-- to access all found param names.
+function paramUtils:getParamList(paramName)
+    return RegulationManager
+end
+
+function paramUtils:getResCap(paramName)
+    return RegulationManager[paramName] ~= nil
+end
+
+function paramUtils:getCount()
+    return self.count
+end
+
+function paramUtils:getParamTable(paramName)
+    if not self.cache[paramName] then
+        local paramResCap = RegulationManager[paramName]
+        if paramResCap then
+            self.cache[paramName] = {}
+
+            local paramHeader = readPointer(paramResCap + 0x80)
+            local paramTable = readPointer(paramHeader + 0x80)
+            local paramCount = readU16(paramTable + 0x0A)
+            local rowStart = paramTable + 0x40
+            local rowStop = rowStart + 0x18 * (paramCount - 1)
+
+            local paramRows = self.cache[paramName]
+            for paramRow = rowStart, rowStop, 0x18 do
+                local paramId = readQword(paramRow)
+                local offset = readQword(paramRow + 0x8)
+                paramRows[paramId] = paramTable + offset
+            end
+        else
+            pfError("param '%s' not found in CSRegulationManager.", paramName or 'nil')
+        end
+    end
+    return self.cache[paramName]
+end
+
+function paramUtils:getParamTableAddr(paramName)
+    local paramResCap = RegulationManager[paramName]
+    if paramResCap then
+        local paramHeader = readPointer(paramResCap + 0x80)
+        local paramTable = readPointer(paramHeader + 0x80)
+        return paramTable
+    else
+        pfError("param '%s' not found in CSRegulationManager.", paramName or 'nil')
+    end
+end
+
+function paramUtils:cacheAllParams()
+    for paramName, paramTable in pairs(RegulationManager) do
+        self:getParamTable(paramName)
+    end
+end
+
+function paramUtils:searchAllParamsFor(id)
+    local result = {}
+    for paramName, paramTable in pairs(RegulationManager) do
+        local paramTable = self:getParamTable(paramName)
+        if paramTable[id] then
+             result[#result + 1] = paramName
+        end
+    end
+    return result
+end
+
+paramUtils:RegulationManagerMapper()
+[disable]
+paramUtils = nil

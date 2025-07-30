@@ -1,0 +1,97 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+if view_mode then
+    view_mode:standard()
+    view_mode.menu_item.destroy()
+    view_mode = nil
+end
+
+--[[
+  Adds a menu item to the main menu
+  that allows switching between standard, gaming and compact view modes.
+
+  Gaming view mode hides:
+  * Scanning panel
+  * Address and Type columns in Address list
+  Compact view mode hides:
+  * Scanning panel
+
+  Place in "C:\Program Files\Cheat Engine 7.1\autorun" folder to use with any table.
+
+  Tested only on CE 7.1
+  Author: ametalon, based on "compact mode" by mgr.inz.Player
+  Date: 2020-07-07
+]]
+
+view_mode = {}
+
+local STANDARD_MODE = 0
+local GAMING_MODE = 1
+local COMPACT_MODE = 2
+
+-- caption shows name of the next mode
+local captions = {
+    [STANDARD_MODE] = 'Gaming &View Mode',
+    [GAMING_MODE] = 'Compact &View Mode',
+    [COMPACT_MODE] = 'Standard &View Mode',
+}
+
+
+function view_mode:_update()
+    self.menu_item.Caption = captions[self.mode]
+    -- splitter between Scanning panel and Address list
+    MainForm.Splitter1.Visible = self.mode == STANDARD_MODE
+    -- Status bar
+    MainForm.Panel4.Visible = self.mode == STANDARD_MODE
+    -- Scanning panel
+    MainForm.Panel5.Visible = self.mode == STANDARD_MODE
+    -- Active column in Address list
+    AddressList.Header.Sections[0].Visible = self.mode == STANDARD_MODE
+    -- Address column in Address list
+    AddressList.Header.Sections[2].Visible = self.mode == STANDARD_MODE or self.mode == COMPACT_MODE
+    -- Type column in Address list
+    AddressList.Header.Sections[3].Visible = self.mode == STANDARD_MODE or self.mode == COMPACT_MODE
+end
+
+function view_mode:cycle()
+    if self.mode == STANDARD_MODE then
+        self.mode = GAMING_MODE
+    elseif self.mode == GAMING_MODE then
+        self.mode = COMPACT_MODE
+    elseif self.mode == COMPACT_MODE then
+        self.mode = STANDARD_MODE
+    end
+    self:_update()
+end
+
+function view_mode:standard()
+    self.mode = STANDARD_MODE
+    self:_update()
+end
+
+function view_mode:gaming()
+    self.mode = GAMING_MODE
+    self:_update()
+end
+
+function view_mode:compact()
+    self.mode = COMPACT_MODE
+    self:_update()
+end
+
+
+local parent = getMainForm().Menu.Items
+local menu_item = createMenuItem(parent)
+menu_item.OnClick = function()
+    view_mode:cycle()
+end
+parent.add(menu_item)
+
+
+view_mode.menu_item = menu_item
+view_mode:compact()
+[disable]
+view_mode:standard()
+view_mode.menu_item.destroy()
+view_mode = nil

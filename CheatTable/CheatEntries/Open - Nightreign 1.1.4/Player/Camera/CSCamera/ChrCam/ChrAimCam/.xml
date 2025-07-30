@@ -1,0 +1,20 @@
+<CheatEntry>
+  <ID>1337273166</ID>
+  <Description>"ChrAimCam"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+68</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337273167"/>
+    <id id="1337273168"/>
+    <id id="1337273189"/>
+    <id id="1337273190"/>
+    <id id="1337273191"/>
+    <id id="1337273192"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

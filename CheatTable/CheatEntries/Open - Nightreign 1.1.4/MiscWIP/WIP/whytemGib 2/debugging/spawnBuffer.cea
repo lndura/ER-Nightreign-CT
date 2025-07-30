@@ -1,0 +1,6 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+itemGive:buffer(itemGive.data, true)
+disableMemrec(memrec)
+[disable]

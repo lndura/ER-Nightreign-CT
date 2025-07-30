@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>22</ID>
+  <Description>"Murk Held"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameDataMan</Address>
+  <Offsets>
+    <Offset>D0</Offset>
+    <Offset>8</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,60 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+HeroOperationExplanationParam = {}
+function HeroOperationExplanationParam:new(id_or_all, patchName)
+    return paramPatcher(self, "HeroOperationExplanationParam", 0x18, id_or_all, patchName)
+end
+
+
+
+function HeroOperationExplanationParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function HeroOperationExplanationParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function HeroOperationExplanationParam:setHeroId(value)
+    return self:setU8(0x04, value)
+end
+function HeroOperationExplanationParam:getHeroId(value)
+    return self:getU8(0x04, value)
+end
+
+function HeroOperationExplanationParam:setDisplaySlot(value)
+    return self:setU8(0x05, value)
+end
+function HeroOperationExplanationParam:getDisplaySlot(value)
+    return self:getU8(0x05, value)
+end
+
+--dummy8 midPadding[2]
+
+function HeroOperationExplanationParam:setHintTextId(value)
+    return self:setU32(0x08, value)
+end
+function HeroOperationExplanationParam:getHintTextId(value)
+    return self:getU32(0x08, value)
+end
+
+function HeroOperationExplanationParam:setSpEffectId(value)
+    return self:setU32(0x0C, value)
+end
+function HeroOperationExplanationParam:getSpEffectId(value)
+    return self:getU32(0x0C, value)
+end
+
+function HeroOperationExplanationParam:setShortcutTextId(value)
+    return self:setU32(0x10, value)
+end
+function HeroOperationExplanationParam:getShortcutTextId(value)
+    return self:getU32(0x10, value)
+end
+[disable]
+HeroOperationExplanationParam = nil

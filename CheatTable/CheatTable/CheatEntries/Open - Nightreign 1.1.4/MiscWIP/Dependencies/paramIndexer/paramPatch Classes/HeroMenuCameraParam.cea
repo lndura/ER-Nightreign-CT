@@ -1,0 +1,95 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+HeroMenuCameraParam = {}
+function HeroMenuCameraParam:new(id_or_all, patchName)
+    return paramPatcher(self, "HeroMenuCameraParam", 0x34, id_or_all, patchName)
+end
+
+
+
+function HeroMenuCameraParam:setUnknown_0(value)
+    return self:setU32(0x00, value)
+end
+function HeroMenuCameraParam:getUnknown_0(value)
+    return self:getU32(0x00, value)
+end
+
+function HeroMenuCameraParam:setUnknown_1(value)
+    return self:setF32(0x04, value)
+end
+function HeroMenuCameraParam:getUnknown_1(value)
+    return self:getF32(0x04, value)
+end
+
+function HeroMenuCameraParam:setUnknown_2(value)
+    return self:setF32(0x08, value)
+end
+function HeroMenuCameraParam:getUnknown_2(value)
+    return self:getF32(0x08, value)
+end
+
+function HeroMenuCameraParam:setUnknown_3(value)
+    return self:setU32(0x0C, value)
+end
+function HeroMenuCameraParam:getUnknown_3(value)
+    return self:getU32(0x0C, value)
+end
+
+function HeroMenuCameraParam:setUnknown_4(value)
+    return self:setF32(0x10, value)
+end
+function HeroMenuCameraParam:getUnknown_4(value)
+    return self:getF32(0x10, value)
+end
+
+function HeroMenuCameraParam:setUnknown_5(value)
+    return self:setF32(0x14, value)
+end
+function HeroMenuCameraParam:getUnknown_5(value)
+    return self:getF32(0x14, value)
+end
+
+function HeroMenuCameraParam:setUnknown_6(value)
+    return self:setF32(0x18, value)
+end
+function HeroMenuCameraParam:getUnknown_6(value)
+    return self:getF32(0x18, value)
+end
+
+function HeroMenuCameraParam:setUnknown_7(value)
+    return self:setF32(0x1C, value)
+end
+function HeroMenuCameraParam:getUnknown_7(value)
+    return self:getF32(0x1C, value)
+end
+
+function HeroMenuCameraParam:setUnknown_8(value)
+    return self:setF32(0x20, value)
+end
+function HeroMenuCameraParam:getUnknown_8(value)
+    return self:getF32(0x20, value)
+end
+
+function HeroMenuCameraParam:setUnknown_9(value)
+    return self:setF32(0x24, value)
+end
+function HeroMenuCameraParam:getUnknown_9(value)
+    return self:getF32(0x24, value)
+end
+
+function HeroMenuCameraParam:setUnknown_10(value)
+    return self:setF32(0x28, value)
+end
+function HeroMenuCameraParam:getUnknown_10(value)
+    return self:getF32(0x28, value)
+end
+
+function HeroMenuCameraParam:setUnknown_11(value)
+    return self:setF32(0x2C, value)
+end
+function HeroMenuCameraParam:getUnknown_11(value)
+    return self:getF32(0x2C, value)
+end
+[disable]
+HeroMenuCameraParam = nil

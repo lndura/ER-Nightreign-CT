@@ -1,0 +1,647 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+DecalParam = {}
+function DecalParam:new(id_or_all, patchName)
+    return paramPatcher(self, "DecalParam", 0xF7, id_or_all, patchName)
+end
+
+
+
+function DecalParam:setTextureId(value)
+    return self:setU32(0x00, value)
+end
+function DecalParam:getTextureId(value)
+    return self:getU32(0x00, value)
+end
+
+function DecalParam:setDmypolyId(value)
+    return self:setU32(0x04, value)
+end
+function DecalParam:getDmypolyId(value)
+    return self:getU32(0x04, value)
+end
+
+function DecalParam:setPitchAngle(value)
+    return self:setF32(0x08, value)
+end
+function DecalParam:getPitchAngle(value)
+    return self:getF32(0x08, value)
+end
+
+function DecalParam:setYawAngle(value)
+    return self:setF32(0x0C, value)
+end
+function DecalParam:getYawAngle(value)
+    return self:getF32(0x0C, value)
+end
+
+function DecalParam:setNearDistance(value)
+    return self:setF32(0x10, value)
+end
+function DecalParam:getNearDistance(value)
+    return self:getF32(0x10, value)
+end
+
+function DecalParam:setFarDistance(value)
+    return self:setF32(0x14, value)
+end
+function DecalParam:getFarDistance(value)
+    return self:getF32(0x14, value)
+end
+
+function DecalParam:setNearSize(value)
+    return self:setF32(0x18, value)
+end
+function DecalParam:getNearSize(value)
+    return self:getF32(0x18, value)
+end
+
+function DecalParam:setFarSize(value)
+    return self:setF32(0x1C, value)
+end
+function DecalParam:getFarSize(value)
+    return self:getF32(0x1C, value)
+end
+
+function DecalParam:setMaskSpeffectId(value)
+    return self:setU32(0x20, value)
+end
+function DecalParam:getMaskSpeffectId(value)
+    return self:getU32(0x20, value)
+end
+
+function DecalParam:setPad_10(value)
+    return self:setBinary(0x24, 0, value, 4)
+end
+
+function DecalParam:getPad_10()
+    return self:getBinary(0x24, 0, value, 4)
+end
+
+function DecalParam:setReplaceTextureId_byMaterial(value)
+    return self:setBinary(0x24, 4, value, 1)
+end
+
+function DecalParam:getReplaceTextureId_byMaterial()
+    return self:getBinary(0x24, 4, value, 1)
+end
+
+function DecalParam:setDmypolyCategory(value)
+    return self:setBinary(0x24, 5, value, 2)
+end
+
+function DecalParam:getDmypolyCategory()
+    return self:getBinary(0x24, 5, value, 2)
+end
+
+function DecalParam:setPad_05(value)
+    return self:setBinary(0x24, 7, value, 4)
+end
+
+function DecalParam:getPad_05()
+    return self:getBinary(0x24, 7, value, 4)
+end
+
+function DecalParam:setUseDeferredDecal(value)
+    return self:setBinary(0x25, 3, value, 1)
+end
+
+function DecalParam:getUseDeferredDecal()
+    return self:getBinary(0x25, 3, value, 1)
+end
+
+function DecalParam:setUsePaintDecal(value)
+    return self:setBinary(0x25, 4, value, 1)
+end
+
+function DecalParam:getUsePaintDecal()
+    return self:getBinary(0x25, 4, value, 1)
+end
+
+function DecalParam:setBloodTypeEnable(value)
+    return self:setBinary(0x25, 5, value, 1)
+end
+
+function DecalParam:getBloodTypeEnable()
+    return self:getBinary(0x25, 5, value, 1)
+end
+
+function DecalParam:setBUseNormal(value)
+    return self:setBinary(0x25, 6, value, 1)
+end
+
+function DecalParam:getBUseNormal()
+    return self:getBinary(0x25, 6, value, 1)
+end
+
+function DecalParam:setPad_08(value)
+    return self:setBinary(0x25, 7, value, 1)
+end
+
+function DecalParam:getPad_08()
+    return self:getBinary(0x25, 7, value, 1)
+end
+
+function DecalParam:setPad_09(value)
+    return self:setBinary(0x26, 0, value, 1)
+end
+
+function DecalParam:getPad_09()
+    return self:getBinary(0x26, 0, value, 1)
+end
+
+function DecalParam:setUsePom(value)
+    return self:setBinary(0x26, 1, value, 1)
+end
+
+function DecalParam:getUsePom()
+    return self:getBinary(0x26, 1, value, 1)
+end
+
+function DecalParam:setUseEmissive(value)
+    return self:setBinary(0x26, 2, value, 1)
+end
+
+function DecalParam:getUseEmissive()
+    return self:getBinary(0x26, 2, value, 1)
+end
+
+function DecalParam:setPutVertical(value)
+    return self:setBinary(0x26, 3, value, 1)
+end
+
+function DecalParam:getPutVertical()
+    return self:getBinary(0x26, 3, value, 1)
+end
+
+function DecalParam:setRandomSizeMin(value)
+    return self:setU16(0x26, value)
+end
+function DecalParam:getRandomSizeMin(value)
+    return self:getU16(0x26, value)
+end
+
+function DecalParam:setRandomSizeMax(value)
+    return self:setU16(0x28, value)
+end
+function DecalParam:getRandomSizeMax(value)
+    return self:getU16(0x28, value)
+end
+
+function DecalParam:setRandomRollMin(value)
+    return self:setF32(0x2A, value)
+end
+function DecalParam:getRandomRollMin(value)
+    return self:getF32(0x2A, value)
+end
+
+function DecalParam:setRandomRollMax(value)
+    return self:setF32(0x2E, value)
+end
+function DecalParam:getRandomRollMax(value)
+    return self:getF32(0x2E, value)
+end
+
+function DecalParam:setRandomPitchMin(value)
+    return self:setF32(0x32, value)
+end
+function DecalParam:getRandomPitchMin(value)
+    return self:getF32(0x32, value)
+end
+
+function DecalParam:setRandomPitchMax(value)
+    return self:setF32(0x36, value)
+end
+function DecalParam:getRandomPitchMax(value)
+    return self:getF32(0x36, value)
+end
+
+function DecalParam:setRandomYawMin(value)
+    return self:setF32(0x3A, value)
+end
+function DecalParam:getRandomYawMin(value)
+    return self:getF32(0x3A, value)
+end
+
+function DecalParam:setRandomYawMax(value)
+    return self:setF32(0x3E, value)
+end
+function DecalParam:getRandomYawMax(value)
+    return self:getF32(0x3E, value)
+end
+
+function DecalParam:setPomHightScale(value)
+    return self:setF32(0x42, value)
+end
+function DecalParam:getPomHightScale(value)
+    return self:getF32(0x42, value)
+end
+
+function DecalParam:setPomSampleMin(value)
+    return self:setU8(0x46, value)
+end
+function DecalParam:getPomSampleMin(value)
+    return self:getU8(0x46, value)
+end
+
+function DecalParam:setPomSampleMax(value)
+    return self:setU8(0x47, value)
+end
+function DecalParam:getPomSampleMax(value)
+    return self:getU8(0x47, value)
+end
+
+function DecalParam:setBlendMode(value)
+    return self:setU8(0x48, value)
+end
+function DecalParam:getBlendMode(value)
+    return self:getU8(0x48, value)
+end
+
+function DecalParam:setAppearDirType(value)
+    return self:setU8(0x49, value)
+end
+function DecalParam:getAppearDirType(value)
+    return self:getU8(0x49, value)
+end
+
+function DecalParam:setEmissiveValueBegin(value)
+    return self:setF32(0x4A, value)
+end
+function DecalParam:getEmissiveValueBegin(value)
+    return self:getF32(0x4A, value)
+end
+
+function DecalParam:setEmissiveValueEnd(value)
+    return self:setF32(0x4E, value)
+end
+function DecalParam:getEmissiveValueEnd(value)
+    return self:getF32(0x4E, value)
+end
+
+function DecalParam:setEmissiveTime(value)
+    return self:setF32(0x52, value)
+end
+function DecalParam:getEmissiveTime(value)
+    return self:getF32(0x52, value)
+end
+
+function DecalParam:setBIntpEnable(value)
+    return self:setU8(0x56, value)
+end
+function DecalParam:getBIntpEnable(value)
+    return self:getU8(0x56, value)
+end
+
+--dummy8 pad_01[3]
+
+function DecalParam:setIntpIntervalDist(value)
+    return self:setF32(0x5A, value)
+end
+function DecalParam:getIntpIntervalDist(value)
+    return self:getF32(0x5A, value)
+end
+
+function DecalParam:setBeginIntpTextureId(value)
+    return self:setU32(0x5E, value)
+end
+function DecalParam:getBeginIntpTextureId(value)
+    return self:getU32(0x5E, value)
+end
+
+function DecalParam:setEndIntpTextureId(value)
+    return self:setU32(0x62, value)
+end
+function DecalParam:getEndIntpTextureId(value)
+    return self:getU32(0x62, value)
+end
+
+function DecalParam:setAppearSfxId(value)
+    return self:setU32(0x66, value)
+end
+function DecalParam:getAppearSfxId(value)
+    return self:getU32(0x66, value)
+end
+
+function DecalParam:setAppearSfxOffsetPos(value)
+    return self:setF32(0x6A, value)
+end
+function DecalParam:getAppearSfxOffsetPos(value)
+    return self:getF32(0x6A, value)
+end
+
+function DecalParam:setMaskTextureId(value)
+    return self:setU32(0x6E, value)
+end
+function DecalParam:getMaskTextureId(value)
+    return self:getU32(0x6E, value)
+end
+
+function DecalParam:setDiffuseTextureId(value)
+    return self:setU32(0x72, value)
+end
+function DecalParam:getDiffuseTextureId(value)
+    return self:getU32(0x72, value)
+end
+
+function DecalParam:setReflecTextureId(value)
+    return self:setU32(0x76, value)
+end
+function DecalParam:getReflecTextureId(value)
+    return self:getU32(0x76, value)
+end
+
+function DecalParam:setMaskScale(value)
+    return self:setF32(0x7A, value)
+end
+function DecalParam:getMaskScale(value)
+    return self:getF32(0x7A, value)
+end
+
+function DecalParam:setNormalTextureId(value)
+    return self:setU32(0x7E, value)
+end
+function DecalParam:getNormalTextureId(value)
+    return self:getU32(0x7E, value)
+end
+
+function DecalParam:setHeightTextureId(value)
+    return self:setU32(0x82, value)
+end
+function DecalParam:getHeightTextureId(value)
+    return self:getU32(0x82, value)
+end
+
+function DecalParam:setEmissiveTextureId(value)
+    return self:setU32(0x86, value)
+end
+function DecalParam:getEmissiveTextureId(value)
+    return self:getU32(0x86, value)
+end
+
+function DecalParam:setDiffuseColorR(value)
+    return self:setU8(0x8A, value)
+end
+function DecalParam:getDiffuseColorR(value)
+    return self:getU8(0x8A, value)
+end
+
+function DecalParam:setDiffuseColorG(value)
+    return self:setU8(0x8B, value)
+end
+function DecalParam:getDiffuseColorG(value)
+    return self:getU8(0x8B, value)
+end
+
+function DecalParam:setDiffuseColorB(value)
+    return self:setU8(0x8C, value)
+end
+function DecalParam:getDiffuseColorB(value)
+    return self:getU8(0x8C, value)
+end
+
+--dummy8 pad_03[1]
+
+function DecalParam:setReflecColorR(value)
+    return self:setU8(0x8E, value)
+end
+function DecalParam:getReflecColorR(value)
+    return self:getU8(0x8E, value)
+end
+
+function DecalParam:setReflecColorG(value)
+    return self:setU8(0x8F, value)
+end
+function DecalParam:getReflecColorG(value)
+    return self:getU8(0x8F, value)
+end
+
+function DecalParam:setReflecColorB(value)
+    return self:setU8(0x90, value)
+end
+function DecalParam:getReflecColorB(value)
+    return self:getU8(0x90, value)
+end
+
+function DecalParam:setBLifeEnable(value)
+    return self:setU8(0x91, value)
+end
+function DecalParam:getBLifeEnable(value)
+    return self:getU8(0x91, value)
+end
+
+function DecalParam:setSiniScale(value)
+    return self:setF32(0x92, value)
+end
+function DecalParam:getSiniScale(value)
+    return self:getF32(0x92, value)
+end
+
+function DecalParam:setLifeTimeSec(value)
+    return self:setF32(0x96, value)
+end
+function DecalParam:getLifeTimeSec(value)
+    return self:getF32(0x96, value)
+end
+
+function DecalParam:setFadeOutTimeSec(value)
+    return self:setF32(0x9A, value)
+end
+function DecalParam:getFadeOutTimeSec(value)
+    return self:getF32(0x9A, value)
+end
+
+function DecalParam:setPriority(value)
+    return self:setU16(0x9E, value)
+end
+function DecalParam:getPriority(value)
+    return self:getU16(0x9E, value)
+end
+
+function DecalParam:setBDistThinOutEnable(value)
+    return self:setU8(0xA0, value)
+end
+function DecalParam:getBDistThinOutEnable(value)
+    return self:getU8(0xA0, value)
+end
+
+function DecalParam:setBAlignedTexRandomVariationEnable(value)
+    return self:setU8(0xA1, value)
+end
+function DecalParam:getBAlignedTexRandomVariationEnable(value)
+    return self:getU8(0xA1, value)
+end
+
+function DecalParam:setDistThinOutCheckDist(value)
+    return self:setF32(0xA2, value)
+end
+function DecalParam:getDistThinOutCheckDist(value)
+    return self:getF32(0xA2, value)
+end
+
+function DecalParam:setDistThinOutCheckAngleDeg(value)
+    return self:setF32(0xA6, value)
+end
+function DecalParam:getDistThinOutCheckAngleDeg(value)
+    return self:getF32(0xA6, value)
+end
+
+function DecalParam:setDistThinOutMaxNum(value)
+    return self:setU8(0xAA, value)
+end
+function DecalParam:getDistThinOutMaxNum(value)
+    return self:getU8(0xAA, value)
+end
+
+function DecalParam:setDistThinOutCheckNum(value)
+    return self:setU8(0xAB, value)
+end
+function DecalParam:getDistThinOutCheckNum(value)
+    return self:getU8(0xAB, value)
+end
+
+function DecalParam:setDelayAppearFrame(value)
+    return self:setU16(0xAC, value)
+end
+function DecalParam:getDelayAppearFrame(value)
+    return self:getU16(0xAC, value)
+end
+
+function DecalParam:setRandVaria_Diffuse(value)
+    return self:setBinary(0xAE, 4, value, 4)
+end
+
+function DecalParam:getRandVaria_Diffuse()
+    return self:getBinary(0xAE, 4, value, 4)
+end
+
+function DecalParam:setRandVaria_Mask(value)
+    return self:setBinary(0xAF, 0, value, 4)
+end
+
+function DecalParam:getRandVaria_Mask()
+    return self:getBinary(0xAF, 0, value, 4)
+end
+
+function DecalParam:setRandVaria_Reflec(value)
+    return self:setBinary(0xAF, 4, value, 4)
+end
+
+function DecalParam:getRandVaria_Reflec()
+    return self:getBinary(0xAF, 4, value, 4)
+end
+
+function DecalParam:setPad_12(value)
+    return self:setBinary(0xB0, 0, value, 4)
+end
+
+function DecalParam:getPad_12()
+    return self:getBinary(0xB0, 0, value, 4)
+end
+
+function DecalParam:setRandVaria_Normal(value)
+    return self:setBinary(0xB0, 4, value, 4)
+end
+
+function DecalParam:getRandVaria_Normal()
+    return self:getBinary(0xB0, 4, value, 4)
+end
+
+function DecalParam:setRandVaria_Height(value)
+    return self:setBinary(0xB1, 0, value, 4)
+end
+
+function DecalParam:getRandVaria_Height()
+    return self:getBinary(0xB1, 0, value, 4)
+end
+
+function DecalParam:setRandVaria_Emissive(value)
+    return self:setBinary(0xB1, 4, value, 4)
+end
+
+function DecalParam:getRandVaria_Emissive()
+    return self:getBinary(0xB1, 4, value, 4)
+end
+
+function DecalParam:setPad_11(value)
+    return self:setBinary(0xB2, 0, value, 4)
+end
+
+function DecalParam:getPad_11()
+    return self:getBinary(0xB2, 0, value, 4)
+end
+
+function DecalParam:setFadeInTimeSec(value)
+    return self:setF32(0xB2, value)
+end
+function DecalParam:getFadeInTimeSec(value)
+    return self:getF32(0xB2, value)
+end
+
+function DecalParam:setThinOutOverlapMultiRadius(value)
+    return self:setF32(0xB6, value)
+end
+function DecalParam:getThinOutOverlapMultiRadius(value)
+    return self:getF32(0xB6, value)
+end
+
+function DecalParam:setThinOutNeighborAddRadius(value)
+    return self:setF32(0xBA, value)
+end
+function DecalParam:getThinOutNeighborAddRadius(value)
+    return self:getF32(0xBA, value)
+end
+
+function DecalParam:setThinOutOverlapLimitNum(value)
+    return self:setU32(0xBE, value)
+end
+function DecalParam:getThinOutOverlapLimitNum(value)
+    return self:getU32(0xBE, value)
+end
+
+function DecalParam:setThinOutNeighborLimitNum(value)
+    return self:setU32(0xC2, value)
+end
+function DecalParam:getThinOutNeighborLimitNum(value)
+    return self:getU32(0xC2, value)
+end
+
+function DecalParam:setThinOutMode(value)
+    return self:setU8(0xC6, value)
+end
+function DecalParam:getThinOutMode(value)
+    return self:getU8(0xC6, value)
+end
+
+function DecalParam:setEmissiveColorR(value)
+    return self:setU8(0xC7, value)
+end
+function DecalParam:getEmissiveColorR(value)
+    return self:getU8(0xC7, value)
+end
+
+function DecalParam:setEmissiveColorG(value)
+    return self:setU8(0xC8, value)
+end
+function DecalParam:getEmissiveColorG(value)
+    return self:getU8(0xC8, value)
+end
+
+function DecalParam:setEmissiveColorB(value)
+    return self:setU8(0xC9, value)
+end
+function DecalParam:getEmissiveColorB(value)
+    return self:getU8(0xC9, value)
+end
+
+function DecalParam:setMaxDecalSfxCreatableSlopeAngleDeg(value)
+    return self:setF32(0xCA, value)
+end
+function DecalParam:getMaxDecalSfxCreatableSlopeAngleDeg(value)
+    return self:getF32(0xCA, value)
+end
+
+--dummy8 pad_02[40]
+[disable]
+DecalParam = nil

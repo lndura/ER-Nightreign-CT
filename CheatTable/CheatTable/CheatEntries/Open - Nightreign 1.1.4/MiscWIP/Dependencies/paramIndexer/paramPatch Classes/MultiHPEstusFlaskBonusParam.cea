@@ -1,0 +1,125 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MultiHPEstusFlaskBonusParam = {}
+function MultiHPEstusFlaskBonusParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MultiHPEstusFlaskBonusParam", 0x41, id_or_all, patchName)
+end
+
+
+
+function MultiHPEstusFlaskBonusParam:setHost(value)
+    return self:setU8(0x00, value)
+end
+function MultiHPEstusFlaskBonusParam:getHost(value)
+    return self:getU8(0x00, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setWhiteGhost_None(value)
+    return self:setU8(0x01, value)
+end
+function MultiHPEstusFlaskBonusParam:getWhiteGhost_None(value)
+    return self:getU8(0x01, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setWhiteGhost_Umbasa(value)
+    return self:setU8(0x02, value)
+end
+function MultiHPEstusFlaskBonusParam:getWhiteGhost_Umbasa(value)
+    return self:getU8(0x02, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setWhiteGhost_Berserker(value)
+    return self:setU8(0x03, value)
+end
+function MultiHPEstusFlaskBonusParam:getWhiteGhost_Berserker(value)
+    return self:getU8(0x03, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setBlackGhost_None_Sign(value)
+    return self:setU8(0x04, value)
+end
+function MultiHPEstusFlaskBonusParam:getBlackGhost_None_Sign(value)
+    return self:getU8(0x04, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setBlackGhost_Umbasa_Sign(value)
+    return self:setU8(0x05, value)
+end
+function MultiHPEstusFlaskBonusParam:getBlackGhost_Umbasa_Sign(value)
+    return self:getU8(0x05, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setBlackGhost_Berserker_Sign(value)
+    return self:setU8(0x06, value)
+end
+function MultiHPEstusFlaskBonusParam:getBlackGhost_Berserker_Sign(value)
+    return self:getU8(0x06, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setBlackGhost_None_Invade(value)
+    return self:setU8(0x07, value)
+end
+function MultiHPEstusFlaskBonusParam:getBlackGhost_None_Invade(value)
+    return self:getU8(0x07, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setBlackGhost_Umbasa_Invade(value)
+    return self:setU8(0x08, value)
+end
+function MultiHPEstusFlaskBonusParam:getBlackGhost_Umbasa_Invade(value)
+    return self:getU8(0x08, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setBlackGhost_Berserker_Invade(value)
+    return self:setU8(0x09, value)
+end
+function MultiHPEstusFlaskBonusParam:getBlackGhost_Berserker_Invade(value)
+    return self:getU8(0x09, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setRedHunter1(value)
+    return self:setU8(0x0A, value)
+end
+function MultiHPEstusFlaskBonusParam:getRedHunter1(value)
+    return self:getU8(0x0A, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setRedHunter2(value)
+    return self:setU8(0x0B, value)
+end
+function MultiHPEstusFlaskBonusParam:getRedHunter2(value)
+    return self:getU8(0x0B, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setGuardianOfForest(value)
+    return self:setU8(0x0C, value)
+end
+function MultiHPEstusFlaskBonusParam:getGuardianOfForest(value)
+    return self:getU8(0x0C, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setGuardianOfAnor(value)
+    return self:setU8(0x0D, value)
+end
+function MultiHPEstusFlaskBonusParam:getGuardianOfAnor(value)
+    return self:getU8(0x0D, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setBattleRoyal(value)
+    return self:setU8(0x0E, value)
+end
+function MultiHPEstusFlaskBonusParam:getBattleRoyal(value)
+    return self:getU8(0x0E, value)
+end
+
+function MultiHPEstusFlaskBonusParam:setYellowMonk(value)
+    return self:setU8(0x0F, value)
+end
+function MultiHPEstusFlaskBonusParam:getYellowMonk(value)
+    return self:getU8(0x0F, value)
+end
+
+--dummy8 pad1[48]
+[disable]
+MultiHPEstusFlaskBonusParam = nil

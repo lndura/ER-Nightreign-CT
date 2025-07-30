@@ -1,0 +1,57 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MaterialExParam = {}
+function MaterialExParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MaterialExParam", 0x41, id_or_all, patchName)
+end
+
+
+
+--fixstrW paramName[32]
+
+function MaterialExParam:setMaterialId(value)
+    return self:setU32(0x20, value)
+end
+function MaterialExParam:getMaterialId(value)
+    return self:getU32(0x20, value)
+end
+
+function MaterialExParam:setMaterialParamValue0(value)
+    return self:setF32(0x24, value)
+end
+function MaterialExParam:getMaterialParamValue0(value)
+    return self:getF32(0x24, value)
+end
+
+function MaterialExParam:setMaterialParamValue1(value)
+    return self:setF32(0x28, value)
+end
+function MaterialExParam:getMaterialParamValue1(value)
+    return self:getF32(0x28, value)
+end
+
+function MaterialExParam:setMaterialParamValue2(value)
+    return self:setF32(0x2C, value)
+end
+function MaterialExParam:getMaterialParamValue2(value)
+    return self:getF32(0x2C, value)
+end
+
+function MaterialExParam:setMaterialParamValue3(value)
+    return self:setF32(0x30, value)
+end
+function MaterialExParam:getMaterialParamValue3(value)
+    return self:getF32(0x30, value)
+end
+
+function MaterialExParam:setMaterialParamValue4(value)
+    return self:setF32(0x34, value)
+end
+function MaterialExParam:getMaterialParamValue4(value)
+    return self:getF32(0x34, value)
+end
+
+--dummy8 pad[8]
+[disable]
+MaterialExParam = nil

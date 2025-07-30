@@ -1,0 +1,39 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+ThrowCounterParam = {}
+function ThrowCounterParam:new(id_or_all, patchName)
+    return paramPatcher(self, "ThrowCounterParam", 0x14, id_or_all, patchName)
+end
+
+
+
+function ThrowCounterParam:setUnknown_0(value)
+    return self:setU32(0x00, value)
+end
+function ThrowCounterParam:getUnknown_0(value)
+    return self:getU32(0x00, value)
+end
+
+function ThrowCounterParam:setCharacterId(value)
+    return self:setU32(0x04, value)
+end
+function ThrowCounterParam:getCharacterId(value)
+    return self:getU32(0x04, value)
+end
+
+function ThrowCounterParam:setUnknown_2(value)
+    return self:setU32(0x08, value)
+end
+function ThrowCounterParam:getUnknown_2(value)
+    return self:getU32(0x08, value)
+end
+
+function ThrowCounterParam:setUnknown_3(value)
+    return self:setU32(0x0C, value)
+end
+function ThrowCounterParam:getUnknown_3(value)
+    return self:getU32(0x0C, value)
+end
+[disable]
+ThrowCounterParam = nil

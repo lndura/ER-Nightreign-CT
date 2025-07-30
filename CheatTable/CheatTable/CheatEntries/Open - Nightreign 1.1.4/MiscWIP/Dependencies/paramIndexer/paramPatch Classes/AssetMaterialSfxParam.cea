@@ -1,0 +1,235 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+AssetMaterialSfxParam = {}
+function AssetMaterialSfxParam:new(id_or_all, patchName)
+    return paramPatcher(self, "AssetMaterialSfxParam", 0x84, id_or_all, patchName)
+end
+
+
+
+function AssetMaterialSfxParam:setSfxId_00(value)
+    return self:setU32(0x00, value)
+end
+function AssetMaterialSfxParam:getSfxId_00(value)
+    return self:getU32(0x00, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_01(value)
+    return self:setU32(0x04, value)
+end
+function AssetMaterialSfxParam:getSfxId_01(value)
+    return self:getU32(0x04, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_02(value)
+    return self:setU32(0x08, value)
+end
+function AssetMaterialSfxParam:getSfxId_02(value)
+    return self:getU32(0x08, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_03(value)
+    return self:setU32(0x0C, value)
+end
+function AssetMaterialSfxParam:getSfxId_03(value)
+    return self:getU32(0x0C, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_04(value)
+    return self:setU32(0x10, value)
+end
+function AssetMaterialSfxParam:getSfxId_04(value)
+    return self:getU32(0x10, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_05(value)
+    return self:setU32(0x14, value)
+end
+function AssetMaterialSfxParam:getSfxId_05(value)
+    return self:getU32(0x14, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_06(value)
+    return self:setU32(0x18, value)
+end
+function AssetMaterialSfxParam:getSfxId_06(value)
+    return self:getU32(0x18, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_07(value)
+    return self:setU32(0x1C, value)
+end
+function AssetMaterialSfxParam:getSfxId_07(value)
+    return self:getU32(0x1C, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_08(value)
+    return self:setU32(0x20, value)
+end
+function AssetMaterialSfxParam:getSfxId_08(value)
+    return self:getU32(0x20, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_09(value)
+    return self:setU32(0x24, value)
+end
+function AssetMaterialSfxParam:getSfxId_09(value)
+    return self:getU32(0x24, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_10(value)
+    return self:setU32(0x28, value)
+end
+function AssetMaterialSfxParam:getSfxId_10(value)
+    return self:getU32(0x28, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_11(value)
+    return self:setU32(0x2C, value)
+end
+function AssetMaterialSfxParam:getSfxId_11(value)
+    return self:getU32(0x2C, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_12(value)
+    return self:setU32(0x30, value)
+end
+function AssetMaterialSfxParam:getSfxId_12(value)
+    return self:getU32(0x30, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_13(value)
+    return self:setU32(0x34, value)
+end
+function AssetMaterialSfxParam:getSfxId_13(value)
+    return self:getU32(0x34, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_14(value)
+    return self:setU32(0x38, value)
+end
+function AssetMaterialSfxParam:getSfxId_14(value)
+    return self:getU32(0x38, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_15(value)
+    return self:setU32(0x3C, value)
+end
+function AssetMaterialSfxParam:getSfxId_15(value)
+    return self:getU32(0x3C, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_16(value)
+    return self:setU32(0x40, value)
+end
+function AssetMaterialSfxParam:getSfxId_16(value)
+    return self:getU32(0x40, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_17(value)
+    return self:setU32(0x44, value)
+end
+function AssetMaterialSfxParam:getSfxId_17(value)
+    return self:getU32(0x44, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_18(value)
+    return self:setU32(0x48, value)
+end
+function AssetMaterialSfxParam:getSfxId_18(value)
+    return self:getU32(0x48, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_19(value)
+    return self:setU32(0x4C, value)
+end
+function AssetMaterialSfxParam:getSfxId_19(value)
+    return self:getU32(0x4C, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_20(value)
+    return self:setU32(0x50, value)
+end
+function AssetMaterialSfxParam:getSfxId_20(value)
+    return self:getU32(0x50, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_21(value)
+    return self:setU32(0x54, value)
+end
+function AssetMaterialSfxParam:getSfxId_21(value)
+    return self:getU32(0x54, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_22(value)
+    return self:setU32(0x58, value)
+end
+function AssetMaterialSfxParam:getSfxId_22(value)
+    return self:getU32(0x58, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_23(value)
+    return self:setU32(0x5C, value)
+end
+function AssetMaterialSfxParam:getSfxId_23(value)
+    return self:getU32(0x5C, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_24(value)
+    return self:setU32(0x60, value)
+end
+function AssetMaterialSfxParam:getSfxId_24(value)
+    return self:getU32(0x60, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_25(value)
+    return self:setU32(0x64, value)
+end
+function AssetMaterialSfxParam:getSfxId_25(value)
+    return self:getU32(0x64, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_26(value)
+    return self:setU32(0x68, value)
+end
+function AssetMaterialSfxParam:getSfxId_26(value)
+    return self:getU32(0x68, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_27(value)
+    return self:setU32(0x6C, value)
+end
+function AssetMaterialSfxParam:getSfxId_27(value)
+    return self:getU32(0x6C, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_28(value)
+    return self:setU32(0x70, value)
+end
+function AssetMaterialSfxParam:getSfxId_28(value)
+    return self:getU32(0x70, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_29(value)
+    return self:setU32(0x74, value)
+end
+function AssetMaterialSfxParam:getSfxId_29(value)
+    return self:getU32(0x74, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_30(value)
+    return self:setU32(0x78, value)
+end
+function AssetMaterialSfxParam:getSfxId_30(value)
+    return self:getU32(0x78, value)
+end
+
+function AssetMaterialSfxParam:setSfxId_31(value)
+    return self:setU32(0x7C, value)
+end
+function AssetMaterialSfxParam:getSfxId_31(value)
+    return self:getU32(0x7C, value)
+end
+[disable]
+AssetMaterialSfxParam = nil

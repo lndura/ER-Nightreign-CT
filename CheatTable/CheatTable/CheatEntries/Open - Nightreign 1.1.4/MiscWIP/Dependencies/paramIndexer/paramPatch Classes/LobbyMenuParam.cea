@@ -1,0 +1,74 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+LobbyMenuParam = {}
+function LobbyMenuParam:new(id_or_all, patchName)
+    return paramPatcher(self, "LobbyMenuParam", 0x24, id_or_all, patchName)
+end
+
+
+
+function LobbyMenuParam:setUnknown_0(value)
+    return self:setU32(0x00, value)
+end
+function LobbyMenuParam:getUnknown_0(value)
+    return self:getU32(0x00, value)
+end
+
+function LobbyMenuParam:setNameId(value)
+    return self:setU32(0x04, value)
+end
+function LobbyMenuParam:getNameId(value)
+    return self:getU32(0x04, value)
+end
+
+function LobbyMenuParam:setUnknownEventFlag_1(value)
+    return self:setU32(0x08, value)
+end
+function LobbyMenuParam:getUnknownEventFlag_1(value)
+    return self:getU32(0x08, value)
+end
+
+function LobbyMenuParam:setUnknownEventFlag_2(value)
+    return self:setU32(0x0C, value)
+end
+function LobbyMenuParam:getUnknownEventFlag_2(value)
+    return self:getU32(0x0C, value)
+end
+
+function LobbyMenuParam:setUnknownEventFlag_3(value)
+    return self:setU32(0x10, value)
+end
+function LobbyMenuParam:getUnknownEventFlag_3(value)
+    return self:getU32(0x10, value)
+end
+
+function LobbyMenuParam:setIconId(value)
+    return self:setU16(0x14, value)
+end
+function LobbyMenuParam:getIconId(value)
+    return self:getU16(0x14, value)
+end
+
+function LobbyMenuParam:setMapLayer(value)
+    return self:setU16(0x16, value)
+end
+function LobbyMenuParam:getMapLayer(value)
+    return self:getU16(0x16, value)
+end
+
+function LobbyMenuParam:setUnknownEventFlag_4(value)
+    return self:setU32(0x18, value)
+end
+function LobbyMenuParam:getUnknownEventFlag_4(value)
+    return self:getU32(0x18, value)
+end
+
+function LobbyMenuParam:setUnknown_7(value)
+    return self:setU32(0x1C, value)
+end
+function LobbyMenuParam:getUnknown_7(value)
+    return self:getU32(0x1C, value)
+end
+[disable]
+LobbyMenuParam = nil

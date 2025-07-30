@@ -1,0 +1,72 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+HeroMenuParam = {}
+function HeroMenuParam:new(id_or_all, patchName)
+    return paramPatcher(self, "HeroMenuParam", 0x24, id_or_all, patchName)
+end
+
+
+
+function HeroMenuParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function HeroMenuParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function HeroMenuParam:setCharaInitParamId(value)
+    return self:setU32(0x04, value)
+end
+function HeroMenuParam:getCharaInitParamId(value)
+    return self:getU32(0x04, value)
+end
+
+function HeroMenuParam:setUnknown_2(value)
+    return self:setU32(0x08, value)
+end
+function HeroMenuParam:getUnknown_2(value)
+    return self:getU32(0x08, value)
+end
+
+function HeroMenuParam:setUnknown_3(value)
+    return self:setU32(0x0C, value)
+end
+function HeroMenuParam:getUnknown_3(value)
+    return self:getU32(0x0C, value)
+end
+
+function HeroMenuParam:setHeroMenuCameraId(value)
+    return self:setU32(0x10, value)
+end
+function HeroMenuParam:getHeroMenuCameraId(value)
+    return self:getU32(0x10, value)
+end
+
+function HeroMenuParam:setUnknown_5(value)
+    return self:setU32(0x14, value)
+end
+function HeroMenuParam:getUnknown_5(value)
+    return self:getU32(0x14, value)
+end
+
+function HeroMenuParam:setUnknown_6(value)
+    return self:setF32(0x18, value)
+end
+function HeroMenuParam:getUnknown_6(value)
+    return self:getF32(0x18, value)
+end
+
+function HeroMenuParam:setUnknown_7(value)
+    return self:setF32(0x1C, value)
+end
+function HeroMenuParam:getUnknown_7(value)
+    return self:getF32(0x1C, value)
+end
+[disable]
+HeroMenuParam = nil

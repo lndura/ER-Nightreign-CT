@@ -1,0 +1,15 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+local flag_ID = readInteger(ef.flag)
+local flag = getEventFlag(flag_ID)
+if flag:isExist() then
+    local address = flag:getAddr()
+    local bitPos = flag:getBitIndex()
+    printf("0x%X bit %d", address, bitPos)
+    if memrec[0] then memrec[0].address = address end
+else
+    print("Flag %d doesn't exist.", flag_ID)
+end
+disableMemrec(memrec)
+[disable]

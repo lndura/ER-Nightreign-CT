@@ -1,0 +1,83 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+
+
+inventory = {mem = allocateMemory(0x30)}
+
+inventory.data = {
+    Addr = inventory.mem,
+    Item = inventory.mem + 0x08,
+    Slot = inventory.mem + 0x10,
+    Type = inventory.mem + 0x14,
+}
+
+writeInteger(inventory.data.Slot, 1)
+writeInteger(inventory.data.Type, 1)
+
+inventory.relics = {
+    inventory.mem + 0x18,
+    inventory.mem + 0x20,
+    inventory.mem + 0x28,
+}
+
+local function updateInventoryData(PlayerGameData, CSGaItemImp)
+    local InventoryType = readInteger(inventory.data.Type)
+    local InventorySlot = readInteger(inventory.data.Slot)
+
+    local EquipInventoryData = readPointer(PlayerGameData + 0x498)
+    local InventoryList = readPointer(EquipInventoryData + InventoryType * 0x10)
+    local InventorySize = readInteger(EquipInventoryData + InventoryType * 0x10 + 0x8)
+    if InventoryList and 0 < InventorySize then
+
+        if InventorySlot <= 0 then
+            InventorySlot = InventorySize
+        elseif InventorySlot > InventorySize then
+            InventorySlot = 1
+        end
+
+        local InventoryAddr = InventoryList + (InventorySlot - 1) * 0x14
+
+        writeInteger(inventory.data.Slot, InventorySlot)
+        writePointer(inventory.data.Addr, InventoryAddr or 0)
+
+        local CSGaItemIndex = readU16(InventoryAddr)
+        if CSGaItemIndex then
+            local CSGaItemIns = readPointer(CSGaItemImp + 8 + 8 * CSGaItemIndex)
+            writePointer(inventory.data.Item, CSGaItemIns or 0)
+        end
+    else
+        writeInteger(inventory.data.Slot, 0)
+        writePointer(inventory.data.Addr, 0)
+        writePointer(inventory.data.Item, 0)
+    end
+end
+
+local function updateEquipedRelics(PlayerGameData, CSGaItemImp)
+    for RelicSlot = 1,3,1 do
+        local EquippedRelic = 0x2E4 + RelicSlot * 4
+        local CSGaItemIndex = readU16(PlayerGameData + EquippedRelic)
+        if CSGaItemIndex then
+            local CSGaItemIns = readPointer(CSGaItemImp + 8 + 8 * CSGaItemIndex)
+            writePointer(inventory.relics[RelicSlot], CSGaItemIns or 0)
+        end
+    end
+end
+
+function updateInvData()
+    local GameDataManImp = readPointer("GameDataMan")
+    local CSGaItemImp = readPointer("CSGaItem")
+    if GameDataManImp and CSGaItemImp then
+        local PlayerGameData = readPointer(GameDataManImp + 0x8)
+        if PlayerGameData then
+            updateInventoryData(PlayerGameData, CSGaItemImp)
+            updateEquipedRelics(PlayerGameData, CSGaItemImp)
+        end
+    end
+end
+
+luaTask.insert("updateInvData", updateInvData)
+[disable]
+luaTask.remove("updateInvData")
+deAlloc(inventory.mem)
+inventory = nil

@@ -1,0 +1,742 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+NpcThinkParam = {}
+function NpcThinkParam:new(id_or_all, patchName)
+    return paramPatcher(self, "NpcThinkParam", 0xE8, id_or_all, patchName)
+end
+
+
+
+function NpcThinkParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function NpcThinkParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function NpcThinkParam:setLogicId(value)
+    return self:setU32(0x04, value)
+end
+function NpcThinkParam:getLogicId(value)
+    return self:getU32(0x04, value)
+end
+
+function NpcThinkParam:setBattleGoalID(value)
+    return self:setU32(0x08, value)
+end
+function NpcThinkParam:getBattleGoalID(value)
+    return self:getU32(0x08, value)
+end
+
+function NpcThinkParam:setSearchEye_dist(value)
+    return self:setU16(0x0C, value)
+end
+function NpcThinkParam:getSearchEye_dist(value)
+    return self:getU16(0x0C, value)
+end
+
+function NpcThinkParam:setSearchEye_angY(value)
+    return self:setU8(0x0E, value)
+end
+function NpcThinkParam:getSearchEye_angY(value)
+    return self:getU8(0x0E, value)
+end
+
+function NpcThinkParam:setIsNoAvoidHugeEnemy(value)
+    return self:setBinary(0x0F, 0, value, 1)
+end
+
+function NpcThinkParam:getIsNoAvoidHugeEnemy()
+    return self:getBinary(0x0F, 0, value, 1)
+end
+
+function NpcThinkParam:setEnableWeaponOnOff(value)
+    return self:setBinary(0x0F, 1, value, 1)
+end
+
+function NpcThinkParam:getEnableWeaponOnOff()
+    return self:getBinary(0x0F, 1, value, 1)
+end
+
+function NpcThinkParam:setTargetAILockDmyPoly(value)
+    return self:setBinary(0x0F, 2, value, 1)
+end
+
+function NpcThinkParam:getTargetAILockDmyPoly()
+    return self:getBinary(0x0F, 2, value, 1)
+end
+
+--dummy8 pad8:5
+
+function NpcThinkParam:setSpEffectId_RangedAttack(value)
+    return self:setU32(0x10, value)
+end
+function NpcThinkParam:getSpEffectId_RangedAttack(value)
+    return self:getU32(0x10, value)
+end
+
+function NpcThinkParam:setSearchTargetLv1ForgetTime(value)
+    return self:setF32(0x14, value)
+end
+function NpcThinkParam:getSearchTargetLv1ForgetTime(value)
+    return self:getF32(0x14, value)
+end
+
+function NpcThinkParam:setSearchTargetLv2ForgetTime(value)
+    return self:setF32(0x18, value)
+end
+function NpcThinkParam:getSearchTargetLv2ForgetTime(value)
+    return self:getF32(0x18, value)
+end
+
+function NpcThinkParam:setBackHomeLife_OnHitEneWal(value)
+    return self:setF32(0x1C, value)
+end
+function NpcThinkParam:getBackHomeLife_OnHitEneWal(value)
+    return self:getF32(0x1C, value)
+end
+
+function NpcThinkParam:setSightTargetForgetTime(value)
+    return self:setF32(0x20, value)
+end
+function NpcThinkParam:getSightTargetForgetTime(value)
+    return self:getF32(0x20, value)
+end
+
+function NpcThinkParam:setIdAttackCannotMove(value)
+    return self:setU32(0x24, value)
+end
+function NpcThinkParam:getIdAttackCannotMove(value)
+    return self:getU32(0x24, value)
+end
+
+function NpcThinkParam:setEar_dist(value)
+    return self:setF32(0x28, value)
+end
+function NpcThinkParam:getEar_dist(value)
+    return self:getF32(0x28, value)
+end
+
+function NpcThinkParam:setCallHelp_ActionAnimId(value)
+    return self:setU32(0x2C, value)
+end
+function NpcThinkParam:getCallHelp_ActionAnimId(value)
+    return self:getU32(0x2C, value)
+end
+
+function NpcThinkParam:setCallHelp_CallActionId(value)
+    return self:setU32(0x30, value)
+end
+function NpcThinkParam:getCallHelp_CallActionId(value)
+    return self:getU32(0x30, value)
+end
+
+function NpcThinkParam:setEye_dist(value)
+    return self:setU16(0x34, value)
+end
+function NpcThinkParam:getEye_dist(value)
+    return self:getU16(0x34, value)
+end
+
+function NpcThinkParam:setIsGuard_Act(value)
+    return self:setU8(0x36, value)
+end
+function NpcThinkParam:getIsGuard_Act(value)
+    return self:getU8(0x36, value)
+end
+
+--dummy8 pad6[1]
+
+function NpcThinkParam:setEar_soundcut_dist(value)
+    return self:setU16(0x38, value)
+end
+function NpcThinkParam:getEar_soundcut_dist(value)
+    return self:getU16(0x38, value)
+end
+
+function NpcThinkParam:setNose_dist(value)
+    return self:setU16(0x3A, value)
+end
+function NpcThinkParam:getNose_dist(value)
+    return self:getU16(0x3A, value)
+end
+
+function NpcThinkParam:setMaxBackhomeDist(value)
+    return self:setU16(0x3C, value)
+end
+function NpcThinkParam:getMaxBackhomeDist(value)
+    return self:getU16(0x3C, value)
+end
+
+function NpcThinkParam:setBackhomeDist(value)
+    return self:setU16(0x3E, value)
+end
+function NpcThinkParam:getBackhomeDist(value)
+    return self:getU16(0x3E, value)
+end
+
+function NpcThinkParam:setBackhomeBattleDist(value)
+    return self:setU16(0x40, value)
+end
+function NpcThinkParam:getBackhomeBattleDist(value)
+    return self:getU16(0x40, value)
+end
+
+function NpcThinkParam:setNonBattleActLife(value)
+    return self:setU16(0x42, value)
+end
+function NpcThinkParam:getNonBattleActLife(value)
+    return self:getU16(0x42, value)
+end
+
+function NpcThinkParam:setBackHome_LookTargetTime(value)
+    return self:setU16(0x44, value)
+end
+function NpcThinkParam:getBackHome_LookTargetTime(value)
+    return self:getU16(0x44, value)
+end
+
+function NpcThinkParam:setBackHome_LookTargetDist(value)
+    return self:setU16(0x46, value)
+end
+function NpcThinkParam:getBackHome_LookTargetDist(value)
+    return self:getU16(0x46, value)
+end
+
+function NpcThinkParam:setSoundTargetForgetTime(value)
+    return self:setF32(0x48, value)
+end
+function NpcThinkParam:getSoundTargetForgetTime(value)
+    return self:getF32(0x48, value)
+end
+
+function NpcThinkParam:setBattleStartDist(value)
+    return self:setU16(0x4C, value)
+end
+function NpcThinkParam:getBattleStartDist(value)
+    return self:getU16(0x4C, value)
+end
+
+function NpcThinkParam:setCallHelp_MyPeerId(value)
+    return self:setU16(0x4E, value)
+end
+function NpcThinkParam:getCallHelp_MyPeerId(value)
+    return self:getU16(0x4E, value)
+end
+
+function NpcThinkParam:setCallHelp_CallPeerId(value)
+    return self:setU16(0x50, value)
+end
+function NpcThinkParam:getCallHelp_CallPeerId(value)
+    return self:getU16(0x50, value)
+end
+
+function NpcThinkParam:setTargetSys_DmgEffectRate(value)
+    return self:setU16(0x52, value)
+end
+function NpcThinkParam:getTargetSys_DmgEffectRate(value)
+    return self:getU16(0x52, value)
+end
+
+function NpcThinkParam:setTeamAttackEffectivity(value)
+    return self:setU8(0x54, value)
+end
+function NpcThinkParam:getTeamAttackEffectivity(value)
+    return self:getU8(0x54, value)
+end
+
+function NpcThinkParam:setEye_angX(value)
+    return self:setU8(0x55, value)
+end
+function NpcThinkParam:getEye_angX(value)
+    return self:getU8(0x55, value)
+end
+
+function NpcThinkParam:setEye_angY(value)
+    return self:setU8(0x56, value)
+end
+function NpcThinkParam:getEye_angY(value)
+    return self:getU8(0x56, value)
+end
+
+function NpcThinkParam:setDisableDark(value)
+    return self:setU8(0x57, value)
+end
+function NpcThinkParam:getDisableDark(value)
+    return self:getU8(0x57, value)
+end
+
+function NpcThinkParam:setCaravanRole(value)
+    return self:setU8(0x58, value)
+end
+function NpcThinkParam:getCaravanRole(value)
+    return self:getU8(0x58, value)
+end
+
+function NpcThinkParam:setCallHelp_CallValidMinDistTarget(value)
+    return self:setU8(0x59, value)
+end
+function NpcThinkParam:getCallHelp_CallValidMinDistTarget(value)
+    return self:getU8(0x59, value)
+end
+
+function NpcThinkParam:setCallHelp_CallValidRange(value)
+    return self:setU8(0x5A, value)
+end
+function NpcThinkParam:getCallHelp_CallValidRange(value)
+    return self:getU8(0x5A, value)
+end
+
+function NpcThinkParam:setCallHelp_ForgetTimeByArrival(value)
+    return self:setU8(0x5B, value)
+end
+function NpcThinkParam:getCallHelp_ForgetTimeByArrival(value)
+    return self:getU8(0x5B, value)
+end
+
+function NpcThinkParam:setCallHelp_MinWaitTime(value)
+    return self:setU8(0x5C, value)
+end
+function NpcThinkParam:getCallHelp_MinWaitTime(value)
+    return self:getU8(0x5C, value)
+end
+
+function NpcThinkParam:setCallHelp_MaxWaitTime(value)
+    return self:setU8(0x5D, value)
+end
+function NpcThinkParam:getCallHelp_MaxWaitTime(value)
+    return self:getU8(0x5D, value)
+end
+
+function NpcThinkParam:setGoalAction_ToCaution(value)
+    return self:setU8(0x5E, value)
+end
+function NpcThinkParam:getGoalAction_ToCaution(value)
+    return self:getU8(0x5E, value)
+end
+
+function NpcThinkParam:setEar_listenLevel(value)
+    return self:setU8(0x5F, value)
+end
+function NpcThinkParam:getEar_listenLevel(value)
+    return self:getU8(0x5F, value)
+end
+
+function NpcThinkParam:setCallHelp_ReplyBehaviorType(value)
+    return self:setU8(0x60, value)
+end
+function NpcThinkParam:getCallHelp_ReplyBehaviorType(value)
+    return self:getU8(0x60, value)
+end
+
+function NpcThinkParam:setDisablePathMove(value)
+    return self:setU8(0x61, value)
+end
+function NpcThinkParam:getDisablePathMove(value)
+    return self:getU8(0x61, value)
+end
+
+function NpcThinkParam:setSkipArrivalVisibleCheck(value)
+    return self:setU8(0x62, value)
+end
+function NpcThinkParam:getSkipArrivalVisibleCheck(value)
+    return self:getU8(0x62, value)
+end
+
+function NpcThinkParam:setThinkAttr_doAdmirer(value)
+    return self:setU8(0x63, value)
+end
+function NpcThinkParam:getThinkAttr_doAdmirer(value)
+    return self:getU8(0x63, value)
+end
+
+function NpcThinkParam:setEnableNaviFlg_Edge(value)
+    return self:setBinary(0x64, 0, value, 1)
+end
+
+function NpcThinkParam:getEnableNaviFlg_Edge()
+    return self:getBinary(0x64, 0, value, 1)
+end
+
+function NpcThinkParam:setEnableNaviFlg_LargeSpace(value)
+    return self:setBinary(0x64, 1, value, 1)
+end
+
+function NpcThinkParam:getEnableNaviFlg_LargeSpace()
+    return self:getBinary(0x64, 1, value, 1)
+end
+
+function NpcThinkParam:setEnableNaviFlg_Ladder(value)
+    return self:setBinary(0x64, 2, value, 1)
+end
+
+function NpcThinkParam:getEnableNaviFlg_Ladder()
+    return self:getBinary(0x64, 2, value, 1)
+end
+
+function NpcThinkParam:setEnableNaviFlg_Hole(value)
+    return self:setBinary(0x64, 3, value, 1)
+end
+
+function NpcThinkParam:getEnableNaviFlg_Hole()
+    return self:getBinary(0x64, 3, value, 1)
+end
+
+function NpcThinkParam:setEnableNaviFlg_Door(value)
+    return self:setBinary(0x64, 4, value, 1)
+end
+
+function NpcThinkParam:getEnableNaviFlg_Door()
+    return self:getBinary(0x64, 4, value, 1)
+end
+
+function NpcThinkParam:setEnableNaviFlg_InSideWall(value)
+    return self:setBinary(0x64, 5, value, 1)
+end
+
+function NpcThinkParam:getEnableNaviFlg_InSideWall()
+    return self:getBinary(0x64, 5, value, 1)
+end
+
+function NpcThinkParam:setEnableNaviFlg_Lava(value)
+    return self:setBinary(0x64, 6, value, 1)
+end
+
+function NpcThinkParam:getEnableNaviFlg_Lava()
+    return self:getBinary(0x64, 6, value, 1)
+end
+
+function NpcThinkParam:setEnableNaviFlg_Edge_Ordinary(value)
+    return self:setBinary(0x64, 7, value, 1)
+end
+
+function NpcThinkParam:getEnableNaviFlg_Edge_Ordinary()
+    return self:getBinary(0x64, 7, value, 1)
+end
+
+--dummy8 enableNaviFlg_reserve1[3]
+
+function NpcThinkParam:setSearchThreshold_Lv0toLv1(value)
+    return self:setU32(0x68, value)
+end
+function NpcThinkParam:getSearchThreshold_Lv0toLv1(value)
+    return self:getU32(0x68, value)
+end
+
+function NpcThinkParam:setSearchThreshold_Lv1toLv2(value)
+    return self:setU32(0x6C, value)
+end
+function NpcThinkParam:getSearchThreshold_Lv1toLv2(value)
+    return self:getU32(0x6C, value)
+end
+
+function NpcThinkParam:setPlatoonReplyTime(value)
+    return self:setF32(0x70, value)
+end
+function NpcThinkParam:getPlatoonReplyTime(value)
+    return self:getF32(0x70, value)
+end
+
+function NpcThinkParam:setPlatoonReplyAddRandomTime(value)
+    return self:setF32(0x74, value)
+end
+function NpcThinkParam:getPlatoonReplyAddRandomTime(value)
+    return self:getF32(0x74, value)
+end
+
+function NpcThinkParam:setSearchEye_angX(value)
+    return self:setU8(0x78, value)
+end
+function NpcThinkParam:getSearchEye_angX(value)
+    return self:getU8(0x78, value)
+end
+
+function NpcThinkParam:setIsUpdateBattleSight(value)
+    return self:setU8(0x79, value)
+end
+function NpcThinkParam:getIsUpdateBattleSight(value)
+    return self:getU8(0x79, value)
+end
+
+function NpcThinkParam:setBattleEye_updateDist(value)
+    return self:setU16(0x7A, value)
+end
+function NpcThinkParam:getBattleEye_updateDist(value)
+    return self:getU16(0x7A, value)
+end
+
+function NpcThinkParam:setBattleEye_updateAngX(value)
+    return self:setU8(0x7C, value)
+end
+function NpcThinkParam:getBattleEye_updateAngX(value)
+    return self:getU8(0x7C, value)
+end
+
+function NpcThinkParam:setBattleEye_updateAngY(value)
+    return self:setU8(0x7D, value)
+end
+function NpcThinkParam:getBattleEye_updateAngY(value)
+    return self:getU8(0x7D, value)
+end
+
+function NpcThinkParam:setUnknown_1(value)
+    return self:setU32(0x7E, value)
+end
+function NpcThinkParam:getUnknown_1(value)
+    return self:getU32(0x7E, value)
+end
+
+function NpcThinkParam:setUnknown_2(value)
+    return self:setU32(0x82, value)
+end
+function NpcThinkParam:getUnknown_2(value)
+    return self:getU32(0x82, value)
+end
+
+function NpcThinkParam:setUnknown_3(value)
+    return self:setU32(0x86, value)
+end
+function NpcThinkParam:getUnknown_3(value)
+    return self:getU32(0x86, value)
+end
+
+function NpcThinkParam:setUnknown_4(value)
+    return self:setU32(0x8A, value)
+end
+function NpcThinkParam:getUnknown_4(value)
+    return self:getU32(0x8A, value)
+end
+
+function NpcThinkParam:setEye_BackOffsetDist(value)
+    return self:setU16(0x8E, value)
+end
+function NpcThinkParam:getEye_BackOffsetDist(value)
+    return self:getU16(0x8E, value)
+end
+
+function NpcThinkParam:setEye_BeginDist(value)
+    return self:setU16(0x90, value)
+end
+function NpcThinkParam:getEye_BeginDist(value)
+    return self:getU16(0x90, value)
+end
+
+function NpcThinkParam:setActTypeOnFailedPath(value)
+    return self:setU8(0x92, value)
+end
+function NpcThinkParam:getActTypeOnFailedPath(value)
+    return self:getU8(0x92, value)
+end
+
+function NpcThinkParam:setGoalAction_ToCautionImportant(value)
+    return self:setU8(0x93, value)
+end
+function NpcThinkParam:getGoalAction_ToCautionImportant(value)
+    return self:getU8(0x93, value)
+end
+
+function NpcThinkParam:setShiftAnimeId_RangedAttack(value)
+    return self:setU32(0x94, value)
+end
+function NpcThinkParam:getShiftAnimeId_RangedAttack(value)
+    return self:getU32(0x94, value)
+end
+
+function NpcThinkParam:setActTypeOnNonBtlFailedPath(value)
+    return self:setU8(0x98, value)
+end
+function NpcThinkParam:getActTypeOnNonBtlFailedPath(value)
+    return self:getU8(0x98, value)
+end
+
+function NpcThinkParam:setIsBuddyAI(value)
+    return self:setU8(0x99, value)
+end
+function NpcThinkParam:getIsBuddyAI(value)
+    return self:getU8(0x99, value)
+end
+
+function NpcThinkParam:setGoalAction_ToSearchLv1(value)
+    return self:setU8(0x9A, value)
+end
+function NpcThinkParam:getGoalAction_ToSearchLv1(value)
+    return self:getU8(0x9A, value)
+end
+
+function NpcThinkParam:setGoalAction_ToSearchLv2(value)
+    return self:setU8(0x9B, value)
+end
+function NpcThinkParam:getGoalAction_ToSearchLv2(value)
+    return self:getU8(0x9B, value)
+end
+
+function NpcThinkParam:setEnableJumpMove(value)
+    return self:setU8(0x9C, value)
+end
+function NpcThinkParam:getEnableJumpMove(value)
+    return self:getU8(0x9C, value)
+end
+
+function NpcThinkParam:setDisableLocalSteering(value)
+    return self:setU8(0x9D, value)
+end
+function NpcThinkParam:getDisableLocalSteering(value)
+    return self:getU8(0x9D, value)
+end
+
+function NpcThinkParam:setGoalAction_ToDisappear(value)
+    return self:setU8(0x9E, value)
+end
+function NpcThinkParam:getGoalAction_ToDisappear(value)
+    return self:getU8(0x9E, value)
+end
+
+function NpcThinkParam:setChangeStateAction_ToNormal(value)
+    return self:setU8(0x9F, value)
+end
+function NpcThinkParam:getChangeStateAction_ToNormal(value)
+    return self:getU8(0x9F, value)
+end
+
+function NpcThinkParam:setMemoryTargetForgetTime(value)
+    return self:setF32(0xA0, value)
+end
+function NpcThinkParam:getMemoryTargetForgetTime(value)
+    return self:getF32(0xA0, value)
+end
+
+function NpcThinkParam:setRangedAttackId(value)
+    return self:setU32(0xA4, value)
+end
+function NpcThinkParam:getRangedAttackId(value)
+    return self:getU32(0xA4, value)
+end
+
+function NpcThinkParam:setUseFall_onNormalCaution(value)
+    return self:setU8(0xA8, value)
+end
+function NpcThinkParam:getUseFall_onNormalCaution(value)
+    return self:getU8(0xA8, value)
+end
+
+function NpcThinkParam:setUseFall_onSearchBattle(value)
+    return self:setU8(0xA9, value)
+end
+function NpcThinkParam:getUseFall_onSearchBattle(value)
+    return self:getU8(0xA9, value)
+end
+
+function NpcThinkParam:setEnableJumpMove_onBattle(value)
+    return self:setU8(0xAA, value)
+end
+function NpcThinkParam:getEnableJumpMove_onBattle(value)
+    return self:getU8(0xAA, value)
+end
+
+function NpcThinkParam:setBackToHomeStuckAct(value)
+    return self:setU8(0xAB, value)
+end
+function NpcThinkParam:getBackToHomeStuckAct(value)
+    return self:getU8(0xAB, value)
+end
+
+--dummy8 pad3[4]
+
+function NpcThinkParam:setSoundBehaviorId01(value)
+    return self:setU32(0xB0, value)
+end
+function NpcThinkParam:getSoundBehaviorId01(value)
+    return self:getU32(0xB0, value)
+end
+
+function NpcThinkParam:setSoundBehaviorId02(value)
+    return self:setU32(0xB4, value)
+end
+function NpcThinkParam:getSoundBehaviorId02(value)
+    return self:getU32(0xB4, value)
+end
+
+function NpcThinkParam:setSoundBehaviorId03(value)
+    return self:setU32(0xB8, value)
+end
+function NpcThinkParam:getSoundBehaviorId03(value)
+    return self:getU32(0xB8, value)
+end
+
+function NpcThinkParam:setSoundBehaviorId04(value)
+    return self:setU32(0xBC, value)
+end
+function NpcThinkParam:getSoundBehaviorId04(value)
+    return self:getU32(0xBC, value)
+end
+
+function NpcThinkParam:setSoundBehaviorId05(value)
+    return self:setU32(0xC0, value)
+end
+function NpcThinkParam:getSoundBehaviorId05(value)
+    return self:getU32(0xC0, value)
+end
+
+function NpcThinkParam:setSoundBehaviorId06(value)
+    return self:setU32(0xC4, value)
+end
+function NpcThinkParam:getSoundBehaviorId06(value)
+    return self:getU32(0xC4, value)
+end
+
+function NpcThinkParam:setSoundBehaviorId07(value)
+    return self:setU32(0xC8, value)
+end
+function NpcThinkParam:getSoundBehaviorId07(value)
+    return self:getU32(0xC8, value)
+end
+
+function NpcThinkParam:setSoundBehaviorId08(value)
+    return self:setU32(0xCC, value)
+end
+function NpcThinkParam:getSoundBehaviorId08(value)
+    return self:getU32(0xCC, value)
+end
+
+function NpcThinkParam:setWeaponOffSpecialEffectId(value)
+    return self:setU32(0xD0, value)
+end
+function NpcThinkParam:getWeaponOffSpecialEffectId(value)
+    return self:getU32(0xD0, value)
+end
+
+function NpcThinkParam:setWeaponOnSpecialEffectId(value)
+    return self:setU32(0xD4, value)
+end
+function NpcThinkParam:getWeaponOnSpecialEffectId(value)
+    return self:getU32(0xD4, value)
+end
+
+function NpcThinkParam:setWeaponOffAnimId(value)
+    return self:setU32(0xD8, value)
+end
+function NpcThinkParam:getWeaponOffAnimId(value)
+    return self:getU32(0xD8, value)
+end
+
+function NpcThinkParam:setWeaponOnAnimId(value)
+    return self:setU32(0xDC, value)
+end
+function NpcThinkParam:getWeaponOnAnimId(value)
+    return self:getU32(0xDC, value)
+end
+
+function NpcThinkParam:setSurpriseAnimId(value)
+    return self:setU32(0xE0, value)
+end
+function NpcThinkParam:getSurpriseAnimId(value)
+    return self:getU32(0xE0, value)
+end
+[disable]
+NpcThinkParam = nil

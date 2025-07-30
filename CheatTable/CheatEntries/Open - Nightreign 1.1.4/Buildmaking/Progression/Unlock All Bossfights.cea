@@ -1,0 +1,10 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+local flags = {
+    110, -- Regular Bosses
+    115, -- Night Aspect
+}
+setEventFlagList(flags, 1)
+disableMemrec(memrec)
+[disable]

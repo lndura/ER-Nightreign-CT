@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337272898</ID>
+  <Description>"Slot"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>inventory.data.Slot</Address>
+  <x-ce2fs-child-order>
+    <id id="1337272900"/>
+    <id id="1337273228"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

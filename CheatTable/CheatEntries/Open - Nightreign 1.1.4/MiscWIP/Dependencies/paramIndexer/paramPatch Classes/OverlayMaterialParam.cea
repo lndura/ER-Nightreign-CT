@@ -1,0 +1,36 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+OverlayMaterialParam = {}
+function OverlayMaterialParam:new(id_or_all, patchName)
+    return paramPatcher(self, "OverlayMaterialParam", 0x31, id_or_all, patchName)
+end
+
+
+
+--fixstrW paramName[32]
+
+function OverlayMaterialParam:setMaterialId(value)
+    return self:setU32(0x20, value)
+end
+function OverlayMaterialParam:getMaterialId(value)
+    return self:getU32(0x20, value)
+end
+
+function OverlayMaterialParam:setMaterialParamValue0(value)
+    return self:setF32(0x24, value)
+end
+function OverlayMaterialParam:getMaterialParamValue0(value)
+    return self:getF32(0x24, value)
+end
+
+function OverlayMaterialParam:setMaterialParamValue1(value)
+    return self:setF32(0x28, value)
+end
+function OverlayMaterialParam:getMaterialParamValue1(value)
+    return self:getF32(0x28, value)
+end
+
+--dummy8 endPadding[4]
+[disable]
+OverlayMaterialParam = nil

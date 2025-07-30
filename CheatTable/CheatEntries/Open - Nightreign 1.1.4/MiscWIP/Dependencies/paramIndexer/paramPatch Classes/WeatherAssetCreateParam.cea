@@ -1,0 +1,164 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+WeatherAssetCreateParam = {}
+function WeatherAssetCreateParam:new(id_or_all, patchName)
+    return paramPatcher(self, "WeatherAssetCreateParam", 0x41, id_or_all, patchName)
+end
+
+
+
+function WeatherAssetCreateParam:setAssetId(value)
+    return self:setU32(0x00, value)
+end
+function WeatherAssetCreateParam:getAssetId(value)
+    return self:getU32(0x00, value)
+end
+
+function WeatherAssetCreateParam:setSlotNo(value)
+    return self:setU32(0x04, value)
+end
+function WeatherAssetCreateParam:getSlotNo(value)
+    return self:getU32(0x04, value)
+end
+
+function WeatherAssetCreateParam:setCreateConditionType(value)
+    return self:setU8(0x08, value)
+end
+function WeatherAssetCreateParam:getCreateConditionType(value)
+    return self:getU8(0x08, value)
+end
+
+--dummy8 padding0[3]
+
+function WeatherAssetCreateParam:setTransitionSrcWeather(value)
+    return self:setU16(0x0C, value)
+end
+function WeatherAssetCreateParam:getTransitionSrcWeather(value)
+    return self:getU16(0x0C, value)
+end
+
+function WeatherAssetCreateParam:setTransitionDstWeather(value)
+    return self:setU16(0x0E, value)
+end
+function WeatherAssetCreateParam:getTransitionDstWeather(value)
+    return self:getU16(0x0E, value)
+end
+
+function WeatherAssetCreateParam:setElapsedTimeCheckweather(value)
+    return self:setU16(0x10, value)
+end
+function WeatherAssetCreateParam:getElapsedTimeCheckweather(value)
+    return self:getU16(0x10, value)
+end
+
+--dummy8 padding1[2]
+
+function WeatherAssetCreateParam:setElapsedTime(value)
+    return self:setF32(0x14, value)
+end
+function WeatherAssetCreateParam:getElapsedTime(value)
+    return self:getF32(0x14, value)
+end
+
+function WeatherAssetCreateParam:setCreateDelayTime(value)
+    return self:setF32(0x18, value)
+end
+function WeatherAssetCreateParam:getCreateDelayTime(value)
+    return self:getF32(0x18, value)
+end
+
+function WeatherAssetCreateParam:setCreateProbability(value)
+    return self:setU32(0x1C, value)
+end
+function WeatherAssetCreateParam:getCreateProbability(value)
+    return self:getU32(0x1C, value)
+end
+
+function WeatherAssetCreateParam:setLifeTime(value)
+    return self:setF32(0x20, value)
+end
+function WeatherAssetCreateParam:getLifeTime(value)
+    return self:getF32(0x20, value)
+end
+
+function WeatherAssetCreateParam:setFadeTime(value)
+    return self:setF32(0x24, value)
+end
+function WeatherAssetCreateParam:getFadeTime(value)
+    return self:getF32(0x24, value)
+end
+
+function WeatherAssetCreateParam:setEnableCreateTimeMin(value)
+    return self:setF32(0x28, value)
+end
+function WeatherAssetCreateParam:getEnableCreateTimeMin(value)
+    return self:getF32(0x28, value)
+end
+
+function WeatherAssetCreateParam:setEnableCreateTimeMax(value)
+    return self:setF32(0x2C, value)
+end
+function WeatherAssetCreateParam:getEnableCreateTimeMax(value)
+    return self:getF32(0x2C, value)
+end
+
+function WeatherAssetCreateParam:setCreatePoint0(value)
+    return self:setU16(0x30, value)
+end
+function WeatherAssetCreateParam:getCreatePoint0(value)
+    return self:getU16(0x30, value)
+end
+
+function WeatherAssetCreateParam:setCreatePoint1(value)
+    return self:setU16(0x32, value)
+end
+function WeatherAssetCreateParam:getCreatePoint1(value)
+    return self:getU16(0x32, value)
+end
+
+function WeatherAssetCreateParam:setCreatePoint2(value)
+    return self:setU16(0x34, value)
+end
+function WeatherAssetCreateParam:getCreatePoint2(value)
+    return self:getU16(0x34, value)
+end
+
+function WeatherAssetCreateParam:setCreatePoint3(value)
+    return self:setU16(0x36, value)
+end
+function WeatherAssetCreateParam:getCreatePoint3(value)
+    return self:getU16(0x36, value)
+end
+
+function WeatherAssetCreateParam:setCreateAssetLimitId0(value)
+    return self:setU8(0x38, value)
+end
+function WeatherAssetCreateParam:getCreateAssetLimitId0(value)
+    return self:getU8(0x38, value)
+end
+
+function WeatherAssetCreateParam:setCreateAssetLimitId1(value)
+    return self:setU8(0x39, value)
+end
+function WeatherAssetCreateParam:getCreateAssetLimitId1(value)
+    return self:getU8(0x39, value)
+end
+
+function WeatherAssetCreateParam:setCreateAssetLimitId2(value)
+    return self:setU8(0x3A, value)
+end
+function WeatherAssetCreateParam:getCreateAssetLimitId2(value)
+    return self:getU8(0x3A, value)
+end
+
+function WeatherAssetCreateParam:setCreateAssetLimitId3(value)
+    return self:setU8(0x3B, value)
+end
+function WeatherAssetCreateParam:getCreateAssetLimitId3(value)
+    return self:getU8(0x3B, value)
+end
+
+--dummy8 Reserved2[4]
+[disable]
+WeatherAssetCreateParam = nil

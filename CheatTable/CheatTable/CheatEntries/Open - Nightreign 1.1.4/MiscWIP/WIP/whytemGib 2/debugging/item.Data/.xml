@@ -1,0 +1,32 @@
+<CheatEntry>
+  <ID>761</ID>
+  <Description>"item.Data"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>itemGive.data</Address>
+  <x-ce2fs-child-order>
+    <id id="762"/>
+    <id id="763"/>
+    <id id="764"/>
+    <id id="765"/>
+    <id id="766"/>
+    <id id="767"/>
+    <id id="768"/>
+    <id id="769"/>
+    <id id="770"/>
+    <id id="771"/>
+    <id id="772"/>
+    <id id="773"/>
+    <id id="774"/>
+    <id id="775"/>
+    <id id="776"/>
+    <id id="777"/>
+    <id id="778"/>
+    <id id="779"/>
+    <id id="780"/>
+    <id id="781"/>
+    <id id="782"/>
+    <id id="783"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,237 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+GrassTypeParam_Lv1 = {}
+function GrassTypeParam_Lv1:new(id_or_all, patchName)
+    return paramPatcher(self, "GrassTypeParam_Lv1", 0xA5, id_or_all, patchName)
+end
+
+
+
+function GrassTypeParam_Lv1:setLodRange(value)
+    return self:setU16(0x00, value)
+end
+function GrassTypeParam_Lv1:getLodRange(value)
+    return self:getU16(0x00, value)
+end
+
+function GrassTypeParam_Lv1:setLod0ClusterType(value)
+    return self:setU8(0x02, value)
+end
+function GrassTypeParam_Lv1:getLod0ClusterType(value)
+    return self:getU8(0x02, value)
+end
+
+function GrassTypeParam_Lv1:setLod1ClusterType(value)
+    return self:setU8(0x03, value)
+end
+function GrassTypeParam_Lv1:getLod1ClusterType(value)
+    return self:getU8(0x03, value)
+end
+
+function GrassTypeParam_Lv1:setLod2ClusterType(value)
+    return self:setU8(0x04, value)
+end
+function GrassTypeParam_Lv1:getLod2ClusterType(value)
+    return self:getU8(0x04, value)
+end
+
+--dummy8 pad0[2]
+
+function GrassTypeParam_Lv1:setDistributionType(value)
+    return self:setU8(0x07, value)
+end
+function GrassTypeParam_Lv1:getDistributionType(value)
+    return self:getU8(0x07, value)
+end
+
+function GrassTypeParam_Lv1:setBaseDensity(value)
+    return self:setF32(0x08, value)
+end
+function GrassTypeParam_Lv1:getBaseDensity(value)
+    return self:getF32(0x08, value)
+end
+
+--fixstrW model0Name[16]
+
+--fixstrW flatTextureName[32]
+
+--fixstrW billboardTextureName[32]
+
+function GrassTypeParam_Lv1:setNormalInfluence(value)
+    return self:setU8(0x5C, value)
+end
+function GrassTypeParam_Lv1:getNormalInfluence(value)
+    return self:getU8(0x5C, value)
+end
+
+function GrassTypeParam_Lv1:setInclinationMax(value)
+    return self:setU8(0x5D, value)
+end
+function GrassTypeParam_Lv1:getInclinationMax(value)
+    return self:getU8(0x5D, value)
+end
+
+function GrassTypeParam_Lv1:setInclinationJitter(value)
+    return self:setU8(0x5E, value)
+end
+function GrassTypeParam_Lv1:getInclinationJitter(value)
+    return self:getU8(0x5E, value)
+end
+
+function GrassTypeParam_Lv1:setScaleBaseMin(value)
+    return self:setU8(0x5F, value)
+end
+function GrassTypeParam_Lv1:getScaleBaseMin(value)
+    return self:getU8(0x5F, value)
+end
+
+function GrassTypeParam_Lv1:setScaleBaseMax(value)
+    return self:setU8(0x60, value)
+end
+function GrassTypeParam_Lv1:getScaleBaseMax(value)
+    return self:getU8(0x60, value)
+end
+
+function GrassTypeParam_Lv1:setScaleHeightMin(value)
+    return self:setU8(0x61, value)
+end
+function GrassTypeParam_Lv1:getScaleHeightMin(value)
+    return self:getU8(0x61, value)
+end
+
+function GrassTypeParam_Lv1:setScaleHeightMax(value)
+    return self:setU8(0x62, value)
+end
+function GrassTypeParam_Lv1:getScaleHeightMax(value)
+    return self:getU8(0x62, value)
+end
+
+function GrassTypeParam_Lv1:setColorShade1_r(value)
+    return self:setU8(0x63, value)
+end
+function GrassTypeParam_Lv1:getColorShade1_r(value)
+    return self:getU8(0x63, value)
+end
+
+function GrassTypeParam_Lv1:setColorShade1_g(value)
+    return self:setU8(0x64, value)
+end
+function GrassTypeParam_Lv1:getColorShade1_g(value)
+    return self:getU8(0x64, value)
+end
+
+function GrassTypeParam_Lv1:setColorShade1_b(value)
+    return self:setU8(0x65, value)
+end
+function GrassTypeParam_Lv1:getColorShade1_b(value)
+    return self:getU8(0x65, value)
+end
+
+function GrassTypeParam_Lv1:setColorShade2_r(value)
+    return self:setU8(0x66, value)
+end
+function GrassTypeParam_Lv1:getColorShade2_r(value)
+    return self:getU8(0x66, value)
+end
+
+function GrassTypeParam_Lv1:setColorShade2_g(value)
+    return self:setU8(0x67, value)
+end
+function GrassTypeParam_Lv1:getColorShade2_g(value)
+    return self:getU8(0x67, value)
+end
+
+function GrassTypeParam_Lv1:setColorShade2_b(value)
+    return self:setU8(0x68, value)
+end
+function GrassTypeParam_Lv1:getColorShade2_b(value)
+    return self:getU8(0x68, value)
+end
+
+function GrassTypeParam_Lv1:setFlatSplitType(value)
+    return self:setU8(0x69, value)
+end
+function GrassTypeParam_Lv1:getFlatSplitType(value)
+    return self:getU8(0x69, value)
+end
+
+function GrassTypeParam_Lv1:setFlatBladeCount(value)
+    return self:setU8(0x6A, value)
+end
+function GrassTypeParam_Lv1:getFlatBladeCount(value)
+    return self:getU8(0x6A, value)
+end
+
+function GrassTypeParam_Lv1:setFlatSlant(value)
+    return self:setU8(0x6B, value)
+end
+function GrassTypeParam_Lv1:getFlatSlant(value)
+    return self:getU8(0x6B, value)
+end
+
+function GrassTypeParam_Lv1:setFlatRadius(value)
+    return self:setF32(0x6C, value)
+end
+function GrassTypeParam_Lv1:getFlatRadius(value)
+    return self:getF32(0x6C, value)
+end
+
+function GrassTypeParam_Lv1:setCastShadow(value)
+    return self:setU8(0x70, value)
+end
+function GrassTypeParam_Lv1:getCastShadow(value)
+    return self:getU8(0x70, value)
+end
+
+function GrassTypeParam_Lv1:setWindAmplitude(value)
+    return self:setU8(0x71, value)
+end
+function GrassTypeParam_Lv1:getWindAmplitude(value)
+    return self:getU8(0x71, value)
+end
+
+--dummy8 pad1[1]
+
+function GrassTypeParam_Lv1:setWindCycle(value)
+    return self:setU8(0x73, value)
+end
+function GrassTypeParam_Lv1:getWindCycle(value)
+    return self:getU8(0x73, value)
+end
+
+function GrassTypeParam_Lv1:setOrientationAngle(value)
+    return self:setF32(0x74, value)
+end
+function GrassTypeParam_Lv1:getOrientationAngle(value)
+    return self:getF32(0x74, value)
+end
+
+function GrassTypeParam_Lv1:setOrientationRange(value)
+    return self:setF32(0x78, value)
+end
+function GrassTypeParam_Lv1:getOrientationRange(value)
+    return self:getF32(0x78, value)
+end
+
+function GrassTypeParam_Lv1:setSpacing(value)
+    return self:setF32(0x7C, value)
+end
+function GrassTypeParam_Lv1:getSpacing(value)
+    return self:getF32(0x7C, value)
+end
+
+function GrassTypeParam_Lv1:setDithering(value)
+    return self:setU8(0x80, value)
+end
+function GrassTypeParam_Lv1:getDithering(value)
+    return self:getU8(0x80, value)
+end
+
+--dummy8 pad[3]
+
+--fixstrW simpleModelName[16]
+
+--fixstrW model1Name[16]
+[disable]
+GrassTypeParam_Lv1 = nil

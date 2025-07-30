@@ -1,0 +1,529 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MenuCommonParam = {}
+function MenuCommonParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MenuCommonParam", 0x118, id_or_all, patchName)
+end
+
+
+
+function MenuCommonParam:setSoloPlayDeath_ToFadeOutTime(value)
+    return self:setF32(0x00, value)
+end
+function MenuCommonParam:getSoloPlayDeath_ToFadeOutTime(value)
+    return self:getF32(0x00, value)
+end
+
+function MenuCommonParam:setPartyGhostDeath_ToFadeOutTime(value)
+    return self:setF32(0x04, value)
+end
+function MenuCommonParam:getPartyGhostDeath_ToFadeOutTime(value)
+    return self:getF32(0x04, value)
+end
+
+function MenuCommonParam:setPlayerMaxHpLimit(value)
+    return self:setU32(0x08, value)
+end
+function MenuCommonParam:getPlayerMaxHpLimit(value)
+    return self:getU32(0x08, value)
+end
+
+function MenuCommonParam:setPlayerMaxMpLimit(value)
+    return self:setU32(0x0C, value)
+end
+function MenuCommonParam:getPlayerMaxMpLimit(value)
+    return self:getU32(0x0C, value)
+end
+
+function MenuCommonParam:setPlayerMaxSpLimit(value)
+    return self:setU32(0x10, value)
+end
+function MenuCommonParam:getPlayerMaxSpLimit(value)
+    return self:getU32(0x10, value)
+end
+
+function MenuCommonParam:setActionPanelChangeThreshold_Vel(value)
+    return self:setF32(0x14, value)
+end
+function MenuCommonParam:getActionPanelChangeThreshold_Vel(value)
+    return self:getF32(0x14, value)
+end
+
+function MenuCommonParam:setActionPanelChangeThreshold_PassTime(value)
+    return self:setF32(0x18, value)
+end
+function MenuCommonParam:getActionPanelChangeThreshold_PassTime(value)
+    return self:getF32(0x18, value)
+end
+
+function MenuCommonParam:setKgIconVspace(value)
+    return self:setU32(0x1C, value)
+end
+function MenuCommonParam:getKgIconVspace(value)
+    return self:getU32(0x1C, value)
+end
+
+function MenuCommonParam:setWorldMapCursorSelectRadius(value)
+    return self:setF32(0x20, value)
+end
+function MenuCommonParam:getWorldMapCursorSelectRadius(value)
+    return self:getF32(0x20, value)
+end
+
+function MenuCommonParam:setUnknownInt_1(value)
+    return self:setU32(0x24, value)
+end
+function MenuCommonParam:getUnknownInt_1(value)
+    return self:getU32(0x24, value)
+end
+
+function MenuCommonParam:setDecalPosOffsetX(value)
+    return self:setU32(0x28, value)
+end
+function MenuCommonParam:getDecalPosOffsetX(value)
+    return self:getU32(0x28, value)
+end
+
+function MenuCommonParam:setDecalPosOffsetY(value)
+    return self:setU32(0x2C, value)
+end
+function MenuCommonParam:getDecalPosOffsetY(value)
+    return self:getU32(0x2C, value)
+end
+
+function MenuCommonParam:setTargetStateSearchDurationTime(value)
+    return self:setF32(0x30, value)
+end
+function MenuCommonParam:getTargetStateSearchDurationTime(value)
+    return self:getF32(0x30, value)
+end
+
+function MenuCommonParam:setTargetStateBattleDurationTime(value)
+    return self:setF32(0x34, value)
+end
+function MenuCommonParam:getTargetStateBattleDurationTime(value)
+    return self:getF32(0x34, value)
+end
+
+function MenuCommonParam:setWorldMapCursorSpeed(value)
+    return self:setF32(0x38, value)
+end
+function MenuCommonParam:getWorldMapCursorSpeed(value)
+    return self:getF32(0x38, value)
+end
+
+function MenuCommonParam:setWorldMapCursorFirstDistance(value)
+    return self:setF32(0x3C, value)
+end
+function MenuCommonParam:getWorldMapCursorFirstDistance(value)
+    return self:getF32(0x3C, value)
+end
+
+function MenuCommonParam:setWorldMapCursorFirstDelay(value)
+    return self:setF32(0x40, value)
+end
+function MenuCommonParam:getWorldMapCursorFirstDelay(value)
+    return self:getF32(0x40, value)
+end
+
+function MenuCommonParam:setWorldMapCursorWaitTime(value)
+    return self:setF32(0x44, value)
+end
+function MenuCommonParam:getWorldMapCursorWaitTime(value)
+    return self:getF32(0x44, value)
+end
+
+function MenuCommonParam:setWorldMapCursorSnapRadius(value)
+    return self:setF32(0x48, value)
+end
+function MenuCommonParam:getWorldMapCursorSnapRadius(value)
+    return self:getF32(0x48, value)
+end
+
+function MenuCommonParam:setWorldMapCursorSnapTime(value)
+    return self:setF32(0x4C, value)
+end
+function MenuCommonParam:getWorldMapCursorSnapTime(value)
+    return self:getF32(0x4C, value)
+end
+
+function MenuCommonParam:setItemGetLogAliveTime(value)
+    return self:setF32(0x50, value)
+end
+function MenuCommonParam:getItemGetLogAliveTime(value)
+    return self:getF32(0x50, value)
+end
+
+function MenuCommonParam:setPlayerMaxSaLimit(value)
+    return self:setU32(0x54, value)
+end
+function MenuCommonParam:getPlayerMaxSaLimit(value)
+    return self:getU32(0x54, value)
+end
+
+function MenuCommonParam:setWorldMap_IsChangeableLayerEventFlagId(value)
+    return self:setU32(0x58, value)
+end
+function MenuCommonParam:getWorldMap_IsChangeableLayerEventFlagId(value)
+    return self:getU32(0x58, value)
+end
+
+function MenuCommonParam:setWorldMap_TravelMargin(value)
+    return self:setF32(0x5C, value)
+end
+function MenuCommonParam:getWorldMap_TravelMargin(value)
+    return self:getF32(0x5C, value)
+end
+
+function MenuCommonParam:setSystemAnnounceScrollBufferTime(value)
+    return self:setF32(0x60, value)
+end
+function MenuCommonParam:getSystemAnnounceScrollBufferTime(value)
+    return self:getF32(0x60, value)
+end
+
+function MenuCommonParam:setSystemAnnounceScrollSpeed(value)
+    return self:setU32(0x64, value)
+end
+function MenuCommonParam:getSystemAnnounceScrollSpeed(value)
+    return self:getU32(0x64, value)
+end
+
+function MenuCommonParam:setSystemAnnounceNoScrollWaitTime(value)
+    return self:setF32(0x68, value)
+end
+function MenuCommonParam:getSystemAnnounceNoScrollWaitTime(value)
+    return self:getF32(0x68, value)
+end
+
+function MenuCommonParam:setSystemAnnounceScrollCount(value)
+    return self:setU8(0x6C, value)
+end
+function MenuCommonParam:getSystemAnnounceScrollCount(value)
+    return self:getU8(0x6C, value)
+end
+
+function MenuCommonParam:setUnknownByte_1(value)
+    return self:setU8(0x6D, value)
+end
+function MenuCommonParam:getUnknownByte_1(value)
+    return self:getU8(0x6D, value)
+end
+
+function MenuCommonParam:setUnknownByte_2(value)
+    return self:setU8(0x6E, value)
+end
+function MenuCommonParam:getUnknownByte_2(value)
+    return self:getU8(0x6E, value)
+end
+
+function MenuCommonParam:setUnknownByte_3(value)
+    return self:setU8(0x6F, value)
+end
+function MenuCommonParam:getUnknownByte_3(value)
+    return self:getU8(0x6F, value)
+end
+
+function MenuCommonParam:setCompassMemoDispDistance(value)
+    return self:setF32(0x70, value)
+end
+function MenuCommonParam:getCompassMemoDispDistance(value)
+    return self:getF32(0x70, value)
+end
+
+function MenuCommonParam:setCompassBonfireDispDistance(value)
+    return self:setF32(0x74, value)
+end
+function MenuCommonParam:getCompassBonfireDispDistance(value)
+    return self:getF32(0x74, value)
+end
+
+function MenuCommonParam:setMarkerGoalThreshold(value)
+    return self:setF32(0x78, value)
+end
+function MenuCommonParam:getMarkerGoalThreshold(value)
+    return self:getF32(0x78, value)
+end
+
+function MenuCommonParam:setSvSliderStep(value)
+    return self:setF32(0x7C, value)
+end
+function MenuCommonParam:getSvSliderStep(value)
+    return self:getF32(0x7C, value)
+end
+
+function MenuCommonParam:setPreOpeningMovie_WaitSec(value)
+    return self:setF32(0x80, value)
+end
+function MenuCommonParam:getPreOpeningMovie_WaitSec(value)
+    return self:getF32(0x80, value)
+end
+
+function MenuCommonParam:setKgIconScale(value)
+    return self:setF32(0x84, value)
+end
+function MenuCommonParam:getKgIconScale(value)
+    return self:getF32(0x84, value)
+end
+
+function MenuCommonParam:setKgIconScale_forTable(value)
+    return self:setF32(0x88, value)
+end
+function MenuCommonParam:getKgIconScale_forTable(value)
+    return self:getF32(0x88, value)
+end
+
+function MenuCommonParam:setKgIconVspace_forTable(value)
+    return self:setU32(0x8C, value)
+end
+function MenuCommonParam:getKgIconVspace_forTable(value)
+    return self:getU32(0x8C, value)
+end
+
+function MenuCommonParam:setKgIconScale_forConfig(value)
+    return self:setF32(0x90, value)
+end
+function MenuCommonParam:getKgIconScale_forConfig(value)
+    return self:getF32(0x90, value)
+end
+
+function MenuCommonParam:setKgIconVspace_forConfig(value)
+    return self:setU32(0x94, value)
+end
+function MenuCommonParam:getKgIconVspace_forConfig(value)
+    return self:getU32(0x94, value)
+end
+
+function MenuCommonParam:setWorldMap_SearchRadius(value)
+    return self:setF32(0x98, value)
+end
+function MenuCommonParam:getWorldMap_SearchRadius(value)
+    return self:getF32(0x98, value)
+end
+
+function MenuCommonParam:setTutorialDisplayTime(value)
+    return self:setF32(0x9C, value)
+end
+function MenuCommonParam:getTutorialDisplayTime(value)
+    return self:getF32(0x9C, value)
+end
+
+function MenuCommonParam:setCompassFriendHostInnerDistance(value)
+    return self:setF32(0xA0, value)
+end
+function MenuCommonParam:getCompassFriendHostInnerDistance(value)
+    return self:getF32(0xA0, value)
+end
+
+function MenuCommonParam:setCompassEnemyHostInnerDistance(value)
+    return self:setF32(0xA4, value)
+end
+function MenuCommonParam:getCompassEnemyHostInnerDistance(value)
+    return self:getF32(0xA4, value)
+end
+
+function MenuCommonParam:setCompassFriendGuestInnerDistance(value)
+    return self:setF32(0xA8, value)
+end
+function MenuCommonParam:getCompassFriendGuestInnerDistance(value)
+    return self:getF32(0xA8, value)
+end
+
+function MenuCommonParam:setCutsceneKeyGuideAliveTime(value)
+    return self:setF32(0xAC, value)
+end
+function MenuCommonParam:getCutsceneKeyGuideAliveTime(value)
+    return self:getF32(0xAC, value)
+end
+
+function MenuCommonParam:setAutoHideHpThresholdRatio(value)
+    return self:setF32(0xB0, value)
+end
+function MenuCommonParam:getAutoHideHpThresholdRatio(value)
+    return self:getF32(0xB0, value)
+end
+
+function MenuCommonParam:setAutoHideHpThresholdValue(value)
+    return self:setU32(0xB4, value)
+end
+function MenuCommonParam:getAutoHideHpThresholdValue(value)
+    return self:getU32(0xB4, value)
+end
+
+function MenuCommonParam:setAutoHideMpThresholdRatio(value)
+    return self:setF32(0xB8, value)
+end
+function MenuCommonParam:getAutoHideMpThresholdRatio(value)
+    return self:getF32(0xB8, value)
+end
+
+function MenuCommonParam:setAutoHideMpThresholdValue(value)
+    return self:setU32(0xBC, value)
+end
+function MenuCommonParam:getAutoHideMpThresholdValue(value)
+    return self:getU32(0xBC, value)
+end
+
+function MenuCommonParam:setAutoHideSpThresholdRatio(value)
+    return self:setF32(0xC0, value)
+end
+function MenuCommonParam:getAutoHideSpThresholdRatio(value)
+    return self:getF32(0xC0, value)
+end
+
+function MenuCommonParam:setAutoHideSpThresholdValue(value)
+    return self:setU32(0xC4, value)
+end
+function MenuCommonParam:getAutoHideSpThresholdValue(value)
+    return self:getU32(0xC4, value)
+end
+
+function MenuCommonParam:setWorldMapZoomAnimationTime(value)
+    return self:setF32(0xC8, value)
+end
+function MenuCommonParam:getWorldMapZoomAnimationTime(value)
+    return self:getF32(0xC8, value)
+end
+
+function MenuCommonParam:setWorldMapIconScaleMin(value)
+    return self:setF32(0xCC, value)
+end
+function MenuCommonParam:getWorldMapIconScaleMin(value)
+    return self:getF32(0xCC, value)
+end
+
+function MenuCommonParam:setWorldMap_TravelMargin_Point(value)
+    return self:setF32(0xD0, value)
+end
+function MenuCommonParam:getWorldMap_TravelMargin_Point(value)
+    return self:getF32(0xD0, value)
+end
+
+function MenuCommonParam:setEnemyTagSafeLeft(value)
+    return self:setU16(0xD4, value)
+end
+function MenuCommonParam:getEnemyTagSafeLeft(value)
+    return self:getU16(0xD4, value)
+end
+
+function MenuCommonParam:setEnemyTagSafeRight(value)
+    return self:setU16(0xD6, value)
+end
+function MenuCommonParam:getEnemyTagSafeRight(value)
+    return self:getU16(0xD6, value)
+end
+
+function MenuCommonParam:setEnemyTagSafeTop(value)
+    return self:setU16(0xD8, value)
+end
+function MenuCommonParam:getEnemyTagSafeTop(value)
+    return self:getU16(0xD8, value)
+end
+
+function MenuCommonParam:setEnemyTagSafeBottom(value)
+    return self:setU16(0xDA, value)
+end
+function MenuCommonParam:getEnemyTagSafeBottom(value)
+    return self:getU16(0xDA, value)
+end
+
+function MenuCommonParam:setPcHorseHpRecoverDispThreshold(value)
+    return self:setU32(0xDC, value)
+end
+function MenuCommonParam:getPcHorseHpRecoverDispThreshold(value)
+    return self:getU32(0xDC, value)
+end
+
+function MenuCommonParam:setUnknown_1(value)
+    return self:setF32(0xE0, value)
+end
+function MenuCommonParam:getUnknown_1(value)
+    return self:getF32(0xE0, value)
+end
+
+function MenuCommonParam:setUnknown_2(value)
+    return self:setF32(0xE4, value)
+end
+function MenuCommonParam:getUnknown_2(value)
+    return self:getF32(0xE4, value)
+end
+
+function MenuCommonParam:setUnknown_3(value)
+    return self:setF32(0xE8, value)
+end
+function MenuCommonParam:getUnknown_3(value)
+    return self:getF32(0xE8, value)
+end
+
+function MenuCommonParam:setUnknown_4(value)
+    return self:setF32(0xEC, value)
+end
+function MenuCommonParam:getUnknown_4(value)
+    return self:getF32(0xEC, value)
+end
+
+function MenuCommonParam:setUnknown_5(value)
+    return self:setF32(0xF0, value)
+end
+function MenuCommonParam:getUnknown_5(value)
+    return self:getF32(0xF0, value)
+end
+
+function MenuCommonParam:setUnknown_6(value)
+    return self:setF32(0xF4, value)
+end
+function MenuCommonParam:getUnknown_6(value)
+    return self:getF32(0xF4, value)
+end
+
+function MenuCommonParam:setUnknown_7(value)
+    return self:setF32(0xF8, value)
+end
+function MenuCommonParam:getUnknown_7(value)
+    return self:getF32(0xF8, value)
+end
+
+function MenuCommonParam:setUnknown_8(value)
+    return self:setF32(0xFC, value)
+end
+function MenuCommonParam:getUnknown_8(value)
+    return self:getF32(0xFC, value)
+end
+
+function MenuCommonParam:setUnknown_9(value)
+    return self:setF32(0x100, value)
+end
+function MenuCommonParam:getUnknown_9(value)
+    return self:getF32(0x100, value)
+end
+
+function MenuCommonParam:setUnknown_10(value)
+    return self:setU32(0x104, value)
+end
+function MenuCommonParam:getUnknown_10(value)
+    return self:getU32(0x104, value)
+end
+
+function MenuCommonParam:setUnknown_11(value)
+    return self:setF32(0x108, value)
+end
+function MenuCommonParam:getUnknown_11(value)
+    return self:getF32(0x108, value)
+end
+
+function MenuCommonParam:setUnknown_12(value)
+    return self:setF32(0x10C, value)
+end
+function MenuCommonParam:getUnknown_12(value)
+    return self:getF32(0x10C, value)
+end
+
+function MenuCommonParam:setUnknown_13(value)
+    return self:setF32(0x110, value)
+end
+function MenuCommonParam:getUnknown_13(value)
+    return self:getF32(0x110, value)
+end
+[disable]
+MenuCommonParam = nil

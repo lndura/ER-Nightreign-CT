@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337273224</ID>
+  <Description>"CamOverrideChrIns"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>8 Bytes</VariableType>
+  <Address>+B8</Address>
+  <x-ce2fs-child-order>
+    <id id="1337274363"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,7 @@
+{$lua}
+if syntaxcheck then return end
+local paramName = "AtkParam_Npc"
+[enable]
+paramUtils:toggleParam(paramName, false)
+[disable]
+paramUtils:toggleParam(paramName, true)

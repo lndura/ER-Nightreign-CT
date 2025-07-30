@@ -1,0 +1,9 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+local CAMERA_DISTANCE = 7.5
+local Camera = LockCamParam:new(true, "CamDist")
+Camera:setCamDistTarget(CAMERA_DISTANCE)
+Camera:patch()
+[disable]
+paramPatch:restore("CamDist")

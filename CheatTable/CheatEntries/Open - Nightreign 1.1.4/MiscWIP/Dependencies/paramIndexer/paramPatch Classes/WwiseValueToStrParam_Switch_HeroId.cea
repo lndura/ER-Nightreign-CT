@@ -1,0 +1,25 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+WwiseValueToStrParam_Switch_HeroId = {}
+function WwiseValueToStrParam_Switch_HeroId:new(id_or_all, patchName)
+    return paramPatcher(self, "WwiseValueToStrParam_Switch_HeroId", 0x25, id_or_all, patchName)
+end
+
+
+
+function WwiseValueToStrParam_Switch_HeroId:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function WwiseValueToStrParam_Switch_HeroId:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+--fixstr ParamStr[32]
+[disable]
+WwiseValueToStrParam_Switch_HeroId = nil

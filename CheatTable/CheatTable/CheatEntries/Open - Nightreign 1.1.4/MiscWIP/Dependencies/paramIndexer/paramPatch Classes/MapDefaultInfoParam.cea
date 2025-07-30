@@ -1,0 +1,205 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MapDefaultInfoParam = {}
+function MapDefaultInfoParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MapDefaultInfoParam", 0x41, id_or_all, patchName)
+end
+
+
+
+function MapDefaultInfoParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function MapDefaultInfoParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function MapDefaultInfoParam:setEnableFastTravelEventFlagId(value)
+    return self:setU32(0x04, value)
+end
+function MapDefaultInfoParam:getEnableFastTravelEventFlagId(value)
+    return self:getU32(0x04, value)
+end
+
+function MapDefaultInfoParam:setWeatherLotTimeOffsetIngameSeconds(value)
+    return self:setU32(0x08, value)
+end
+function MapDefaultInfoParam:getWeatherLotTimeOffsetIngameSeconds(value)
+    return self:getU32(0x08, value)
+end
+
+function MapDefaultInfoParam:setWeatherCreateAssetLimitId(value)
+    return self:setU8(0x0C, value)
+end
+function MapDefaultInfoParam:getWeatherCreateAssetLimitId(value)
+    return self:getU8(0x0C, value)
+end
+
+function MapDefaultInfoParam:setMapAiSightType(value)
+    return self:setU8(0x0D, value)
+end
+function MapDefaultInfoParam:getMapAiSightType(value)
+    return self:getU8(0x0D, value)
+end
+
+function MapDefaultInfoParam:setSoundIndoorType(value)
+    return self:setU8(0x0E, value)
+end
+function MapDefaultInfoParam:getSoundIndoorType(value)
+    return self:getU8(0x0E, value)
+end
+
+function MapDefaultInfoParam:setReverbDefaultType(value)
+    return self:setU8(0x0F, value)
+end
+function MapDefaultInfoParam:getReverbDefaultType(value)
+    return self:getU8(0x0F, value)
+end
+
+function MapDefaultInfoParam:setBgmPlaceInfo(value)
+    return self:setU16(0x10, value)
+end
+function MapDefaultInfoParam:getBgmPlaceInfo(value)
+    return self:getU16(0x10, value)
+end
+
+function MapDefaultInfoParam:setEnvPlaceInfo(value)
+    return self:setU16(0x12, value)
+end
+function MapDefaultInfoParam:getEnvPlaceInfo(value)
+    return self:getU16(0x12, value)
+end
+
+function MapDefaultInfoParam:setMapAdditionalSoundBankId(value)
+    return self:setU32(0x14, value)
+end
+function MapDefaultInfoParam:getMapAdditionalSoundBankId(value)
+    return self:getU32(0x14, value)
+end
+
+function MapDefaultInfoParam:setMapHeightForSound(value)
+    return self:setU16(0x18, value)
+end
+function MapDefaultInfoParam:getMapHeightForSound(value)
+    return self:getU16(0x18, value)
+end
+
+function MapDefaultInfoParam:setIsEnableBlendTimezoneEnvmap(value)
+    return self:setU8(0x1A, value)
+end
+function MapDefaultInfoParam:getIsEnableBlendTimezoneEnvmap(value)
+    return self:getU8(0x1A, value)
+end
+
+function MapDefaultInfoParam:setOverrideGIResolution_XSS(value)
+    return self:setU8(0x1B, value)
+end
+function MapDefaultInfoParam:getOverrideGIResolution_XSS(value)
+    return self:getU8(0x1B, value)
+end
+
+function MapDefaultInfoParam:setMapLoHiChangeBorderDist_XZ(value)
+    return self:setF32(0x1C, value)
+end
+function MapDefaultInfoParam:getMapLoHiChangeBorderDist_XZ(value)
+    return self:getF32(0x1C, value)
+end
+
+function MapDefaultInfoParam:setMapLoHiChangeBorderDist_Y(value)
+    return self:setF32(0x20, value)
+end
+function MapDefaultInfoParam:getMapLoHiChangeBorderDist_Y(value)
+    return self:getF32(0x20, value)
+end
+
+function MapDefaultInfoParam:setMapLoHiChangePlayDist(value)
+    return self:setF32(0x24, value)
+end
+function MapDefaultInfoParam:getMapLoHiChangePlayDist(value)
+    return self:getF32(0x24, value)
+end
+
+function MapDefaultInfoParam:setMapAutoDrawGroupBackFacePixelNum(value)
+    return self:setU32(0x28, value)
+end
+function MapDefaultInfoParam:getMapAutoDrawGroupBackFacePixelNum(value)
+    return self:getU32(0x28, value)
+end
+
+function MapDefaultInfoParam:setPlayerLigntScale(value)
+    return self:setF32(0x2C, value)
+end
+function MapDefaultInfoParam:getPlayerLigntScale(value)
+    return self:getF32(0x2C, value)
+end
+
+function MapDefaultInfoParam:setIsEnableTimezonnePlayerLigntScale(value)
+    return self:setU8(0x30, value)
+end
+function MapDefaultInfoParam:getIsEnableTimezonnePlayerLigntScale(value)
+    return self:getU8(0x30, value)
+end
+
+function MapDefaultInfoParam:setIsDisableAutoCliffWind(value)
+    return self:setU8(0x31, value)
+end
+function MapDefaultInfoParam:getIsDisableAutoCliffWind(value)
+    return self:getU8(0x31, value)
+end
+
+function MapDefaultInfoParam:setOpenChrActivateThreshold(value)
+    return self:setU16(0x32, value)
+end
+function MapDefaultInfoParam:getOpenChrActivateThreshold(value)
+    return self:getU16(0x32, value)
+end
+
+function MapDefaultInfoParam:setMapMimicryEstablishmentParamId(value)
+    return self:setU32(0x34, value)
+end
+function MapDefaultInfoParam:getMapMimicryEstablishmentParamId(value)
+    return self:getU32(0x34, value)
+end
+
+function MapDefaultInfoParam:setOverrideGIResolution_XSX(value)
+    return self:setU8(0x38, value)
+end
+function MapDefaultInfoParam:getOverrideGIResolution_XSX(value)
+    return self:getU8(0x38, value)
+end
+
+function MapDefaultInfoParam:setUnknown_1(value)
+    return self:setU32(0x39, value)
+end
+function MapDefaultInfoParam:getUnknown_1(value)
+    return self:getU32(0x39, value)
+end
+
+function MapDefaultInfoParam:setUnknown_2(value)
+    return self:setU8(0x3D, value)
+end
+function MapDefaultInfoParam:getUnknown_2(value)
+    return self:getU8(0x3D, value)
+end
+
+function MapDefaultInfoParam:setUnknown_3(value)
+    return self:setU8(0x3E, value)
+end
+function MapDefaultInfoParam:getUnknown_3(value)
+    return self:getU8(0x3E, value)
+end
+
+function MapDefaultInfoParam:setUnknown_4(value)
+    return self:setU8(0x3F, value)
+end
+function MapDefaultInfoParam:getUnknown_4(value)
+    return self:getU8(0x3F, value)
+end
+[disable]
+MapDefaultInfoParam = nil

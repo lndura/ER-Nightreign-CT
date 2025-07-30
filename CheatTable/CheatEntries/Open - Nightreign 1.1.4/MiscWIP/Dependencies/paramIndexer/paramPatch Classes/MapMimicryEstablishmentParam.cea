@@ -1,0 +1,97 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MapMimicryEstablishmentParam = {}
+function MapMimicryEstablishmentParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MapMimicryEstablishmentParam", 0x41, id_or_all, patchName)
+end
+
+
+
+function MapMimicryEstablishmentParam:setMimicryEstablishment0(value)
+    return self:setF32(0x00, value)
+end
+function MapMimicryEstablishmentParam:getMimicryEstablishment0(value)
+    return self:getF32(0x00, value)
+end
+
+function MapMimicryEstablishmentParam:setMimicryEstablishment1(value)
+    return self:setF32(0x04, value)
+end
+function MapMimicryEstablishmentParam:getMimicryEstablishment1(value)
+    return self:getF32(0x04, value)
+end
+
+function MapMimicryEstablishmentParam:setMimicryEstablishment2(value)
+    return self:setF32(0x08, value)
+end
+function MapMimicryEstablishmentParam:getMimicryEstablishment2(value)
+    return self:getF32(0x08, value)
+end
+
+function MapMimicryEstablishmentParam:setMimicryBeginSfxId0(value)
+    return self:setU32(0x0C, value)
+end
+function MapMimicryEstablishmentParam:getMimicryBeginSfxId0(value)
+    return self:getU32(0x0C, value)
+end
+
+function MapMimicryEstablishmentParam:setMimicrySfxId0(value)
+    return self:setU32(0x10, value)
+end
+function MapMimicryEstablishmentParam:getMimicrySfxId0(value)
+    return self:getU32(0x10, value)
+end
+
+function MapMimicryEstablishmentParam:setMimicryEndSfxId0(value)
+    return self:setU32(0x14, value)
+end
+function MapMimicryEstablishmentParam:getMimicryEndSfxId0(value)
+    return self:getU32(0x14, value)
+end
+
+function MapMimicryEstablishmentParam:setMimicryBeginSfxId1(value)
+    return self:setU32(0x18, value)
+end
+function MapMimicryEstablishmentParam:getMimicryBeginSfxId1(value)
+    return self:getU32(0x18, value)
+end
+
+function MapMimicryEstablishmentParam:setMimicrySfxId1(value)
+    return self:setU32(0x1C, value)
+end
+function MapMimicryEstablishmentParam:getMimicrySfxId1(value)
+    return self:getU32(0x1C, value)
+end
+
+function MapMimicryEstablishmentParam:setMimicryEndSfxId1(value)
+    return self:setU32(0x20, value)
+end
+function MapMimicryEstablishmentParam:getMimicryEndSfxId1(value)
+    return self:getU32(0x20, value)
+end
+
+function MapMimicryEstablishmentParam:setMimicryBeginSfxId2(value)
+    return self:setU32(0x24, value)
+end
+function MapMimicryEstablishmentParam:getMimicryBeginSfxId2(value)
+    return self:getU32(0x24, value)
+end
+
+function MapMimicryEstablishmentParam:setMimicrySfxId2(value)
+    return self:setU32(0x28, value)
+end
+function MapMimicryEstablishmentParam:getMimicrySfxId2(value)
+    return self:getU32(0x28, value)
+end
+
+function MapMimicryEstablishmentParam:setMimicryEndSfxId2(value)
+    return self:setU32(0x2C, value)
+end
+function MapMimicryEstablishmentParam:getMimicryEndSfxId2(value)
+    return self:getU32(0x2C, value)
+end
+
+--dummy8 pad1[16]
+[disable]
+MapMimicryEstablishmentParam = nil

@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>1337273048</ID>
+  <Description>"HavokPosition"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+38</Address>
+  <x-ce2fs-child-order>
+    <id id="1337273049"/>
+    <id id="1337273050"/>
+    <id id="1337273051"/>
+    <id id="1337273052"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

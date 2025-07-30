@@ -1,0 +1,100 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+BuddyStoneParam = {}
+function BuddyStoneParam:new(id_or_all, patchName)
+    return paramPatcher(self, "BuddyStoneParam", 0x41, id_or_all, patchName)
+end
+
+
+
+function BuddyStoneParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function BuddyStoneParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function BuddyStoneParam:setTalkChrEntityId(value)
+    return self:setU32(0x04, value)
+end
+function BuddyStoneParam:getTalkChrEntityId(value)
+    return self:getU32(0x04, value)
+end
+
+function BuddyStoneParam:setEliminateTargetEntityId(value)
+    return self:setU32(0x08, value)
+end
+function BuddyStoneParam:getEliminateTargetEntityId(value)
+    return self:getU32(0x08, value)
+end
+
+function BuddyStoneParam:setSummonedEventFlagId(value)
+    return self:setU32(0x0C, value)
+end
+function BuddyStoneParam:getSummonedEventFlagId(value)
+    return self:getU32(0x0C, value)
+end
+
+function BuddyStoneParam:setIsSpecial(value)
+    return self:setBinary(0x10, 0, value, 1)
+end
+
+function BuddyStoneParam:getIsSpecial()
+    return self:getBinary(0x10, 0, value, 1)
+end
+
+--dummy8 pad1:7
+
+--dummy8 pad2[3]
+
+function BuddyStoneParam:setBuddyId(value)
+    return self:setU32(0x14, value)
+end
+function BuddyStoneParam:getBuddyId(value)
+    return self:getU32(0x14, value)
+end
+
+function BuddyStoneParam:setDopingSpEffectId(value)
+    return self:setU32(0x18, value)
+end
+function BuddyStoneParam:getDopingSpEffectId(value)
+    return self:getU32(0x18, value)
+end
+
+function BuddyStoneParam:setActivateRange(value)
+    return self:setU16(0x1C, value)
+end
+function BuddyStoneParam:getActivateRange(value)
+    return self:getU16(0x1C, value)
+end
+
+function BuddyStoneParam:setOverwriteReturnRange(value)
+    return self:setU16(0x1E, value)
+end
+function BuddyStoneParam:getOverwriteReturnRange(value)
+    return self:getU16(0x1E, value)
+end
+
+function BuddyStoneParam:setOverwriteActivateRegionEntityId(value)
+    return self:setU32(0x20, value)
+end
+function BuddyStoneParam:getOverwriteActivateRegionEntityId(value)
+    return self:getU32(0x20, value)
+end
+
+function BuddyStoneParam:setWarnRegionEntityId(value)
+    return self:setU32(0x24, value)
+end
+function BuddyStoneParam:getWarnRegionEntityId(value)
+    return self:getU32(0x24, value)
+end
+
+--dummy8 pad3[24]
+[disable]
+BuddyStoneParam = nil

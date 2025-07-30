@@ -1,0 +1,229 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+
+paramPatch = {
+    cached = {},
+    backup = {},
+}
+
+function paramPatch:debugTest()
+    printf("Debuging...\nAddress:: 0x%016X\nSize:\n0x%02X", self.address or 0, self.size or 0)
+end
+
+function paramPatch:setBinary(bytePos, bitPos, value, bitSize)
+    bitSize = bitSize or 1
+    local address = self.address + bytePos
+    local byte = readByte(address)
+    local mask = ((1 << bitSize) - 1) << bitPos
+    local cleared = byte & (~mask)
+    local shiftedValue = (value << bitPos) & mask
+    local result = cleared | shiftedValue
+    writeByte(address, result)
+end
+
+function paramPatch:getBinary(bytePos, bitPos, bitSize)
+    bitSize = bitSize or 1
+    local address = self.address + bytePos
+    local mask = (1 << bitSize) - 1
+    local value = (byte >> bitPos) & mask
+    return value
+end
+
+function paramPatch:setF32(bytePos, value)
+     local address = self.address + bytePos
+     local variable = writeF32(address, value)
+     return variable
+end
+
+function paramPatch:getF32(bytePos)
+     local address = self.address + bytePos
+     local variable = readF32(address)
+     return variable
+end
+
+for i = 1,4,1 do
+     local o = math.floor(8 * 2 ^ (i - 1))
+     local getStr, setStr = "getU" .. o, "setU" .. o
+     local readFn, writeFn = "readU" .. o, "writeU" .. o
+     local getFun, setFun = _G[readFn], _G[writeFn]
+
+     if type(getFun) ~= 'function' then
+         pfError("%s not found.", readFn)
+     end
+
+     if type(setFun) ~= 'function' then
+         pfError("%s not found.", writeFn)
+     end
+
+     paramPatch[getStr] = function(self, bytePos)
+         local address = self.address + bytePos
+         local variable = getFun(address)
+         return variable
+     end
+
+     paramPatch[setStr] = function(self, bytePos, value)
+         local address = self.address + bytePos
+         local variable = setFun(address, value)
+         return variable
+     end
+end
+
+function paramPatch:restore(...)
+    local patches = {...}
+    local total = #patches
+    for i = 1,total,1 do
+        local patchName = patches[i]
+        local patch = self.backup[patchName]
+        if patch then
+            for address, bytes in pairs(patch) do
+                writeBytes(address, bytes)
+            end
+        end
+        self.backup[patchName] = nil
+    end
+end
+
+paramPatchAll = {}
+--[[
+paramPatchAll.thread = allocateMemory(512, getAddress(process))
+paramPatchAll.paramTable = paramPatchAll.thread + 0x41
+paramPatchAll.patcher = paramPatchAll.paramTable + 0x8
+--]]
+function paramPatchAll:debugTest()
+    printf("Debuging...\nparamTable: 0x%016X\npatchInfo:\n%s", self.paramAddr or 0, self.patchInfo or 'nil')
+end
+
+function paramPatchAll:setU8(bytePos, value)
+    self.patchInfo = string.format("%s\nmov byte ptr [r12+%X],#%d", self.patchInfo, bytePos, value)
+end
+
+function paramPatchAll:setU16(bytePos, value)
+    self.patchInfo = string.format("%s\nmov word ptr [r12+%X],#%d", self.patchInfo, bytePos, value)
+end
+
+function paramPatchAll:setU32(bytePos, value)
+    self.patchInfo = string.format("%s\nmov dword ptr [r12+%X],#%d", self.patchInfo, bytePos, value)
+end
+
+function paramPatchAll:setF32(bytePos, value)
+    self.patchInfo = string.format("%s\nmov dword ptr [r12+%X],(float)%f", self.patchInfo, bytePos, value)
+end
+
+function paramPatchAll:setU64(bytePos, value)
+    self.patchInfo = string.format("%s\nmov qword ptr [r12+%X],#%d", self.patchInfo, bytePos, value)
+end
+
+function paramPatchAll:patch()
+    self.patchInfo = string.format("paramPatch:%s\njmp patchRowDone", self.patchInfo)
+    if readPointer(self.paramAddr) then
+        writePointer("paramTable", self.paramAddr)
+        autoAssemble(self.patchInfo)
+        return createRemoteThread("paramPatchAll")
+    end
+    return nil
+end
+
+function paramPatcher(parent, paramName, rowSize, id_or_all, patchName)
+    local obj = {}
+    local patcher = false
+    local patcherType = type(id_or_all)
+
+    if patcherType == 'number' then
+        local paramTable = paramUtils:getParamTable(paramName)
+        local address = paramTable[id_or_all]
+        if not address then
+            pfError("no address found for %d / 0x%X in '%s'", id_or_all, id_or_all, paramName)
+        end
+
+        local cached = paramPatch.cached
+        if not cached[address] then
+            cached[address] = readBytes(address, rowSize, true)
+        end
+
+        local backup = paramPatch.backup
+        if not backup[patchName] then
+            local patchNameIsStr = patchName and type(patchName) == 'string'
+            if patchNameIsStr and patchName:gsub(" ","") ~= "" then
+                backup[patchName] = {}
+            else
+                pfError("paramPatch: invalid patchName. Input must be a string that isn't whitespace.")
+            end
+        end
+
+        if not backup[patchName][address] then
+            backup[patchName][address] = cached[address]
+        end
+
+        obj.size = rowSize
+        obj.address = address
+        patcher = paramPatch
+
+    elseif patcherType == 'boolean' and patcherType then
+        local backup = paramPatch.backup
+        if not backup[patchName] then
+            local patchNameIsStr = patchName and type(patchName) == 'string'
+            if patchNameIsStr and patchName:gsub(" ","") ~= "" then
+                backup[patchName] = {}
+            else
+                pfError("paramPatch: invalid patchName. Input must be a string that isn't whitespace.")
+            end
+        end
+
+        local paramTable = paramUtils:getParamTableAddr(paramName)
+        if not paramTable then
+            pfError("paramTable not found for '%s'", paramName or 'nil')
+        end
+
+        local paramCount = readU16(paramTable + 0x0A)
+        local rowStart = paramTable + 0x40
+        local rowStop = rowStart + 0x18 * (paramCount - 1)
+
+        local cached = paramPatch.cached
+        for paramRow = rowStart, rowStop, 0x18 do
+            local offset = readQword(paramRow + 0x8)
+            local address = paramTable + offset
+            if not cached[address] then
+                cached[address] = readBytes(address, rowSize, true)
+            end
+            backup[patchName][address] = cached[address]
+        end
+
+        obj.paramAddr = paramTable
+        obj.patchInfo = ""
+        patcher = paramPatchAll
+    else
+        pfError("invalid patch type: %s : %s", patcherType, tostring(id_or_all) )
+    end
+
+    if not patcher then
+        pfError("param patcher methods not found.")
+    end
+
+    setmetatable(obj, {
+        __index = function(tbl, key)
+            return parent[key] or patcher[key]
+        end
+    })
+    return obj
+end
+
+local addr_list = getAddressList()
+local classes = addr_list.getMemoryRecordByDescription("paramPatch Classes")
+for i = 0, (classes.Count - 1) do
+    classes[i].Active = true
+end
+[disable]
+local addr_list = getAddressList()
+local classes = addr_list.getMemoryRecordByDescription("paramPatch Classes")
+for i = 0, (classes.Count - 1) do
+    classes[i].Active = false
+end
+--deAlloc(paramPatchAll.thread)
+for address, bytes in pairs(paramPatch.cached) do
+    if readByte(address) then
+        writeBytes(address, bytes)
+    end
+end
+paramPatchAll = nil
+paramPatch = nil

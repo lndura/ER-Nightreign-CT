@@ -1,0 +1,16 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+local credits = {
+    ["vswarte, aka ChainFailure"] = "ItemGib AOB, teaching me Ghidra things and exposing Elden Ring structures in eldenring-rs.",
+    ["InuNorii & The Grand Archives"] = "All currency givers, as example giving Souls and development choices from TGA have contributed to this project.",
+    ["Dasaav"] = "Much of the Lua programming from TGA's dependencies that Dasaav has made have contributed to this project, such as Event Flags and parsing the PE.",
+    ["Temwill and Sfix"] = "Singleton finder AOB and everything related to it. This has made getting symbols incredibly efficient and easy.",
+}
+
+for name, credit in pairs(credits) do
+   local txt = credit:gsub("%. ", ".\n") .. "\n"
+   printf("%s:\n%s", name, txt)
+end
+disableMemrec(memrec)
+[disable]

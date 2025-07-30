@@ -1,0 +1,540 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+BonfireWarpParam = {}
+function BonfireWarpParam:new(id_or_all, patchName)
+    return paramPatcher(self, "BonfireWarpParam", 0xEE, id_or_all, patchName)
+end
+
+
+
+function BonfireWarpParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function BonfireWarpParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function BonfireWarpParam:setEventflagId(value)
+    return self:setU32(0x04, value)
+end
+function BonfireWarpParam:getEventflagId(value)
+    return self:getU32(0x04, value)
+end
+
+function BonfireWarpParam:setBonfireEntityId(value)
+    return self:setU32(0x08, value)
+end
+function BonfireWarpParam:getBonfireEntityId(value)
+    return self:getU32(0x08, value)
+end
+
+--dummy8 pad4[2]
+
+function BonfireWarpParam:setBonfireSubCategorySortId(value)
+    return self:setU16(0x0E, value)
+end
+function BonfireWarpParam:getBonfireSubCategorySortId(value)
+    return self:getU16(0x0E, value)
+end
+
+function BonfireWarpParam:setForbiddenIconId(value)
+    return self:setU16(0x10, value)
+end
+function BonfireWarpParam:getForbiddenIconId(value)
+    return self:getU16(0x10, value)
+end
+
+function BonfireWarpParam:setDispMinZoomStep(value)
+    return self:setU8(0x12, value)
+end
+function BonfireWarpParam:getDispMinZoomStep(value)
+    return self:getU8(0x12, value)
+end
+
+function BonfireWarpParam:setSelectMinZoomStep(value)
+    return self:setU8(0x13, value)
+end
+function BonfireWarpParam:getSelectMinZoomStep(value)
+    return self:getU8(0x13, value)
+end
+
+function BonfireWarpParam:setBonfireSubCategoryId(value)
+    return self:setU32(0x14, value)
+end
+function BonfireWarpParam:getBonfireSubCategoryId(value)
+    return self:getU32(0x14, value)
+end
+
+function BonfireWarpParam:setClearedEventFlagId(value)
+    return self:setU32(0x18, value)
+end
+function BonfireWarpParam:getClearedEventFlagId(value)
+    return self:getU32(0x18, value)
+end
+
+function BonfireWarpParam:setIconId(value)
+    return self:setU16(0x1C, value)
+end
+function BonfireWarpParam:getIconId(value)
+    return self:getU16(0x1C, value)
+end
+
+function BonfireWarpParam:setDispMask00(value)
+    return self:setBinary(0x1E, 0, value, 1)
+end
+
+function BonfireWarpParam:getDispMask00()
+    return self:getBinary(0x1E, 0, value, 1)
+end
+
+function BonfireWarpParam:setDispMask01(value)
+    return self:setBinary(0x1E, 1, value, 1)
+end
+
+function BonfireWarpParam:getDispMask01()
+    return self:getBinary(0x1E, 1, value, 1)
+end
+
+--dummy8 pad1_old:6
+
+function BonfireWarpParam:setDispMask02(value)
+    return self:setBinary(0x1F, 0, value, 1)
+end
+
+function BonfireWarpParam:getDispMask02()
+    return self:getBinary(0x1F, 0, value, 1)
+end
+
+--dummy8 pad1:5
+
+--dummy8 pad2[1]
+
+function BonfireWarpParam:setAreaNo(value)
+    return self:setU8(0x20, value)
+end
+function BonfireWarpParam:getAreaNo(value)
+    return self:getU8(0x20, value)
+end
+
+function BonfireWarpParam:setGridXNo(value)
+    return self:setU8(0x21, value)
+end
+function BonfireWarpParam:getGridXNo(value)
+    return self:getU8(0x21, value)
+end
+
+function BonfireWarpParam:setGridZNo(value)
+    return self:setU8(0x22, value)
+end
+function BonfireWarpParam:getGridZNo(value)
+    return self:getU8(0x22, value)
+end
+
+--dummy8 pad3[1]
+
+function BonfireWarpParam:setPosX(value)
+    return self:setF32(0x24, value)
+end
+function BonfireWarpParam:getPosX(value)
+    return self:getF32(0x24, value)
+end
+
+function BonfireWarpParam:setPosY(value)
+    return self:setF32(0x28, value)
+end
+function BonfireWarpParam:getPosY(value)
+    return self:getF32(0x28, value)
+end
+
+function BonfireWarpParam:setPosZ(value)
+    return self:setF32(0x2C, value)
+end
+function BonfireWarpParam:getPosZ(value)
+    return self:getF32(0x2C, value)
+end
+
+function BonfireWarpParam:setTextId1(value)
+    return self:setU32(0x30, value)
+end
+function BonfireWarpParam:getTextId1(value)
+    return self:getU32(0x30, value)
+end
+
+function BonfireWarpParam:setTextEnableFlagId1(value)
+    return self:setU32(0x34, value)
+end
+function BonfireWarpParam:getTextEnableFlagId1(value)
+    return self:getU32(0x34, value)
+end
+
+function BonfireWarpParam:setTextDisableFlagId1(value)
+    return self:setU32(0x38, value)
+end
+function BonfireWarpParam:getTextDisableFlagId1(value)
+    return self:getU32(0x38, value)
+end
+
+function BonfireWarpParam:setTextId2(value)
+    return self:setU32(0x3C, value)
+end
+function BonfireWarpParam:getTextId2(value)
+    return self:getU32(0x3C, value)
+end
+
+function BonfireWarpParam:setTextEnableFlagId2(value)
+    return self:setU32(0x40, value)
+end
+function BonfireWarpParam:getTextEnableFlagId2(value)
+    return self:getU32(0x40, value)
+end
+
+function BonfireWarpParam:setTextDisableFlagId2(value)
+    return self:setU32(0x44, value)
+end
+function BonfireWarpParam:getTextDisableFlagId2(value)
+    return self:getU32(0x44, value)
+end
+
+function BonfireWarpParam:setTextId3(value)
+    return self:setU32(0x48, value)
+end
+function BonfireWarpParam:getTextId3(value)
+    return self:getU32(0x48, value)
+end
+
+function BonfireWarpParam:setTextEnableFlagId3(value)
+    return self:setU32(0x4C, value)
+end
+function BonfireWarpParam:getTextEnableFlagId3(value)
+    return self:getU32(0x4C, value)
+end
+
+function BonfireWarpParam:setTextDisableFlagId3(value)
+    return self:setU32(0x50, value)
+end
+function BonfireWarpParam:getTextDisableFlagId3(value)
+    return self:getU32(0x50, value)
+end
+
+function BonfireWarpParam:setTextId4(value)
+    return self:setU32(0x54, value)
+end
+function BonfireWarpParam:getTextId4(value)
+    return self:getU32(0x54, value)
+end
+
+function BonfireWarpParam:setTextEnableFlagId4(value)
+    return self:setU32(0x58, value)
+end
+function BonfireWarpParam:getTextEnableFlagId4(value)
+    return self:getU32(0x58, value)
+end
+
+function BonfireWarpParam:setTextDisableFlagId4(value)
+    return self:setU32(0x5C, value)
+end
+function BonfireWarpParam:getTextDisableFlagId4(value)
+    return self:getU32(0x5C, value)
+end
+
+function BonfireWarpParam:setTextId5(value)
+    return self:setU32(0x60, value)
+end
+function BonfireWarpParam:getTextId5(value)
+    return self:getU32(0x60, value)
+end
+
+function BonfireWarpParam:setTextEnableFlagId5(value)
+    return self:setU32(0x64, value)
+end
+function BonfireWarpParam:getTextEnableFlagId5(value)
+    return self:getU32(0x64, value)
+end
+
+function BonfireWarpParam:setTextDisableFlagId5(value)
+    return self:setU32(0x68, value)
+end
+function BonfireWarpParam:getTextDisableFlagId5(value)
+    return self:getU32(0x68, value)
+end
+
+function BonfireWarpParam:setTextId6(value)
+    return self:setU32(0x6C, value)
+end
+function BonfireWarpParam:getTextId6(value)
+    return self:getU32(0x6C, value)
+end
+
+function BonfireWarpParam:setTextEnableFlagId6(value)
+    return self:setU32(0x70, value)
+end
+function BonfireWarpParam:getTextEnableFlagId6(value)
+    return self:getU32(0x70, value)
+end
+
+function BonfireWarpParam:setTextDisableFlagId6(value)
+    return self:setU32(0x74, value)
+end
+function BonfireWarpParam:getTextDisableFlagId6(value)
+    return self:getU32(0x74, value)
+end
+
+function BonfireWarpParam:setTextId7(value)
+    return self:setU32(0x78, value)
+end
+function BonfireWarpParam:getTextId7(value)
+    return self:getU32(0x78, value)
+end
+
+function BonfireWarpParam:setTextEnableFlagId7(value)
+    return self:setU32(0x7C, value)
+end
+function BonfireWarpParam:getTextEnableFlagId7(value)
+    return self:getU32(0x7C, value)
+end
+
+function BonfireWarpParam:setTextDisableFlagId7(value)
+    return self:setU32(0x80, value)
+end
+function BonfireWarpParam:getTextDisableFlagId7(value)
+    return self:getU32(0x80, value)
+end
+
+function BonfireWarpParam:setTextId8(value)
+    return self:setU32(0x84, value)
+end
+function BonfireWarpParam:getTextId8(value)
+    return self:getU32(0x84, value)
+end
+
+function BonfireWarpParam:setTextEnableFlagId8(value)
+    return self:setU32(0x88, value)
+end
+function BonfireWarpParam:getTextEnableFlagId8(value)
+    return self:getU32(0x88, value)
+end
+
+function BonfireWarpParam:setTextDisableFlagId8(value)
+    return self:setU32(0x8C, value)
+end
+function BonfireWarpParam:getTextDisableFlagId8(value)
+    return self:getU32(0x8C, value)
+end
+
+function BonfireWarpParam:setTextType1(value)
+    return self:setU8(0x90, value)
+end
+function BonfireWarpParam:getTextType1(value)
+    return self:getU8(0x90, value)
+end
+
+function BonfireWarpParam:setTextType2(value)
+    return self:setU8(0x91, value)
+end
+function BonfireWarpParam:getTextType2(value)
+    return self:getU8(0x91, value)
+end
+
+function BonfireWarpParam:setTextType3(value)
+    return self:setU8(0x92, value)
+end
+function BonfireWarpParam:getTextType3(value)
+    return self:getU8(0x92, value)
+end
+
+function BonfireWarpParam:setTextType4(value)
+    return self:setU8(0x93, value)
+end
+function BonfireWarpParam:getTextType4(value)
+    return self:getU8(0x93, value)
+end
+
+function BonfireWarpParam:setTextType5(value)
+    return self:setU8(0x94, value)
+end
+function BonfireWarpParam:getTextType5(value)
+    return self:getU8(0x94, value)
+end
+
+function BonfireWarpParam:setTextType6(value)
+    return self:setU8(0x95, value)
+end
+function BonfireWarpParam:getTextType6(value)
+    return self:getU8(0x95, value)
+end
+
+function BonfireWarpParam:setTextType7(value)
+    return self:setU8(0x96, value)
+end
+function BonfireWarpParam:getTextType7(value)
+    return self:getU8(0x96, value)
+end
+
+function BonfireWarpParam:setTextType8(value)
+    return self:setU8(0x97, value)
+end
+function BonfireWarpParam:getTextType8(value)
+    return self:getU8(0x97, value)
+end
+
+function BonfireWarpParam:setNoIgnitionSfxDmypolyId_0(value)
+    return self:setU32(0x98, value)
+end
+function BonfireWarpParam:getNoIgnitionSfxDmypolyId_0(value)
+    return self:getU32(0x98, value)
+end
+
+function BonfireWarpParam:setNoIgnitionSfxId_0(value)
+    return self:setU32(0x9C, value)
+end
+function BonfireWarpParam:getNoIgnitionSfxId_0(value)
+    return self:getU32(0x9C, value)
+end
+
+function BonfireWarpParam:setNoIgnitionSfxDmypolyId_1(value)
+    return self:setU32(0xA0, value)
+end
+function BonfireWarpParam:getNoIgnitionSfxDmypolyId_1(value)
+    return self:getU32(0xA0, value)
+end
+
+function BonfireWarpParam:setNoIgnitionSfxId_1(value)
+    return self:setU32(0xA4, value)
+end
+function BonfireWarpParam:getNoIgnitionSfxId_1(value)
+    return self:getU32(0xA4, value)
+end
+
+function BonfireWarpParam:setTextEnableFlag2Id1(value)
+    return self:setU32(0xA8, value)
+end
+function BonfireWarpParam:getTextEnableFlag2Id1(value)
+    return self:getU32(0xA8, value)
+end
+
+function BonfireWarpParam:setTextEnableFlag2Id2(value)
+    return self:setU32(0xAC, value)
+end
+function BonfireWarpParam:getTextEnableFlag2Id2(value)
+    return self:getU32(0xAC, value)
+end
+
+function BonfireWarpParam:setTextEnableFlag2Id3(value)
+    return self:setU32(0xB0, value)
+end
+function BonfireWarpParam:getTextEnableFlag2Id3(value)
+    return self:getU32(0xB0, value)
+end
+
+function BonfireWarpParam:setTextEnableFlag2Id4(value)
+    return self:setU32(0xB4, value)
+end
+function BonfireWarpParam:getTextEnableFlag2Id4(value)
+    return self:getU32(0xB4, value)
+end
+
+function BonfireWarpParam:setTextEnableFlag2Id5(value)
+    return self:setU32(0xB8, value)
+end
+function BonfireWarpParam:getTextEnableFlag2Id5(value)
+    return self:getU32(0xB8, value)
+end
+
+function BonfireWarpParam:setTextEnableFlag2Id6(value)
+    return self:setU32(0xBC, value)
+end
+function BonfireWarpParam:getTextEnableFlag2Id6(value)
+    return self:getU32(0xBC, value)
+end
+
+function BonfireWarpParam:setTextEnableFlag2Id7(value)
+    return self:setU32(0xC0, value)
+end
+function BonfireWarpParam:getTextEnableFlag2Id7(value)
+    return self:getU32(0xC0, value)
+end
+
+function BonfireWarpParam:setTextEnableFlag2Id8(value)
+    return self:setU32(0xC4, value)
+end
+function BonfireWarpParam:getTextEnableFlag2Id8(value)
+    return self:getU32(0xC4, value)
+end
+
+function BonfireWarpParam:setTextDisableFlag2Id1(value)
+    return self:setU32(0xC8, value)
+end
+function BonfireWarpParam:getTextDisableFlag2Id1(value)
+    return self:getU32(0xC8, value)
+end
+
+function BonfireWarpParam:setTextDisableFlag2Id2(value)
+    return self:setU32(0xCC, value)
+end
+function BonfireWarpParam:getTextDisableFlag2Id2(value)
+    return self:getU32(0xCC, value)
+end
+
+function BonfireWarpParam:setTextDisableFlag2Id3(value)
+    return self:setU32(0xD0, value)
+end
+function BonfireWarpParam:getTextDisableFlag2Id3(value)
+    return self:getU32(0xD0, value)
+end
+
+function BonfireWarpParam:setTextDisableFlag2Id4(value)
+    return self:setU32(0xD4, value)
+end
+function BonfireWarpParam:getTextDisableFlag2Id4(value)
+    return self:getU32(0xD4, value)
+end
+
+function BonfireWarpParam:setTextDisableFlag2Id5(value)
+    return self:setU32(0xD8, value)
+end
+function BonfireWarpParam:getTextDisableFlag2Id5(value)
+    return self:getU32(0xD8, value)
+end
+
+function BonfireWarpParam:setTextDisableFlag2Id6(value)
+    return self:setU32(0xDC, value)
+end
+function BonfireWarpParam:getTextDisableFlag2Id6(value)
+    return self:getU32(0xDC, value)
+end
+
+function BonfireWarpParam:setTextDisableFlag2Id7(value)
+    return self:setU32(0xE0, value)
+end
+function BonfireWarpParam:getTextDisableFlag2Id7(value)
+    return self:getU32(0xE0, value)
+end
+
+function BonfireWarpParam:setTextDisableFlag2Id8(value)
+    return self:setU32(0xE4, value)
+end
+function BonfireWarpParam:getTextDisableFlag2Id8(value)
+    return self:getU32(0xE4, value)
+end
+
+function BonfireWarpParam:setAltIconId(value)
+    return self:setU16(0xE8, value)
+end
+function BonfireWarpParam:getAltIconId(value)
+    return self:getU16(0xE8, value)
+end
+
+function BonfireWarpParam:setAltForbiddenIconId(value)
+    return self:setU16(0xEA, value)
+end
+function BonfireWarpParam:getAltForbiddenIconId(value)
+    return self:getU16(0xEA, value)
+end
+[disable]
+BonfireWarpParam = nil

@@ -1,0 +1,160 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+LoadBalancerDrawDistScaleParam_xsx = {}
+function LoadBalancerDrawDistScaleParam_xsx:new(id_or_all, patchName)
+    return paramPatcher(self, "LoadBalancerDrawDistScaleParam_xsx", 0x81, id_or_all, patchName)
+end
+
+
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv00(value)
+    return self:setF32(0x00, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv00(value)
+    return self:getF32(0x00, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv01(value)
+    return self:setF32(0x04, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv01(value)
+    return self:getF32(0x04, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv02(value)
+    return self:setF32(0x08, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv02(value)
+    return self:getF32(0x08, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv03(value)
+    return self:setF32(0x0C, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv03(value)
+    return self:getF32(0x0C, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv04(value)
+    return self:setF32(0x10, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv04(value)
+    return self:getF32(0x10, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv05(value)
+    return self:setF32(0x14, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv05(value)
+    return self:getF32(0x14, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv06(value)
+    return self:setF32(0x18, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv06(value)
+    return self:getF32(0x18, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv07(value)
+    return self:setF32(0x1C, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv07(value)
+    return self:getF32(0x1C, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv08(value)
+    return self:setF32(0x20, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv08(value)
+    return self:getF32(0x20, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv09(value)
+    return self:setF32(0x24, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv09(value)
+    return self:getF32(0x24, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv10(value)
+    return self:setF32(0x28, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv10(value)
+    return self:getF32(0x28, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv11(value)
+    return self:setF32(0x2C, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv11(value)
+    return self:getF32(0x2C, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv12(value)
+    return self:setF32(0x30, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv12(value)
+    return self:getF32(0x30, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv13(value)
+    return self:setF32(0x34, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv13(value)
+    return self:getF32(0x34, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv14(value)
+    return self:setF32(0x38, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv14(value)
+    return self:getF32(0x38, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv15(value)
+    return self:setF32(0x3C, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv15(value)
+    return self:getF32(0x3C, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv16(value)
+    return self:setF32(0x40, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv16(value)
+    return self:getF32(0x40, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv17(value)
+    return self:setF32(0x44, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv17(value)
+    return self:getF32(0x44, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv18(value)
+    return self:setF32(0x48, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv18(value)
+    return self:getF32(0x48, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv19(value)
+    return self:setF32(0x4C, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv19(value)
+    return self:getF32(0x4C, value)
+end
+
+function LoadBalancerDrawDistScaleParam_xsx:setLv20(value)
+    return self:setF32(0x50, value)
+end
+function LoadBalancerDrawDistScaleParam_xsx:getLv20(value)
+    return self:getF32(0x50, value)
+end
+
+--dummy8 reserve[44]
+[disable]
+LoadBalancerDrawDistScaleParam_xsx = nil

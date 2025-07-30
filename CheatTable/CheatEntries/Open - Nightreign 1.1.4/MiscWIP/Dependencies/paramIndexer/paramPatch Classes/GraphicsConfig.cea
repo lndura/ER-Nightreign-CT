@@ -1,0 +1,111 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+GraphicsConfig = {}
+function GraphicsConfig:new(id_or_all, patchName)
+    return paramPatcher(self, "GraphicsConfig", 0x11, id_or_all, patchName)
+end
+
+
+
+function GraphicsConfig:setM_textureFilterQuality(value)
+    return self:setU8(0x00, value)
+end
+function GraphicsConfig:getM_textureFilterQuality(value)
+    return self:getU8(0x00, value)
+end
+
+function GraphicsConfig:setM_aaQuality(value)
+    return self:setU8(0x01, value)
+end
+function GraphicsConfig:getM_aaQuality(value)
+    return self:getU8(0x01, value)
+end
+
+function GraphicsConfig:setM_ssaoQuality(value)
+    return self:setU8(0x02, value)
+end
+function GraphicsConfig:getM_ssaoQuality(value)
+    return self:getU8(0x02, value)
+end
+
+function GraphicsConfig:setM_dofQuality(value)
+    return self:setU8(0x03, value)
+end
+function GraphicsConfig:getM_dofQuality(value)
+    return self:getU8(0x03, value)
+end
+
+function GraphicsConfig:setM_motionBlurQuality(value)
+    return self:setU8(0x04, value)
+end
+function GraphicsConfig:getM_motionBlurQuality(value)
+    return self:getU8(0x04, value)
+end
+
+function GraphicsConfig:setM_shadowQuality(value)
+    return self:setU8(0x05, value)
+end
+function GraphicsConfig:getM_shadowQuality(value)
+    return self:getU8(0x05, value)
+end
+
+function GraphicsConfig:setM_lightingQuality(value)
+    return self:setU8(0x06, value)
+end
+function GraphicsConfig:getM_lightingQuality(value)
+    return self:getU8(0x06, value)
+end
+
+function GraphicsConfig:setM_effectQuality(value)
+    return self:setU8(0x07, value)
+end
+function GraphicsConfig:getM_effectQuality(value)
+    return self:getU8(0x07, value)
+end
+
+function GraphicsConfig:setM_decalQuality(value)
+    return self:setU8(0x08, value)
+end
+function GraphicsConfig:getM_decalQuality(value)
+    return self:getU8(0x08, value)
+end
+
+function GraphicsConfig:setM_reflectionQuality(value)
+    return self:setU8(0x09, value)
+end
+function GraphicsConfig:getM_reflectionQuality(value)
+    return self:getU8(0x09, value)
+end
+
+function GraphicsConfig:setM_waterQuality(value)
+    return self:setU8(0x0A, value)
+end
+function GraphicsConfig:getM_waterQuality(value)
+    return self:getU8(0x0A, value)
+end
+
+function GraphicsConfig:setM_shaderQuality(value)
+    return self:setU8(0x0B, value)
+end
+function GraphicsConfig:getM_shaderQuality(value)
+    return self:getU8(0x0B, value)
+end
+
+function GraphicsConfig:setM_volumetricEffectQuality(value)
+    return self:setU8(0x0C, value)
+end
+function GraphicsConfig:getM_volumetricEffectQuality(value)
+    return self:getU8(0x0C, value)
+end
+
+function GraphicsConfig:setM_RayTracingQuality(value)
+    return self:setU8(0x0D, value)
+end
+function GraphicsConfig:getM_RayTracingQuality(value)
+    return self:getU8(0x0D, value)
+end
+
+--dummy8 m_dummy[2]
+[disable]
+GraphicsConfig = nil

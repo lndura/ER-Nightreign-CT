@@ -1,0 +1,536 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+ItemLotParam_enemy = {}
+function ItemLotParam_enemy:new(id_or_all, patchName)
+    return paramPatcher(self, "ItemLotParam_enemy", 0xD9, id_or_all, patchName)
+end
+
+
+
+function ItemLotParam_enemy:setLotItemId01(value)
+    return self:setU32(0x00, value)
+end
+function ItemLotParam_enemy:getLotItemId01(value)
+    return self:getU32(0x00, value)
+end
+
+function ItemLotParam_enemy:setLotItemId02(value)
+    return self:setU32(0x04, value)
+end
+function ItemLotParam_enemy:getLotItemId02(value)
+    return self:getU32(0x04, value)
+end
+
+function ItemLotParam_enemy:setLotItemId03(value)
+    return self:setU32(0x08, value)
+end
+function ItemLotParam_enemy:getLotItemId03(value)
+    return self:getU32(0x08, value)
+end
+
+function ItemLotParam_enemy:setLotItemId04(value)
+    return self:setU32(0x0C, value)
+end
+function ItemLotParam_enemy:getLotItemId04(value)
+    return self:getU32(0x0C, value)
+end
+
+function ItemLotParam_enemy:setLotItemId05(value)
+    return self:setU32(0x10, value)
+end
+function ItemLotParam_enemy:getLotItemId05(value)
+    return self:getU32(0x10, value)
+end
+
+function ItemLotParam_enemy:setLotItemId06(value)
+    return self:setU32(0x14, value)
+end
+function ItemLotParam_enemy:getLotItemId06(value)
+    return self:getU32(0x14, value)
+end
+
+function ItemLotParam_enemy:setLotItemId07(value)
+    return self:setU32(0x18, value)
+end
+function ItemLotParam_enemy:getLotItemId07(value)
+    return self:getU32(0x18, value)
+end
+
+function ItemLotParam_enemy:setLotItemId08(value)
+    return self:setU32(0x1C, value)
+end
+function ItemLotParam_enemy:getLotItemId08(value)
+    return self:getU32(0x1C, value)
+end
+
+function ItemLotParam_enemy:setLotItemCategory01(value)
+    return self:setU32(0x20, value)
+end
+function ItemLotParam_enemy:getLotItemCategory01(value)
+    return self:getU32(0x20, value)
+end
+
+function ItemLotParam_enemy:setLotItemCategory02(value)
+    return self:setU32(0x24, value)
+end
+function ItemLotParam_enemy:getLotItemCategory02(value)
+    return self:getU32(0x24, value)
+end
+
+function ItemLotParam_enemy:setLotItemCategory03(value)
+    return self:setU32(0x28, value)
+end
+function ItemLotParam_enemy:getLotItemCategory03(value)
+    return self:getU32(0x28, value)
+end
+
+function ItemLotParam_enemy:setLotItemCategory04(value)
+    return self:setU32(0x2C, value)
+end
+function ItemLotParam_enemy:getLotItemCategory04(value)
+    return self:getU32(0x2C, value)
+end
+
+function ItemLotParam_enemy:setLotItemCategory05(value)
+    return self:setU32(0x30, value)
+end
+function ItemLotParam_enemy:getLotItemCategory05(value)
+    return self:getU32(0x30, value)
+end
+
+function ItemLotParam_enemy:setLotItemCategory06(value)
+    return self:setU32(0x34, value)
+end
+function ItemLotParam_enemy:getLotItemCategory06(value)
+    return self:getU32(0x34, value)
+end
+
+function ItemLotParam_enemy:setLotItemCategory07(value)
+    return self:setU32(0x38, value)
+end
+function ItemLotParam_enemy:getLotItemCategory07(value)
+    return self:getU32(0x38, value)
+end
+
+function ItemLotParam_enemy:setLotItemCategory08(value)
+    return self:setU32(0x3C, value)
+end
+function ItemLotParam_enemy:getLotItemCategory08(value)
+    return self:getU32(0x3C, value)
+end
+
+function ItemLotParam_enemy:setLotItemBasePoint01(value)
+    return self:setU16(0x40, value)
+end
+function ItemLotParam_enemy:getLotItemBasePoint01(value)
+    return self:getU16(0x40, value)
+end
+
+function ItemLotParam_enemy:setLotItemBasePoint02(value)
+    return self:setU16(0x42, value)
+end
+function ItemLotParam_enemy:getLotItemBasePoint02(value)
+    return self:getU16(0x42, value)
+end
+
+function ItemLotParam_enemy:setLotItemBasePoint03(value)
+    return self:setU16(0x44, value)
+end
+function ItemLotParam_enemy:getLotItemBasePoint03(value)
+    return self:getU16(0x44, value)
+end
+
+function ItemLotParam_enemy:setLotItemBasePoint04(value)
+    return self:setU16(0x46, value)
+end
+function ItemLotParam_enemy:getLotItemBasePoint04(value)
+    return self:getU16(0x46, value)
+end
+
+function ItemLotParam_enemy:setLotItemBasePoint05(value)
+    return self:setU16(0x48, value)
+end
+function ItemLotParam_enemy:getLotItemBasePoint05(value)
+    return self:getU16(0x48, value)
+end
+
+function ItemLotParam_enemy:setLotItemBasePoint06(value)
+    return self:setU16(0x4A, value)
+end
+function ItemLotParam_enemy:getLotItemBasePoint06(value)
+    return self:getU16(0x4A, value)
+end
+
+function ItemLotParam_enemy:setLotItemBasePoint07(value)
+    return self:setU16(0x4C, value)
+end
+function ItemLotParam_enemy:getLotItemBasePoint07(value)
+    return self:getU16(0x4C, value)
+end
+
+function ItemLotParam_enemy:setLotItemBasePoint08(value)
+    return self:setU16(0x4E, value)
+end
+function ItemLotParam_enemy:getLotItemBasePoint08(value)
+    return self:getU16(0x4E, value)
+end
+
+function ItemLotParam_enemy:setCumulateLotPoint01(value)
+    return self:setU16(0x50, value)
+end
+function ItemLotParam_enemy:getCumulateLotPoint01(value)
+    return self:getU16(0x50, value)
+end
+
+function ItemLotParam_enemy:setCumulateLotPoint02(value)
+    return self:setU16(0x52, value)
+end
+function ItemLotParam_enemy:getCumulateLotPoint02(value)
+    return self:getU16(0x52, value)
+end
+
+function ItemLotParam_enemy:setCumulateLotPoint03(value)
+    return self:setU16(0x54, value)
+end
+function ItemLotParam_enemy:getCumulateLotPoint03(value)
+    return self:getU16(0x54, value)
+end
+
+function ItemLotParam_enemy:setCumulateLotPoint04(value)
+    return self:setU16(0x56, value)
+end
+function ItemLotParam_enemy:getCumulateLotPoint04(value)
+    return self:getU16(0x56, value)
+end
+
+function ItemLotParam_enemy:setCumulateLotPoint05(value)
+    return self:setU16(0x58, value)
+end
+function ItemLotParam_enemy:getCumulateLotPoint05(value)
+    return self:getU16(0x58, value)
+end
+
+function ItemLotParam_enemy:setCumulateLotPoint06(value)
+    return self:setU16(0x5A, value)
+end
+function ItemLotParam_enemy:getCumulateLotPoint06(value)
+    return self:getU16(0x5A, value)
+end
+
+function ItemLotParam_enemy:setCumulateLotPoint07(value)
+    return self:setU16(0x5C, value)
+end
+function ItemLotParam_enemy:getCumulateLotPoint07(value)
+    return self:getU16(0x5C, value)
+end
+
+function ItemLotParam_enemy:setCumulateLotPoint08(value)
+    return self:setU16(0x5E, value)
+end
+function ItemLotParam_enemy:getCumulateLotPoint08(value)
+    return self:getU16(0x5E, value)
+end
+
+function ItemLotParam_enemy:setGetItemFlagId01(value)
+    return self:setU32(0x60, value)
+end
+function ItemLotParam_enemy:getGetItemFlagId01(value)
+    return self:getU32(0x60, value)
+end
+
+function ItemLotParam_enemy:setGetItemFlagId02(value)
+    return self:setU32(0x64, value)
+end
+function ItemLotParam_enemy:getGetItemFlagId02(value)
+    return self:getU32(0x64, value)
+end
+
+function ItemLotParam_enemy:setGetItemFlagId03(value)
+    return self:setU32(0x68, value)
+end
+function ItemLotParam_enemy:getGetItemFlagId03(value)
+    return self:getU32(0x68, value)
+end
+
+function ItemLotParam_enemy:setGetItemFlagId04(value)
+    return self:setU32(0x6C, value)
+end
+function ItemLotParam_enemy:getGetItemFlagId04(value)
+    return self:getU32(0x6C, value)
+end
+
+function ItemLotParam_enemy:setGetItemFlagId05(value)
+    return self:setU32(0x70, value)
+end
+function ItemLotParam_enemy:getGetItemFlagId05(value)
+    return self:getU32(0x70, value)
+end
+
+function ItemLotParam_enemy:setGetItemFlagId06(value)
+    return self:setU32(0x74, value)
+end
+function ItemLotParam_enemy:getGetItemFlagId06(value)
+    return self:getU32(0x74, value)
+end
+
+function ItemLotParam_enemy:setGetItemFlagId07(value)
+    return self:setU32(0x78, value)
+end
+function ItemLotParam_enemy:getGetItemFlagId07(value)
+    return self:getU32(0x78, value)
+end
+
+function ItemLotParam_enemy:setGetItemFlagId08(value)
+    return self:setU32(0x7C, value)
+end
+function ItemLotParam_enemy:getGetItemFlagId08(value)
+    return self:getU32(0x7C, value)
+end
+
+function ItemLotParam_enemy:setGetItemFlagId(value)
+    return self:setU32(0x80, value)
+end
+function ItemLotParam_enemy:getGetItemFlagId(value)
+    return self:getU32(0x80, value)
+end
+
+function ItemLotParam_enemy:setCumulateNumFlagId(value)
+    return self:setU32(0x84, value)
+end
+function ItemLotParam_enemy:getCumulateNumFlagId(value)
+    return self:getU32(0x84, value)
+end
+
+function ItemLotParam_enemy:setCumulateNumMax(value)
+    return self:setU8(0x88, value)
+end
+function ItemLotParam_enemy:getCumulateNumMax(value)
+    return self:getU8(0x88, value)
+end
+
+function ItemLotParam_enemy:setLotItem_Rarity(value)
+    return self:setU8(0x89, value)
+end
+function ItemLotParam_enemy:getLotItem_Rarity(value)
+    return self:getU8(0x89, value)
+end
+
+function ItemLotParam_enemy:setLotItemNum01(value)
+    return self:setU8(0x8A, value)
+end
+function ItemLotParam_enemy:getLotItemNum01(value)
+    return self:getU8(0x8A, value)
+end
+
+function ItemLotParam_enemy:setLotItemNum02(value)
+    return self:setU8(0x8B, value)
+end
+function ItemLotParam_enemy:getLotItemNum02(value)
+    return self:getU8(0x8B, value)
+end
+
+function ItemLotParam_enemy:setLotItemNum03(value)
+    return self:setU8(0x8C, value)
+end
+function ItemLotParam_enemy:getLotItemNum03(value)
+    return self:getU8(0x8C, value)
+end
+
+function ItemLotParam_enemy:setLotItemNum04(value)
+    return self:setU8(0x8D, value)
+end
+function ItemLotParam_enemy:getLotItemNum04(value)
+    return self:getU8(0x8D, value)
+end
+
+function ItemLotParam_enemy:setLotItemNum05(value)
+    return self:setU8(0x8E, value)
+end
+function ItemLotParam_enemy:getLotItemNum05(value)
+    return self:getU8(0x8E, value)
+end
+
+function ItemLotParam_enemy:setLotItemNum06(value)
+    return self:setU8(0x8F, value)
+end
+function ItemLotParam_enemy:getLotItemNum06(value)
+    return self:getU8(0x8F, value)
+end
+
+function ItemLotParam_enemy:setLotItemNum07(value)
+    return self:setU8(0x90, value)
+end
+function ItemLotParam_enemy:getLotItemNum07(value)
+    return self:getU8(0x90, value)
+end
+
+function ItemLotParam_enemy:setLotItemNum08(value)
+    return self:setU8(0x91, value)
+end
+function ItemLotParam_enemy:getLotItemNum08(value)
+    return self:getU8(0x91, value)
+end
+
+function ItemLotParam_enemy:setEnableLuck01(value)
+    return self:setBinary(0x92, 0, value, 1)
+end
+
+function ItemLotParam_enemy:getEnableLuck01()
+    return self:getBinary(0x92, 0, value, 1)
+end
+
+function ItemLotParam_enemy:setEnableLuck02(value)
+    return self:setBinary(0x92, 1, value, 1)
+end
+
+function ItemLotParam_enemy:getEnableLuck02()
+    return self:getBinary(0x92, 1, value, 1)
+end
+
+function ItemLotParam_enemy:setEnableLuck03(value)
+    return self:setBinary(0x92, 2, value, 1)
+end
+
+function ItemLotParam_enemy:getEnableLuck03()
+    return self:getBinary(0x92, 2, value, 1)
+end
+
+function ItemLotParam_enemy:setEnableLuck04(value)
+    return self:setBinary(0x92, 3, value, 1)
+end
+
+function ItemLotParam_enemy:getEnableLuck04()
+    return self:getBinary(0x92, 3, value, 1)
+end
+
+function ItemLotParam_enemy:setEnableLuck05(value)
+    return self:setBinary(0x92, 4, value, 1)
+end
+
+function ItemLotParam_enemy:getEnableLuck05()
+    return self:getBinary(0x92, 4, value, 1)
+end
+
+function ItemLotParam_enemy:setEnableLuck06(value)
+    return self:setBinary(0x92, 5, value, 1)
+end
+
+function ItemLotParam_enemy:getEnableLuck06()
+    return self:getBinary(0x92, 5, value, 1)
+end
+
+function ItemLotParam_enemy:setEnableLuck07(value)
+    return self:setBinary(0x92, 6, value, 1)
+end
+
+function ItemLotParam_enemy:getEnableLuck07()
+    return self:getBinary(0x92, 6, value, 1)
+end
+
+function ItemLotParam_enemy:setEnableLuck08(value)
+    return self:setBinary(0x92, 7, value, 1)
+end
+
+function ItemLotParam_enemy:getEnableLuck08()
+    return self:getBinary(0x92, 7, value, 1)
+end
+
+function ItemLotParam_enemy:setCumulateReset01(value)
+    return self:setBinary(0x93, 0, value, 1)
+end
+
+function ItemLotParam_enemy:getCumulateReset01()
+    return self:getBinary(0x93, 0, value, 1)
+end
+
+function ItemLotParam_enemy:setCumulateReset02(value)
+    return self:setBinary(0x93, 1, value, 1)
+end
+
+function ItemLotParam_enemy:getCumulateReset02()
+    return self:getBinary(0x93, 1, value, 1)
+end
+
+function ItemLotParam_enemy:setCumulateReset03(value)
+    return self:setBinary(0x93, 2, value, 1)
+end
+
+function ItemLotParam_enemy:getCumulateReset03()
+    return self:getBinary(0x93, 2, value, 1)
+end
+
+function ItemLotParam_enemy:setCumulateReset04(value)
+    return self:setBinary(0x93, 3, value, 1)
+end
+
+function ItemLotParam_enemy:getCumulateReset04()
+    return self:getBinary(0x93, 3, value, 1)
+end
+
+function ItemLotParam_enemy:setCumulateReset05(value)
+    return self:setBinary(0x93, 4, value, 1)
+end
+
+function ItemLotParam_enemy:getCumulateReset05()
+    return self:getBinary(0x93, 4, value, 1)
+end
+
+function ItemLotParam_enemy:setCumulateReset06(value)
+    return self:setBinary(0x93, 5, value, 1)
+end
+
+function ItemLotParam_enemy:getCumulateReset06()
+    return self:getBinary(0x93, 5, value, 1)
+end
+
+function ItemLotParam_enemy:setCumulateReset07(value)
+    return self:setBinary(0x93, 6, value, 1)
+end
+
+function ItemLotParam_enemy:getCumulateReset07()
+    return self:getBinary(0x93, 6, value, 1)
+end
+
+function ItemLotParam_enemy:setCumulateReset08(value)
+    return self:setBinary(0x93, 7, value, 1)
+end
+
+function ItemLotParam_enemy:getCumulateReset08()
+    return self:getBinary(0x93, 7, value, 1)
+end
+
+function ItemLotParam_enemy:setGameClearOffset(value)
+    return self:setU8(0x94, value)
+end
+function ItemLotParam_enemy:getGameClearOffset(value)
+    return self:getU8(0x94, value)
+end
+
+function ItemLotParam_enemy:setCanExecByFriendlyGhost(value)
+    return self:setBinary(0x95, 0, value, 1)
+end
+
+function ItemLotParam_enemy:getCanExecByFriendlyGhost()
+    return self:getBinary(0x95, 0, value, 1)
+end
+
+function ItemLotParam_enemy:setCanExecByHostileGhost(value)
+    return self:setBinary(0x95, 1, value, 1)
+end
+
+function ItemLotParam_enemy:getCanExecByHostileGhost()
+    return self:getBinary(0x95, 1, value, 1)
+end
+
+function ItemLotParam_enemy:setPAD1(value)
+    return self:setBinary(0x95, 2, value, 6)
+end
+
+function ItemLotParam_enemy:getPAD1()
+    return self:getBinary(0x95, 2, value, 6)
+end
+
+--dummy8 endPadding[66]
+[disable]
+ItemLotParam_enemy = nil

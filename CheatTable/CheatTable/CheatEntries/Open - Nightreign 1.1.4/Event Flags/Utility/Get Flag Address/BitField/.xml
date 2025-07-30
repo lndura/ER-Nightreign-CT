@@ -1,0 +1,19 @@
+<CheatEntry>
+  <ID>360</ID>
+  <Description>"BitField"</Description>
+  <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>8 Bytes</VariableType>
+  <Address>7FF3F95B29DE</Address>
+  <x-ce2fs-child-order>
+    <id id="361"/>
+    <id id="370"/>
+    <id id="379"/>
+    <id id="388"/>
+    <id id="397"/>
+    <id id="406"/>
+    <id id="415"/>
+    <id id="424"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

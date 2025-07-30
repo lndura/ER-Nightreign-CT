@@ -1,0 +1,31 @@
+{  By InuNorii
+}
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+local soul_addr = AOBScanModuleUnique(process,"?? 8b d9 ?? 8d 04 17") - 0xD
+local murk_addr = AOBScanModuleUnique(process,"?? 8b 81 d0 00 00 00 ?? 8b d1 b9")
+local sigil_addr = AOBScanModuleUnique(process,"?? 8b 41 5c ?? 8b d1")
+
+function addCurrency(value, target)
+    local addr = {
+        [0] = soul_addr,
+        [1] = murk_addr,
+        [2] = sigil_addr,
+        soul = soul_addr,
+        murk = murk_addr,
+        sigil = sigil_addr,
+    }
+
+    local fn_call = addr[target or 0]
+
+    if value then
+        local GameDataMan = readPointer("GameDataMan")
+        local PlayerGameData = readPointer(GameDataMan + 8)
+        return executeCodeEx(0, 100, fn_call, PlayerGameData, value)
+    end
+    return false
+end
+
+[DISABLE]
+addCurrency = nil

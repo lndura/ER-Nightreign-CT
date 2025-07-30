@@ -1,0 +1,67 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+CoolTimeParam = {}
+function CoolTimeParam:new(id_or_all, patchName)
+    return paramPatcher(self, "CoolTimeParam", 0x24, id_or_all, patchName)
+end
+
+
+
+function CoolTimeParam:setLimitationTime_0(value)
+    return self:setF32(0x00, value)
+end
+function CoolTimeParam:getLimitationTime_0(value)
+    return self:getF32(0x00, value)
+end
+
+function CoolTimeParam:setObserveTime_0(value)
+    return self:setF32(0x04, value)
+end
+function CoolTimeParam:getObserveTime_0(value)
+    return self:getF32(0x04, value)
+end
+
+function CoolTimeParam:setLimitationTime_1(value)
+    return self:setF32(0x08, value)
+end
+function CoolTimeParam:getLimitationTime_1(value)
+    return self:getF32(0x08, value)
+end
+
+function CoolTimeParam:setObserveTime_1(value)
+    return self:setF32(0x0C, value)
+end
+function CoolTimeParam:getObserveTime_1(value)
+    return self:getF32(0x0C, value)
+end
+
+function CoolTimeParam:setLimitationTime_2(value)
+    return self:setF32(0x10, value)
+end
+function CoolTimeParam:getLimitationTime_2(value)
+    return self:getF32(0x10, value)
+end
+
+function CoolTimeParam:setObserveTime_2(value)
+    return self:setF32(0x14, value)
+end
+function CoolTimeParam:getObserveTime_2(value)
+    return self:getF32(0x14, value)
+end
+
+function CoolTimeParam:setLimitationTime_3(value)
+    return self:setF32(0x18, value)
+end
+function CoolTimeParam:getLimitationTime_3(value)
+    return self:getF32(0x18, value)
+end
+
+function CoolTimeParam:setObserveTime_3(value)
+    return self:setF32(0x1C, value)
+end
+function CoolTimeParam:getObserveTime_3(value)
+    return self:getF32(0x1C, value)
+end
+[disable]
+CoolTimeParam = nil

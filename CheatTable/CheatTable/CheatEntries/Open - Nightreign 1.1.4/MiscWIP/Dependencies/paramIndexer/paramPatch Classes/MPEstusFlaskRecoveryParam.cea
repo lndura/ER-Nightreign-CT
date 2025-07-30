@@ -1,0 +1,153 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MPEstusFlaskRecoveryParam = {}
+function MPEstusFlaskRecoveryParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MPEstusFlaskRecoveryParam", 0x21, id_or_all, patchName)
+end
+
+
+
+function MPEstusFlaskRecoveryParam:setHost(value)
+    return self:setU8(0x00, value)
+end
+function MPEstusFlaskRecoveryParam:getHost(value)
+    return self:getU8(0x00, value)
+end
+
+function MPEstusFlaskRecoveryParam:setInvadeOrb_None(value)
+    return self:setU8(0x01, value)
+end
+function MPEstusFlaskRecoveryParam:getInvadeOrb_None(value)
+    return self:getU8(0x01, value)
+end
+
+function MPEstusFlaskRecoveryParam:setInvadeOrb_Umbasa(value)
+    return self:setU8(0x02, value)
+end
+function MPEstusFlaskRecoveryParam:getInvadeOrb_Umbasa(value)
+    return self:getU8(0x02, value)
+end
+
+function MPEstusFlaskRecoveryParam:setInvadeOrb_Berserker(value)
+    return self:setU8(0x03, value)
+end
+function MPEstusFlaskRecoveryParam:getInvadeOrb_Berserker(value)
+    return self:getU8(0x03, value)
+end
+
+function MPEstusFlaskRecoveryParam:setInvadeOrb_Sinners(value)
+    return self:setU8(0x04, value)
+end
+function MPEstusFlaskRecoveryParam:getInvadeOrb_Sinners(value)
+    return self:getU8(0x04, value)
+end
+
+function MPEstusFlaskRecoveryParam:setInvadeSign_None(value)
+    return self:setU8(0x05, value)
+end
+function MPEstusFlaskRecoveryParam:getInvadeSign_None(value)
+    return self:getU8(0x05, value)
+end
+
+function MPEstusFlaskRecoveryParam:setInvadeSign_Umbasa(value)
+    return self:setU8(0x06, value)
+end
+function MPEstusFlaskRecoveryParam:getInvadeSign_Umbasa(value)
+    return self:getU8(0x06, value)
+end
+
+function MPEstusFlaskRecoveryParam:setInvadeSign_Berserker(value)
+    return self:setU8(0x07, value)
+end
+function MPEstusFlaskRecoveryParam:getInvadeSign_Berserker(value)
+    return self:getU8(0x07, value)
+end
+
+function MPEstusFlaskRecoveryParam:setInvadeSign_Sinners(value)
+    return self:setU8(0x08, value)
+end
+function MPEstusFlaskRecoveryParam:getInvadeSign_Sinners(value)
+    return self:getU8(0x08, value)
+end
+
+function MPEstusFlaskRecoveryParam:setInvadeRing_Sinners(value)
+    return self:setU8(0x09, value)
+end
+function MPEstusFlaskRecoveryParam:getInvadeRing_Sinners(value)
+    return self:getU8(0x09, value)
+end
+
+function MPEstusFlaskRecoveryParam:setInvadeRing_Rosalia(value)
+    return self:setU8(0x0A, value)
+end
+function MPEstusFlaskRecoveryParam:getInvadeRing_Rosalia(value)
+    return self:getU8(0x0A, value)
+end
+
+function MPEstusFlaskRecoveryParam:setInvadeRing_Forest(value)
+    return self:setU8(0x0B, value)
+end
+function MPEstusFlaskRecoveryParam:getInvadeRing_Forest(value)
+    return self:getU8(0x0B, value)
+end
+
+function MPEstusFlaskRecoveryParam:setCoopSign_None(value)
+    return self:setU8(0x0C, value)
+end
+function MPEstusFlaskRecoveryParam:getCoopSign_None(value)
+    return self:getU8(0x0C, value)
+end
+
+function MPEstusFlaskRecoveryParam:setCoopSign_Umbasa(value)
+    return self:setU8(0x0D, value)
+end
+function MPEstusFlaskRecoveryParam:getCoopSign_Umbasa(value)
+    return self:getU8(0x0D, value)
+end
+
+function MPEstusFlaskRecoveryParam:setCoopSign_Berserker(value)
+    return self:setU8(0x0E, value)
+end
+function MPEstusFlaskRecoveryParam:getCoopSign_Berserker(value)
+    return self:getU8(0x0E, value)
+end
+
+function MPEstusFlaskRecoveryParam:setCoopSign_Sinners(value)
+    return self:setU8(0x0F, value)
+end
+function MPEstusFlaskRecoveryParam:getCoopSign_Sinners(value)
+    return self:getU8(0x0F, value)
+end
+
+function MPEstusFlaskRecoveryParam:setCoopRing_RedHunter(value)
+    return self:setU8(0x10, value)
+end
+function MPEstusFlaskRecoveryParam:getCoopRing_RedHunter(value)
+    return self:getU8(0x10, value)
+end
+
+function MPEstusFlaskRecoveryParam:setInvadeRing_Anor(value)
+    return self:setU8(0x11, value)
+end
+function MPEstusFlaskRecoveryParam:getInvadeRing_Anor(value)
+    return self:getU8(0x11, value)
+end
+
+function MPEstusFlaskRecoveryParam:setParamReplaceRate(value)
+    return self:setU16(0x12, value)
+end
+function MPEstusFlaskRecoveryParam:getParamReplaceRate(value)
+    return self:getU16(0x12, value)
+end
+
+function MPEstusFlaskRecoveryParam:setParamReplaceId(value)
+    return self:setU32(0x14, value)
+end
+function MPEstusFlaskRecoveryParam:getParamReplaceId(value)
+    return self:getU32(0x14, value)
+end
+
+--dummy8 pad[8]
+[disable]
+MPEstusFlaskRecoveryParam = nil

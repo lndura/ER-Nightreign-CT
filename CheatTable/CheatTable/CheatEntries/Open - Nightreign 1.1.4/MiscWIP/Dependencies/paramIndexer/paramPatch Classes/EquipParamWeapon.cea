@@ -1,0 +1,1943 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+EquipParamWeapon = {}
+function EquipParamWeapon:new(id_or_all, patchName)
+    return paramPatcher(self, "EquipParamWeapon", 0x2AC, id_or_all, patchName)
+end
+
+
+
+function EquipParamWeapon:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function EquipParamWeapon:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function EquipParamWeapon:setBehaviorVariationId(value)
+    return self:setU32(0x04, value)
+end
+function EquipParamWeapon:getBehaviorVariationId(value)
+    return self:getU32(0x04, value)
+end
+
+function EquipParamWeapon:setSortId(value)
+    return self:setU32(0x08, value)
+end
+function EquipParamWeapon:getSortId(value)
+    return self:getU32(0x08, value)
+end
+
+function EquipParamWeapon:setWanderingEquipId(value)
+    return self:setU32(0x0C, value)
+end
+function EquipParamWeapon:getWanderingEquipId(value)
+    return self:getU32(0x0C, value)
+end
+
+function EquipParamWeapon:setWeight(value)
+    return self:setF32(0x10, value)
+end
+function EquipParamWeapon:getWeight(value)
+    return self:getF32(0x10, value)
+end
+
+function EquipParamWeapon:setWeaponWeightRate(value)
+    return self:setF32(0x14, value)
+end
+function EquipParamWeapon:getWeaponWeightRate(value)
+    return self:getF32(0x14, value)
+end
+
+function EquipParamWeapon:setFixPrice(value)
+    return self:setU32(0x18, value)
+end
+function EquipParamWeapon:getFixPrice(value)
+    return self:getU32(0x18, value)
+end
+
+function EquipParamWeapon:setReinforcePrice(value)
+    return self:setU32(0x1C, value)
+end
+function EquipParamWeapon:getReinforcePrice(value)
+    return self:getU32(0x1C, value)
+end
+
+function EquipParamWeapon:setSellValue(value)
+    return self:setU32(0x20, value)
+end
+function EquipParamWeapon:getSellValue(value)
+    return self:getU32(0x20, value)
+end
+
+function EquipParamWeapon:setCorrectStrength(value)
+    return self:setF32(0x24, value)
+end
+function EquipParamWeapon:getCorrectStrength(value)
+    return self:getF32(0x24, value)
+end
+
+function EquipParamWeapon:setCorrectAgility(value)
+    return self:setF32(0x28, value)
+end
+function EquipParamWeapon:getCorrectAgility(value)
+    return self:getF32(0x28, value)
+end
+
+function EquipParamWeapon:setCorrectMagic(value)
+    return self:setF32(0x2C, value)
+end
+function EquipParamWeapon:getCorrectMagic(value)
+    return self:getF32(0x2C, value)
+end
+
+function EquipParamWeapon:setCorrectFaith(value)
+    return self:setF32(0x30, value)
+end
+function EquipParamWeapon:getCorrectFaith(value)
+    return self:getF32(0x30, value)
+end
+
+function EquipParamWeapon:setPhysGuardCutRate(value)
+    return self:setF32(0x34, value)
+end
+function EquipParamWeapon:getPhysGuardCutRate(value)
+    return self:getF32(0x34, value)
+end
+
+function EquipParamWeapon:setMagGuardCutRate(value)
+    return self:setF32(0x38, value)
+end
+function EquipParamWeapon:getMagGuardCutRate(value)
+    return self:getF32(0x38, value)
+end
+
+function EquipParamWeapon:setFireGuardCutRate(value)
+    return self:setF32(0x3C, value)
+end
+function EquipParamWeapon:getFireGuardCutRate(value)
+    return self:getF32(0x3C, value)
+end
+
+function EquipParamWeapon:setThunGuardCutRate(value)
+    return self:setF32(0x40, value)
+end
+function EquipParamWeapon:getThunGuardCutRate(value)
+    return self:getF32(0x40, value)
+end
+
+function EquipParamWeapon:setSpEffectBehaviorId0(value)
+    return self:setU32(0x44, value)
+end
+function EquipParamWeapon:getSpEffectBehaviorId0(value)
+    return self:getU32(0x44, value)
+end
+
+function EquipParamWeapon:setSpEffectBehaviorId1(value)
+    return self:setU32(0x48, value)
+end
+function EquipParamWeapon:getSpEffectBehaviorId1(value)
+    return self:getU32(0x48, value)
+end
+
+function EquipParamWeapon:setSpEffectBehaviorId2(value)
+    return self:setU32(0x4C, value)
+end
+function EquipParamWeapon:getSpEffectBehaviorId2(value)
+    return self:getU32(0x4C, value)
+end
+
+function EquipParamWeapon:setResidentSpEffectId(value)
+    return self:setU32(0x50, value)
+end
+function EquipParamWeapon:getResidentSpEffectId(value)
+    return self:getU32(0x50, value)
+end
+
+function EquipParamWeapon:setResidentSpEffectId1(value)
+    return self:setU32(0x54, value)
+end
+function EquipParamWeapon:getResidentSpEffectId1(value)
+    return self:getU32(0x54, value)
+end
+
+function EquipParamWeapon:setResidentSpEffectId2(value)
+    return self:setU32(0x58, value)
+end
+function EquipParamWeapon:getResidentSpEffectId2(value)
+    return self:getU32(0x58, value)
+end
+
+function EquipParamWeapon:setMaterialSetId(value)
+    return self:setU32(0x5C, value)
+end
+function EquipParamWeapon:getMaterialSetId(value)
+    return self:getU32(0x5C, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep(value)
+    return self:setU32(0x60, value)
+end
+function EquipParamWeapon:getOriginEquipWep(value)
+    return self:getU32(0x60, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep1(value)
+    return self:setU32(0x64, value)
+end
+function EquipParamWeapon:getOriginEquipWep1(value)
+    return self:getU32(0x64, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep2(value)
+    return self:setU32(0x68, value)
+end
+function EquipParamWeapon:getOriginEquipWep2(value)
+    return self:getU32(0x68, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep3(value)
+    return self:setU32(0x6C, value)
+end
+function EquipParamWeapon:getOriginEquipWep3(value)
+    return self:getU32(0x6C, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep4(value)
+    return self:setU32(0x70, value)
+end
+function EquipParamWeapon:getOriginEquipWep4(value)
+    return self:getU32(0x70, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep5(value)
+    return self:setU32(0x74, value)
+end
+function EquipParamWeapon:getOriginEquipWep5(value)
+    return self:getU32(0x74, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep6(value)
+    return self:setU32(0x78, value)
+end
+function EquipParamWeapon:getOriginEquipWep6(value)
+    return self:getU32(0x78, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep7(value)
+    return self:setU32(0x7C, value)
+end
+function EquipParamWeapon:getOriginEquipWep7(value)
+    return self:getU32(0x7C, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep8(value)
+    return self:setU32(0x80, value)
+end
+function EquipParamWeapon:getOriginEquipWep8(value)
+    return self:getU32(0x80, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep9(value)
+    return self:setU32(0x84, value)
+end
+function EquipParamWeapon:getOriginEquipWep9(value)
+    return self:getU32(0x84, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep10(value)
+    return self:setU32(0x88, value)
+end
+function EquipParamWeapon:getOriginEquipWep10(value)
+    return self:getU32(0x88, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep11(value)
+    return self:setU32(0x8C, value)
+end
+function EquipParamWeapon:getOriginEquipWep11(value)
+    return self:getU32(0x8C, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep12(value)
+    return self:setU32(0x90, value)
+end
+function EquipParamWeapon:getOriginEquipWep12(value)
+    return self:getU32(0x90, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep13(value)
+    return self:setU32(0x94, value)
+end
+function EquipParamWeapon:getOriginEquipWep13(value)
+    return self:getU32(0x94, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep14(value)
+    return self:setU32(0x98, value)
+end
+function EquipParamWeapon:getOriginEquipWep14(value)
+    return self:getU32(0x98, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep15(value)
+    return self:setU32(0x9C, value)
+end
+function EquipParamWeapon:getOriginEquipWep15(value)
+    return self:getU32(0x9C, value)
+end
+
+function EquipParamWeapon:setWeakA_DamageRate(value)
+    return self:setF32(0xA0, value)
+end
+function EquipParamWeapon:getWeakA_DamageRate(value)
+    return self:getF32(0xA0, value)
+end
+
+function EquipParamWeapon:setWeakB_DamageRate(value)
+    return self:setF32(0xA4, value)
+end
+function EquipParamWeapon:getWeakB_DamageRate(value)
+    return self:getF32(0xA4, value)
+end
+
+function EquipParamWeapon:setWeakC_DamageRate(value)
+    return self:setF32(0xA8, value)
+end
+function EquipParamWeapon:getWeakC_DamageRate(value)
+    return self:getF32(0xA8, value)
+end
+
+function EquipParamWeapon:setWeakD_DamageRate(value)
+    return self:setF32(0xAC, value)
+end
+function EquipParamWeapon:getWeakD_DamageRate(value)
+    return self:getF32(0xAC, value)
+end
+
+function EquipParamWeapon:setSleepGuardResist_MaxCorrect(value)
+    return self:setF32(0xB0, value)
+end
+function EquipParamWeapon:getSleepGuardResist_MaxCorrect(value)
+    return self:getF32(0xB0, value)
+end
+
+function EquipParamWeapon:setMadnessGuardResist_MaxCorrect(value)
+    return self:setF32(0xB4, value)
+end
+function EquipParamWeapon:getMadnessGuardResist_MaxCorrect(value)
+    return self:getF32(0xB4, value)
+end
+
+function EquipParamWeapon:setSaWeaponDamage(value)
+    return self:setF32(0xB8, value)
+end
+function EquipParamWeapon:getSaWeaponDamage(value)
+    return self:getF32(0xB8, value)
+end
+
+function EquipParamWeapon:setEquipModelId(value)
+    return self:setU16(0xBC, value)
+end
+function EquipParamWeapon:getEquipModelId(value)
+    return self:getU16(0xBC, value)
+end
+
+function EquipParamWeapon:setIconId(value)
+    return self:setU16(0xBE, value)
+end
+function EquipParamWeapon:getIconId(value)
+    return self:getU16(0xBE, value)
+end
+
+function EquipParamWeapon:setDurability(value)
+    return self:setU16(0xC0, value)
+end
+function EquipParamWeapon:getDurability(value)
+    return self:getU16(0xC0, value)
+end
+
+function EquipParamWeapon:setDurabilityMax(value)
+    return self:setU16(0xC2, value)
+end
+function EquipParamWeapon:getDurabilityMax(value)
+    return self:getU16(0xC2, value)
+end
+
+function EquipParamWeapon:setAttackThrowEscape(value)
+    return self:setU16(0xC4, value)
+end
+function EquipParamWeapon:getAttackThrowEscape(value)
+    return self:getU16(0xC4, value)
+end
+
+function EquipParamWeapon:setParryDamageLife(value)
+    return self:setU16(0xC6, value)
+end
+function EquipParamWeapon:getParryDamageLife(value)
+    return self:getU16(0xC6, value)
+end
+
+function EquipParamWeapon:setAttackBasePhysics(value)
+    return self:setU16(0xC8, value)
+end
+function EquipParamWeapon:getAttackBasePhysics(value)
+    return self:getU16(0xC8, value)
+end
+
+function EquipParamWeapon:setAttackBaseMagic(value)
+    return self:setU16(0xCA, value)
+end
+function EquipParamWeapon:getAttackBaseMagic(value)
+    return self:getU16(0xCA, value)
+end
+
+function EquipParamWeapon:setAttackBaseFire(value)
+    return self:setU16(0xCC, value)
+end
+function EquipParamWeapon:getAttackBaseFire(value)
+    return self:getU16(0xCC, value)
+end
+
+function EquipParamWeapon:setAttackBaseThunder(value)
+    return self:setU16(0xCE, value)
+end
+function EquipParamWeapon:getAttackBaseThunder(value)
+    return self:getU16(0xCE, value)
+end
+
+function EquipParamWeapon:setAttackBaseStamina(value)
+    return self:setU16(0xD0, value)
+end
+function EquipParamWeapon:getAttackBaseStamina(value)
+    return self:getU16(0xD0, value)
+end
+
+function EquipParamWeapon:setGuardAngle(value)
+    return self:setU16(0xD2, value)
+end
+function EquipParamWeapon:getGuardAngle(value)
+    return self:getU16(0xD2, value)
+end
+
+function EquipParamWeapon:setSaDurability(value)
+    return self:setF32(0xD4, value)
+end
+function EquipParamWeapon:getSaDurability(value)
+    return self:getF32(0xD4, value)
+end
+
+function EquipParamWeapon:setStaminaGuardDef(value)
+    return self:setU16(0xD8, value)
+end
+function EquipParamWeapon:getStaminaGuardDef(value)
+    return self:getU16(0xD8, value)
+end
+
+function EquipParamWeapon:setReinforceTypeId(value)
+    return self:setU16(0xDA, value)
+end
+function EquipParamWeapon:getReinforceTypeId(value)
+    return self:getU16(0xDA, value)
+end
+
+function EquipParamWeapon:setTrophySGradeId(value)
+    return self:setU16(0xDC, value)
+end
+function EquipParamWeapon:getTrophySGradeId(value)
+    return self:getU16(0xDC, value)
+end
+
+function EquipParamWeapon:setTrophySeqId(value)
+    return self:setU16(0xDE, value)
+end
+function EquipParamWeapon:getTrophySeqId(value)
+    return self:getU16(0xDE, value)
+end
+
+function EquipParamWeapon:setThrowAtkRate(value)
+    return self:setU16(0xE0, value)
+end
+function EquipParamWeapon:getThrowAtkRate(value)
+    return self:getU16(0xE0, value)
+end
+
+function EquipParamWeapon:setBowDistRate(value)
+    return self:setU16(0xE2, value)
+end
+function EquipParamWeapon:getBowDistRate(value)
+    return self:getU16(0xE2, value)
+end
+
+function EquipParamWeapon:setEquipModelCategory(value)
+    return self:setU8(0xE4, value)
+end
+function EquipParamWeapon:getEquipModelCategory(value)
+    return self:getU8(0xE4, value)
+end
+
+function EquipParamWeapon:setEquipModelGender(value)
+    return self:setU8(0xE5, value)
+end
+function EquipParamWeapon:getEquipModelGender(value)
+    return self:getU8(0xE5, value)
+end
+
+function EquipParamWeapon:setWeaponCategory(value)
+    return self:setU8(0xE6, value)
+end
+function EquipParamWeapon:getWeaponCategory(value)
+    return self:getU8(0xE6, value)
+end
+
+function EquipParamWeapon:setWepmotionCategory(value)
+    return self:setU8(0xE7, value)
+end
+function EquipParamWeapon:getWepmotionCategory(value)
+    return self:getU8(0xE7, value)
+end
+
+function EquipParamWeapon:setGuardmotionCategory(value)
+    return self:setU8(0xE8, value)
+end
+function EquipParamWeapon:getGuardmotionCategory(value)
+    return self:getU8(0xE8, value)
+end
+
+function EquipParamWeapon:setAtkMaterial(value)
+    return self:setU8(0xE9, value)
+end
+function EquipParamWeapon:getAtkMaterial(value)
+    return self:getU8(0xE9, value)
+end
+
+function EquipParamWeapon:setDefSeMaterial1(value)
+    return self:setU16(0xEA, value)
+end
+function EquipParamWeapon:getDefSeMaterial1(value)
+    return self:getU16(0xEA, value)
+end
+
+function EquipParamWeapon:setCorrectType_Physics(value)
+    return self:setU8(0xEC, value)
+end
+function EquipParamWeapon:getCorrectType_Physics(value)
+    return self:getU8(0xEC, value)
+end
+
+function EquipParamWeapon:setSpAttribute(value)
+    return self:setU8(0xED, value)
+end
+function EquipParamWeapon:getSpAttribute(value)
+    return self:getU8(0xED, value)
+end
+
+function EquipParamWeapon:setSpAtkcategory(value)
+    return self:setU16(0xEE, value)
+end
+function EquipParamWeapon:getSpAtkcategory(value)
+    return self:getU16(0xEE, value)
+end
+
+function EquipParamWeapon:setWepmotionOneHandId(value)
+    return self:setU8(0xF0, value)
+end
+function EquipParamWeapon:getWepmotionOneHandId(value)
+    return self:getU8(0xF0, value)
+end
+
+function EquipParamWeapon:setWepmotionBothHandId(value)
+    return self:setU8(0xF1, value)
+end
+function EquipParamWeapon:getWepmotionBothHandId(value)
+    return self:getU8(0xF1, value)
+end
+
+function EquipParamWeapon:setProperStrength(value)
+    return self:setU8(0xF2, value)
+end
+function EquipParamWeapon:getProperStrength(value)
+    return self:getU8(0xF2, value)
+end
+
+function EquipParamWeapon:setProperAgility(value)
+    return self:setU8(0xF3, value)
+end
+function EquipParamWeapon:getProperAgility(value)
+    return self:getU8(0xF3, value)
+end
+
+function EquipParamWeapon:setProperMagic(value)
+    return self:setU8(0xF4, value)
+end
+function EquipParamWeapon:getProperMagic(value)
+    return self:getU8(0xF4, value)
+end
+
+function EquipParamWeapon:setProperFaith(value)
+    return self:setU8(0xF5, value)
+end
+function EquipParamWeapon:getProperFaith(value)
+    return self:getU8(0xF5, value)
+end
+
+function EquipParamWeapon:setOverStrength(value)
+    return self:setU8(0xF6, value)
+end
+function EquipParamWeapon:getOverStrength(value)
+    return self:getU8(0xF6, value)
+end
+
+function EquipParamWeapon:setAttackBaseParry(value)
+    return self:setU8(0xF7, value)
+end
+function EquipParamWeapon:getAttackBaseParry(value)
+    return self:getU8(0xF7, value)
+end
+
+function EquipParamWeapon:setDefenseBaseParry(value)
+    return self:setU8(0xF8, value)
+end
+function EquipParamWeapon:getDefenseBaseParry(value)
+    return self:getU8(0xF8, value)
+end
+
+function EquipParamWeapon:setGuardBaseRepel(value)
+    return self:setU8(0xF9, value)
+end
+function EquipParamWeapon:getGuardBaseRepel(value)
+    return self:getU8(0xF9, value)
+end
+
+function EquipParamWeapon:setAttackBaseRepel(value)
+    return self:setU8(0xFA, value)
+end
+function EquipParamWeapon:getAttackBaseRepel(value)
+    return self:getU8(0xFA, value)
+end
+
+function EquipParamWeapon:setGuardCutCancelRate(value)
+    return self:setU8(0xFB, value)
+end
+function EquipParamWeapon:getGuardCutCancelRate(value)
+    return self:getU8(0xFB, value)
+end
+
+function EquipParamWeapon:setGuardLevel(value)
+    return self:setU8(0xFC, value)
+end
+function EquipParamWeapon:getGuardLevel(value)
+    return self:getU8(0xFC, value)
+end
+
+function EquipParamWeapon:setSlashGuardCutRate(value)
+    return self:setU8(0xFD, value)
+end
+function EquipParamWeapon:getSlashGuardCutRate(value)
+    return self:getU8(0xFD, value)
+end
+
+function EquipParamWeapon:setBlowGuardCutRate(value)
+    return self:setU8(0xFE, value)
+end
+function EquipParamWeapon:getBlowGuardCutRate(value)
+    return self:getU8(0xFE, value)
+end
+
+function EquipParamWeapon:setThrustGuardCutRate(value)
+    return self:setU8(0xFF, value)
+end
+function EquipParamWeapon:getThrustGuardCutRate(value)
+    return self:getU8(0xFF, value)
+end
+
+function EquipParamWeapon:setPoisonGuardResist(value)
+    return self:setU8(0x100, value)
+end
+function EquipParamWeapon:getPoisonGuardResist(value)
+    return self:getU8(0x100, value)
+end
+
+function EquipParamWeapon:setDiseaseGuardResist(value)
+    return self:setU8(0x101, value)
+end
+function EquipParamWeapon:getDiseaseGuardResist(value)
+    return self:getU8(0x101, value)
+end
+
+function EquipParamWeapon:setBloodGuardResist(value)
+    return self:setU8(0x102, value)
+end
+function EquipParamWeapon:getBloodGuardResist(value)
+    return self:getU8(0x102, value)
+end
+
+function EquipParamWeapon:setCurseGuardResist(value)
+    return self:setU8(0x103, value)
+end
+function EquipParamWeapon:getCurseGuardResist(value)
+    return self:getU8(0x103, value)
+end
+
+function EquipParamWeapon:setAtkAttribute(value)
+    return self:setU8(0x104, value)
+end
+function EquipParamWeapon:getAtkAttribute(value)
+    return self:getU8(0x104, value)
+end
+
+function EquipParamWeapon:setRightHandEquipable(value)
+    return self:setBinary(0x105, 0, value, 1)
+end
+
+function EquipParamWeapon:getRightHandEquipable()
+    return self:getBinary(0x105, 0, value, 1)
+end
+
+function EquipParamWeapon:setLeftHandEquipable(value)
+    return self:setBinary(0x105, 1, value, 1)
+end
+
+function EquipParamWeapon:getLeftHandEquipable()
+    return self:getBinary(0x105, 1, value, 1)
+end
+
+function EquipParamWeapon:setBothHandEquipable(value)
+    return self:setBinary(0x105, 2, value, 1)
+end
+
+function EquipParamWeapon:getBothHandEquipable()
+    return self:getBinary(0x105, 2, value, 1)
+end
+
+function EquipParamWeapon:setArrowSlotEquipable(value)
+    return self:setBinary(0x105, 3, value, 1)
+end
+
+function EquipParamWeapon:getArrowSlotEquipable()
+    return self:getBinary(0x105, 3, value, 1)
+end
+
+function EquipParamWeapon:setBoltSlotEquipable(value)
+    return self:setBinary(0x105, 4, value, 1)
+end
+
+function EquipParamWeapon:getBoltSlotEquipable()
+    return self:getBinary(0x105, 4, value, 1)
+end
+
+function EquipParamWeapon:setEnableGuard(value)
+    return self:setBinary(0x105, 5, value, 1)
+end
+
+function EquipParamWeapon:getEnableGuard()
+    return self:getBinary(0x105, 5, value, 1)
+end
+
+function EquipParamWeapon:setEnableParry(value)
+    return self:setBinary(0x105, 6, value, 1)
+end
+
+function EquipParamWeapon:getEnableParry()
+    return self:getBinary(0x105, 6, value, 1)
+end
+
+function EquipParamWeapon:setEnableMagic(value)
+    return self:setBinary(0x105, 7, value, 1)
+end
+
+function EquipParamWeapon:getEnableMagic()
+    return self:getBinary(0x105, 7, value, 1)
+end
+
+function EquipParamWeapon:setEnableSorcery(value)
+    return self:setBinary(0x106, 0, value, 1)
+end
+
+function EquipParamWeapon:getEnableSorcery()
+    return self:getBinary(0x106, 0, value, 1)
+end
+
+function EquipParamWeapon:setEnableMiracle(value)
+    return self:setBinary(0x106, 1, value, 1)
+end
+
+function EquipParamWeapon:getEnableMiracle()
+    return self:getBinary(0x106, 1, value, 1)
+end
+
+function EquipParamWeapon:setEnableVowMagic(value)
+    return self:setBinary(0x106, 2, value, 1)
+end
+
+function EquipParamWeapon:getEnableVowMagic()
+    return self:getBinary(0x106, 2, value, 1)
+end
+
+function EquipParamWeapon:setIsNormalAttackType(value)
+    return self:setBinary(0x106, 3, value, 1)
+end
+
+function EquipParamWeapon:getIsNormalAttackType()
+    return self:getBinary(0x106, 3, value, 1)
+end
+
+function EquipParamWeapon:setIsBlowAttackType(value)
+    return self:setBinary(0x106, 4, value, 1)
+end
+
+function EquipParamWeapon:getIsBlowAttackType()
+    return self:getBinary(0x106, 4, value, 1)
+end
+
+function EquipParamWeapon:setIsSlashAttackType(value)
+    return self:setBinary(0x106, 5, value, 1)
+end
+
+function EquipParamWeapon:getIsSlashAttackType()
+    return self:getBinary(0x106, 5, value, 1)
+end
+
+function EquipParamWeapon:setIsThrustAttackType(value)
+    return self:setBinary(0x106, 6, value, 1)
+end
+
+function EquipParamWeapon:getIsThrustAttackType()
+    return self:getBinary(0x106, 6, value, 1)
+end
+
+function EquipParamWeapon:setIsEnhance(value)
+    return self:setBinary(0x106, 7, value, 1)
+end
+
+function EquipParamWeapon:getIsEnhance()
+    return self:getBinary(0x106, 7, value, 1)
+end
+
+function EquipParamWeapon:setIsHeroPointCorrect(value)
+    return self:setBinary(0x107, 0, value, 1)
+end
+
+function EquipParamWeapon:getIsHeroPointCorrect()
+    return self:getBinary(0x107, 0, value, 1)
+end
+
+function EquipParamWeapon:setIsCustom(value)
+    return self:setBinary(0x107, 1, value, 1)
+end
+
+function EquipParamWeapon:getIsCustom()
+    return self:getBinary(0x107, 1, value, 1)
+end
+
+function EquipParamWeapon:setDisableBaseChangeReset(value)
+    return self:setBinary(0x107, 2, value, 1)
+end
+
+function EquipParamWeapon:getDisableBaseChangeReset()
+    return self:getBinary(0x107, 2, value, 1)
+end
+
+function EquipParamWeapon:setDisableRepair(value)
+    return self:setBinary(0x107, 3, value, 1)
+end
+
+function EquipParamWeapon:getDisableRepair()
+    return self:getBinary(0x107, 3, value, 1)
+end
+
+function EquipParamWeapon:setIsDarkHand(value)
+    return self:setBinary(0x107, 4, value, 1)
+end
+
+function EquipParamWeapon:getIsDarkHand()
+    return self:getBinary(0x107, 4, value, 1)
+end
+
+function EquipParamWeapon:setSimpleModelForDlc(value)
+    return self:setBinary(0x107, 5, value, 1)
+end
+
+function EquipParamWeapon:getSimpleModelForDlc()
+    return self:getBinary(0x107, 5, value, 1)
+end
+
+function EquipParamWeapon:setLanternWep(value)
+    return self:setBinary(0x107, 6, value, 1)
+end
+
+function EquipParamWeapon:getLanternWep()
+    return self:getBinary(0x107, 6, value, 1)
+end
+
+function EquipParamWeapon:setIsVersusGhostWep(value)
+    return self:setBinary(0x107, 7, value, 1)
+end
+
+function EquipParamWeapon:getIsVersusGhostWep()
+    return self:getBinary(0x107, 7, value, 1)
+end
+
+function EquipParamWeapon:setBaseChangeCategory(value)
+    return self:setBinary(0x108, 0, value, 6)
+end
+
+function EquipParamWeapon:getBaseChangeCategory()
+    return self:getBinary(0x108, 0, value, 6)
+end
+
+function EquipParamWeapon:setIsDragonSlayer(value)
+    return self:setBinary(0x108, 6, value, 1)
+end
+
+function EquipParamWeapon:getIsDragonSlayer()
+    return self:getBinary(0x108, 6, value, 1)
+end
+
+function EquipParamWeapon:setIsDeposit(value)
+    return self:setBinary(0x108, 7, value, 1)
+end
+
+function EquipParamWeapon:getIsDeposit()
+    return self:getBinary(0x108, 7, value, 1)
+end
+
+function EquipParamWeapon:setDisableMultiDropShare(value)
+    return self:setBinary(0x109, 0, value, 1)
+end
+
+function EquipParamWeapon:getDisableMultiDropShare()
+    return self:getBinary(0x109, 0, value, 1)
+end
+
+function EquipParamWeapon:setIsDiscard(value)
+    return self:setBinary(0x109, 1, value, 1)
+end
+
+function EquipParamWeapon:getIsDiscard()
+    return self:getBinary(0x109, 1, value, 1)
+end
+
+function EquipParamWeapon:setIsDrop(value)
+    return self:setBinary(0x109, 2, value, 1)
+end
+
+function EquipParamWeapon:getIsDrop()
+    return self:getBinary(0x109, 2, value, 1)
+end
+
+function EquipParamWeapon:setShowLogCondType(value)
+    return self:setBinary(0x109, 3, value, 1)
+end
+
+function EquipParamWeapon:getShowLogCondType()
+    return self:getBinary(0x109, 3, value, 1)
+end
+
+function EquipParamWeapon:setEnableThrow(value)
+    return self:setBinary(0x109, 4, value, 1)
+end
+
+function EquipParamWeapon:getEnableThrow()
+    return self:getBinary(0x109, 4, value, 1)
+end
+
+function EquipParamWeapon:setShowDialogCondType(value)
+    return self:setBinary(0x109, 5, value, 2)
+end
+
+function EquipParamWeapon:getShowDialogCondType()
+    return self:getBinary(0x109, 5, value, 2)
+end
+
+function EquipParamWeapon:setDisableGemAttr(value)
+    return self:setBinary(0x109, 7, value, 1)
+end
+
+function EquipParamWeapon:getDisableGemAttr()
+    return self:getBinary(0x109, 7, value, 1)
+end
+
+function EquipParamWeapon:setDefSfxMaterial1(value)
+    return self:setU16(0x10A, value)
+end
+function EquipParamWeapon:getDefSfxMaterial1(value)
+    return self:getU16(0x10A, value)
+end
+
+function EquipParamWeapon:setWepCollidableType0(value)
+    return self:setU8(0x10C, value)
+end
+function EquipParamWeapon:getWepCollidableType0(value)
+    return self:getU8(0x10C, value)
+end
+
+function EquipParamWeapon:setWepCollidableType1(value)
+    return self:setU8(0x10D, value)
+end
+function EquipParamWeapon:getWepCollidableType1(value)
+    return self:getU8(0x10D, value)
+end
+
+function EquipParamWeapon:setPostureControlId_Right(value)
+    return self:setU8(0x10E, value)
+end
+function EquipParamWeapon:getPostureControlId_Right(value)
+    return self:getU8(0x10E, value)
+end
+
+function EquipParamWeapon:setPostureControlId_Left(value)
+    return self:setU8(0x10F, value)
+end
+function EquipParamWeapon:getPostureControlId_Left(value)
+    return self:getU8(0x10F, value)
+end
+
+function EquipParamWeapon:setTraceSfxId0(value)
+    return self:setU32(0x110, value)
+end
+function EquipParamWeapon:getTraceSfxId0(value)
+    return self:getU32(0x110, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdHead0(value)
+    return self:setU32(0x114, value)
+end
+function EquipParamWeapon:getTraceDmyIdHead0(value)
+    return self:getU32(0x114, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdTail0(value)
+    return self:setU32(0x118, value)
+end
+function EquipParamWeapon:getTraceDmyIdTail0(value)
+    return self:getU32(0x118, value)
+end
+
+function EquipParamWeapon:setTraceSfxId1(value)
+    return self:setU32(0x11C, value)
+end
+function EquipParamWeapon:getTraceSfxId1(value)
+    return self:getU32(0x11C, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdHead1(value)
+    return self:setU32(0x120, value)
+end
+function EquipParamWeapon:getTraceDmyIdHead1(value)
+    return self:getU32(0x120, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdTail1(value)
+    return self:setU32(0x124, value)
+end
+function EquipParamWeapon:getTraceDmyIdTail1(value)
+    return self:getU32(0x124, value)
+end
+
+function EquipParamWeapon:setTraceSfxId2(value)
+    return self:setU32(0x128, value)
+end
+function EquipParamWeapon:getTraceSfxId2(value)
+    return self:getU32(0x128, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdHead2(value)
+    return self:setU32(0x12C, value)
+end
+function EquipParamWeapon:getTraceDmyIdHead2(value)
+    return self:getU32(0x12C, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdTail2(value)
+    return self:setU32(0x130, value)
+end
+function EquipParamWeapon:getTraceDmyIdTail2(value)
+    return self:getU32(0x130, value)
+end
+
+function EquipParamWeapon:setTraceSfxId3(value)
+    return self:setU32(0x134, value)
+end
+function EquipParamWeapon:getTraceSfxId3(value)
+    return self:getU32(0x134, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdHead3(value)
+    return self:setU32(0x138, value)
+end
+function EquipParamWeapon:getTraceDmyIdHead3(value)
+    return self:getU32(0x138, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdTail3(value)
+    return self:setU32(0x13C, value)
+end
+function EquipParamWeapon:getTraceDmyIdTail3(value)
+    return self:getU32(0x13C, value)
+end
+
+function EquipParamWeapon:setTraceSfxId4(value)
+    return self:setU32(0x140, value)
+end
+function EquipParamWeapon:getTraceSfxId4(value)
+    return self:getU32(0x140, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdHead4(value)
+    return self:setU32(0x144, value)
+end
+function EquipParamWeapon:getTraceDmyIdHead4(value)
+    return self:getU32(0x144, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdTail4(value)
+    return self:setU32(0x148, value)
+end
+function EquipParamWeapon:getTraceDmyIdTail4(value)
+    return self:getU32(0x148, value)
+end
+
+function EquipParamWeapon:setTraceSfxId5(value)
+    return self:setU32(0x14C, value)
+end
+function EquipParamWeapon:getTraceSfxId5(value)
+    return self:getU32(0x14C, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdHead5(value)
+    return self:setU32(0x150, value)
+end
+function EquipParamWeapon:getTraceDmyIdHead5(value)
+    return self:getU32(0x150, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdTail5(value)
+    return self:setU32(0x154, value)
+end
+function EquipParamWeapon:getTraceDmyIdTail5(value)
+    return self:getU32(0x154, value)
+end
+
+function EquipParamWeapon:setTraceSfxId6(value)
+    return self:setU32(0x158, value)
+end
+function EquipParamWeapon:getTraceSfxId6(value)
+    return self:getU32(0x158, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdHead6(value)
+    return self:setU32(0x15C, value)
+end
+function EquipParamWeapon:getTraceDmyIdHead6(value)
+    return self:getU32(0x15C, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdTail6(value)
+    return self:setU32(0x160, value)
+end
+function EquipParamWeapon:getTraceDmyIdTail6(value)
+    return self:getU32(0x160, value)
+end
+
+function EquipParamWeapon:setTraceSfxId7(value)
+    return self:setU32(0x164, value)
+end
+function EquipParamWeapon:getTraceSfxId7(value)
+    return self:getU32(0x164, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdHead7(value)
+    return self:setU32(0x168, value)
+end
+function EquipParamWeapon:getTraceDmyIdHead7(value)
+    return self:getU32(0x168, value)
+end
+
+function EquipParamWeapon:setTraceDmyIdTail7(value)
+    return self:setU32(0x16C, value)
+end
+function EquipParamWeapon:getTraceDmyIdTail7(value)
+    return self:getU32(0x16C, value)
+end
+
+function EquipParamWeapon:setDefSfxMaterial2(value)
+    return self:setU16(0x170, value)
+end
+function EquipParamWeapon:getDefSfxMaterial2(value)
+    return self:getU16(0x170, value)
+end
+
+function EquipParamWeapon:setDefSeMaterial2(value)
+    return self:setU16(0x172, value)
+end
+function EquipParamWeapon:getDefSeMaterial2(value)
+    return self:getU16(0x172, value)
+end
+
+function EquipParamWeapon:setAbsorpParamId(value)
+    return self:setU32(0x174, value)
+end
+function EquipParamWeapon:getAbsorpParamId(value)
+    return self:getU32(0x174, value)
+end
+
+function EquipParamWeapon:setToughnessCorrectRate(value)
+    return self:setF32(0x178, value)
+end
+function EquipParamWeapon:getToughnessCorrectRate(value)
+    return self:getF32(0x178, value)
+end
+
+function EquipParamWeapon:setIsValidTough_ProtSADmg(value)
+    return self:setBinary(0x17C, 0, value, 1)
+end
+
+function EquipParamWeapon:getIsValidTough_ProtSADmg()
+    return self:getBinary(0x17C, 0, value, 1)
+end
+
+function EquipParamWeapon:setIsDualBlade(value)
+    return self:setBinary(0x17C, 1, value, 1)
+end
+
+function EquipParamWeapon:getIsDualBlade()
+    return self:getBinary(0x17C, 1, value, 1)
+end
+
+function EquipParamWeapon:setIsAutoEquip(value)
+    return self:setBinary(0x17C, 2, value, 1)
+end
+
+function EquipParamWeapon:getIsAutoEquip()
+    return self:getBinary(0x17C, 2, value, 1)
+end
+
+function EquipParamWeapon:setIsEnableEmergencyStep(value)
+    return self:setBinary(0x17C, 3, value, 1)
+end
+
+function EquipParamWeapon:getIsEnableEmergencyStep()
+    return self:getBinary(0x17C, 3, value, 1)
+end
+
+function EquipParamWeapon:setInvisibleOnRemo(value)
+    return self:setBinary(0x17C, 4, value, 1)
+end
+
+function EquipParamWeapon:getInvisibleOnRemo()
+    return self:getBinary(0x17C, 4, value, 1)
+end
+
+--dummy8 unk1:3
+
+function EquipParamWeapon:setCorrectType_Magic(value)
+    return self:setU8(0x17D, value)
+end
+function EquipParamWeapon:getCorrectType_Magic(value)
+    return self:getU8(0x17D, value)
+end
+
+function EquipParamWeapon:setCorrectType_Fire(value)
+    return self:setU8(0x17E, value)
+end
+function EquipParamWeapon:getCorrectType_Fire(value)
+    return self:getU8(0x17E, value)
+end
+
+function EquipParamWeapon:setCorrectType_Thunder(value)
+    return self:setU8(0x17F, value)
+end
+function EquipParamWeapon:getCorrectType_Thunder(value)
+    return self:getU8(0x17F, value)
+end
+
+function EquipParamWeapon:setWeakE_DamageRate(value)
+    return self:setF32(0x180, value)
+end
+function EquipParamWeapon:getWeakE_DamageRate(value)
+    return self:getF32(0x180, value)
+end
+
+function EquipParamWeapon:setWeakF_DamageRate(value)
+    return self:setF32(0x184, value)
+end
+function EquipParamWeapon:getWeakF_DamageRate(value)
+    return self:getF32(0x184, value)
+end
+
+function EquipParamWeapon:setDarkGuardCutRate(value)
+    return self:setF32(0x188, value)
+end
+function EquipParamWeapon:getDarkGuardCutRate(value)
+    return self:getF32(0x188, value)
+end
+
+function EquipParamWeapon:setAttackBaseDark(value)
+    return self:setU16(0x18C, value)
+end
+function EquipParamWeapon:getAttackBaseDark(value)
+    return self:getU16(0x18C, value)
+end
+
+function EquipParamWeapon:setCorrectType_Dark(value)
+    return self:setU8(0x18E, value)
+end
+function EquipParamWeapon:getCorrectType_Dark(value)
+    return self:getU8(0x18E, value)
+end
+
+function EquipParamWeapon:setCorrectType_Poison(value)
+    return self:setU8(0x18F, value)
+end
+function EquipParamWeapon:getCorrectType_Poison(value)
+    return self:getU8(0x18F, value)
+end
+
+function EquipParamWeapon:setSortGroupId(value)
+    return self:setU8(0x190, value)
+end
+function EquipParamWeapon:getSortGroupId(value)
+    return self:getU8(0x190, value)
+end
+
+function EquipParamWeapon:setAtkAttribute2(value)
+    return self:setU8(0x191, value)
+end
+function EquipParamWeapon:getAtkAttribute2(value)
+    return self:getU8(0x191, value)
+end
+
+function EquipParamWeapon:setSleepGuardResist(value)
+    return self:setU8(0x192, value)
+end
+function EquipParamWeapon:getSleepGuardResist(value)
+    return self:getU8(0x192, value)
+end
+
+function EquipParamWeapon:setMadnessGuardResist(value)
+    return self:setU8(0x193, value)
+end
+function EquipParamWeapon:getMadnessGuardResist(value)
+    return self:getU8(0x193, value)
+end
+
+function EquipParamWeapon:setCorrectType_Blood(value)
+    return self:setU8(0x194, value)
+end
+function EquipParamWeapon:getCorrectType_Blood(value)
+    return self:getU8(0x194, value)
+end
+
+function EquipParamWeapon:setProperLuck(value)
+    return self:setU8(0x195, value)
+end
+function EquipParamWeapon:getProperLuck(value)
+    return self:getU8(0x195, value)
+end
+
+function EquipParamWeapon:setFreezeGuardResist(value)
+    return self:setU8(0x196, value)
+end
+function EquipParamWeapon:getFreezeGuardResist(value)
+    return self:getU8(0x196, value)
+end
+
+function EquipParamWeapon:setAutoReplenishType(value)
+    return self:setU8(0x197, value)
+end
+function EquipParamWeapon:getAutoReplenishType(value)
+    return self:getU8(0x197, value)
+end
+
+function EquipParamWeapon:setSwordArtsParamId(value)
+    return self:setU32(0x198, value)
+end
+function EquipParamWeapon:getSwordArtsParamId(value)
+    return self:getU32(0x198, value)
+end
+
+function EquipParamWeapon:setCorrectLuck(value)
+    return self:setF32(0x19C, value)
+end
+function EquipParamWeapon:getCorrectLuck(value)
+    return self:getF32(0x19C, value)
+end
+
+function EquipParamWeapon:setArrowBoltEquipId(value)
+    return self:setU32(0x1A0, value)
+end
+function EquipParamWeapon:getArrowBoltEquipId(value)
+    return self:getU32(0x1A0, value)
+end
+
+function EquipParamWeapon:setDerivationLevelType(value)
+    return self:setU8(0x1A4, value)
+end
+function EquipParamWeapon:getDerivationLevelType(value)
+    return self:getU8(0x1A4, value)
+end
+
+function EquipParamWeapon:setEnchantSfxSize(value)
+    return self:setU8(0x1A5, value)
+end
+function EquipParamWeapon:getEnchantSfxSize(value)
+    return self:getU8(0x1A5, value)
+end
+
+function EquipParamWeapon:setWepType(value)
+    return self:setU16(0x1A6, value)
+end
+function EquipParamWeapon:getWepType(value)
+    return self:getU16(0x1A6, value)
+end
+
+function EquipParamWeapon:setPhysGuardCutRate_MaxCorrect(value)
+    return self:setF32(0x1A8, value)
+end
+function EquipParamWeapon:getPhysGuardCutRate_MaxCorrect(value)
+    return self:getF32(0x1A8, value)
+end
+
+function EquipParamWeapon:setMagGuardCutRate_MaxCorrect(value)
+    return self:setF32(0x1AC, value)
+end
+function EquipParamWeapon:getMagGuardCutRate_MaxCorrect(value)
+    return self:getF32(0x1AC, value)
+end
+
+function EquipParamWeapon:setFireGuardCutRate_MaxCorrect(value)
+    return self:setF32(0x1B0, value)
+end
+function EquipParamWeapon:getFireGuardCutRate_MaxCorrect(value)
+    return self:getF32(0x1B0, value)
+end
+
+function EquipParamWeapon:setThunGuardCutRate_MaxCorrect(value)
+    return self:setF32(0x1B4, value)
+end
+function EquipParamWeapon:getThunGuardCutRate_MaxCorrect(value)
+    return self:getF32(0x1B4, value)
+end
+
+function EquipParamWeapon:setDarkGuardCutRate_MaxCorrect(value)
+    return self:setF32(0x1B8, value)
+end
+function EquipParamWeapon:getDarkGuardCutRate_MaxCorrect(value)
+    return self:getF32(0x1B8, value)
+end
+
+function EquipParamWeapon:setPoisonGuardResist_MaxCorrect(value)
+    return self:setF32(0x1BC, value)
+end
+function EquipParamWeapon:getPoisonGuardResist_MaxCorrect(value)
+    return self:getF32(0x1BC, value)
+end
+
+function EquipParamWeapon:setDiseaseGuardResist_MaxCorrect(value)
+    return self:setF32(0x1C0, value)
+end
+function EquipParamWeapon:getDiseaseGuardResist_MaxCorrect(value)
+    return self:getF32(0x1C0, value)
+end
+
+function EquipParamWeapon:setBloodGuardResist_MaxCorrect(value)
+    return self:setF32(0x1C4, value)
+end
+function EquipParamWeapon:getBloodGuardResist_MaxCorrect(value)
+    return self:getF32(0x1C4, value)
+end
+
+function EquipParamWeapon:setCurseGuardResist_MaxCorrect(value)
+    return self:setF32(0x1C8, value)
+end
+function EquipParamWeapon:getCurseGuardResist_MaxCorrect(value)
+    return self:getF32(0x1C8, value)
+end
+
+function EquipParamWeapon:setFreezeGuardResist_MaxCorrect(value)
+    return self:setF32(0x1CC, value)
+end
+function EquipParamWeapon:getFreezeGuardResist_MaxCorrect(value)
+    return self:getF32(0x1CC, value)
+end
+
+function EquipParamWeapon:setStaminaGuardDef_MaxCorrect(value)
+    return self:setF32(0x1D0, value)
+end
+function EquipParamWeapon:getStaminaGuardDef_MaxCorrect(value)
+    return self:getF32(0x1D0, value)
+end
+
+function EquipParamWeapon:setResidentSfxId_1(value)
+    return self:setU32(0x1D4, value)
+end
+function EquipParamWeapon:getResidentSfxId_1(value)
+    return self:getU32(0x1D4, value)
+end
+
+function EquipParamWeapon:setResidentSfxId_2(value)
+    return self:setU32(0x1D8, value)
+end
+function EquipParamWeapon:getResidentSfxId_2(value)
+    return self:getU32(0x1D8, value)
+end
+
+function EquipParamWeapon:setResidentSfxId_3(value)
+    return self:setU32(0x1DC, value)
+end
+function EquipParamWeapon:getResidentSfxId_3(value)
+    return self:getU32(0x1DC, value)
+end
+
+function EquipParamWeapon:setResidentSfxId_4(value)
+    return self:setU32(0x1E0, value)
+end
+function EquipParamWeapon:getResidentSfxId_4(value)
+    return self:getU32(0x1E0, value)
+end
+
+function EquipParamWeapon:setResidentSfx_DmyId_1(value)
+    return self:setU32(0x1E4, value)
+end
+function EquipParamWeapon:getResidentSfx_DmyId_1(value)
+    return self:getU32(0x1E4, value)
+end
+
+function EquipParamWeapon:setResidentSfx_DmyId_2(value)
+    return self:setU32(0x1E8, value)
+end
+function EquipParamWeapon:getResidentSfx_DmyId_2(value)
+    return self:getU32(0x1E8, value)
+end
+
+function EquipParamWeapon:setResidentSfx_DmyId_3(value)
+    return self:setU32(0x1EC, value)
+end
+function EquipParamWeapon:getResidentSfx_DmyId_3(value)
+    return self:getU32(0x1EC, value)
+end
+
+function EquipParamWeapon:setResidentSfx_DmyId_4(value)
+    return self:setU32(0x1F0, value)
+end
+function EquipParamWeapon:getResidentSfx_DmyId_4(value)
+    return self:getU32(0x1F0, value)
+end
+
+function EquipParamWeapon:setStaminaConsumptionRate(value)
+    return self:setF32(0x1F4, value)
+end
+function EquipParamWeapon:getStaminaConsumptionRate(value)
+    return self:getF32(0x1F4, value)
+end
+
+function EquipParamWeapon:setVsPlayerDmgCorrectRate_Physics(value)
+    return self:setF32(0x1F8, value)
+end
+function EquipParamWeapon:getVsPlayerDmgCorrectRate_Physics(value)
+    return self:getF32(0x1F8, value)
+end
+
+function EquipParamWeapon:setVsPlayerDmgCorrectRate_Magic(value)
+    return self:setF32(0x1FC, value)
+end
+function EquipParamWeapon:getVsPlayerDmgCorrectRate_Magic(value)
+    return self:getF32(0x1FC, value)
+end
+
+function EquipParamWeapon:setVsPlayerDmgCorrectRate_Fire(value)
+    return self:setF32(0x200, value)
+end
+function EquipParamWeapon:getVsPlayerDmgCorrectRate_Fire(value)
+    return self:getF32(0x200, value)
+end
+
+function EquipParamWeapon:setVsPlayerDmgCorrectRate_Thunder(value)
+    return self:setF32(0x204, value)
+end
+function EquipParamWeapon:getVsPlayerDmgCorrectRate_Thunder(value)
+    return self:getF32(0x204, value)
+end
+
+function EquipParamWeapon:setVsPlayerDmgCorrectRate_Dark(value)
+    return self:setF32(0x208, value)
+end
+function EquipParamWeapon:getVsPlayerDmgCorrectRate_Dark(value)
+    return self:getF32(0x208, value)
+end
+
+function EquipParamWeapon:setVsPlayerDmgCorrectRate_Poison(value)
+    return self:setF32(0x20C, value)
+end
+function EquipParamWeapon:getVsPlayerDmgCorrectRate_Poison(value)
+    return self:getF32(0x20C, value)
+end
+
+function EquipParamWeapon:setVsPlayerDmgCorrectRate_Blood(value)
+    return self:setF32(0x210, value)
+end
+function EquipParamWeapon:getVsPlayerDmgCorrectRate_Blood(value)
+    return self:getF32(0x210, value)
+end
+
+function EquipParamWeapon:setVsPlayerDmgCorrectRate_Freeze(value)
+    return self:setF32(0x214, value)
+end
+function EquipParamWeapon:getVsPlayerDmgCorrectRate_Freeze(value)
+    return self:getF32(0x214, value)
+end
+
+function EquipParamWeapon:setAttainmentWepStatusStr(value)
+    return self:setU32(0x218, value)
+end
+function EquipParamWeapon:getAttainmentWepStatusStr(value)
+    return self:getU32(0x218, value)
+end
+
+function EquipParamWeapon:setAttainmentWepStatusDex(value)
+    return self:setU32(0x21C, value)
+end
+function EquipParamWeapon:getAttainmentWepStatusDex(value)
+    return self:getU32(0x21C, value)
+end
+
+function EquipParamWeapon:setAttainmentWepStatusMag(value)
+    return self:setU32(0x220, value)
+end
+function EquipParamWeapon:getAttainmentWepStatusMag(value)
+    return self:getU32(0x220, value)
+end
+
+function EquipParamWeapon:setAttainmentWepStatusFai(value)
+    return self:setU32(0x224, value)
+end
+function EquipParamWeapon:getAttainmentWepStatusFai(value)
+    return self:getU32(0x224, value)
+end
+
+function EquipParamWeapon:setAttainmentWepStatusLuc(value)
+    return self:setU32(0x228, value)
+end
+function EquipParamWeapon:getAttainmentWepStatusLuc(value)
+    return self:getU32(0x228, value)
+end
+
+function EquipParamWeapon:setAttackElementCorrectId(value)
+    return self:setU32(0x22C, value)
+end
+function EquipParamWeapon:getAttackElementCorrectId(value)
+    return self:getU32(0x22C, value)
+end
+
+function EquipParamWeapon:setSaleValue(value)
+    return self:setU32(0x230, value)
+end
+function EquipParamWeapon:getSaleValue(value)
+    return self:getU32(0x230, value)
+end
+
+function EquipParamWeapon:setReinforceShopCategory(value)
+    return self:setU8(0x234, value)
+end
+function EquipParamWeapon:getReinforceShopCategory(value)
+    return self:getU8(0x234, value)
+end
+
+function EquipParamWeapon:setMaxArrowQuantity(value)
+    return self:setU8(0x235, value)
+end
+function EquipParamWeapon:getMaxArrowQuantity(value)
+    return self:getU8(0x235, value)
+end
+
+function EquipParamWeapon:setResidentSfx_1_IsVisibleForHang(value)
+    return self:setBinary(0x236, 0, value, 1)
+end
+
+function EquipParamWeapon:getResidentSfx_1_IsVisibleForHang()
+    return self:getBinary(0x236, 0, value, 1)
+end
+
+function EquipParamWeapon:setResidentSfx_2_IsVisibleForHang(value)
+    return self:setBinary(0x236, 1, value, 1)
+end
+
+function EquipParamWeapon:getResidentSfx_2_IsVisibleForHang()
+    return self:getBinary(0x236, 1, value, 1)
+end
+
+function EquipParamWeapon:setResidentSfx_3_IsVisibleForHang(value)
+    return self:setBinary(0x236, 2, value, 1)
+end
+
+function EquipParamWeapon:getResidentSfx_3_IsVisibleForHang()
+    return self:getBinary(0x236, 2, value, 1)
+end
+
+function EquipParamWeapon:setResidentSfx_4_IsVisibleForHang(value)
+    return self:setBinary(0x236, 3, value, 1)
+end
+
+function EquipParamWeapon:getResidentSfx_4_IsVisibleForHang()
+    return self:getBinary(0x236, 3, value, 1)
+end
+
+function EquipParamWeapon:setIsSoulParamIdChange_model0(value)
+    return self:setBinary(0x236, 4, value, 1)
+end
+
+function EquipParamWeapon:getIsSoulParamIdChange_model0()
+    return self:getBinary(0x236, 4, value, 1)
+end
+
+function EquipParamWeapon:setIsSoulParamIdChange_model1(value)
+    return self:setBinary(0x236, 5, value, 1)
+end
+
+function EquipParamWeapon:getIsSoulParamIdChange_model1()
+    return self:getBinary(0x236, 5, value, 1)
+end
+
+function EquipParamWeapon:setIsSoulParamIdChange_model2(value)
+    return self:setBinary(0x236, 6, value, 1)
+end
+
+function EquipParamWeapon:getIsSoulParamIdChange_model2()
+    return self:getBinary(0x236, 6, value, 1)
+end
+
+function EquipParamWeapon:setIsSoulParamIdChange_model3(value)
+    return self:setBinary(0x236, 7, value, 1)
+end
+
+function EquipParamWeapon:getIsSoulParamIdChange_model3()
+    return self:getBinary(0x236, 7, value, 1)
+end
+
+function EquipParamWeapon:setWepSeIdOffset(value)
+    return self:setU8(0x237, value)
+end
+function EquipParamWeapon:getWepSeIdOffset(value)
+    return self:getU8(0x237, value)
+end
+
+function EquipParamWeapon:setBaseChangePrice(value)
+    return self:setU32(0x238, value)
+end
+function EquipParamWeapon:getBaseChangePrice(value)
+    return self:getU32(0x238, value)
+end
+
+function EquipParamWeapon:setLevelSyncCorrectId(value)
+    return self:setU16(0x23C, value)
+end
+function EquipParamWeapon:getLevelSyncCorrectId(value)
+    return self:getU16(0x23C, value)
+end
+
+function EquipParamWeapon:setCorrectType_Sleep(value)
+    return self:setU8(0x23E, value)
+end
+function EquipParamWeapon:getCorrectType_Sleep(value)
+    return self:getU8(0x23E, value)
+end
+
+function EquipParamWeapon:setCorrectType_Madness(value)
+    return self:setU8(0x23F, value)
+end
+function EquipParamWeapon:getCorrectType_Madness(value)
+    return self:getU8(0x23F, value)
+end
+
+function EquipParamWeapon:setRarity(value)
+    return self:setU8(0x240, value)
+end
+function EquipParamWeapon:getRarity(value)
+    return self:getU8(0x240, value)
+end
+
+function EquipParamWeapon:setGemMountType(value)
+    return self:setU8(0x241, value)
+end
+function EquipParamWeapon:getGemMountType(value)
+    return self:getU8(0x241, value)
+end
+
+function EquipParamWeapon:setWepRegainHp(value)
+    return self:setU16(0x242, value)
+end
+function EquipParamWeapon:getWepRegainHp(value)
+    return self:getU16(0x242, value)
+end
+
+function EquipParamWeapon:setSpEffectMsgId0(value)
+    return self:setU32(0x244, value)
+end
+function EquipParamWeapon:getSpEffectMsgId0(value)
+    return self:getU32(0x244, value)
+end
+
+function EquipParamWeapon:setSpEffectMsgId1(value)
+    return self:setU32(0x248, value)
+end
+function EquipParamWeapon:getSpEffectMsgId1(value)
+    return self:getU32(0x248, value)
+end
+
+function EquipParamWeapon:setSpEffectMsgId2(value)
+    return self:setU32(0x24C, value)
+end
+function EquipParamWeapon:getSpEffectMsgId2(value)
+    return self:getU32(0x24C, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep16(value)
+    return self:setU32(0x250, value)
+end
+function EquipParamWeapon:getOriginEquipWep16(value)
+    return self:getU32(0x250, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep17(value)
+    return self:setU32(0x254, value)
+end
+function EquipParamWeapon:getOriginEquipWep17(value)
+    return self:getU32(0x254, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep18(value)
+    return self:setU32(0x258, value)
+end
+function EquipParamWeapon:getOriginEquipWep18(value)
+    return self:getU32(0x258, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep19(value)
+    return self:setU32(0x25C, value)
+end
+function EquipParamWeapon:getOriginEquipWep19(value)
+    return self:getU32(0x25C, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep20(value)
+    return self:setU32(0x260, value)
+end
+function EquipParamWeapon:getOriginEquipWep20(value)
+    return self:getU32(0x260, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep21(value)
+    return self:setU32(0x264, value)
+end
+function EquipParamWeapon:getOriginEquipWep21(value)
+    return self:getU32(0x264, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep22(value)
+    return self:setU32(0x268, value)
+end
+function EquipParamWeapon:getOriginEquipWep22(value)
+    return self:getU32(0x268, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep23(value)
+    return self:setU32(0x26C, value)
+end
+function EquipParamWeapon:getOriginEquipWep23(value)
+    return self:getU32(0x26C, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep24(value)
+    return self:setU32(0x270, value)
+end
+function EquipParamWeapon:getOriginEquipWep24(value)
+    return self:getU32(0x270, value)
+end
+
+function EquipParamWeapon:setOriginEquipWep25(value)
+    return self:setU32(0x274, value)
+end
+function EquipParamWeapon:getOriginEquipWep25(value)
+    return self:getU32(0x274, value)
+end
+
+function EquipParamWeapon:setEquippedSpell_R1(value)
+    return self:setU32(0x278, value)
+end
+function EquipParamWeapon:getEquippedSpell_R1(value)
+    return self:getU32(0x278, value)
+end
+
+function EquipParamWeapon:setEquippedSpell_R2(value)
+    return self:setU32(0x27C, value)
+end
+function EquipParamWeapon:getEquippedSpell_R2(value)
+    return self:getU32(0x27C, value)
+end
+
+function EquipParamWeapon:setUnknown_3(value)
+    return self:setF32(0x280, value)
+end
+function EquipParamWeapon:getUnknown_3(value)
+    return self:getF32(0x280, value)
+end
+
+function EquipParamWeapon:setUnknown_4(value)
+    return self:setU32(0x284, value)
+end
+function EquipParamWeapon:getUnknown_4(value)
+    return self:getU32(0x284, value)
+end
+
+--dummy8 midPadding[8]
+
+function EquipParamWeapon:setUnknown_7(value)
+    return self:setU32(0x290, value)
+end
+function EquipParamWeapon:getUnknown_7(value)
+    return self:getU32(0x290, value)
+end
+
+function EquipParamWeapon:setUnknown_8(value)
+    return self:setU32(0x294, value)
+end
+function EquipParamWeapon:getUnknown_8(value)
+    return self:getU32(0x294, value)
+end
+
+function EquipParamWeapon:setCriticalMultiplier(value)
+    return self:setF32(0x298, value)
+end
+function EquipParamWeapon:getCriticalMultiplier(value)
+    return self:getF32(0x298, value)
+end
+
+function EquipParamWeapon:setAttachEffectId(value)
+    return self:setU32(0x29C, value)
+end
+function EquipParamWeapon:getAttachEffectId(value)
+    return self:getU32(0x29C, value)
+end
+
+function EquipParamWeapon:setReviveDamage(value)
+    return self:setF32(0x2A0, value)
+end
+function EquipParamWeapon:getReviveDamage(value)
+    return self:getF32(0x2A0, value)
+end
+
+function EquipParamWeapon:setUnknown_11(value)
+    return self:setU32(0x2A4, value)
+end
+function EquipParamWeapon:getUnknown_11(value)
+    return self:getU32(0x2A4, value)
+end
+[disable]
+EquipParamWeapon = nil

@@ -1,0 +1,83 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+WorldMapPlaceNameParam = {}
+function WorldMapPlaceNameParam:new(id_or_all, patchName)
+    return paramPatcher(self, "WorldMapPlaceNameParam", 0x24, id_or_all, patchName)
+end
+
+
+
+function WorldMapPlaceNameParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function WorldMapPlaceNameParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function WorldMapPlaceNameParam:setWorldMapPieceId(value)
+    return self:setU32(0x04, value)
+end
+function WorldMapPlaceNameParam:getWorldMapPieceId(value)
+    return self:getU32(0x04, value)
+end
+
+function WorldMapPlaceNameParam:setTextId(value)
+    return self:setU32(0x08, value)
+end
+function WorldMapPlaceNameParam:getTextId(value)
+    return self:getU32(0x08, value)
+end
+
+--dummy8 pad1[4]
+
+function WorldMapPlaceNameParam:setAreaNo(value)
+    return self:setU8(0x10, value)
+end
+function WorldMapPlaceNameParam:getAreaNo(value)
+    return self:getU8(0x10, value)
+end
+
+function WorldMapPlaceNameParam:setGridXNo(value)
+    return self:setU8(0x11, value)
+end
+function WorldMapPlaceNameParam:getGridXNo(value)
+    return self:getU8(0x11, value)
+end
+
+function WorldMapPlaceNameParam:setGridZNo(value)
+    return self:setU8(0x12, value)
+end
+function WorldMapPlaceNameParam:getGridZNo(value)
+    return self:getU8(0x12, value)
+end
+
+--dummy8 pad2[1]
+
+function WorldMapPlaceNameParam:setPosX(value)
+    return self:setF32(0x14, value)
+end
+function WorldMapPlaceNameParam:getPosX(value)
+    return self:getF32(0x14, value)
+end
+
+function WorldMapPlaceNameParam:setPosY(value)
+    return self:setF32(0x18, value)
+end
+function WorldMapPlaceNameParam:getPosY(value)
+    return self:getF32(0x18, value)
+end
+
+function WorldMapPlaceNameParam:setPosZ(value)
+    return self:setF32(0x1C, value)
+end
+function WorldMapPlaceNameParam:getPosZ(value)
+    return self:getF32(0x1C, value)
+end
+[disable]
+WorldMapPlaceNameParam = nil

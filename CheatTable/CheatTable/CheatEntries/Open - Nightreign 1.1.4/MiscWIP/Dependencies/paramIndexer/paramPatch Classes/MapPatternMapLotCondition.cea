@@ -1,0 +1,74 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MapPatternMapLotCondition = {}
+function MapPatternMapLotCondition:new(id_or_all, patchName)
+    return paramPatcher(self, "MapPatternMapLotCondition", 0x1C, id_or_all, patchName)
+end
+
+
+
+function MapPatternMapLotCondition:setUnknown_0(value)
+    return self:setU32(0x00, value)
+end
+function MapPatternMapLotCondition:getUnknown_0(value)
+    return self:getU32(0x00, value)
+end
+
+function MapPatternMapLotCondition:setModifier1(value)
+    return self:setU32(0x04, value)
+end
+function MapPatternMapLotCondition:getModifier1(value)
+    return self:getU32(0x04, value)
+end
+
+function MapPatternMapLotCondition:setModifier2(value)
+    return self:setU32(0x08, value)
+end
+function MapPatternMapLotCondition:getModifier2(value)
+    return self:getU32(0x08, value)
+end
+
+function MapPatternMapLotCondition:setUnknown_3(value)
+    return self:setU32(0x0C, value)
+end
+function MapPatternMapLotCondition:getUnknown_3(value)
+    return self:getU32(0x0C, value)
+end
+
+function MapPatternMapLotCondition:setUnknown_4a(value)
+    return self:setU8(0x10, value)
+end
+function MapPatternMapLotCondition:getUnknown_4a(value)
+    return self:getU8(0x10, value)
+end
+
+function MapPatternMapLotCondition:setTargetBoss1(value)
+    return self:setU8(0x11, value)
+end
+function MapPatternMapLotCondition:getTargetBoss1(value)
+    return self:getU8(0x11, value)
+end
+
+function MapPatternMapLotCondition:setTargetBoss2(value)
+    return self:setU8(0x12, value)
+end
+function MapPatternMapLotCondition:getTargetBoss2(value)
+    return self:getU8(0x12, value)
+end
+
+function MapPatternMapLotCondition:setUnknown_4d(value)
+    return self:setU8(0x13, value)
+end
+function MapPatternMapLotCondition:getUnknown_4d(value)
+    return self:getU8(0x13, value)
+end
+
+function MapPatternMapLotCondition:setUnknown_5(value)
+    return self:setU32(0x14, value)
+end
+function MapPatternMapLotCondition:getUnknown_5(value)
+    return self:getU32(0x14, value)
+end
+[disable]
+MapPatternMapLotCondition = nil

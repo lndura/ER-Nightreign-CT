@@ -1,0 +1,18 @@
+<CheatEntry>
+  <ID>1337274913</ID>
+  <Description>"Byte 0"</Description>
+  <Options moAlwaysHideChildren="1" moManualExpandCollapse="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+0</Address>
+  <x-ce2fs-child-order>
+    <id id="1337274914"/>
+    <id id="1337274915"/>
+    <id id="1337274916"/>
+    <id id="1337274917"/>
+    <id id="1337274918"/>
+    <id id="1337274919"/>
+    <id id="1337274920"/>
+    <id id="1337274921"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

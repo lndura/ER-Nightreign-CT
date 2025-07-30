@@ -1,0 +1,223 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+BuddyParam = {}
+function BuddyParam:new(id_or_all, patchName)
+    return paramPatcher(self, "BuddyParam", 0x71, id_or_all, patchName)
+end
+
+
+
+function BuddyParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function BuddyParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function BuddyParam:setTriggerSpEffectId(value)
+    return self:setU32(0x04, value)
+end
+function BuddyParam:getTriggerSpEffectId(value)
+    return self:getU32(0x04, value)
+end
+
+function BuddyParam:setNpcParamId(value)
+    return self:setU32(0x08, value)
+end
+function BuddyParam:getNpcParamId(value)
+    return self:getU32(0x08, value)
+end
+
+function BuddyParam:setNpcThinkParamId(value)
+    return self:setU32(0x0C, value)
+end
+function BuddyParam:getNpcThinkParamId(value)
+    return self:getU32(0x0C, value)
+end
+
+function BuddyParam:setNpcParamId_ridden(value)
+    return self:setU32(0x10, value)
+end
+function BuddyParam:getNpcParamId_ridden(value)
+    return self:getU32(0x10, value)
+end
+
+function BuddyParam:setNpcThinkParamId_ridden(value)
+    return self:setU32(0x14, value)
+end
+function BuddyParam:getNpcThinkParamId_ridden(value)
+    return self:getU32(0x14, value)
+end
+
+function BuddyParam:setX_offset(value)
+    return self:setF32(0x18, value)
+end
+function BuddyParam:getX_offset(value)
+    return self:getF32(0x18, value)
+end
+
+function BuddyParam:setZ_offset(value)
+    return self:setF32(0x1C, value)
+end
+function BuddyParam:getZ_offset(value)
+    return self:getF32(0x1C, value)
+end
+
+function BuddyParam:setY_angle(value)
+    return self:setF32(0x20, value)
+end
+function BuddyParam:getY_angle(value)
+    return self:getF32(0x20, value)
+end
+
+function BuddyParam:setAppearOnAroundSekihi(value)
+    return self:setU8(0x24, value)
+end
+function BuddyParam:getAppearOnAroundSekihi(value)
+    return self:getU8(0x24, value)
+end
+
+function BuddyParam:setDisablePCTargetShare(value)
+    return self:setU8(0x25, value)
+end
+function BuddyParam:getDisablePCTargetShare(value)
+    return self:getU8(0x25, value)
+end
+
+function BuddyParam:setPcFollowType(value)
+    return self:setU8(0x26, value)
+end
+function BuddyParam:getPcFollowType(value)
+    return self:getU8(0x26, value)
+end
+
+--dummy8 Reserve[1]
+
+function BuddyParam:setDopingSpEffect_lv0(value)
+    return self:setU32(0x28, value)
+end
+function BuddyParam:getDopingSpEffect_lv0(value)
+    return self:getU32(0x28, value)
+end
+
+function BuddyParam:setDopingSpEffect_lv1(value)
+    return self:setU32(0x2C, value)
+end
+function BuddyParam:getDopingSpEffect_lv1(value)
+    return self:getU32(0x2C, value)
+end
+
+function BuddyParam:setDopingSpEffect_lv2(value)
+    return self:setU32(0x30, value)
+end
+function BuddyParam:getDopingSpEffect_lv2(value)
+    return self:getU32(0x30, value)
+end
+
+function BuddyParam:setDopingSpEffect_lv3(value)
+    return self:setU32(0x34, value)
+end
+function BuddyParam:getDopingSpEffect_lv3(value)
+    return self:getU32(0x34, value)
+end
+
+function BuddyParam:setDopingSpEffect_lv4(value)
+    return self:setU32(0x38, value)
+end
+function BuddyParam:getDopingSpEffect_lv4(value)
+    return self:getU32(0x38, value)
+end
+
+function BuddyParam:setDopingSpEffect_lv5(value)
+    return self:setU32(0x3C, value)
+end
+function BuddyParam:getDopingSpEffect_lv5(value)
+    return self:getU32(0x3C, value)
+end
+
+function BuddyParam:setDopingSpEffect_lv6(value)
+    return self:setU32(0x40, value)
+end
+function BuddyParam:getDopingSpEffect_lv6(value)
+    return self:getU32(0x40, value)
+end
+
+function BuddyParam:setDopingSpEffect_lv7(value)
+    return self:setU32(0x44, value)
+end
+function BuddyParam:getDopingSpEffect_lv7(value)
+    return self:getU32(0x44, value)
+end
+
+function BuddyParam:setDopingSpEffect_lv8(value)
+    return self:setU32(0x48, value)
+end
+function BuddyParam:getDopingSpEffect_lv8(value)
+    return self:getU32(0x48, value)
+end
+
+function BuddyParam:setDopingSpEffect_lv9(value)
+    return self:setU32(0x4C, value)
+end
+function BuddyParam:getDopingSpEffect_lv9(value)
+    return self:getU32(0x4C, value)
+end
+
+function BuddyParam:setDopingSpEffect_lv10(value)
+    return self:setU32(0x50, value)
+end
+function BuddyParam:getDopingSpEffect_lv10(value)
+    return self:getU32(0x50, value)
+end
+
+function BuddyParam:setNpcPlayerInitParamId(value)
+    return self:setU32(0x54, value)
+end
+function BuddyParam:getNpcPlayerInitParamId(value)
+    return self:getU32(0x54, value)
+end
+
+function BuddyParam:setGenerateAnimId(value)
+    return self:setU32(0x58, value)
+end
+function BuddyParam:getGenerateAnimId(value)
+    return self:getU32(0x58, value)
+end
+
+function BuddyParam:setUsageShortcutTextId(value)
+    return self:setU32(0x5C, value)
+end
+function BuddyParam:getUsageShortcutTextId(value)
+    return self:getU32(0x5C, value)
+end
+
+function BuddyParam:setUnknown_2(value)
+    return self:setU32(0x60, value)
+end
+function BuddyParam:getUnknown_2(value)
+    return self:getU32(0x60, value)
+end
+
+function BuddyParam:setUnknown_3(value)
+    return self:setU32(0x64, value)
+end
+function BuddyParam:getUnknown_3(value)
+    return self:getU32(0x64, value)
+end
+
+function BuddyParam:setSummonBehaviorId(value)
+    return self:setU32(0x68, value)
+end
+function BuddyParam:getSummonBehaviorId(value)
+    return self:getU32(0x68, value)
+end
+
+--dummy8 padding[4]
+[disable]
+BuddyParam = nil

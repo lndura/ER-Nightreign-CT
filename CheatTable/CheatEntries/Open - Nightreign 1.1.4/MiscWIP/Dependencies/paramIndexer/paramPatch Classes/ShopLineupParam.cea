@@ -1,0 +1,172 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+ShopLineupParam = {}
+function ShopLineupParam:new(id_or_all, patchName)
+    return paramPatcher(self, "ShopLineupParam", 0x42, id_or_all, patchName)
+end
+
+
+
+function ShopLineupParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function ShopLineupParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function ShopLineupParam:setEquipId(value)
+    return self:setU32(0x04, value)
+end
+function ShopLineupParam:getEquipId(value)
+    return self:getU32(0x04, value)
+end
+
+function ShopLineupParam:setValue(value)
+    return self:setU32(0x08, value)
+end
+function ShopLineupParam:getValue(value)
+    return self:getU32(0x08, value)
+end
+
+function ShopLineupParam:setMtrlId(value)
+    return self:setU32(0x0C, value)
+end
+function ShopLineupParam:getMtrlId(value)
+    return self:getU32(0x0C, value)
+end
+
+function ShopLineupParam:setEventFlag_forStock(value)
+    return self:setU32(0x10, value)
+end
+function ShopLineupParam:getEventFlag_forStock(value)
+    return self:getU32(0x10, value)
+end
+
+function ShopLineupParam:setEventFlag_forRelease(value)
+    return self:setU32(0x14, value)
+end
+function ShopLineupParam:getEventFlag_forRelease(value)
+    return self:getU32(0x14, value)
+end
+
+function ShopLineupParam:setSellQuantity(value)
+    return self:setU16(0x18, value)
+end
+function ShopLineupParam:getSellQuantity(value)
+    return self:getU16(0x18, value)
+end
+
+function ShopLineupParam:setUnknown_1(value)
+    return self:setU8(0x1A, value)
+end
+function ShopLineupParam:getUnknown_1(value)
+    return self:getU8(0x1A, value)
+end
+
+function ShopLineupParam:setEquipType(value)
+    return self:setU8(0x1B, value)
+end
+function ShopLineupParam:getEquipType(value)
+    return self:getU8(0x1B, value)
+end
+
+function ShopLineupParam:setCostType(value)
+    return self:setU8(0x1C, value)
+end
+function ShopLineupParam:getCostType(value)
+    return self:getU8(0x1C, value)
+end
+
+--dummy8 pad1[1]
+
+function ShopLineupParam:setSetNum(value)
+    return self:setU16(0x1E, value)
+end
+function ShopLineupParam:getSetNum(value)
+    return self:getU16(0x1E, value)
+end
+
+function ShopLineupParam:setValue_Add(value)
+    return self:setU32(0x20, value)
+end
+function ShopLineupParam:getValue_Add(value)
+    return self:getU32(0x20, value)
+end
+
+function ShopLineupParam:setValue_Magnification(value)
+    return self:setF32(0x24, value)
+end
+function ShopLineupParam:getValue_Magnification(value)
+    return self:getF32(0x24, value)
+end
+
+function ShopLineupParam:setIconId(value)
+    return self:setU32(0x28, value)
+end
+function ShopLineupParam:getIconId(value)
+    return self:getU32(0x28, value)
+end
+
+function ShopLineupParam:setNameMsgId(value)
+    return self:setU32(0x2C, value)
+end
+function ShopLineupParam:getNameMsgId(value)
+    return self:getU32(0x2C, value)
+end
+
+function ShopLineupParam:setMenuTitleMsgId(value)
+    return self:setU32(0x30, value)
+end
+function ShopLineupParam:getMenuTitleMsgId(value)
+    return self:getU32(0x30, value)
+end
+
+function ShopLineupParam:setMenuIconId(value)
+    return self:setU16(0x34, value)
+end
+function ShopLineupParam:getMenuIconId(value)
+    return self:getU16(0x34, value)
+end
+
+function ShopLineupParam:setUnknown_2a(value)
+    return self:setU16(0x36, value)
+end
+function ShopLineupParam:getUnknown_2a(value)
+    return self:getU16(0x36, value)
+end
+
+function ShopLineupParam:setUnknown_2c(value)
+    return self:setU16(0x38, value)
+end
+function ShopLineupParam:getUnknown_2c(value)
+    return self:getU16(0x38, value)
+end
+
+function ShopLineupParam:setUnknown_3a(value)
+    return self:setU16(0x3A, value)
+end
+function ShopLineupParam:getUnknown_3a(value)
+    return self:getU16(0x3A, value)
+end
+
+function ShopLineupParam:setUnknown_3c(value)
+    return self:setU16(0x3C, value)
+end
+function ShopLineupParam:getUnknown_3c(value)
+    return self:getU16(0x3C, value)
+end
+
+function ShopLineupParam:setUnknown_4a(value)
+    return self:setU16(0x3E, value)
+end
+function ShopLineupParam:getUnknown_4a(value)
+    return self:getU16(0x3E, value)
+end
+[disable]
+ShopLineupParam = nil

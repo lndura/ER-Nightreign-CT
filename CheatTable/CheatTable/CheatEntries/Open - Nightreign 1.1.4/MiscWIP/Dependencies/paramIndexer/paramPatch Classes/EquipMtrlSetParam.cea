@@ -1,0 +1,193 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+EquipMtrlSetParam = {}
+function EquipMtrlSetParam:new(id_or_all, patchName)
+    return paramPatcher(self, "EquipMtrlSetParam", 0x34, id_or_all, patchName)
+end
+
+
+
+function EquipMtrlSetParam:setMaterialId01(value)
+    return self:setU32(0x00, value)
+end
+function EquipMtrlSetParam:getMaterialId01(value)
+    return self:getU32(0x00, value)
+end
+
+function EquipMtrlSetParam:setMaterialId02(value)
+    return self:setU32(0x04, value)
+end
+function EquipMtrlSetParam:getMaterialId02(value)
+    return self:getU32(0x04, value)
+end
+
+function EquipMtrlSetParam:setMaterialId03(value)
+    return self:setU32(0x08, value)
+end
+function EquipMtrlSetParam:getMaterialId03(value)
+    return self:getU32(0x08, value)
+end
+
+function EquipMtrlSetParam:setMaterialId04(value)
+    return self:setU32(0x0C, value)
+end
+function EquipMtrlSetParam:getMaterialId04(value)
+    return self:getU32(0x0C, value)
+end
+
+function EquipMtrlSetParam:setMaterialId05(value)
+    return self:setU32(0x10, value)
+end
+function EquipMtrlSetParam:getMaterialId05(value)
+    return self:getU32(0x10, value)
+end
+
+function EquipMtrlSetParam:setMaterialId06(value)
+    return self:setU32(0x14, value)
+end
+function EquipMtrlSetParam:getMaterialId06(value)
+    return self:getU32(0x14, value)
+end
+
+--dummy8 pad_id[8]
+
+function EquipMtrlSetParam:setItemNum01(value)
+    return self:setU8(0x20, value)
+end
+function EquipMtrlSetParam:getItemNum01(value)
+    return self:getU8(0x20, value)
+end
+
+function EquipMtrlSetParam:setItemNum02(value)
+    return self:setU8(0x21, value)
+end
+function EquipMtrlSetParam:getItemNum02(value)
+    return self:getU8(0x21, value)
+end
+
+function EquipMtrlSetParam:setItemNum03(value)
+    return self:setU8(0x22, value)
+end
+function EquipMtrlSetParam:getItemNum03(value)
+    return self:getU8(0x22, value)
+end
+
+function EquipMtrlSetParam:setItemNum04(value)
+    return self:setU8(0x23, value)
+end
+function EquipMtrlSetParam:getItemNum04(value)
+    return self:getU8(0x23, value)
+end
+
+function EquipMtrlSetParam:setItemNum05(value)
+    return self:setU8(0x24, value)
+end
+function EquipMtrlSetParam:getItemNum05(value)
+    return self:getU8(0x24, value)
+end
+
+function EquipMtrlSetParam:setItemNum06(value)
+    return self:setU8(0x25, value)
+end
+function EquipMtrlSetParam:getItemNum06(value)
+    return self:getU8(0x25, value)
+end
+
+--dummy8 pad_num[2]
+
+function EquipMtrlSetParam:setMaterialCate01(value)
+    return self:setU8(0x28, value)
+end
+function EquipMtrlSetParam:getMaterialCate01(value)
+    return self:getU8(0x28, value)
+end
+
+function EquipMtrlSetParam:setMaterialCate02(value)
+    return self:setU8(0x29, value)
+end
+function EquipMtrlSetParam:getMaterialCate02(value)
+    return self:getU8(0x29, value)
+end
+
+function EquipMtrlSetParam:setMaterialCate03(value)
+    return self:setU8(0x2A, value)
+end
+function EquipMtrlSetParam:getMaterialCate03(value)
+    return self:getU8(0x2A, value)
+end
+
+function EquipMtrlSetParam:setMaterialCate04(value)
+    return self:setU8(0x2B, value)
+end
+function EquipMtrlSetParam:getMaterialCate04(value)
+    return self:getU8(0x2B, value)
+end
+
+function EquipMtrlSetParam:setMaterialCate05(value)
+    return self:setU8(0x2C, value)
+end
+function EquipMtrlSetParam:getMaterialCate05(value)
+    return self:getU8(0x2C, value)
+end
+
+function EquipMtrlSetParam:setMaterialCate06(value)
+    return self:setU8(0x2D, value)
+end
+function EquipMtrlSetParam:getMaterialCate06(value)
+    return self:getU8(0x2D, value)
+end
+
+--dummy8 pad_cate[2]
+
+function EquipMtrlSetParam:setIsDisableDispNum01(value)
+    return self:setBinary(0x30, 0, value, 1)
+end
+
+function EquipMtrlSetParam:getIsDisableDispNum01()
+    return self:getBinary(0x30, 0, value, 1)
+end
+
+function EquipMtrlSetParam:setIsDisableDispNum02(value)
+    return self:setBinary(0x30, 1, value, 1)
+end
+
+function EquipMtrlSetParam:getIsDisableDispNum02()
+    return self:getBinary(0x30, 1, value, 1)
+end
+
+function EquipMtrlSetParam:setIsDisableDispNum03(value)
+    return self:setBinary(0x30, 2, value, 1)
+end
+
+function EquipMtrlSetParam:getIsDisableDispNum03()
+    return self:getBinary(0x30, 2, value, 1)
+end
+
+function EquipMtrlSetParam:setIsDisableDispNum04(value)
+    return self:setBinary(0x30, 3, value, 1)
+end
+
+function EquipMtrlSetParam:getIsDisableDispNum04()
+    return self:getBinary(0x30, 3, value, 1)
+end
+
+function EquipMtrlSetParam:setIsDisableDispNum05(value)
+    return self:setBinary(0x30, 4, value, 1)
+end
+
+function EquipMtrlSetParam:getIsDisableDispNum05()
+    return self:getBinary(0x30, 4, value, 1)
+end
+
+function EquipMtrlSetParam:setIsDisableDispNum06(value)
+    return self:setBinary(0x30, 5, value, 1)
+end
+
+function EquipMtrlSetParam:getIsDisableDispNum06()
+    return self:getBinary(0x30, 5, value, 1)
+end
+
+--dummy8 pad[3]
+[disable]
+EquipMtrlSetParam = nil

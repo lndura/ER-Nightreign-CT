@@ -1,0 +1,32 @@
+<CheatEntry>
+  <ID>1337273372</ID>
+  <Description>"item.Data"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>itemGive.data</Address>
+  <x-ce2fs-child-order>
+    <id id="1337273373"/>
+    <id id="1337273374"/>
+    <id id="1337273375"/>
+    <id id="1337273376"/>
+    <id id="1337273377"/>
+    <id id="1337273378"/>
+    <id id="1337273379"/>
+    <id id="1337273380"/>
+    <id id="1337273381"/>
+    <id id="1337273382"/>
+    <id id="1337273383"/>
+    <id id="1337273384"/>
+    <id id="1337273385"/>
+    <id id="1337273386"/>
+    <id id="1337273387"/>
+    <id id="1337273388"/>
+    <id id="1337273389"/>
+    <id id="1337273390"/>
+    <id id="1337273391"/>
+    <id id="1337273392"/>
+    <id id="1337273393"/>
+    <id id="1337273394"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

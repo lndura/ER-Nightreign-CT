@@ -1,0 +1,46 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+FeTextEffectParam = {}
+function FeTextEffectParam:new(id_or_all, patchName)
+    return paramPatcher(self, "FeTextEffectParam", 0x21, id_or_all, patchName)
+end
+
+
+
+function FeTextEffectParam:setResId(value)
+    return self:setU16(0x00, value)
+end
+function FeTextEffectParam:getResId(value)
+    return self:getU16(0x00, value)
+end
+
+--dummy8 pad1[2]
+
+function FeTextEffectParam:setTextId(value)
+    return self:setU32(0x04, value)
+end
+function FeTextEffectParam:getTextId(value)
+    return self:getU32(0x04, value)
+end
+
+function FeTextEffectParam:setSeId(value)
+    return self:setU32(0x08, value)
+end
+function FeTextEffectParam:getSeId(value)
+    return self:getU32(0x08, value)
+end
+
+function FeTextEffectParam:setCanMixMapName(value)
+    return self:setBinary(0x0C, 0, value, 1)
+end
+
+function FeTextEffectParam:getCanMixMapName()
+    return self:getBinary(0x0C, 0, value, 1)
+end
+
+--dummy8 pad3:7
+
+--dummy8 pad2[19]
+[disable]
+FeTextEffectParam = nil

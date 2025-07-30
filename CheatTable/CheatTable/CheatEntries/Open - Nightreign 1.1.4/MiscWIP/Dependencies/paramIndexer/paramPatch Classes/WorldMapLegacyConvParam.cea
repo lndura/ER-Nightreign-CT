@@ -1,0 +1,123 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+WorldMapLegacyConvParam = {}
+function WorldMapLegacyConvParam:new(id_or_all, patchName)
+    return paramPatcher(self, "WorldMapLegacyConvParam", 0x31, id_or_all, patchName)
+end
+
+
+
+function WorldMapLegacyConvParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function WorldMapLegacyConvParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+--dummy8 disableParamReserve1:7
+
+--dummy8 disableParamReserve2[3]
+
+function WorldMapLegacyConvParam:setSrcAreaNo(value)
+    return self:setU8(0x04, value)
+end
+function WorldMapLegacyConvParam:getSrcAreaNo(value)
+    return self:getU8(0x04, value)
+end
+
+function WorldMapLegacyConvParam:setSrcGridXNo(value)
+    return self:setU8(0x05, value)
+end
+function WorldMapLegacyConvParam:getSrcGridXNo(value)
+    return self:getU8(0x05, value)
+end
+
+function WorldMapLegacyConvParam:setSrcGridZNo(value)
+    return self:setU8(0x06, value)
+end
+function WorldMapLegacyConvParam:getSrcGridZNo(value)
+    return self:getU8(0x06, value)
+end
+
+--dummy8 pad1[1]
+
+function WorldMapLegacyConvParam:setSrcPosX(value)
+    return self:setF32(0x08, value)
+end
+function WorldMapLegacyConvParam:getSrcPosX(value)
+    return self:getF32(0x08, value)
+end
+
+function WorldMapLegacyConvParam:setSrcPosY(value)
+    return self:setF32(0x0C, value)
+end
+function WorldMapLegacyConvParam:getSrcPosY(value)
+    return self:getF32(0x0C, value)
+end
+
+function WorldMapLegacyConvParam:setSrcPosZ(value)
+    return self:setF32(0x10, value)
+end
+function WorldMapLegacyConvParam:getSrcPosZ(value)
+    return self:getF32(0x10, value)
+end
+
+function WorldMapLegacyConvParam:setDstAreaNo(value)
+    return self:setU8(0x14, value)
+end
+function WorldMapLegacyConvParam:getDstAreaNo(value)
+    return self:getU8(0x14, value)
+end
+
+function WorldMapLegacyConvParam:setDstGridXNo(value)
+    return self:setU8(0x15, value)
+end
+function WorldMapLegacyConvParam:getDstGridXNo(value)
+    return self:getU8(0x15, value)
+end
+
+function WorldMapLegacyConvParam:setDstGridZNo(value)
+    return self:setU8(0x16, value)
+end
+function WorldMapLegacyConvParam:getDstGridZNo(value)
+    return self:getU8(0x16, value)
+end
+
+--dummy8 pad2[1]
+
+function WorldMapLegacyConvParam:setDstPosX(value)
+    return self:setF32(0x18, value)
+end
+function WorldMapLegacyConvParam:getDstPosX(value)
+    return self:getF32(0x18, value)
+end
+
+function WorldMapLegacyConvParam:setDstPosY(value)
+    return self:setF32(0x1C, value)
+end
+function WorldMapLegacyConvParam:getDstPosY(value)
+    return self:getF32(0x1C, value)
+end
+
+function WorldMapLegacyConvParam:setDstPosZ(value)
+    return self:setF32(0x20, value)
+end
+function WorldMapLegacyConvParam:getDstPosZ(value)
+    return self:getF32(0x20, value)
+end
+
+function WorldMapLegacyConvParam:setIsBasePoint(value)
+    return self:setBinary(0x24, 0, value, 1)
+end
+
+function WorldMapLegacyConvParam:getIsBasePoint()
+    return self:getBinary(0x24, 0, value, 1)
+end
+
+--dummy8 pad3:7
+
+--dummy8 pad4[11]
+[disable]
+WorldMapLegacyConvParam = nil

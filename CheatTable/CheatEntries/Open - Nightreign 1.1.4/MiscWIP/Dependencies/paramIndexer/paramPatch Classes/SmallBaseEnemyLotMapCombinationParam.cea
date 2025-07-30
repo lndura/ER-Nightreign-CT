@@ -1,0 +1,81 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+SmallBaseEnemyLotMapCombinationParam = {}
+function SmallBaseEnemyLotMapCombinationParam:new(id_or_all, patchName)
+    return paramPatcher(self, "SmallBaseEnemyLotMapCombinationParam", 0x19, id_or_all, patchName)
+end
+
+
+
+function SmallBaseEnemyLotMapCombinationParam:setUnknown_0(value)
+    return self:setU32(0x00, value)
+end
+function SmallBaseEnemyLotMapCombinationParam:getUnknown_0(value)
+    return self:getU32(0x00, value)
+end
+
+function SmallBaseEnemyLotMapCombinationParam:setUnknown_1(value)
+    return self:setU32(0x04, value)
+end
+function SmallBaseEnemyLotMapCombinationParam:getUnknown_1(value)
+    return self:getU32(0x04, value)
+end
+
+function SmallBaseEnemyLotMapCombinationParam:setUnknown_2(value)
+    return self:setU32(0x08, value)
+end
+function SmallBaseEnemyLotMapCombinationParam:getUnknown_2(value)
+    return self:getU32(0x08, value)
+end
+
+function SmallBaseEnemyLotMapCombinationParam:setUnknown_3a(value)
+    return self:setU16(0x0C, value)
+end
+function SmallBaseEnemyLotMapCombinationParam:getUnknown_3a(value)
+    return self:getU16(0x0C, value)
+end
+
+function SmallBaseEnemyLotMapCombinationParam:setUnknown_3b(value)
+    return self:setU16(0x0E, value)
+end
+function SmallBaseEnemyLotMapCombinationParam:getUnknown_3b(value)
+    return self:getU16(0x0E, value)
+end
+
+function SmallBaseEnemyLotMapCombinationParam:setUnknown_4(value)
+    return self:setU32(0x10, value)
+end
+function SmallBaseEnemyLotMapCombinationParam:getUnknown_4(value)
+    return self:getU32(0x10, value)
+end
+
+function SmallBaseEnemyLotMapCombinationParam:setUnknown_5a(value)
+    return self:setU8(0x14, value)
+end
+function SmallBaseEnemyLotMapCombinationParam:getUnknown_5a(value)
+    return self:getU8(0x14, value)
+end
+
+function SmallBaseEnemyLotMapCombinationParam:setUnknown_5b(value)
+    return self:setU8(0x15, value)
+end
+function SmallBaseEnemyLotMapCombinationParam:getUnknown_5b(value)
+    return self:getU8(0x15, value)
+end
+
+function SmallBaseEnemyLotMapCombinationParam:setUnknown_5c(value)
+    return self:setU8(0x16, value)
+end
+function SmallBaseEnemyLotMapCombinationParam:getUnknown_5c(value)
+    return self:getU8(0x16, value)
+end
+
+function SmallBaseEnemyLotMapCombinationParam:setUnknown_5d(value)
+    return self:setU8(0x17, value)
+end
+function SmallBaseEnemyLotMapCombinationParam:getUnknown_5d(value)
+    return self:getU8(0x17, value)
+end
+[disable]
+SmallBaseEnemyLotMapCombinationParam = nil

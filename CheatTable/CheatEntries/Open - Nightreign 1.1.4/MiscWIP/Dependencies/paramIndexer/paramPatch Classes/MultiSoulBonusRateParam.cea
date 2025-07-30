@@ -1,0 +1,125 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+MultiSoulBonusRateParam = {}
+function MultiSoulBonusRateParam:new(id_or_all, patchName)
+    return paramPatcher(self, "MultiSoulBonusRateParam", 0x81, id_or_all, patchName)
+end
+
+
+
+function MultiSoulBonusRateParam:setHost(value)
+    return self:setF32(0x00, value)
+end
+function MultiSoulBonusRateParam:getHost(value)
+    return self:getF32(0x00, value)
+end
+
+function MultiSoulBonusRateParam:setWhiteGhost_None(value)
+    return self:setF32(0x04, value)
+end
+function MultiSoulBonusRateParam:getWhiteGhost_None(value)
+    return self:getF32(0x04, value)
+end
+
+function MultiSoulBonusRateParam:setWhiteGhost_Umbasa(value)
+    return self:setF32(0x08, value)
+end
+function MultiSoulBonusRateParam:getWhiteGhost_Umbasa(value)
+    return self:getF32(0x08, value)
+end
+
+function MultiSoulBonusRateParam:setWhiteGhost_Berserker(value)
+    return self:setF32(0x0C, value)
+end
+function MultiSoulBonusRateParam:getWhiteGhost_Berserker(value)
+    return self:getF32(0x0C, value)
+end
+
+function MultiSoulBonusRateParam:setBlackGhost_None_Sign(value)
+    return self:setF32(0x10, value)
+end
+function MultiSoulBonusRateParam:getBlackGhost_None_Sign(value)
+    return self:getF32(0x10, value)
+end
+
+function MultiSoulBonusRateParam:setBlackGhost_Umbasa_Sign(value)
+    return self:setF32(0x14, value)
+end
+function MultiSoulBonusRateParam:getBlackGhost_Umbasa_Sign(value)
+    return self:getF32(0x14, value)
+end
+
+function MultiSoulBonusRateParam:setBlackGhost_Berserker_Sign(value)
+    return self:setF32(0x18, value)
+end
+function MultiSoulBonusRateParam:getBlackGhost_Berserker_Sign(value)
+    return self:getF32(0x18, value)
+end
+
+function MultiSoulBonusRateParam:setBlackGhost_None_Invade(value)
+    return self:setF32(0x1C, value)
+end
+function MultiSoulBonusRateParam:getBlackGhost_None_Invade(value)
+    return self:getF32(0x1C, value)
+end
+
+function MultiSoulBonusRateParam:setBlackGhost_Umbasa_Invade(value)
+    return self:setF32(0x20, value)
+end
+function MultiSoulBonusRateParam:getBlackGhost_Umbasa_Invade(value)
+    return self:getF32(0x20, value)
+end
+
+function MultiSoulBonusRateParam:setBlackGhost_Berserker_Invade(value)
+    return self:setF32(0x24, value)
+end
+function MultiSoulBonusRateParam:getBlackGhost_Berserker_Invade(value)
+    return self:getF32(0x24, value)
+end
+
+function MultiSoulBonusRateParam:setRedHunter1(value)
+    return self:setF32(0x28, value)
+end
+function MultiSoulBonusRateParam:getRedHunter1(value)
+    return self:getF32(0x28, value)
+end
+
+function MultiSoulBonusRateParam:setRedHunter2(value)
+    return self:setF32(0x2C, value)
+end
+function MultiSoulBonusRateParam:getRedHunter2(value)
+    return self:getF32(0x2C, value)
+end
+
+function MultiSoulBonusRateParam:setGuardianOfForest(value)
+    return self:setF32(0x30, value)
+end
+function MultiSoulBonusRateParam:getGuardianOfForest(value)
+    return self:getF32(0x30, value)
+end
+
+function MultiSoulBonusRateParam:setGuardianOfAnor(value)
+    return self:setF32(0x34, value)
+end
+function MultiSoulBonusRateParam:getGuardianOfAnor(value)
+    return self:getF32(0x34, value)
+end
+
+function MultiSoulBonusRateParam:setBattleRoyal(value)
+    return self:setF32(0x38, value)
+end
+function MultiSoulBonusRateParam:getBattleRoyal(value)
+    return self:getF32(0x38, value)
+end
+
+function MultiSoulBonusRateParam:setYellowMonk(value)
+    return self:setF32(0x3C, value)
+end
+function MultiSoulBonusRateParam:getYellowMonk(value)
+    return self:getF32(0x3C, value)
+end
+
+--dummy8 pad1[64]
+[disable]
+MultiSoulBonusRateParam = nil

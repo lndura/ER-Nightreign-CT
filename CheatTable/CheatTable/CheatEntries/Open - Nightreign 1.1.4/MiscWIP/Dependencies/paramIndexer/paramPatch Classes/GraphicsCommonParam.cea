@@ -1,0 +1,29 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+GraphicsCommonParam = {}
+function GraphicsCommonParam:new(id_or_all, patchName)
+    return paramPatcher(self, "GraphicsCommonParam", 0x101, id_or_all, patchName)
+end
+
+
+
+function GraphicsCommonParam:setHitBulletDecalOffset_HitIns(value)
+    return self:setF32(0x00, value)
+end
+function GraphicsCommonParam:getHitBulletDecalOffset_HitIns(value)
+    return self:getF32(0x00, value)
+end
+
+--dummy8 reserved02[8]
+
+function GraphicsCommonParam:setCharaWetDecalFadeRange(value)
+    return self:setF32(0x0C, value)
+end
+function GraphicsCommonParam:getCharaWetDecalFadeRange(value)
+    return self:getF32(0x0C, value)
+end
+
+--dummy8 reserved04[240]
+[disable]
+GraphicsCommonParam = nil

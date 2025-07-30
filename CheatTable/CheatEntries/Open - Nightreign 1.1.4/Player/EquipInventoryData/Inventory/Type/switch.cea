@@ -1,0 +1,8 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+local Type = readU32(inventory.data.Type)
+local newType = Type == 1 and 2 or 1
+writeU32(inventory.data.Type, newType)
+disableMemrec(memrec)
+[disable]

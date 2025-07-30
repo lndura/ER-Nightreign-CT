@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337272952</ID>
+  <Description>"DrawHitCapsule"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+A0</Address>
+</CheatEntry>

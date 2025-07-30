@@ -1,0 +1,89 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+CutsceneGparamTimeParam = {}
+function CutsceneGparamTimeParam:new(id_or_all, patchName)
+    return paramPatcher(self, "CutsceneGparamTimeParam", 0x14, id_or_all, patchName)
+end
+
+
+
+function CutsceneGparamTimeParam:setDisableParam_NT(value)
+    return self:setBinary(0x00, 0, value, 1)
+end
+
+function CutsceneGparamTimeParam:getDisableParam_NT()
+    return self:getBinary(0x00, 0, value, 1)
+end
+
+function CutsceneGparamTimeParam:setDisableParam_Debug(value)
+    return self:setBinary(0x00, 1, value, 1)
+end
+
+function CutsceneGparamTimeParam:getDisableParam_Debug()
+    return self:getBinary(0x00, 1, value, 1)
+end
+
+--dummy8 disableParamReserve1:6
+
+--dummy8 disableParamReserve2[3]
+
+function CutsceneGparamTimeParam:setDstTimezone_Morning(value)
+    return self:setU8(0x04, value)
+end
+function CutsceneGparamTimeParam:getDstTimezone_Morning(value)
+    return self:getU8(0x04, value)
+end
+
+function CutsceneGparamTimeParam:setDstTimezone_Noon(value)
+    return self:setU8(0x05, value)
+end
+function CutsceneGparamTimeParam:getDstTimezone_Noon(value)
+    return self:getU8(0x05, value)
+end
+
+function CutsceneGparamTimeParam:setDstTimezone_AfterNoon(value)
+    return self:setU8(0x06, value)
+end
+function CutsceneGparamTimeParam:getDstTimezone_AfterNoon(value)
+    return self:getU8(0x06, value)
+end
+
+function CutsceneGparamTimeParam:setDstTimezone_Evening(value)
+    return self:setU8(0x07, value)
+end
+function CutsceneGparamTimeParam:getDstTimezone_Evening(value)
+    return self:getU8(0x07, value)
+end
+
+function CutsceneGparamTimeParam:setDstTimezone_Night(value)
+    return self:setU8(0x08, value)
+end
+function CutsceneGparamTimeParam:getDstTimezone_Night(value)
+    return self:getU8(0x08, value)
+end
+
+function CutsceneGparamTimeParam:setDstTimezone_DeepNightA(value)
+    return self:setU8(0x09, value)
+end
+function CutsceneGparamTimeParam:getDstTimezone_DeepNightA(value)
+    return self:getU8(0x09, value)
+end
+
+function CutsceneGparamTimeParam:setDstTimezone_DeepNightB(value)
+    return self:setU8(0x0A, value)
+end
+function CutsceneGparamTimeParam:getDstTimezone_DeepNightB(value)
+    return self:getU8(0x0A, value)
+end
+
+--dummy8 reserved[1]
+
+function CutsceneGparamTimeParam:setPostPlayIngameTime(value)
+    return self:setF32(0x0C, value)
+end
+function CutsceneGparamTimeParam:getPostPlayIngameTime(value)
+    return self:getF32(0x0C, value)
+end
+[disable]
+CutsceneGparamTimeParam = nil

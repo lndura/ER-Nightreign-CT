@@ -1,0 +1,144 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+ReinforceParamProtector = {}
+function ReinforceParamProtector:new(id_or_all, patchName)
+    return paramPatcher(self, "ReinforceParamProtector", 0x44, id_or_all, patchName)
+end
+
+
+
+function ReinforceParamProtector:setPhysicsDefRate(value)
+    return self:setF32(0x00, value)
+end
+function ReinforceParamProtector:getPhysicsDefRate(value)
+    return self:getF32(0x00, value)
+end
+
+function ReinforceParamProtector:setMagicDefRate(value)
+    return self:setF32(0x04, value)
+end
+function ReinforceParamProtector:getMagicDefRate(value)
+    return self:getF32(0x04, value)
+end
+
+function ReinforceParamProtector:setFireDefRate(value)
+    return self:setF32(0x08, value)
+end
+function ReinforceParamProtector:getFireDefRate(value)
+    return self:getF32(0x08, value)
+end
+
+function ReinforceParamProtector:setThunderDefRate(value)
+    return self:setF32(0x0C, value)
+end
+function ReinforceParamProtector:getThunderDefRate(value)
+    return self:getF32(0x0C, value)
+end
+
+function ReinforceParamProtector:setSlashDefRate(value)
+    return self:setF32(0x10, value)
+end
+function ReinforceParamProtector:getSlashDefRate(value)
+    return self:getF32(0x10, value)
+end
+
+function ReinforceParamProtector:setBlowDefRate(value)
+    return self:setF32(0x14, value)
+end
+function ReinforceParamProtector:getBlowDefRate(value)
+    return self:getF32(0x14, value)
+end
+
+function ReinforceParamProtector:setThrustDefRate(value)
+    return self:setF32(0x18, value)
+end
+function ReinforceParamProtector:getThrustDefRate(value)
+    return self:getF32(0x18, value)
+end
+
+function ReinforceParamProtector:setResistPoisonRate(value)
+    return self:setF32(0x1C, value)
+end
+function ReinforceParamProtector:getResistPoisonRate(value)
+    return self:getF32(0x1C, value)
+end
+
+function ReinforceParamProtector:setResistDiseaseRate(value)
+    return self:setF32(0x20, value)
+end
+function ReinforceParamProtector:getResistDiseaseRate(value)
+    return self:getF32(0x20, value)
+end
+
+function ReinforceParamProtector:setResistBloodRate(value)
+    return self:setF32(0x24, value)
+end
+function ReinforceParamProtector:getResistBloodRate(value)
+    return self:getF32(0x24, value)
+end
+
+function ReinforceParamProtector:setResistCurseRate(value)
+    return self:setF32(0x28, value)
+end
+function ReinforceParamProtector:getResistCurseRate(value)
+    return self:getF32(0x28, value)
+end
+
+function ReinforceParamProtector:setResidentSpEffectId1(value)
+    return self:setU8(0x2C, value)
+end
+function ReinforceParamProtector:getResidentSpEffectId1(value)
+    return self:getU8(0x2C, value)
+end
+
+function ReinforceParamProtector:setResidentSpEffectId2(value)
+    return self:setU8(0x2D, value)
+end
+function ReinforceParamProtector:getResidentSpEffectId2(value)
+    return self:getU8(0x2D, value)
+end
+
+function ReinforceParamProtector:setResidentSpEffectId3(value)
+    return self:setU8(0x2E, value)
+end
+function ReinforceParamProtector:getResidentSpEffectId3(value)
+    return self:getU8(0x2E, value)
+end
+
+function ReinforceParamProtector:setMaterialSetId(value)
+    return self:setU8(0x2F, value)
+end
+function ReinforceParamProtector:getMaterialSetId(value)
+    return self:getU8(0x2F, value)
+end
+
+function ReinforceParamProtector:setDarkDefRate(value)
+    return self:setF32(0x30, value)
+end
+function ReinforceParamProtector:getDarkDefRate(value)
+    return self:getF32(0x30, value)
+end
+
+function ReinforceParamProtector:setResistFreezeRate(value)
+    return self:setF32(0x34, value)
+end
+function ReinforceParamProtector:getResistFreezeRate(value)
+    return self:getF32(0x34, value)
+end
+
+function ReinforceParamProtector:setResistSleepRate(value)
+    return self:setF32(0x38, value)
+end
+function ReinforceParamProtector:getResistSleepRate(value)
+    return self:getF32(0x38, value)
+end
+
+function ReinforceParamProtector:setResistMadnessRate(value)
+    return self:setF32(0x3C, value)
+end
+function ReinforceParamProtector:getResistMadnessRate(value)
+    return self:getF32(0x3C, value)
+end
+[disable]
+ReinforceParamProtector = nil

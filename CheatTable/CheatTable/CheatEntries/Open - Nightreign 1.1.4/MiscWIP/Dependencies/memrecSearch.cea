@@ -1,0 +1,58 @@
+{$lua}
+if syntaxcheck then return end
+[enable]
+local function createRecordList(addr_list)
+    local str_list = createStringlist()
+    str_list.beginUpdate()
+    local mem_count = (addr_list.count - 1) or 0
+    for i = 0, mem_count, 1 do
+        local rec_object = addr_list[i]
+        local rec_name = rec_object.description
+        str_list.add(rec_name)
+    end
+    str_list.endUpdate()
+    return str_list
+end
+
+
+local searchToolOpen = false
+local function searchSelectMemrec()
+    searchToolOpen = true
+    local title = "search for MemoryRecord"
+    local description = "Select designated record to go to"
+    local addr_list = getAddressList()
+    local str_list = createRecordList(addr_list)
+    local _,rec_name = showSelectionList(title, description, str_list)
+    if rec_name ~= nil and rec_name ~= "" then
+        local targetNode = addr_list.getMemoryRecordByDescription(rec_name)
+        if targetNode then
+            local parentNode = targetNode.parent
+            while parentNode do
+                parentNode.active = true
+                parentNode = parentNode.parent
+            end
+            addr_list.setSelectedRecord(targetNode)
+            addr_list.Control[0].setFocus()
+        end
+    end
+    searchToolOpen = false
+end
+
+function showSearchTool()
+    local mainform = getMainForm()
+    if mainform.isForegroundWindow() then
+        if not searchToolOpen then
+            local ctrl = isKeyPressed(VK_CONTROL)
+            local find = isKeyPressed(70)
+            if ctrl and find then
+                searchSelectMemrec()
+            end
+        end
+    end
+end
+
+luaTask.insert("showSearchTool", showSearchTool)
+[disable]
+luaTask.remove("showSearchTool")
+showSearchTool = nil
+

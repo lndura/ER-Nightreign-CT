@@ -1,0 +1,22 @@
+<CheatEntry>
+  <ID>1337273258</ID>
+  <Description>"PostCorrectionAttributes"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>GameDataMan</Address>
+  <Offsets>
+    <Offset>1B8</Offset>
+    <Offset>8</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337273259"/>
+    <id id="1337273260"/>
+    <id id="1337273261"/>
+    <id id="1337273262"/>
+    <id id="1337273263"/>
+    <id id="1337273264"/>
+    <id id="1337273265"/>
+    <id id="1337273266"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

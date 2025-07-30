@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>723</ID>
+  <Description>"ITEM_TYPE"</Description>
+  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">*:Invalid ItemType
+0:EquipParamWeapon
+1:EquipParamProtector
+2:EquipParamAccessory
+4:EquipParamGoods
+8:EquipParamAntique
+</DropDownList>
+  <GroupHeader>1</GroupHeader>
+</CheatEntry>
