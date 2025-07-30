@@ -1,7 +1,0 @@
-{$lua}
-if syntaxcheck then return end
-[enable]
-local Slot = readU32(inventory.data.Slot)
-writeU32(inventory.data.Slot, Slot - 1)
-disableMemrec(memrec)
-[disable]

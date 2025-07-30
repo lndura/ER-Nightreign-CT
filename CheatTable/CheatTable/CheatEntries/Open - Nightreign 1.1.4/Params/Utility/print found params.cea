@@ -1,9 +1,0 @@
-{$lua}
-if syntaxcheck then return end
-[enable]
-local paramList = paramUtils:getParamList()
-for paramName in pairs(paramList) do
-  print(paramName)
-end
-synchronize(function(rec) return disableMemrec(rec) end, memrec)
-[disable]

@@ -1,6 +1,0 @@
-{$lua}
-if syntaxcheck then return end
-[enable]
-item:debugGiveCalls(true, false)
-[disable]
-item:debugGiveCalls(false)

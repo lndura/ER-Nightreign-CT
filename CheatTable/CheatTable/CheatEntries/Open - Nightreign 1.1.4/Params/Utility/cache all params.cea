@@ -1,6 +1,0 @@
-{$lua}
-if syntaxcheck then return end
-[enable]
-paramUtils:cacheAllParams()
-synchronize(function(rec) return disableMemrec(rec) end, memrec)
-[disable]

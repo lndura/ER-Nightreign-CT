@@ -1,8 +1,0 @@
-<CheatEntry>
-  <ID>724</ID>
-  <Description>"EVENT_FLAGS"</Description>
-  <DropDownList DisplayValueAsItem="1">110:Regular Bosses Unlocked
-115:Night Aspect Boss unlocked
-</DropDownList>
-  <GroupHeader>1</GroupHeader>
-</CheatEntry>

@@ -1,8 +1,0 @@
-{$lua}
-if syntaxcheck then return end
-[enable]
-local CSGaItemIns = readPointer(inventory.data.Item)
-local rtti = getRTTIClassName(CSGaItemIns)
-print("type: ", rtti or 'no RTTI found, most likely CS::CSGooGaitemIns')
-disableMemrec(memrec)
-[disable]

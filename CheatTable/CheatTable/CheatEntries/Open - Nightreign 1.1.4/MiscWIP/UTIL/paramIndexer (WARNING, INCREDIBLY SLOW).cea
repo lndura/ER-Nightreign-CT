@@ -1,8 +1,0 @@
-{  Fetches param rows from ParamDex repository on Github.
-}
-{$lua}
-if syntaxcheck then return end
-[enable]
-paramIndexer()
-synchronize(function() disableMemrec(memrec) end)
-[disable]
