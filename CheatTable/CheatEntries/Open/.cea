@@ -1,26 +1,16 @@
 {$lua}
---[[
-
-Credits (aside from listed contributors on github):
-    Tremwill and Sfix, for the "Singleton Finder".
-    ChainFailure and Axd1x8a, for explainging things such as, but not limited to reversing with Ghidra and Fromsoftware's game logic.
-    Dasaav, for "getPortableExecutable(bool)" and "proDebug".
-    InuNorii, for "addCurrency", also known as "AddSoul".
-
---]]
-
 if syntaxcheck then return end
 [ENABLE]
-Table = {}
+local Table = {}
 Table.game = {
     "start_protected_game.exe",
     "nightreign.exe",
 }
 Table.max_ce_version = 7.5
 Table.min_ce_version = 7.4
-Table.game_version = "${CE2FS:GAME_VERSION}"
-Table.build_env = "https://raw.githubusercontent.com/lndura/ER-Nightreign-CT/refs/heads/main/BUILD_ENV"
-Table.version = "${CE2FS:TABLE_VERSION}"
+Table.game_version = "1.1.6"
+Table.build_ver = "https://raw.githubusercontent.com/lndura/ER-Nightreign-CT/refs/heads/main/version"
+Table.version = "0.0.1"
 
 function Table:launch(...)
 
@@ -40,17 +30,11 @@ function Table:launch(...)
         pfError("Incompatible CE version: %f (must be between %f and %f", ce_version, self.min_ce_version, self.max_ce_version)
     end
 
-    local game_version = getGameVersion():__tostring()
-    if game_version ~= self.game_version then
-        pfError("Game version %s is not supported.\nUse version %s instead.", game_version, self.game_version)
-    end
-
     local internet = getInternet()
     local success, current, latest, build_str = pcall(function() 
-        local build_env = internet.getURL(self.build_env)
-        local build_str = build_env:match("TABLE_VERSION=([^%s\n]+)")
+        local build_ver = internet.getURL(self.build_ver)
         local table_ver = Semver:fromString(self.version)
-        return table_ver, Semver:fromString(build_str), build_str
+        return table_ver, Semver:fromString(build_ver), build_ver
     end)
     internet.destroy()
 
@@ -59,7 +43,12 @@ function Table:launch(...)
             printf("Cheat table version is outdated.\nCurrent version: %s\nLatest version: %s", self.version, build_str)
         end
     else
-       print("Couldn't fetch Cheat Table Environment for version tracking.")
+       print("Couldn't fetch Cheat Table Github for version tracking.")
+    end
+
+    local game_version = getGameVersion():__tostring()
+    if game_version ~= self.game_version then
+        pfError("Game version %s is not supported.\nUse version %s instead.", game_version, self.game_version)
     end
 
     local required_files = {
@@ -88,13 +77,13 @@ function Table:launch(...)
         end
     end
 
-    local badFunctions = {
+    local _ = {
        "encodeFunction",
        "decodeFunction",
        "shellExecute",
     }
 
-    for _,fnName in ipairs(badFunctions) do
+    for _,fnName in ipairs(_) do
         local fn = _G[fnName]
         if _G[fnName] then
             unregisterLuaFunctionHighlight(fnName)
