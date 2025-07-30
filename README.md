@@ -1,6 +1,7 @@
 # About
 A Cheat Table, aka trainer for Elden Ring.
 Can be used for managing progression, modding parameters and looking for information.
+Uses CE2FS by Tremwill for easy contributing and tracking changes. It is also required to build it.
 
 # List of contributions:
 Temwill and Sfix:
